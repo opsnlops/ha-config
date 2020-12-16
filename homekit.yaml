@@ -1,0 +1,13 @@
+auto_start: true
+filter:
+  include_entities:
+    - script.bedtime_scene
+    - script.blue_fire_scene
+    - script.cooking_time_scene
+    - script.good_morning_scene
+    - script.goodnite_scene
+    - script.kitchen_cleanup_scene
+    - script.lazy_afternoon_scene
+    - script.low_key_scene
+    - script.normal_evening_scene
+    - script.work_at_home_scene

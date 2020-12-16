@@ -1,0 +1,55 @@
+- alias: 'Run At Sunset 20 minutes before the actual sunset'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:20:00'
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.at_sunset
+
+# This really should also be a scene, but let's see if this works for
+# now while I think of a better way to do this. :)
+- alias: 'Turn off the front porch at sunrise'
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '00:20:00'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.front_porch_light
+
+# Trigger the "Away from Home" scene when we're all gone
+- alias: 'Everyone leaves the house'
+  trigger:
+    platform: state
+    entity_id: group.all_furries
+    to: 'not_home'
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.away_from_home
+
+# Dim the lights at 9pm if I'm home
+- alias: 'Dim lights at 9:00pm'
+  initial_state: true
+  trigger:
+    platform: time
+    at: '21:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - sun
+          - mon
+          - tue
+          - wed
+          - thu
+      - condition: state
+        entity_id: person.april 
+        state: home
+  action:
+    - service: scene.turn_on
+      entity_id: scene.low_key
+    - service: notify.mobile_app_april_s_phone
+      data:
+        message: "It's bed time!"

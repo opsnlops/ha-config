@@ -1,0 +1,58 @@
+name: Kitchen Cleanup
+entities:
+  light.kitchen_counter_north:
+    brightness: 183
+    state: 'on'
+    xy_color:
+      - 0.5023
+      - 0.4135
+  light.kitchen_counter_south:
+    brightness: 188
+    state: 'on'
+    xy_color:
+      - 0.5023
+      - 0.4135
+  light.kitchen_pantry_overhead:
+    brightness: 38
+    state: 'on'
+    xy_color:
+      - 0.5023
+      - 0.4135
+  light.office_computer_table_lamp:
+    brightness: 61
+    state: 'on'
+    xy_color:
+      - 0.3879
+      - 0.1765
+  light.office_fairy_lights:
+    state: 'off'
+  light.office_filing_cabinet_lamp:
+    brightness: 25
+    state: 'on'
+    xy_color:
+      - 0.3619
+      - 0.1491
+  light.office_overhead_east:
+    brightness: 43
+    state: 'on'
+    xy_color:
+      - 0.1561
+      - 0.0535
+  light.office_overhead_north:
+    brightness: 254
+    state: 'off'
+    xy_color:
+      - 0.1364
+      - 0.0403
+  light.office_overhead_south:
+    brightness: 254
+    state: 'off'
+    xy_color:
+      - 0.1364
+      - 0.0403
+  light.office_overhead_west:
+    brightness: 254
+    state: 'off'
+    xy_color:
+      - 0.1364
+      - 0.0403

@@ -1,0 +1,160 @@
+name: Away from Home
+entities:
+
+  #
+  # This is the scene that's used when I'm outta the house. It looks
+  # a lot like "Goodnight." It turns off everything other than the
+  # lights outside.
+  #
+
+  # Add in the Christmas tree, just for the season!
+  light.christmas_tree:
+    state: 'off'
+
+
+  # Non Light things
+  light.bedroom_fan:
+    state: 'off'
+  light.living_room_fan:
+    state: 'off'
+  light.office_fan:
+    state: 'off'
+  switch.living_room_heater:
+    state: 'off'
+
+
+  # Lights
+  light.bathroom_stars:
+    state: 'off'
+  light.bedroom_fairy_light_1:
+    state: 'off'
+  light.bedroom_fairy_light_2:
+    state: 'off'
+  light.bedroom_left_nightstand_lamp:
+    brightness: 99
+    state: 'off'
+    xy_color:
+      - 0.2209
+      - 0.0794
+  light.bedroom_right_nightstand_lamp:
+    brightness: 89
+    state: 'off'
+    xy_color:
+      - 0.2202
+      - 0.08
+  light.dining_room_bookshelf:
+    brightness: 76
+    state: 'off'
+    xy_color:
+      - 0.6213
+      - 0.3612
+  light.dining_room_fairy_lights:
+    state: 'off'
+  light.guest_room_bunny_lamp:
+    brightness: 170
+    state: 'off'
+    xy_color:
+      - 0.459
+      - 0.4101
+  light.guest_room_nightstand:
+    brightness: 173
+    state: 'off'
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.hallway_stars:
+    state: 'off'
+  light.kitchen_counter_north:
+    brightness: 254
+    state: 'off'
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.kitchen_counter_south:
+    brightness: 188
+    state: 'off'
+    xy_color:
+      - 0.5023
+      - 0.4135
+  light.kitchen_pantry_overhead:
+    brightness: 38
+    state: 'off'
+    xy_color:
+      - 0.5023
+      - 0.4135
+  light.living_room_corner_lamp:
+    brightness: 254
+    state: 'off'
+    xy_color:
+      - 0.2915
+      - 0.3036
+  light.living_room_fairy_lights:
+    state: 'off'
+  light.living_room_fireplace_backlight:
+    brightness: 109
+    state: 'off'
+    xy_color:
+      - 0.6073
+      - 0.3711
+  light.living_room_glass_table_lamp:
+    brightness: 254
+    state: 'off'
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.living_room_sofa:
+    brightness: 104
+    state: 'off'
+    xy_color:
+      - 0.2915
+      - 0.3036
+  light.living_room_tv_backlighting:
+    brightness: 142
+    state: 'off'
+    xy_color:
+      - 0.474
+      - 0.4103
+  light.living_room_window_lamp:
+    brightness: 216
+    state: 'off'
+    xy_color:
+      - 0.2915
+      - 0.3036
+  light.office_computer_table_lamp:
+    brightness: 191
+    state: 'off'
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.office_fairy_lights:
+    state: 'off'
+  light.office_filing_cabinet_lamp:
+    brightness: 25
+    state: 'off'
+    xy_color:
+      - 0.3619
+      - 0.1491
+  light.office_overhead_east:
+    brightness: 175
+    state: 'off'
+    xy_color:
+      - 0.3156
+      - 0.3286
+  light.office_overhead_north:
+    brightness: 221
+    state: 'off'
+    xy_color:
+      - 0.3154
+      - 0.3284
+  light.office_overhead_south:
+    brightness: 107
+    state: 'off'
+    xy_color:
+      - 0.3156
+      - 0.3286
+  light.office_overhead_west:
+    brightness: 56
+    state: 'off'
+    xy_color:
+      - 0.3156
+      - 0.3286

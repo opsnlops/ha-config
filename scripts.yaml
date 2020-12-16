@@ -1,0 +1,71 @@
+#
+# These scripts create "switches" that HomeKit (and Siri) can trigger via voice.
+#
+
+away_from_home_scene:
+  alias: "Away from Home"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.away_from_home
+
+bedtime_scene:
+  alias: "Bedtime"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.bedtime
+
+blue_fire_scene:
+  alias: "Blue Fire"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.blue_fire
+
+cooking_time_scene:
+  alias: "Cooking Time"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.cooking_time
+
+good_morning_scene:
+  alias: "Good Morning"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.good_morning
+
+goodnight_scene:
+  alias: "Goodnight"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.goodnight
+
+kitchen_cleanup_scene:
+  alias: "Kitchen Cleanup"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_cleanup
+
+lazy_afternoon_scene:
+  alias: "Lazy Afternoon"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.lazy_afternoon
+
+low_key_scene:
+  alias: "Low Key"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.low_key
+
+normal_evening_scene:
+  alias: "Normal Evening"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.normal_evening
+
+work_at_home_scene:
+  alias: "Work at Home"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.work_at_home
+
+### End HomeKit Automation Scripts

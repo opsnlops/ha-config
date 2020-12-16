@@ -1,0 +1,41 @@
+
+# See https://www.home-assistant.io/docs/configuration/basic/
+
+default_config:
+
+homeassistant:
+  name: April's Nest
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  time_zone: America/Los_Angeles
+  internal_url: !secret home_internal_url
+  legacy_templates: false
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include_dir_list scenes/
+
+discovery:
+
+homekit: !include homekit.yaml
+
+zone: !include zones.yaml
+
+# Enable ZWave! This might be better in it's own file eventually
+zwave:
+  usb_path: /dev/ttyACM0
+  device_config: !include zwave_device_config.yaml
+
+# Enable iOS stuff
+ios: !include ios.yaml
+
+# Turn on themes
+frontend:
+  themes: !include_dir_merge_named themes

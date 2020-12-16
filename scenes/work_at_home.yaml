@@ -1,0 +1,40 @@
+name: Work at Home
+entities:
+  light.office_computer_table_lamp:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_fairy_lights:
+    state: 'on'
+  light.office_filing_cabinet_lamp:
+    brightness: 165
+    state: 'on'
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_overhead_east:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_overhead_north:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_overhead_south:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_overhead_west:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.455
+      - 0.3857

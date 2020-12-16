@@ -1,0 +1,136 @@
+name: Blue Fire
+entities:
+  light.bathroom_stars:
+    state: 'on'
+  light.bedroom_fairy_light_1:
+    state: 'off'
+  light.bedroom_fairy_light_2: 
+    state: 'off'
+  light.bedroom_left_nightstand_lamp:
+    brightness: 99
+    state: 'on'
+    xy_color:
+      - 0.167
+      - 0.04
+  light.bedroom_right_nightstand_lamp:
+    brightness: 89
+    state: 'on'
+    xy_color:
+      - 0.6073
+      - 0.3711
+  light.dining_room_bookshelf:
+    brightness: 186
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.dining_room_fairy_lights: 
+    state: 'off'
+  light.guest_room_bunny_lamp:
+    brightness: 165
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.guest_room_nightstand:
+    brightness: 91
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.hallway_stars: 
+    state: 'off'
+  light.kitchen_counter_north:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.kitchen_counter_south:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.kitchen_pantry_overhead:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.living_room_corner_lamp:
+    brightness: 186
+    state: 'on'
+    xy_color:
+      - 0.6075
+      - 0.3711
+  light.living_room_fairy_lights: 
+    state: 'off'
+  light.living_room_fireplace_backlight:
+    brightness: 109
+    state: 'on'
+    xy_color:
+      - 0.6073
+      - 0.3711
+  light.living_room_glass_table_lamp:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.living_room_sofa:
+    brightness: 150
+    state: 'on'
+    xy_color:
+      - 0.6073
+      - 0.3711
+  light.living_room_tv_backlighting:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.living_room_window_lamp:
+    brightness: 254
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.office_computer_table_lamp:
+    brightness: 58
+    state: 'on'
+    xy_color:
+      - 0.6073
+      - 0.3711
+  light.office_fairy_lights: 
+    state: 'off'
+  light.office_filing_cabinet_lamp:
+    brightness: 204
+    state: 'on'
+    xy_color:
+      - 0.3491
+      - 0.1712
+  light.office_overhead_east:
+    brightness: 204
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.office_overhead_north:
+    brightness: 216
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.office_overhead_south:
+    brightness: 234
+    state: 'on'
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.office_overhead_west:
+    brightness: 224
+    state: 'on'
+    xy_color:
+      - 0.6073
+      - 0.3711

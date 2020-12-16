@@ -1,0 +1,15 @@
+
+
+# Everyone in the household
+all_furries:
+  name: All Furries
+  entities:
+    - person.april
+#    - person.natty
+
+# Devices that are exempt from being turned off when I leave the house
+safety_lights:
+  name: Safety Lights
+  entities:
+    - light.front_porch_light
+    
