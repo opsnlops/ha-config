@@ -1,3 +1,11 @@
+
+#
+# These are here because HomeKit does a weird thing. It sends an "on"
+# command, and then an "off" command when you activate a scene. I'm not
+# sure why it does that, but these scripts allow me to turn on scenes and
+# ignore the off command. (See scripts.yaml)
+#
+
 auto_start: true
 filter:
   include_entities:

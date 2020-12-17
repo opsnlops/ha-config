@@ -1,5 +1,7 @@
 
-# See https://www.home-assistant.io/docs/configuration/basic/
+#
+# This is a pretty basic HA config, for now at least. :)
+#
 
 default_config:
 
