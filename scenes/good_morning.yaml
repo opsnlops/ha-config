@@ -1,3 +1,9 @@
+#
+# This scene is horrible and ugly and is only like that to force
+# to get out of bed so I can change it to something else after
+# the coffee has been made. :)
+#
+
 name: Good Morning
 entities:
   light.bathroom_stars:

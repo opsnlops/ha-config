@@ -1,4 +1,9 @@
 
+#
+# I live in North Seattle. There are places where I sometimes go, and
+# I like being able to see them labled in the UI.
+#
+
 - name: Safeway
   latitude: 47.71829695691305
   longitude: -122.31192676733002
