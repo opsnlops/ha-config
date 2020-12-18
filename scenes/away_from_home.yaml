@@ -13,7 +13,7 @@ entities:
 
 
   # Non Light things
-  light.bedroom_fan:
+  switch.bedroom_fan:
     state: 'off'
   light.living_room_fan:
     state: 'off'

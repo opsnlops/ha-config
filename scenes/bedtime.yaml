@@ -6,7 +6,7 @@ entities:
     state: 'on'
   light.bedroom_fairy_light_2:
     state: 'on'
-  light.bedroom_fan:
+  switch.bedroom_fan:
     state: 'on'
   light.bedroom_left_nightstand_lamp:
     brightness: 61
