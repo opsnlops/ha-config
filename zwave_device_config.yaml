@@ -1,1 +1,14 @@
-[ ]
+
+#
+# The Zooz 4-in-1 sensors use the "burglar" type to report motion, so let's
+# map that to what HA expects instead.
+#
+# See https://www.home-assistant.io/docs/z-wave/entities#burglar-entity
+#
+binary_sensor:
+  - platform: template
+    sensors:
+      YOUR_SENSOR:
+        friendly_name: "Bathroom Motion"
+        device_class: motion
+        value_template: "{{ is_state('sensor.bathroom_burglar', '8') }}"
