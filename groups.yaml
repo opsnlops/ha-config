@@ -5,7 +5,7 @@ all_furries:
   name: All Furries
   entities:
     - person.april
-#    - person.natty
+    - person.natty
 
 # Devices that are exempt from being turned off when I leave the house
 safety_lights:
