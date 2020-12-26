@@ -53,3 +53,15 @@
     - service: notify.mobile_app_april_s_phone
       data:
         message: "It's bed time!"
+
+# Start up HomeKit once ZWave is ready
+- alias: 'Start HomeKit'
+  trigger:
+    - platform: event
+      event_type: zwave.network_ready
+    - platform: event
+      event_type: zwave.network_complete
+    - platform: event
+      event_type: zwave.network_complete_some_dead
+  action:
+    - service: homekit.start
