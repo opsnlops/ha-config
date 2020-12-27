@@ -1,69 +1,74 @@
 
-# Don't start up by default. There's an automation that will start up
-# HomeKit once all of the Z-Wave devices have come online.
-auto_start: false
 
-name: Home Assistant on rex
-mode: bridge
+#
+# This is an Apple household, we use HomeKit pretty heavily
+#
 
-filter:
+- name: Home Assistant on rex
+  mode: bridge
 
-  include_domains:
-    - binary_sensor
-    - climate
-    - light
-    - switch
-    - sensor
+  # Don't start up by default. There's an automation that will start up
+  # HomeKit once all of the Z-Wave devices have come online.
+  auto_start: false
 
-  exclude_entities:
-    - binary_sensor.remote_ui
-    - binary_sensor.rpi_power_status
-    - binary_sensor.updater
+  filter:
 
-  exclude_entity_globs:
-    - sensor.april_s_iphone*
-    - sensor.april_s_phone*
-    - sensor.bunny_s_ipad*
-    - sensor.hewlett_packard*
-    - sensor.natphone*
-    - sensor.nattipad*
-    - sensor.speedtest*
+    include_domains:
+      - binary_sensor
+      - climate
+      - light
+      - switch
+      - sensor
 
+    exclude_entities:
+      - binary_sensor.remote_ui
+      - binary_sensor.rpi_power_status
+      - binary_sensor.updater
 
-  # These are here because HomeKit does a weird thing. It sends an "on"
-  # command, and then an "off" command when you activate a scene. I'm not
-  # sure why it does that, but these scripts allow me to turn on scenes and
-  # ignore the off command. (See scripts.yaml)
-  include_entities:
-    - script.bedtime_scene
-    - script.blue_fire_scene
-    - script.cooking_time_scene
-    - script.good_morning_scene
-    - script.goodnite_scene
-    - script.kitchen_cleanup_scene
-    - script.lazy_afternoon_scene
-    - script.low_key_scene
-    - script.normal_evening_scene
-    - script.work_at_home_scene
-    
-    - media_player.denon_avr
+    exclude_entity_globs:
+      - sensor.april_s_iphone*
+      - sensor.april_s_phone*
+      - sensor.bunny_s_ipad*
+      - sensor.hewlett_packard*
+      - sensor.natphone*
+      - sensor.nattipad*
+      - sensor.speedtest*
 
 
-entity_config:
-  binary_sensor.bathroom_motion:
-    linked_battery_sensor: sensor.bathroom_sensor_battery_level
-    low_battery_threshold: 33
-  binary_sensor.guest_room_motion:
-    linked_battery_sensor: sensor.guest_room_sensor_battery_level
-    low_battery_threshold: 33
-  media_player.denon_avr:
-    name: Living Room Receiver
-    feature_list:
-      - feature: on_off
-      - feature: play_pause
-      - feature: play_stop
-      - feature: toggle_mute
-  switch.bedroom_fan:
-    type: outlet
-  switch.living_room_heater:
-    type: outlet
+    # These are here because HomeKit does a weird thing. It sends an "on"
+    # command, and then an "off" command when you activate a scene. I'm not
+    # sure why it does that, but these scripts allow me to turn on scenes and
+    # ignore the off command. (See scripts.yaml)
+    include_entities:
+      - script.bedtime_scene
+      - script.blue_fire_scene
+      - script.cooking_time_scene
+      - script.good_morning_scene
+      - script.goodnite_scene
+      - script.kitchen_cleanup_scene
+      - script.lazy_afternoon_scene
+      - script.low_key_scene
+      - script.normal_evening_scene
+      - script.work_at_home_scene
+      
+      - media_player.denon_avr
+
+
+  entity_config:
+    binary_sensor.bathroom_motion:
+      linked_battery_sensor: sensor.bathroom_sensor_battery_level
+      low_battery_threshold: 33
+    binary_sensor.guest_room_motion:
+      linked_battery_sensor: sensor.guest_room_sensor_battery_level
+      low_battery_threshold: 33
+    media_player.denon_avr:
+      name: Living Room Receiver
+      feature_list:
+        - feature: on_off
+        - feature: play_pause
+        - feature: play_stop
+        - feature: toggle_mute
+    switch.bedroom_fan:
+      type: outlet
+    switch.living_room_heater:
+      type: outlet
