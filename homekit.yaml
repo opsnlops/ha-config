@@ -4,7 +4,7 @@
 # This is an Apple household, we use HomeKit pretty heavily
 #
 
-- name: Home Assistant on rex
+  name: Home Assistant on rex
   mode: bridge
 
   # Don't start up by default. There's an automation that will start up
