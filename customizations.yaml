@@ -1,0 +1,9 @@
+
+# Set the device class of the Zooz sensors to something that
+# HomeKit will understand
+sensor.bathroom_relative_humidity:
+  unit_of_measurement: '%'
+  device_class: humidity
+sensor.guest_room_relative_humidity:
+  unit_of_measurement: '%'
+  device_class: humidity
