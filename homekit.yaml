@@ -65,8 +65,6 @@
       name: Living Room Receiver
       feature_list:
         - feature: on_off
-        - feature: play_pause
-        - feature: play_stop
         - feature: toggle_mute
     switch.bedroom_fan:
       type: outlet
