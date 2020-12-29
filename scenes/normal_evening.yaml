@@ -32,7 +32,7 @@ entities:
   light.dining_room_fairy_lights:
     state: 'on'
   light.guest_room_bunny_lamp:
-    brightness: 170
+    brightness: 254
     state: 'on'
     xy_color:
       - 0.4592
@@ -43,6 +43,8 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.guest_room_stars:
+    state: 'on'
   light.hallway_stars:
     state: 'on'
   light.kitchen_counter_north:

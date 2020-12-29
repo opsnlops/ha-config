@@ -42,6 +42,8 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
+  light.giest_room_stars:
+    state: 'on'
   light.hallway_stars:
     state: 'on'
   light.kitchen_counter_north:

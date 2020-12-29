@@ -38,6 +38,8 @@ entities:
     xy_color:
       - 0.1358
       - 0.0445
+  light.guest_room_stars:
+    state: 'off'
   light.hallway_stars: 
     state: 'off'
   light.kitchen_counter_north:
