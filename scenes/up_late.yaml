@@ -1,0 +1,143 @@
+name: Up Late
+entities:
+
+  # Since it's that time of year, include the Christmas tree!
+  light.christmas_tree:
+    state: 'off'
+
+  light.bathroom_stars:
+    state: 'on'
+  light.bedroom_fairy_light_1:
+    state: 'on'
+  light.bedroom_fairy_light_2:
+    state: 'on'
+  light.bedroom_left_nightstand_lamp:
+    brightness: 114
+    state: 'on'
+    xy_color:
+    - 0.5009
+    - 0.3794
+  light.bedroom_right_nightstand_lamp:
+    brightness: 115
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
+  light.dining_room_bookshelf:
+    brightness: 192
+    state: 'on'
+    xy_color:
+    - 0.287
+    - 0.1383
+  light.dining_room_fairy_lights:
+    state: 'on'
+  light.guest_room_bunny_lamp:
+    brightness: 178
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
+  light.guest_room_nightstand:
+    brightness: 134
+    state: 'on'
+    xy_color:
+    - 0.5012
+    - 0.3794
+  light.guest_room_stars:
+    state: 'on'
+  light.hallway_stars:
+    state: 'on'
+  light.kitchen_counter_north:
+    brightness: 82
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
+  light.kitchen_counter_south:
+    brightness: 81
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
+  light.kitchen_pantry_overhead:
+    brightness: 55
+    state: 'on'
+    xy_color:
+    - 0.1623
+    - 0.2331
+  light.living_room_corner_lamp:
+    brightness: 109
+    state: 'on'
+    xy_color:
+    - 0.5009
+    - 0.3794
+  light.living_room_fairy_lights:
+    state: 'on'
+  light.living_room_fireplace_backlight:
+    brightness: 78
+    state: 'on'
+    xy_color:
+    - 0.4089
+    - 0.2586
+  light.living_room_glass_table_lamp:
+    brightness: 170
+    state: 'on'
+    xy_color:
+    - 0.5009
+    - 0.3794
+  light.living_room_sofa:
+    brightness: 180
+    state: 'on'
+    xy_color:
+    - 0.2339
+    - 0.1211
+  light.living_room_tv_backlighting:
+    brightness: 147
+    state: 'on'
+    xy_color:
+    - 0.2339
+    - 0.1211
+  light.living_room_window_lamp:
+    brightness: 171
+    state: 'on'
+    xy_color:
+    - 0.5009
+    - 0.3794
+  light.office_computer_table_lamp:
+    brightness: 93
+    state: 'on'
+    xy_color:
+    - 0.4089
+    - 0.2586
+  light.office_fairy_lights:
+    state: 'on'
+  light.office_filing_cabinet_lamp:
+    brightness: 50
+    state: 'on'
+    xy_color:
+    - 0.4089
+    - 0.2585
+  light.office_overhead_east:
+    brightness: 50
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
+  light.office_overhead_north:
+    brightness: 104
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
+  light.office_overhead_south:
+    brightness: 111
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
+  light.office_overhead_west:
+    brightness: 105
+    state: 'on'
+    xy_color:
+    - 0.5008
+    - 0.3794
