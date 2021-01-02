@@ -36,8 +36,11 @@ zwave:
   usb_path: /dev/ttyACM0
   device_config: !include zwave_device_config.yaml
 
-# Manually-defined binary sensors
+mqtt: !include mqtt.yaml
+
+# Manually-defined sensors
 binary_sensor: !include binary_sensors.yaml
+sensor: !include sensors.yaml
 
 # Enable iOS stuff
 ios: !include ios.yaml
