@@ -11,4 +11,3 @@ I was a big HomeKit user for a while, but I think I've just outgrown what HomeKi
 * [Aeotec Z-Stick Gen5 Z-Wave Hub](https://www.amazon.com/dp/B00X0AWA6E/)
 * A crazy number of Hue Blubs
 * Some Z-Wave hardware, which is just odds-n-ends stuff
-
