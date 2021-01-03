@@ -35,10 +35,10 @@ entities:
     brightness: 178
     state: 'on'
     xy_color:
-    - 0.5008
+    - 0.5012
     - 0.3794
   light.guest_room_nightstand:
-    brightness: 134
+    brightness: 160
     state: 'on'
     xy_color:
     - 0.5012

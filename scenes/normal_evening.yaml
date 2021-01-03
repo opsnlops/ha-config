@@ -38,11 +38,11 @@ entities:
       - 0.4592
       - 0.4102
   light.guest_room_nightstand:
-    brightness: 173
+    brightness: 254
     state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+      - 0.4592
+      - 0.4102
   light.guest_room_stars:
     state: 'on'
   light.hallway_stars:
