@@ -62,6 +62,9 @@
     binary_sensor.guest_room_motion:
       linked_battery_sensor: sensor.guest_room_sensor_battery_level
       low_battery_threshold: 33
+    binary_sensor.laundry_room_motion:
+      linked_battery_sensor: sensor.laundry_room_sensor_battery_level
+      low_battery_threshold: 33
     media_player.denon_avr:
       name: Living Room Receiver
       feature_list:
