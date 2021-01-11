@@ -1,143 +1,138 @@
 name: Normal Evening
 entities:
-
-  # Add in the Christmas tree, just for the season!
-  light.christmas_tree:
-    state: 'on'
-
   light.bathroom_stars:
-    state: 'on'
+    state: "on"
   light.bedroom_fairy_light_1:
-    state: 'on'
+    state: "on"
   light.bedroom_fairy_light_2:
-    state: 'on'
+    state: "on"
   light.bedroom_left_nightstand_lamp:
     brightness: 99
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.2207
       - 0.079
   light.bedroom_right_nightstand_lamp:
     brightness: 89
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.2207
       - 0.079
   light.dining_room_bookshelf:
     brightness: 155
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.1374
       - 0.0408
   light.dining_room_fairy_lights:
-    state: 'on'
+    state: "on"
   light.guest_room_bunny_lamp:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.4592
       - 0.4102
   light.guest_room_nightstand:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.4592
       - 0.4102
   light.guest_room_stars:
-    state: 'on'
+    state: "on"
   light.hallway_stars:
-    state: 'on'
+    state: "on"
   light.kitchen_counter_north:
     brightness: 102
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.kitchen_counter_south:
     brightness: 102
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.kitchen_pantry_overhead:
     brightness: 81
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.living_room_corner_lamp:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.living_room_fairy_lights:
-    state: 'on'
+    state: "on"
   light.living_room_fireplace_backlight:
     brightness: 109
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.6073
       - 0.3711
   light.living_room_glass_table_lamp:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.living_room_sofa:
     brightness: 140
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.2514
       - 0.1384
   light.living_room_tv_backlighting:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.4077
       - 0.1648
   light.living_room_window_lamp:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.office_computer_table_lamp:
     brightness: 73
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.2207
       - 0.079
   light.office_fairy_lights:
-    state: 'on'
+    state: "on"
   light.office_filing_cabinet_lamp:
     brightness: 43
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.2207
       - 0.079
   light.office_overhead_east:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.1364
       - 0.0403
   light.office_overhead_north:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.1532
       - 0.0403
   light.office_overhead_south:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.1364
       - 0.0403
   light.office_overhead_west:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
       - 0.1364
       - 0.0403
