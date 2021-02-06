@@ -8,9 +8,7 @@
 
 - platform: mqtt
   name: "Second Life Concurrency"
-  state_topic: "sl/concurrency"
+  state_topic: "external/secondlife/concurrency"
   unit_of_measurement: 'resis'
-  value_template: "{{ value_json.concurrency }}"
-  json_attributes_topic: "sl/concurrency"
 
 ### End MQTT
