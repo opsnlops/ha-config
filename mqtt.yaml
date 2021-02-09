@@ -1,14 +1,12 @@
-
 #
 # The broker currently runs as a process on the HASS host
 #
 
-  broker: 127.0.0.1
-  discovery: true
-  birth_message:
-    topic: 'homeassistant/status'
-    payload: 'online'
-  will_message:
-    topic: 'homeassistant/status'
-    payload: 'offline'
-
+broker: 127.0.0.1
+discovery: true
+birth_message:
+  topic: "home/homeassistant/status"
+  payload: "online"
+will_message:
+  topic: "home/homeassistant/status"
+  payload: "offline"

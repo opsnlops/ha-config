@@ -1,39 +1,39 @@
-- alias: 'Run At Sunset 20 minutes before the actual sunset'
+- alias: "Run At Sunset 20 minutes before the actual sunset"
   trigger:
     platform: sun
     event: sunset
-    offset: '-00:20:00'
+    offset: "-00:20:00"
   action:
     service: homeassistant.turn_on
     entity_id: scene.at_sunset
 
 # This really should also be a scene, but let's see if this works for
 # now while I think of a better way to do this. :)
-- alias: 'Turn off the front porch at sunrise'
+- alias: "Turn off the front porch at sunrise"
   trigger:
     platform: sun
     event: sunrise
-    offset: '00:20:00'
+    offset: "00:20:00"
   action:
     service: homeassistant.turn_off
     entity_id: light.front_porch_light
 
 # Trigger the "Away from Home" scene when we're all gone
-- alias: 'Everyone leaves the house'
+- alias: "Everyone leaves the house"
   trigger:
     platform: state
     entity_id: group.all_furries
-    to: 'not_home'
+    to: "not_home"
   action:
     service: homeassistant.turn_on
     entity_id: scene.away_from_home
 
 # Dim the lights at 9pm if I'm home
-- alias: 'Dim lights at 9:00pm'
+- alias: "Dim lights at 9:00pm"
   initial_state: true
   trigger:
     platform: time
-    at: '21:00:00'
+    at: "21:00:00"
   condition:
     condition: and
     conditions:
@@ -45,14 +45,14 @@
           - wed
           - thu
       - condition: state
-        entity_id: person.april 
+        entity_id: person.april
         state: home
   action:
     - service: scene.turn_on
       entity_id: scene.low_key
 
 # Start up HomeKit once ZWave is ready
-- alias: 'Start HomeKit'
+- alias: "Start HomeKit"
   trigger:
     - platform: event
       event_type: zwave.network_ready
@@ -62,3 +62,21 @@
       event_type: zwave.network_complete_some_dead
   action:
     - service: homekit.start
+
+#
+# MQTT Events
+#
+
+# Living room
+- alias: "MQTT - Living Room Motion"
+  trigger:
+    platform: event
+    event_type: signal_received
+    event_data:
+      { "entity_id": "binary_sensor.living_room_motion_sensor_motion" }
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/living_room/motion"
+      payload_template: "{{ states.binary_sensor.living_room_motion_sensor_motion.state }}"
+      retain: true
