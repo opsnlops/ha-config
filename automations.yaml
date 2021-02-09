@@ -63,6 +63,36 @@
   action:
     - service: homekit.start
 
+# Turn on the lights in the bathroom when it's dark and motion is detected
+- alias: Turn on the bathroom stars with motion at night
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bathroom_motion
+    to: "on"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.bathroom_luminance
+    below: 10.0
+  action:
+    service: light.turn_on
+    entity_id: light.bathroom_stars
+
+- alias: Turn off the bathroom stars if it's night time
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bathroom_motion
+    to: "off"
+    for:
+      minutes: 10
+  condition:
+    - condition: time
+      after: "22:00:00"
+      before: "07:00:00"
+  action:
+    service: light.turn_off
+    entity_id: light.bathroom_stars
+
+######################################3
 #
 # MQTT Events
 #
