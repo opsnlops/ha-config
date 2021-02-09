@@ -150,3 +150,66 @@
     data:
       topic: "home/bathroom/temperature"
       payload_template: "{{ states.sensor.bathroom_temperature.state }}"
+
+# Office
+- alias: "MQTT - Office Motion"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.office_motion_sensor_motion"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/office/motion"
+      payload_template: "{{ states.binary_sensor.office_motion_sensor_motion.state }}"
+
+- alias: "MQTT - Office Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.office_motion_sensor_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/office/temperature"
+      payload_template: "{{ states.sensor.office_motion_sensor_temperature.state }}"
+
+# Workshop
+- alias: "MQTT - Workshop Motion"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.guest_room_motion"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/workshop/motion"
+      payload_template: "{{ states.binary_sensor.guest_room_motion.state }}"
+
+- alias: "MQTT - Workshop Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.guest_room_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/workshop/temperature"
+      payload_template: "{{ states.sensor.guest_room_temperature.state }}"
+
+# Outside
+- alias: "MQTT - Outside Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.april_s_nest_realfeel_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/outside/temperature"
+      payload_template: "{{ states.sensor.april_s_nest_realfeel_temperature.state }}"
+
+- alias: "MQTT - Outside Conditions"
+  trigger:
+    platform: state
+    entity_id: "weather.april_s_nest"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/outside/conditions"
+      payload_template: "{{ states.weather.april_s_nest.state }}"
