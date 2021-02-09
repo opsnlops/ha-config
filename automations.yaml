@@ -243,3 +243,47 @@
     data:
       topic: "home/outside/conditions"
       payload_template: "{{ states.weather.april_s_nest.state }}"
+
+## Things!
+
+# Living Room Heater
+- alias: "MQTT - Living Room Heater State"
+  trigger:
+    platform: state
+    entity_id: "switch.living_room_heater"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "thing/living_room/heater/state"
+      payload_template: "{{ states.switch.living_room_heater.state }}"
+
+- alias: "MQTT - Living Room Heater Power"
+  trigger:
+    platform: state
+    entity_id: "sensor.living_room_heater_power"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "thing/living_room/heater/power"
+      payload_template: "{{ states.sensor.living_room_heater_power.state }}"
+
+# Bedroom Fan
+- alias: "MQTT - Bedroom Fan State"
+  trigger:
+    platform: state
+    entity_id: "switch.bedroom_fan"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "thing/beroom/fan/state"
+      payload_template: "{{ states.switch.bedroom_fan.state }}"
+
+- alias: "MQTT - Bedroom Fan Power"
+  trigger:
+    platform: state
+    entity_id: "sensor.bedroom_fan_power"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "thing/bedroom/fan/power"
+      payload_template: "{{ states.sensor.bedroom_fan_power.state }}"
