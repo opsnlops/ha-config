@@ -70,13 +70,21 @@
 # Living room
 - alias: "MQTT - Living Room Motion"
   trigger:
-    platform: event
-    event_type: signal_received
-    event_data:
-      { "entity_id": "binary_sensor.living_room_motion_sensor_motion" }
+    platform: state
+    entity_id: "binary_sensor.living_room_motion_sensor_motion"
   action:
     service: mqtt.publish
     data:
       topic: "home/living_room/motion"
       payload_template: "{{ states.binary_sensor.living_room_motion_sensor_motion.state }}"
-      retain: true
+
+# Living room
+- alias: "MQTT - Laundry Room Motion"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.laundry_room_motion"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/laundry_room/motion"
+      payload_template: "{{ states.binary_sensor.laundry_room_motion.state }}"
