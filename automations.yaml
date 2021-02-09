@@ -139,6 +139,16 @@
       topic: "home/laundry_room/temperature"
       payload_template: "{{ states.sensor.laundry_room_temperature.state }}"
 
+- alias: "MQTT - Laundry Room Room Humidity"
+  trigger:
+    platform: state
+    entity_id: "sensor.laundry_room_relative_humidity"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/laundry_room/humidity"
+      payload_template: "{{ states.sensor.laundry_room_relative_humidity.state }}"
+
 # Bedroom
 - alias: "MQTT - Bedroom Motion"
   trigger:
@@ -180,6 +190,16 @@
     data:
       topic: "home/bathroom/temperature"
       payload_template: "{{ states.sensor.bathroom_temperature.state }}"
+
+- alias: "MQTT - Bathroom Room Humidity"
+  trigger:
+    platform: state
+    entity_id: "sensor.bathroom_relative_humidity"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/bathroom/humidity"
+      payload_template: "{{ states.sensor.bathroom_relative_humidity.state }}"
 
 # Office
 - alias: "MQTT - Office Motion"
@@ -223,6 +243,16 @@
       topic: "home/workshop/temperature"
       payload_template: "{{ states.sensor.guest_room_temperature.state }}"
 
+- alias: "MQTT - Workshop Humidity"
+  trigger:
+    platform: state
+    entity_id: "sensor.guest_room_relative_humidity"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/workshop/humidity"
+      payload_template: "{{ states.sensor.guest_room_relative_humidity.state }}"
+
 # Outside
 - alias: "MQTT - Outside Temperature"
   trigger:
@@ -243,6 +273,26 @@
     data:
       topic: "home/outside/conditions"
       payload_template: "{{ states.weather.april_s_nest.state }}"
+
+- alias: "MQTT - Outside Sun"
+  trigger:
+    platform: state
+    entity_id: "sun.sun"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/outside/sun"
+      payload_template: "{{ states.sun.sun.state }}"
+
+- alias: "MQTT - Outside Air Quailty"
+  trigger:
+    platform: state
+    entity_id: "sensor.airnow_aqi"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/outside/air_quality"
+      payload_template: "{{ states.sensor.airnow_aqi.state }}"
 
 ## Things!
 
@@ -307,3 +357,23 @@
     data:
       topic: "thing/living_room/tv/state"
       payload_template: "{{ states.media_player.living_room_tv.state }}"
+
+- alias: "MQTT - Work Computer Camera"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.aprils_home_mac_pro_camera_in_use"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "thing/office/computer_camera/state"
+      payload_template: "{{ states.binary_sensor.aprils_home_mac_pro_camera_in_use.state }}"
+
+- alias: "MQTT - Work Computer Microphone"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.aprils_home_mac_pro_microphone_in_use"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "thing/office/computer_microphone/state"
+      payload_template: "{{ states.binary_sensor.aprils_home_mac_pro_microphone_in_use.state }}"
