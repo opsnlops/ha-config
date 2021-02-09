@@ -78,7 +78,17 @@
       topic: "home/living_room/motion"
       payload_template: "{{ states.binary_sensor.living_room_motion_sensor_motion.state }}"
 
-# Living room
+- alias: "MQTT - Living Room Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.living_room_motion_sensor_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/living_room/temperature"
+      payload_template: "{{ states.sensor.living_room_motion_sensor_temperature.state }}"
+
+# Laundry room
 - alias: "MQTT - Laundry Room Motion"
   trigger:
     platform: state
@@ -88,3 +98,13 @@
     data:
       topic: "home/laundry_room/motion"
       payload_template: "{{ states.binary_sensor.laundry_room_motion.state }}"
+
+- alias: "MQTT - Laundry Room Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.laundry_room_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/living_room/temperature"
+      payload_template: "{{ states.sensor.laundry_room_temperature.state }}"
