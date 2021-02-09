@@ -275,7 +275,7 @@
   action:
     service: mqtt.publish
     data:
-      topic: "thing/beroom/fan/state"
+      topic: "thing/bedroom/fan/state"
       payload_template: "{{ states.switch.bedroom_fan.state }}"
 
 - alias: "MQTT - Bedroom Fan Power"
