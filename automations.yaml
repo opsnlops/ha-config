@@ -106,5 +106,47 @@
   action:
     service: mqtt.publish
     data:
-      topic: "home/living_room/temperature"
+      topic: "home/laundry_room/temperature"
       payload_template: "{{ states.sensor.laundry_room_temperature.state }}"
+
+# Bedroom
+- alias: "MQTT - Bedroom Motion"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.bedroom_motion_sensor_motion"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/bedroom/motion"
+      payload_template: "{{ states.binary_sensor.bedroom_motion_sensor_motion.state }}"
+
+- alias: "MQTT - Bedroom Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.bedroom_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/bedroom/temperature"
+      payload_template: "{{ states.sensor.bedroom_temperature.state }}"
+
+# Bathroom
+- alias: "MQTT - Bathroom Motion"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.bathroom_motion"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/bathroom/motion"
+      payload_template: "{{ states.binary_sensor.bathroom_motion.state }}"
+
+- alias: "MQTT - Bathroom Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.bathroom_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/bathroom/temperature"
+      payload_template: "{{ states.sensor.bathroom_temperature.state }}"
