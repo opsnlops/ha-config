@@ -1,4 +1,3 @@
-
 #
 # This is a pretty basic HA config, for now at least. :)
 #
@@ -54,8 +53,3 @@ frontend:
 media_player:
   - platform: mpd
     host: 127.0.0.1
-
-icloud:
-  - username: !secret icloud_username
-    password: !secret icloud_password
-
