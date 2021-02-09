@@ -53,3 +53,9 @@ frontend:
 media_player:
   - platform: mpd
     host: 127.0.0.1
+
+# Publish everything to MQTT
+mqtt_statestream:
+  base_topic: home
+  publish_attributes: true
+  publish_timestamps: true
