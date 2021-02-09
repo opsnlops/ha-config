@@ -86,7 +86,7 @@
       minutes: 10
   condition:
     - condition: time
-      after: "22:00:00"
+      after: "21:00:00"
       before: "07:00:00"
   action:
     service: light.turn_off
