@@ -287,3 +287,23 @@
     data:
       topic: "thing/bedroom/fan/power"
       payload_template: "{{ states.sensor.bedroom_fan_power.state }}"
+
+- alias: "MQTT - Everyone Home"
+  trigger:
+    platform: state
+    entity_id: "group.all_furries"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "people/furries/home"
+      payload_template: "{{ states.group.all_furries.state }}"
+
+- alias: "MQTT - Living Room TV"
+  trigger:
+    platform: state
+    entity_id: "media_player.living_room_tv"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "thing/living_room/tv/state"
+      payload_template: "{{ states.media_player.living_room_tv.state }}"
