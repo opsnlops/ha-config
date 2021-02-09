@@ -50,9 +50,6 @@
   action:
     - service: scene.turn_on
       entity_id: scene.low_key
-    - service: notify.mobile_app_april_s_phone
-      data:
-        message: "It's bed time!"
 
 # Start up HomeKit once ZWave is ready
 - alias: 'Start HomeKit'
