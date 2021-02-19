@@ -1,4 +1,3 @@
-
 #
 # I live in North Seattle. There are places where I sometimes go, and
 # I like being able to see them labled in the UI.
@@ -10,7 +9,11 @@
   icon: mdi:cart-outline
 
 - name: Work
-  latitude: 47.59872460977204 
+  latitude: 47.59872460977204
   longitude: -122.3320044598669
   icon: mdi:office-building-outline
-  
+
+- name: New Home
+  latitude: !secret new_home_latitude
+  longitude: !secret new_home_longitude
+  icon: mdi:home-plus
