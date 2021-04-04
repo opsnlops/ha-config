@@ -19,12 +19,14 @@
   name: "Outside Temperature"
   state_topic: "weather/Fineoffset-WHx080/temperature_F"
   unit_of_measurement: "°F"
+  device_class: temperature
   icon: mdi:thermometer
 
 - platform: mqtt
   name: "Outside Humidity"
   state_topic: "weather/Fineoffset-WHx080/humidity"
   unit_of_measurement: "%"
+  device_class: humidity
   icon: mdi:water-percent
 
 - platform: mqtt
