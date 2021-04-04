@@ -1,14 +1,46 @@
-
 #
 # Manually defined sensors
 #
-
 
 ### MQTT
 
 - platform: mqtt
   name: "Second Life Concurrency"
   state_topic: "external/secondlife/concurrency"
-  unit_of_measurement: 'resis'
+  unit_of_measurement: "resis"
 
+# Weather
+
+# So, uh, I have no idea who's sensor this is, but hey, I'm gonna use
+# the data! 😁
+
+- platform: mqtt
+  name: "Outside Temperature"
+  state_topic: "weather/Fineoffset-WHx080/temperature_F"
+  unit_of_measurement: "°F"
+
+- platform: mqtt
+  name: "Outside Humidity"
+  state_topic: "weather/Fineoffset-WHx080/humidity"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Wind Direction"
+  state_topic: "weather/Fineoffset-WHx080/wind_dir_deg"
+  unit_of_measurement: "°"
+
+- platform: mqtt
+  name: "Wind Speed (Avg)"
+  state_topic: "weather/Fineoffset-WHx080/wind_avg_mi_h"
+  unit_of_measurement: "mph"
+
+- platform: mqtt
+  name: "Wind Speed (Max)"
+  state_topic: "weather/Fineoffset-WHx080/wind_max_mi_h"
+  unit_of_measurement: "mph"
+
+- platform: mqtt
+  name: "Rain Amount"
+  state_topic: "weather/Fineoffset-WHx080/rain_in"
+  unit_of_measurement: "inches"
 ### End MQTT
