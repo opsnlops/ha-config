@@ -30,7 +30,7 @@
   icon: mdi:water-percent
 
 - platform: mqtt
-  name: "Wind Direction"
+  name: "Wind Bearing"
   state_topic: "weather/Fineoffset-WHx080/wind_dir_deg"
   unit_of_measurement: "deg"
   icon: mdi:compass
@@ -53,3 +53,11 @@
   unit_of_measurement: "inches"
   icon: mdi:weather-rainy
 ### End MQTT
+
+- platform: template
+  sensors:
+    wind_direction:
+      value_template: >
+        {% set direction = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] %}
+        {% set degree = states('sensor.wind_bearing')|float %}
+        {{ direction[((degree+11.25)/22.5)|int] }}
