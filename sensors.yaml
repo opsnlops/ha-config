@@ -37,13 +37,13 @@
   name: "Wind Speed (Avg)"
   state_topic: "weather/Fineoffset-WHx080/wind_avg_mi_h"
   unit_of_measurement: "mph"
-  icon: mdi:speedometer
+  icon: mdi:weather-windy
 
 - platform: mqtt
   name: "Wind Speed (Max)"
   state_topic: "weather/Fineoffset-WHx080/wind_max_mi_h"
   unit_of_measurement: "mph"
-  icon: mdi:speedometer
+  icon: mdi:weather-windy
 
 - platform: mqtt
   name: "Rain Amount"
