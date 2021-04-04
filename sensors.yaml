@@ -8,6 +8,7 @@
   name: "Second Life Concurrency"
   state_topic: "external/secondlife/concurrency"
   unit_of_measurement: "resis"
+  icon: mdi:account-group
 
 # Weather
 
@@ -18,29 +19,35 @@
   name: "Outside Temperature"
   state_topic: "weather/Fineoffset-WHx080/temperature_F"
   unit_of_measurement: "°F"
+  icon: mdi:thermometer
 
 - platform: mqtt
   name: "Outside Humidity"
   state_topic: "weather/Fineoffset-WHx080/humidity"
   unit_of_measurement: "%"
+  icon: mdi:water-percent
 
 - platform: mqtt
   name: "Wind Direction"
   state_topic: "weather/Fineoffset-WHx080/wind_dir_deg"
-  unit_of_measurement: "°"
+  unit_of_measurement: "deg"
+  icon: mdi:compass
 
 - platform: mqtt
   name: "Wind Speed (Avg)"
   state_topic: "weather/Fineoffset-WHx080/wind_avg_mi_h"
   unit_of_measurement: "mph"
+  icon: mdi:speedometer
 
 - platform: mqtt
   name: "Wind Speed (Max)"
   state_topic: "weather/Fineoffset-WHx080/wind_max_mi_h"
   unit_of_measurement: "mph"
+  icon: mdi:speedometer
 
 - platform: mqtt
   name: "Rain Amount"
   state_topic: "weather/Fineoffset-WHx080/rain_in"
   unit_of_measurement: "inches"
+  icon: mdi:weather-rainy
 ### End MQTT
