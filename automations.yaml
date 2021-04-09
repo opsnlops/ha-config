@@ -51,18 +51,6 @@
     - service: scene.turn_on
       entity_id: scene.low_key
 
-# Start up HomeKit once ZWave is ready
-- alias: "Start HomeKit"
-  trigger:
-    - platform: event
-      event_type: zwave.network_ready
-    - platform: event
-      event_type: zwave.network_complete
-    - platform: event
-      event_type: zwave.network_complete_some_dead
-  action:
-    - service: homekit.start
-
 # Turn on the lights in the bathroom when it's dark and motion is detected
 - alias: Turn on the bathroom stars with motion at night
   trigger:
