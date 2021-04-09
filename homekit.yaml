@@ -5,10 +5,6 @@
 name: Home Assistant on rex
 mode: bridge
 
-# Don't start up by default. There's an automation that will start up
-# HomeKit once all of the Z-Wave devices have come online.
-auto_start: false
-
 filter:
   include_domains:
     - binary_sensor
