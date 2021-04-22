@@ -1,19 +1,14 @@
 #
-# I live in North Seattle. There are places where I sometimes go, and
+# I live on Whidey Island. There are places where I sometimes go, and
 # I like being able to see them labled in the UI.
 #
 
-- name: Safeway
-  latitude: 47.71829695691305
-  longitude: -122.31192676733002
+- name: The Goose
+  latitude: 48.00094797921276
+  longitude: -122.46025135781878
   icon: mdi:cart-outline
 
 - name: Work
   latitude: 47.59872460977204
   longitude: -122.3320044598669
   icon: mdi:office-building-outline
-
-- name: New Home
-  latitude: !secret new_home_latitude
-  longitude: !secret new_home_longitude
-  icon: mdi:home-plus
