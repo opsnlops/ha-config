@@ -3,6 +3,12 @@
 # I like being able to see them labled in the UI.
 #
 
+- name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 200
+  icon: mdi:home
+
 - name: The Goose
   latitude: 48.00094797921276
   longitude: -122.46025135781878
