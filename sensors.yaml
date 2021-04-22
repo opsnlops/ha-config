@@ -12,44 +12,37 @@
 
 # Weather
 
-# So, uh, I have no idea who's sensor this is, but hey, I'm gonna use
-# the data! 😁
-
+# This data comes from dutch, which is reading a sensor on the roof of the
+# house and publishing the data via MQTT. 🏡
 - platform: mqtt
   name: "Outside Temperature"
-  state_topic: "weather/Fineoffset-WHx080/temperature_F"
+  state_topic: "weather/Acurite-5n1/temperature_F"
   unit_of_measurement: "°F"
   device_class: temperature
   icon: mdi:thermometer
 
 - platform: mqtt
   name: "Outside Humidity"
-  state_topic: "weather/Fineoffset-WHx080/humidity"
+  state_topic: "weather/Acurite-5n1/humidity"
   unit_of_measurement: "%"
   device_class: humidity
   icon: mdi:water-percent
 
 - platform: mqtt
   name: "Wind Bearing"
-  state_topic: "weather/Fineoffset-WHx080/wind_dir_deg"
+  state_topic: "weather/Acurite-5n1/wind_dir_deg"
   unit_of_measurement: "deg"
   icon: mdi:compass
 
 - platform: mqtt
   name: "Wind Speed (Avg)"
-  state_topic: "weather/Fineoffset-WHx080/wind_avg_mi_h"
-  unit_of_measurement: "mph"
-  icon: mdi:weather-windy
-
-- platform: mqtt
-  name: "Wind Speed (Max)"
-  state_topic: "weather/Fineoffset-WHx080/wind_max_mi_h"
+  state_topic: "weather/Acurite-5n1/wind_avg_mi_h"
   unit_of_measurement: "mph"
   icon: mdi:weather-windy
 
 - platform: mqtt
   name: "Rain Amount"
-  state_topic: "weather/Fineoffset-WHx080/rain_in"
+  state_topic: "weather/Acurite-5n1/rain_in"
   unit_of_measurement: "inches"
   icon: mdi:weather-rainy
 ### End MQTT
