@@ -17,7 +17,7 @@ entities:
     state: "off"
 
   # Lights
-  light.bathroom_stars:
+  light.hallway_bathroom_stars:
     state: "off"
   light.bedroom_fairy_light_1:
     state: "off"

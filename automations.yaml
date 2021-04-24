@@ -51,24 +51,24 @@
     - service: scene.turn_on
       entity_id: scene.low_key
 
-# Turn on the lights in the bathroom when it's dark and motion is detected
-- alias: Turn on the bathroom stars with motion at night
+# Turn on the lights in the hallway bathroom when it's dark and motion is detected
+- alias: Turn on the hallway bathroom stars with motion at night
   trigger:
     platform: state
-    entity_id: binary_sensor.bathroom_motion
+    entity_id: binary_sensor.hallway_bathroom_motion
     to: "on"
   condition:
     condition: numeric_state
-    entity_id: sensor.bathroom_luminance
+    entity_id: sensor.hallway_bathroom_luminance
     below: 10.0
   action:
     service: light.turn_on
-    entity_id: light.bathroom_stars
+    entity_id: light.hallway_bathroom_stars
 
-- alias: Turn off the bathroom stars if it's night time
+- alias: Turn off the hallway bathroom stars if it's night time
   trigger:
     platform: state
-    entity_id: binary_sensor.bathroom_motion
+    entity_id: binary_sensor.hallway_bathroom_motion
     to: "off"
     for:
       minutes: 10
@@ -78,7 +78,7 @@
       before: "07:00:00"
   action:
     service: light.turn_off
-    entity_id: light.bathroom_stars
+    entity_id: light.hallway_bathroom_stars
 
 ######################################3
 #
@@ -158,36 +158,36 @@
       topic: "home/bedroom/temperature"
       payload_template: "{{ states.sensor.bedroom_temperature.state }}"
 
-# Bathroom
-- alias: "MQTT - Bathroom Motion"
+# Hallway Bathroom
+- alias: "MQTT - Hallway Bathroom Motion"
   trigger:
     platform: state
-    entity_id: "binary_sensor.bathroom_motion"
+    entity_id: "binary_sensor.hallway_bathroom_motion"
   action:
     service: mqtt.publish
     data:
-      topic: "home/bathroom/motion"
-      payload_template: "{{ states.binary_sensor.bathroom_motion.state }}"
+      topic: "home/hallway_bathroom/motion"
+      payload_template: "{{ states.binary_sensor.hallway_bathroom_motion.state }}"
 
-- alias: "MQTT - Bathroom Temperature"
+- alias: "MQTT - Hallway Bathroom Temperature"
   trigger:
     platform: state
-    entity_id: "sensor.bathroom_temperature"
+    entity_id: "sensor.hallway_bathroom_temperature"
   action:
     service: mqtt.publish
     data:
-      topic: "home/bathroom/temperature"
-      payload_template: "{{ states.sensor.bathroom_temperature.state }}"
+      topic: "home/hallway_bathroom/temperature"
+      payload_template: "{{ states.sensor.hallway_bathroom_temperature.state }}"
 
-- alias: "MQTT - Bathroom Room Humidity"
+- alias: "MQTT - Hallway Bathroom Room Humidity"
   trigger:
     platform: state
-    entity_id: "sensor.bathroom_relative_humidity"
+    entity_id: "sensor.hallway_bathroom_relative_humidity"
   action:
     service: mqtt.publish
     data:
-      topic: "home/bathroom/humidity"
-      payload_template: "{{ states.sensor.bathroom_relative_humidity.state }}"
+      topic: "home/hallway_bathroom/humidity"
+      payload_template: "{{ states.sensor.hallway_bathroom_relative_humidity.state }}"
 
 # Office
 - alias: "MQTT - Office Motion"

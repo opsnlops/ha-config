@@ -1,6 +1,6 @@
 name: Bedtime
 entities:
-  light.bathroom_stars:
+  light.hallway_bathroom_stars:
     state: 'on'
   light.bedroom_fairy_light_1:
     state: 'on'

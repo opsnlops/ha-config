@@ -49,8 +49,8 @@ filter:
     - media_player.denon_avr
 
 entity_config:
-  binary_sensor.bathroom_motion:
-    linked_battery_sensor: sensor.bathroom_sensor_battery_level
+  binary_sensor.hallway_bathroom_motion:
+    linked_battery_sensor: sensor.hallway_bathroom_sensor_battery_level
     low_battery_threshold: 33
   binary_sensor.kitchen_motion:
     linked_battery_sensor: sensor.kitchen_sensor_battery_level

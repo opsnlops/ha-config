@@ -6,10 +6,10 @@
 #
 - platform: template
   sensors:
-    bathroom_motion:
-      friendly_name: "Bathroom Motion"
+    hallway_bathroom_motion:
+      friendly_name: "Hallway Bathroom Motion"
       device_class: motion
-      value_template: "{{ is_state('sensor.bathroom_burglar', '8') }}"
+      value_template: "{{ is_state('sensor.hallway_bathroom_burglar', '8') }}"
 
 - platform: template
   sensors:
