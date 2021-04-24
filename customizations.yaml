@@ -3,7 +3,7 @@
 sensor.bathroom_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
-sensor.guest_room_relative_humidity:
+sensor.kitchen_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
 sensor.laundry_room_relative_humidity:

@@ -13,10 +13,10 @@
 
 - platform: template
   sensors:
-    guest_room_motion:
-      friendly_name: "Guest Room Motion"
+    kitchen_motion:
+      friendly_name: "Kitchen Motion"
       device_class: motion
-      value_template: "{{ is_state('sensor.guest_room_burglar', '8') }}"
+      value_template: "{{ is_state('sensor.kitchen_burglar', '8') }}"
 
 - platform: template
   sensors:

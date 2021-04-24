@@ -210,36 +210,36 @@
       topic: "home/office/temperature"
       payload_template: "{{ states.sensor.office_motion_sensor_temperature.state }}"
 
-# Workshop
-- alias: "MQTT - Workshop Motion"
+# Kitchen
+- alias: "MQTT - Kitchen Motion"
   trigger:
     platform: state
-    entity_id: "binary_sensor.guest_room_motion"
+    entity_id: "binary_sensor.kitchen_motion"
   action:
     service: mqtt.publish
     data:
-      topic: "home/workshop/motion"
-      payload_template: "{{ states.binary_sensor.guest_room_motion.state }}"
+      topic: "home/kitchen/motion"
+      payload_template: "{{ states.binary_sensor.kitchen_motion.state }}"
 
-- alias: "MQTT - Workshop Temperature"
+- alias: "MQTT - Kitchen Temperature"
   trigger:
     platform: state
-    entity_id: "sensor.guest_room_temperature"
+    entity_id: "sensor.kitchen_temperature"
   action:
     service: mqtt.publish
     data:
-      topic: "home/workshop/temperature"
-      payload_template: "{{ states.sensor.guest_room_temperature.state }}"
+      topic: "home/kitchen/temperature"
+      payload_template: "{{ states.sensor.kitchen_temperature.state }}"
 
-- alias: "MQTT - Workshop Humidity"
+- alias: "MQTT - Kitchen Humidity"
   trigger:
     platform: state
-    entity_id: "sensor.guest_room_relative_humidity"
+    entity_id: "sensor.kitchen_relative_humidity"
   action:
     service: mqtt.publish
     data:
-      topic: "home/workshop/humidity"
-      payload_template: "{{ states.sensor.guest_room_relative_humidity.state }}"
+      topic: "home/kitchen/humidity"
+      payload_template: "{{ states.sensor.kitchen_relative_humidity.state }}"
 
 # Outside
 - alias: "MQTT - Outside Temperature"
