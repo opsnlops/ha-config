@@ -58,7 +58,7 @@
     rain_today:
       value_template: >
         {%- if not (is_state("sensor.rain_amount","unknown") or is_state("sensor.rain_in_prior","unknown") )-%}
-        {{ ((states.sensor.rain_amount.state | float) - (states.sensor.rain_in_prior.state | float)) | max (0) | round(1) }}
+        {{ ((states.sensor.rain_amount.state | float) - (states.sensor.rain_in_prior.state | float)) | max (0) | round(2) }}
         {%- endif -%}
       friendly_name: "Rain Today"
       unit_of_measurement: "in"
