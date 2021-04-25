@@ -47,20 +47,21 @@
   icon: mdi:weather-rainy
 ### End MQTT
 
-
 # This allows me to see how much rain has come in today, rather than
 # over the lifetime of the senor
 - platform: mqtt
-  state_topic: 'internal/rain_in_prior'
-  name: 'rain_in_prior'
-  unit_of_measurement: 'in'
+  state_topic: "internal/rain_in_prior"
+  name: "rain_in_prior"
+  unit_of_measurement: "in"
 - platform: template
   sensors:
     rain_today:
-      value_template: '{%- if not (is_state("sensor.rain_amount","unknown") or is_state("sensor.rain_in_prior","unknown") )-%}  {{ ((states.sensor.rain_in.state | float) - (states.sensor.rain_in_prior.state | float)) | max (0) | round(1) }} {%- endif -%}' ## ensure calc is no lower than zero!
-      friendly_name: 'Rain Today'
-      unit_of_measurement: 'in'
-
+      value_template: >
+        {%- if not (is_state("sensor.rain_amount","unknown") or is_state("sensor.rain_in_prior","unknown") )-%}
+        {{ ((states.sensor.rain_amount.state | float) - (states.sensor.rain_in_prior.state | float)) | max (0) | round(1) }}
+        {%- endif -%}'
+      friendly_name: "Rain Today"
+      unit_of_measurement: "in"
 
 # Show the wind in human units
 - platform: template
