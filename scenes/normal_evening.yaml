@@ -60,7 +60,25 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.kitchen_hanging_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.154
+      - 0.0806
   light.living_room_corner_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.purple_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.yellow_lamp:
     brightness: 254
     state: "on"
     xy_color:
@@ -84,14 +102,14 @@ entities:
     brightness: 140
     state: "on"
     xy_color:
-      - 0.2514
-      - 0.1384
+      - 0.2513
+      - 0.1382
   light.living_room_tv_backlighting:
     brightness: 254
     state: "on"
     xy_color:
-      - 0.4077
-      - 0.1648
+      - 0.2513
+      - 0.1382
   light.living_room_window_lamp:
     brightness: 254
     state: "on"
