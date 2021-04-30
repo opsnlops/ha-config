@@ -72,6 +72,12 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.pink_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.purple_lamp:
     brightness: 254
     state: "on"
@@ -130,27 +136,3 @@ entities:
     xy_color:
       - 0.2207
       - 0.079
-  light.office_overhead_east:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.1364
-      - 0.0403
-  light.office_overhead_north:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.1532
-      - 0.0403
-  light.office_overhead_south:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.1364
-      - 0.0403
-  light.office_overhead_west:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.1364
-      - 0.0403
