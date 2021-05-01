@@ -42,20 +42,14 @@ entities:
     state: "on"
   light.hallway_stars:
     state: "on"
-  light.kitchen_counter_north:
-    brightness: 102
+  light.kitchen_cooktop_north:
+    brightness: 150
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
-  light.kitchen_counter_south:
-    brightness: 102
-    state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
-  light.kitchen_pantry_overhead:
-    brightness: 81
+  light.kitchen_cooktop_south:
+    brightness: 150
     state: "on"
     xy_color:
       - 0.455
@@ -106,6 +100,12 @@ entities:
       - 0.3857
   light.living_room_sofa:
     brightness: 140
+    state: "on"
+    xy_color:
+      - 0.2513
+      - 0.1382
+  light.over_fireplace:
+    brightness: 254
     state: "on"
     xy_color:
       - 0.2513
