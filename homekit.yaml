@@ -10,7 +10,6 @@ filter:
     - binary_sensor
     - climate
     - light
-    - lock
     - switch
     - sensor
 
