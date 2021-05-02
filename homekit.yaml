@@ -19,7 +19,6 @@ filter:
     - binary_sensor.rpi_power_status
     - binary_sensor.updater
     - switch.bedroom_air_filter
-    - switch.bedroom_fan
     - switch.patio_lights
 
   exclude_entity_globs:
