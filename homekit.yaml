@@ -18,6 +18,7 @@ filter:
     - binary_sensor.rpi_power_status
     - binary_sensor.updater
     - switch.bedroom_air_filter
+    - switch.patio_lights
 
   exclude_entity_globs:
     - sensor.april_s_iphone*

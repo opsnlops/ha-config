@@ -39,7 +39,7 @@ zwave:
 # Present this Z-Wave device as a light
 light:
   - platform: switch
-    name: patio_lights
+    name: Patio Lights
     entity_id: switch.patio_lights
 
 # MQTT Config
