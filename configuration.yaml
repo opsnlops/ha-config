@@ -36,6 +36,12 @@ zwave:
   device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_secure_key
 
+# Present this Z-Wave device as a light
+light:
+  - platform: switch
+    name: patio_lights
+    entity_id: switch.patio_lights
+
 # MQTT Config
 mqtt: !include mqtt.yaml
 
