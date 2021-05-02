@@ -42,6 +42,11 @@ light:
     name: Patio Lights
     entity_id: switch.patio_lights
 
+fan:
+  - platform: switch
+    name: Bedroom Fan
+    entity_id: switch.bedroom_fan
+
 # MQTT Config
 mqtt: !include mqtt.yaml
 
