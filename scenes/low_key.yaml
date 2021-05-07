@@ -54,7 +54,19 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
-  light.kitchen_counter_1:
+  light.kitchen_counter_light_1:
+    brightness: 45
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.kitchen_counter_light_3:
+    brightness: 45
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.kitchen_counter_light_5:
     brightness: 45
     state: "on"
     xy_color:

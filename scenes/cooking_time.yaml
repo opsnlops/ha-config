@@ -1,56 +1,36 @@
 name: Cooking Time
 entities:
-  light.kitchen_counter_north:
+  light.kitchen_counter_light_1:
     brightness: 254
     state: 'on'
     xy_color:
       - 0.455
       - 0.3857
-  light.kitchen_counter_south:
+  light.kitchen_counter_light_3:
     brightness: 254
     state: 'on'
     xy_color:
       - 0.455
       - 0.3857
-  light.kitchen_pantry_overhead:
+  light.kitchen_counter_light_5:
     brightness: 254
     state: 'on'
     xy_color:
       - 0.455
       - 0.3857
-  light.office_computer_table_lamp:
-    brightness: 209
-    state: 'on'
-    xy_color:
-      - 0.1364
-      - 0.0403
-  light.office_fairy_lights:
-    state: 'on'
-  light.office_filing_cabinet_lamp:
-    brightness: 191
-    state: 'on'
-    xy_color:
-      - 0.1358
-      - 0.0445
-  light.office_overhead_east:
+  light.kitchen_cooktop_north:
     brightness: 254
     state: 'on'
     xy_color:
       - 0.455
       - 0.3857
-  light.office_overhead_north:
+  light.kitchen_cooktop_south:
     brightness: 254
     state: 'on'
     xy_color:
       - 0.455
       - 0.3857
-  light.office_overhead_south:
-    brightness: 254
-    state: 'on'
-    xy_color:
-      - 0.455
-      - 0.3857
-  light.office_overhead_west:
+  light.kitchen_hanging_light:
     brightness: 254
     state: 'on'
     xy_color:
