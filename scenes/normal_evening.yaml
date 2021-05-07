@@ -43,65 +43,59 @@ entities:
   light.hallway_stars:
     state: "on"
   light.kitchen_cooktop_north:
-    brightness: 150
-    state: "on"
+    brightness: 124
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+    - 0.4881
+    - 0.4149
   light.kitchen_cooktop_south:
-    brightness: 150
-    state: "on"
+    brightness: 162
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+    - 0.5171
+    - 0.4146
   light.kitchen_counter_light_1:
-    brightness: 150
-    state: "on"
+    brightness: 139
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+    - 0.6816
+    - 0.3087
   light.kitchen_counter_light_2:
-    brightness: 150
-    state: "on"
+    brightness: 189
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+    - 0.6388
+    - 0.3478
   light.kitchen_counter_light_3:
-    brightness: 150
-    state: "on"
+    brightness: 187
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+    - 0.5124
+    - 0.4405
   light.kitchen_counter_light_4:
-    brightness: 150
-    state: "on"
+    brightness: 149
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+    - 0.1972
+    - 0.6796
   light.kitchen_counter_light_5:
-    brightness: 150
-    state: "on"
+    brightness: 175
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
-  light.kitchen_over_fridge_light:
-    brightness: 150
-    state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
+    - 0.1543
+    - 0.0919
   light.kitchen_hanging_light:
-    brightness: 254
-    state: "on"
+    brightness: 208
+    state: 'on'
     xy_color:
-      - 0.154
-      - 0.0806
-  light.living_room_corner_lamp:
-    brightness: 254
-    state: "on"
+    - 0.1571
+    - 0.1989
+  light.kitchen_over_fridge_light:
+    brightness: 149
+    state: 'on'
     xy_color:
-      - 0.455
-      - 0.3857
+    - 0.2117
+    - 0.1087
   light.pink_lamp:
     brightness: 254
     state: "on"
