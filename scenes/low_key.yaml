@@ -43,12 +43,18 @@ entities:
   light.hallway_stars:
     state: "off"
   light.kitchen_cooktop_north:
-    brightness: 43
+    brightness: 45
     state: "on"
     xy_color:
       - 0.5435
       - 0.3978
   light.kitchen_cooktop_south:
+    brightness: 45
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.kitchen_counter_1:
     brightness: 45
     state: "on"
     xy_color:
