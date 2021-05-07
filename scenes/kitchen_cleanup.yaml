@@ -30,3 +30,9 @@ entities:
     xy_color:
       - 0.5023
       - 0.4135
+  light.kitchen_over_fridge_light:
+    brightness: 200
+    state: "on"
+    xy_color:
+      - 0.5023
+      - 0.4135

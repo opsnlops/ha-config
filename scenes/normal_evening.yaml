@@ -72,6 +72,12 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.kitchen_over_fridge_light:
+    brightness: 150
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.kitchen_hanging_light:
     brightness: 254
     state: "on"
