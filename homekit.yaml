@@ -48,8 +48,6 @@ filter:
     - script.up_late_scene
     - script.work_at_home_scene
 
-    - media_player.denon_avr
-
 entity_config:
   binary_sensor.hallway_bathroom_motion:
     linked_battery_sensor: sensor.hallway_bathroom_sensor_battery_level
@@ -63,11 +61,6 @@ entity_config:
   binary_sensor.backyard_motion:
     linked_battery_sensor: sensor.backyard_sensor_battery_level
     low_battery_threshold: 33
-  media_player.denon_avr:
-    name: Living Room Receiver
-    feature_list:
-      - feature: on_off
-      - feature: toggle_mute
   switch.bedroom_fan:
     type: outlet
   switch.living_room_heater:
