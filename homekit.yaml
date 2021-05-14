@@ -18,6 +18,9 @@ filter:
     - binary_sensor.remote_ui
     - binary_sensor.rpi_power_status
     - binary_sensor.updater
+    - sensor.april_s_nest_precipitation
+    - sensor.april_s_nest_realfeel_temperature
+    - sensor.april_s_nest_wind
     - switch.bedroom_air_filter
     - switch.patio_lights
 
