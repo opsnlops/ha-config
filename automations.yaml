@@ -391,19 +391,19 @@
 - alias: "MQTT - Work Computer Camera"
   trigger:
     platform: state
-    entity_id: "binary_sensor.aprils_home_mac_pro_camera_in_use"
+    entity_id: "binary_sensor.april_s_work_mac_mini_camera_in_use"
   action:
     service: mqtt.publish
     data:
       topic: "thing/office/computer_camera/state"
-      payload_template: "{{ states.binary_sensor.aprils_home_mac_pro_camera_in_use.state }}"
+      payload_template: "{{ states.binary_sensor.april_s_work_mac_mini_camera_in_usestate }}"
 
 - alias: "MQTT - Work Computer Microphone"
   trigger:
     platform: state
-    entity_id: "binary_sensor.aprils_home_mac_pro_microphone_in_use"
+    entity_id: "binary_sensor.april_s_work_mac_mini_microphone_in_use"
   action:
     service: mqtt.publish
     data:
       topic: "thing/office/computer_microphone/state"
-      payload_template: "{{ states.binary_sensor.aprils_home_mac_pro_microphone_in_use.state }}"
+      payload_template: "{{ states.binary_sensor.april_s_work_mac_mini_microphone_in_use.state }}"
