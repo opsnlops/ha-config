@@ -274,16 +274,6 @@
       topic: "home/outside/humidity"
       payload_template: "{{ states.sensor.outside_humidity.state }}"
 
-- alias: "MQTT - Outside Wind Gusts"
-  trigger:
-    platform: state
-    entity_id: "sensor.wind_speed_max"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/outside/wind_gusts"
-      payload_template: "{{ states.sensor.wind_speed_max.state }}"
-
 - alias: "MQTT - Outside Wind Avgerage"
   trigger:
     platform: state
@@ -293,6 +283,26 @@
     data:
       topic: "home/outside/wind_average"
       payload_template: "{{ states.sensor.wind_speed_avg.state }}"
+
+- alias: "MQTT - Outside Wind Bearing"
+  trigger:
+    platform: state
+    entity_id: "sensor.wind_bearing"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/outside/wind_bearing"
+      payload_template: "{{ states.sensor.wind_bearing.state }}"
+
+- alias: "MQTT - Outside Wind Direction"
+  trigger:
+    platform: state
+    entity_id: "sensor.wind_direction"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/outside/wind_direction"
+      payload_template: "{{ states.sensor.wind_direction.state }}"
 
 - alias: "MQTT - Outside Conditions"
   trigger:
