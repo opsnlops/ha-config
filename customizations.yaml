@@ -11,6 +11,6 @@ sensor.laundry_room_relative_humidity:
   device_class: humidity
 
 # ...and the Aerotec
-sensor.backyard_relative_humidity:
+sensor.workshop_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity

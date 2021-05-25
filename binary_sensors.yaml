@@ -28,7 +28,7 @@
 # This one is an Aeotec MutliSensor 6
 - platform: template
   sensors:
-    backyard_motion:
-      friendly_name: "Backyard Motion"
+    workshop_motion:
+      friendly_name: "Workshop Motion"
       device_class: motion
-      value_template: "{{ is_state('sensor.backyard_burglar', '3') }}"
+      value_template: "{{ is_state('sensor.workshop_burglar', '8') }}"

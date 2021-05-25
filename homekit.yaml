@@ -61,8 +61,8 @@ entity_config:
   binary_sensor.laundry_room_motion:
     linked_battery_sensor: sensor.laundry_room_sensor_battery_level
     low_battery_threshold: 33
-  binary_sensor.backyard_motion:
-    linked_battery_sensor: sensor.backyard_sensor_battery_level
+  binary_sensor.workshop_motion:
+    linked_battery_sensor: sensor.workshop_sensor_battery_level
     low_battery_threshold: 33
   switch.bedroom_fan:
     type: outlet
