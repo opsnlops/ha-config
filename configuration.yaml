@@ -35,6 +35,7 @@ zwave:
   usb_path: /dev/ttyACM0
   device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_secure_key
+  polling_interval: 30000
 
 # Present this Z-Wave device as a light
 light:
