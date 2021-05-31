@@ -1,4 +1,3 @@
-
 # There's a group called "Safety Lights" that are ones that don't get turned
 # off when leaving the house. Things in here might need to be included in
 # it.
@@ -7,7 +6,10 @@ name: At Sunset
 entities:
   light.front_porch_light:
     brightness: 254
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.4629
-    - 0.3818
+      - 0.4629
+      - 0.3818
+  light.bedroom_door_light:
+    brightness: 254
+    state: "on"

@@ -12,4 +12,5 @@ safety_lights:
   name: Safety Lights
   entities:
     - light.front_porch_light
+    - light.bedroom_door_light
     
