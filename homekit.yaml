@@ -22,6 +22,7 @@ filter:
     - sensor.april_s_nest_realfeel_temperature
     - sensor.april_s_nest_wind
     - switch.bedroom_air_filter
+    - switch.bunny_s_switch
     - switch.patio_lights
 
   exclude_entity_globs:
