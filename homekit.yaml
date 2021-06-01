@@ -49,7 +49,7 @@ filter:
     - script.lazy_afternoon_scene
     - script.low_key_scene
     - script.normal_evening_scene
-    - script.sleepy_time
+    - script.sleepy_time_scene
     - script.up_late_scene
     - script.work_at_home_scene
 
