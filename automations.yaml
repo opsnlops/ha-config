@@ -28,6 +28,15 @@
     service: homeassistant.turn_on
     entity_id: scene.away_from_home
 
+# Dim the outside lights around bedtime
+- alias: "Dim the outside lights at sleep time"
+  trigger:
+    platform: time
+    at: "22:30:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.sleepy_time
+
 # Dim the lights at 9pm if I'm home
 - alias: "Dim lights at 9:00pm"
   initial_state: true

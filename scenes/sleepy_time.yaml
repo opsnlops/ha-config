@@ -1,0 +1,8 @@
+# Once it gets late enough at night, make the outside lights really dim. It's
+# more polite to the neighbors and keeps the bright lights out of my window.
+
+name: Sleepy Time
+entities:
+  light.bedroom_door_light:
+    brightness: 54
+    state: "on"

@@ -62,6 +62,12 @@ normal_evening_scene:
     - service: scene.turn_on
       entity_id: scene.normal_evening
 
+sleepy_time_scene:
+  alias: "Sleepy Time"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.sleepy_time
+
 up_late_scene:
   alias: "Up Late"
   sequence:
