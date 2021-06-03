@@ -15,6 +15,10 @@ homeassistant:
   legacy_templates: false
   customize: !include customizations.yaml
 
+http:
+  use_x_forwarded_for: true
+  trusted_proxies: 127.0.0.1
+
 # Text to speech
 tts:
   - platform: google_translate
