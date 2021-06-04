@@ -191,3 +191,10 @@ entities:
 
   light.lava_lamp:
     state: "off"
+
+  light.hallway_light:
+    state: "on"
+    brightness: 75
+
+  light.laundry_room_light:
+    state: "off"
