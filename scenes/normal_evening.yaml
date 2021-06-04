@@ -166,3 +166,14 @@ entities:
     xy_color:
       - 0.2207
       - 0.079
+
+  light.lava_lamp:
+    state: "off"
+
+  light.hallway_light:
+    state: "on"
+    brightness: 134
+
+  light.laundry_room_light:
+    state: "on"
+    brightness: 93

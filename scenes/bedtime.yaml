@@ -138,3 +138,5 @@ entities:
     xy_color:
       - 0.152
       - 0.2758
+  light.lava_lamp:
+    state: "off"

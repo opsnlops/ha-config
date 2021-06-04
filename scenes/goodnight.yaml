@@ -80,10 +80,6 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
-  light.living_room_fan:
-    state: "off"
-  switch.living_room_heater:
-    state: "off"
   light.living_room_sofa:
     brightness: 104
     state: "off"
@@ -118,27 +114,25 @@ entities:
     xy_color:
       - 0.3619
       - 0.1491
-  light.office_overhead_east:
-    brightness: 175
+
+  light.lava_lamp:
     state: "off"
-    xy_color:
-      - 0.3156
-      - 0.3286
-  light.office_overhead_north:
-    brightness: 221
+
+  light.hallway_light:
     state: "off"
-    xy_color:
-      - 0.3154
-      - 0.3284
-  light.office_overhead_south:
-    brightness: 107
+
+  light.laundry_room_light:
     state: "off"
-    xy_color:
-      - 0.3156
-      - 0.3286
-  light.office_overhead_west:
-    brightness: 56
+
+  light.patio_lights:
     state: "off"
-    xy_color:
-      - 0.3156
-      - 0.3286
+
+  # Make sure the non-bedroom fans are off
+  switch.family_room_ceiling_fan:
+    state: "off"
+  switch.family_room_floor_fan:
+    state: "off"
+  switch.office_fan:
+    state: "off"
+  switch.office_window_fan:
+    state: "off"

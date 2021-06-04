@@ -188,3 +188,6 @@ entities:
 
   light.patio_lights:
     state: "off"
+
+  light.lava_lamp:
+    state: "off"
