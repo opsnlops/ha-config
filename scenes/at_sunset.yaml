@@ -13,3 +13,5 @@ entities:
   light.bedroom_door_light:
     brightness: 254
     state: "on"
+  light.patio_lights:
+    state: "on"

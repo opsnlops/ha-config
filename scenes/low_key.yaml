@@ -185,3 +185,6 @@ entities:
     xy_color:
       - 0.5023
       - 0.4135
+
+  light.patio_lights:
+    state: "off"
