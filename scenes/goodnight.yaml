@@ -42,30 +42,84 @@ entities:
     state: "off"
   light.hallway_stars:
     state: "off"
-  light.kitchen_counter_north:
+
+  # Kitchen
+  light.kitchen_cooktop_north:
+    brightness: 124
+    state: "off"
+    xy_color:
+    - 0.4881
+    - 0.4149
+  light.kitchen_cooktop_south:
+    brightness: 162
+    state: "off"
+    xy_color:
+    - 0.5171
+    - 0.4146
+  light.kitchen_counter_light_1:
+    brightness: 139
+    state: "off"
+    xy_color:
+    - 0.6816
+    - 0.3087
+  light.kitchen_counter_light_2:
+    brightness: 189
+    state: "off"
+    xy_color:
+    - 0.6388
+    - 0.3478
+  light.kitchen_counter_light_3:
+    brightness: 187
+    state: "off"
+    xy_color:
+    - 0.5124
+    - 0.4405
+  light.kitchen_counter_light_4:
+    brightness: 149
+    state: "off"
+    xy_color:
+    - 0.1972
+    - 0.6796
+  light.kitchen_counter_light_5:
+    brightness: 175
+    state: "off"
+    xy_color:
+    - 0.1543
+    - 0.0919
+  light.kitchen_hanging_light:
+    brightness: 208
+    state: "off"
+    xy_color:
+    - 0.1571
+    - 0.1989
+  light.kitchen_over_fridge_light:
+    brightness: 149
+    state: "off"
+    xy_color:
+    - 0.2117
+    - 0.1087
+
+
+  # Family Room
+
+  light.pink_lamp:
     brightness: 254
     state: "off"
     xy_color:
-      - 0.3157
-      - 0.3291
-  light.kitchen_counter_south:
-    brightness: 188
-    state: "off"
-    xy_color:
-      - 0.5023
-      - 0.4135
-  light.kitchen_pantry_overhead:
-    brightness: 38
-    state: "off"
-    xy_color:
-      - 0.5023
-      - 0.4135
-  light.living_room_corner_lamp:
+      - 0.455
+      - 0.3857
+  light.purple_lamp:
     brightness: 254
     state: "off"
     xy_color:
-      - 0.2915
-      - 0.3036
+      - 0.455
+      - 0.3857
+  light.yellow_lamp:
+    brightness: 254
+    state: "off"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.living_room_fairy_lights:
     state: "off"
   light.living_room_fireplace_backlight:
@@ -74,12 +128,7 @@ entities:
     xy_color:
       - 0.6073
       - 0.3711
-  light.living_room_glass_table_lamp:
-    brightness: 254
-    state: "off"
-    xy_color:
-      - 0.455
-      - 0.3857
+
   light.living_room_sofa:
     brightness: 104
     state: "off"
@@ -92,12 +141,7 @@ entities:
     xy_color:
       - 0.474
       - 0.4103
-  light.living_room_window_lamp:
-    brightness: 216
-    state: "off"
-    xy_color:
-      - 0.2915
-      - 0.3036
+
   light.office_computer_table_lamp:
     brightness: 191
     state: "off"
@@ -105,8 +149,6 @@ entities:
       - 0.3157
       - 0.3291
   light.office_fairy_lights:
-    state: "off"
-  light.office_fan:
     state: "off"
   light.office_filing_cabinet_lamp:
     brightness: 25

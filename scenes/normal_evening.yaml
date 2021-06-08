@@ -122,12 +122,6 @@ entities:
     xy_color:
       - 0.6073
       - 0.3711
-  light.living_room_glass_table_lamp:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
   light.living_room_sofa:
     brightness: 140
     state: "on"
@@ -146,12 +140,7 @@ entities:
     xy_color:
       - 0.2513
       - 0.1382
-  light.living_room_window_lamp:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
+      
   light.office_computer_table_lamp:
     brightness: 73
     state: "on"
