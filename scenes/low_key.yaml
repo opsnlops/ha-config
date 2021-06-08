@@ -196,5 +196,9 @@ entities:
     state: "on"
     brightness: 75
 
+  light.entryway_lights:
+    state: "on"
+    brightness: 82
+
   light.laundry_room_light:
     state: "off"
