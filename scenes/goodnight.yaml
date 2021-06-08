@@ -146,21 +146,20 @@ entities:
       - 0.2513
       - 0.1382
 
+  # Office
+
   light.office_computer_table_lamp:
-    brightness: 191
     state: "off"
-    xy_color:
-      - 0.3157
-      - 0.3291
+  light.office_desk_edge_light:
+    state: "off"
+  light.office_desk_light:
+    state: "off"
+  light.office_filing_cabinet_light:
+    state: "off"
+  light.office_floor_light:
+    state: "off"
   light.office_fairy_lights:
     state: "off"
-  light.office_filing_cabinet_lamp:
-    brightness: 25
-    state: "off"
-    xy_color:
-      - 0.3619
-      - 0.1491
-
   light.lava_lamp:
     state: "off"
 
