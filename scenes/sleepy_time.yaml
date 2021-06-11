@@ -3,6 +3,20 @@
 
 name: Sleepy Time
 entities:
+
+  light.back_patio_east:
+    brightness: 38
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.back_patio_west:
+    brightness: 38
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
   light.bedroom_door_light:
     brightness: 54
     state: "on"

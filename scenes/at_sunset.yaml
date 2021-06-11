@@ -4,12 +4,18 @@
 
 name: At Sunset
 entities:
-  light.front_porch_light:
+  light.back_patio_east:
     brightness: 254
     state: "on"
     xy_color:
-      - 0.4629
-      - 0.3818
+      - 0.455
+      - 0.3857
+  light.back_patio_west:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.bedroom_door_light:
     brightness: 254
     state: "on"

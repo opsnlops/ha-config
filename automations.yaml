@@ -7,16 +7,15 @@
     service: homeassistant.turn_on
     entity_id: scene.at_sunset
 
-# This really should also be a scene, but let's see if this works for
-# now while I think of a better way to do this. :)
+# Turn off the outside lights at sunrise
 - alias: "Turn off the outside lights at sunrise"
   trigger:
     platform: sun
     event: sunrise
     offset: "00:20:00"
   action:
-    service: homeassistant.turn_off
-    entity_id: light.bedroom_door_light
+    service: homeassistant.turn_on
+    entity_id: scene.at_sunrise
 
 # Trigger the "Away from Home" scene when we're all gone
 - alias: "Everyone leaves the house"
