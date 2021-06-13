@@ -1,9 +1,12 @@
-
 name: At Sunrise
 entities:
   light.back_patio_east:
     state: "off"
   light.back_patio_west:
+    state: "off"
+  light.back_door_light:
+    state: "off"
+  light.back_corner_light:
     state: "off"
   light.bedroom_door_light:
     state: "off"

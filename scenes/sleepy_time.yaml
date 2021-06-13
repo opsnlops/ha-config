@@ -16,6 +16,19 @@ entities:
       - 0.5435
       - 0.3978
 
+  light.back_door_light:
+    brightness: 38
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.back_corner_light:
+    brightness: 38
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+
   light.bedroom_door_light:
     brightness: 54
     state: "on"
