@@ -142,13 +142,13 @@ entities:
       - 0.1628
       - 0.0889
 
-  light.light.office_desk_edge_light:
+  light.office_desk_edge_light:
     brightness: 68
     state: "on"
     xy_color:
       - 0.5409
       - 0.3978
-  light.light.office_desk_light:
+  light.office_desk_light:
     brightness: 68
     state: "on"
     xy_color:

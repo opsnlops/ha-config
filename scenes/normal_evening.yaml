@@ -146,13 +146,13 @@ entities:
   #
   # All of the lights are blue except for some fire effects
   #
-  light.light.office_desk_edge_light:
+  light.office_desk_edge_light:
     brightness: 254
     state: "on"
     xy_color:
       - 0.1358
       - 0.0445
-  light.light.office_desk_light:
+  light.office_desk_light:
     brightness: 254
     state: "on"
     xy_color:
