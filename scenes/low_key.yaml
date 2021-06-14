@@ -141,55 +141,33 @@ entities:
     xy_color:
       - 0.1628
       - 0.0889
-  light.living_room_window_lamp:
-    brightness: 89
+
+  light.light.office_desk_edge_light:
+    brightness: 68
     state: "on"
     xy_color:
-      - 0.5435
+      - 0.5409
       - 0.3978
-  light.office_computer_table_lamp:
-    brightness: 22
+  light.light.office_desk_light:
+    brightness: 68
     state: "on"
     xy_color:
-      - 0.5435
+      - 0.5409
       - 0.3978
+  light.office_filing_cabinet_light:
+    brightness: 68
+    state: "on"
+    xy_color:
+      - 0.5409
+      - 0.3978
+  light.office_floor_light:
+    state: "off"
   light.office_fairy_lights:
     state: "off"
-  light.office_filing_cabinet_lamp:
-    brightness: 22
-    state: "on"
-    xy_color:
-      - 0.5435
-      - 0.3978
-  light.office_overhead_east:
-    brightness: 58
+  light.lava_lamp:
     state: "off"
-    xy_color:
-      - 0.2037
-      - 0.0712
-  light.office_overhead_north:
-    brightness: 68
-    state: "off"
-    xy_color:
-      - 0.2177
-      - 0.078
-  light.office_overhead_south:
-    brightness: 73
-    state: "off"
-    xy_color:
-      - 0.2163
-      - 0.077
-  light.office_overhead_west:
-    brightness: 114
-    state: "off"
-    xy_color:
-      - 0.5023
-      - 0.4135
 
   light.patio_lights:
-    state: "off"
-
-  light.lava_lamp:
     state: "off"
 
   light.hallway_light:

@@ -44,58 +44,58 @@ entities:
     state: "on"
   light.kitchen_cooktop_north:
     brightness: 124
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.4881
-    - 0.4149
+      - 0.4881
+      - 0.4149
   light.kitchen_cooktop_south:
     brightness: 162
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.5171
-    - 0.4146
+      - 0.5171
+      - 0.4146
   light.kitchen_counter_light_1:
     brightness: 139
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.6816
-    - 0.3087
+      - 0.6816
+      - 0.3087
   light.kitchen_counter_light_2:
     brightness: 189
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.6388
-    - 0.3478
+      - 0.6388
+      - 0.3478
   light.kitchen_counter_light_3:
     brightness: 187
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.5124
-    - 0.4405
+      - 0.5124
+      - 0.4405
   light.kitchen_counter_light_4:
     brightness: 149
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.1972
-    - 0.6796
+      - 0.1972
+      - 0.6796
   light.kitchen_counter_light_5:
     brightness: 175
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.1543
-    - 0.0919
+      - 0.1543
+      - 0.0919
   light.kitchen_hanging_light:
     brightness: 208
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.1571
-    - 0.1989
+      - 0.1571
+      - 0.1989
   light.kitchen_over_fridge_light:
     brightness: 149
-    state: 'on'
+    state: "on"
     xy_color:
-    - 0.2117
-    - 0.1087
+      - 0.2117
+      - 0.1087
   light.pink_lamp:
     brightness: 254
     state: "on"
@@ -140,22 +140,38 @@ entities:
     xy_color:
       - 0.2513
       - 0.1382
-      
-  light.office_computer_table_lamp:
-    brightness: 73
+
+  #
+  # Office
+  #
+  # All of the lights are blue except for some fire effects
+  #
+  light.light.office_desk_edge_light:
+    brightness: 254
     state: "on"
     xy_color:
-      - 0.2207
-      - 0.079
+      - 0.1358
+      - 0.0445
+  light.light.office_desk_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.office_filing_cabinet_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.office_floor_light:
+    brightness: 75
+    state: "on"
+    xy_color:
+      - 0.606
+      - 0.372
   light.office_fairy_lights:
     state: "on"
-  light.office_filing_cabinet_lamp:
-    brightness: 43
-    state: "on"
-    xy_color:
-      - 0.2207
-      - 0.079
-
   light.lava_lamp:
     state: "off"
 
