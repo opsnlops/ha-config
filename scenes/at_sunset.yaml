@@ -32,8 +32,15 @@ entities:
       - 0.455
       - 0.3857
 
-  light.bedroom_door_light:
+  # Lights on the front of the house
+  light.front_door_light:
     brightness: 254
     state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.patio_lights:
+    state: "on"
+  light.bedroom_door_light:
+    brightness: 254
     state: "on"
