@@ -13,4 +13,4 @@ entities:
   light.patio_lights:
     state: "off"
   light.front_door_light:
-    stat: "off"
+    state: "off"
