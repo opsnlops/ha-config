@@ -17,6 +17,20 @@
     service: homeassistant.turn_on
     entity_id: scene.at_sunrise
 
+# Turn on the lights if someone comes home and it's dark
+- alias: "Someone comes home"
+  trigger:
+    platform: state
+    entity_id: group.all_furries
+    to: "home"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.kitchen_luminance
+    below: 10.0
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.normal_evening
+
 # Trigger the "Away from Home" scene when we're all gone
 - alias: "Everyone leaves the house"
   trigger:
