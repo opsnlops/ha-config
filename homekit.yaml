@@ -15,17 +15,26 @@ filter:
     - sensor
 
   exclude_entities:
+    - binary_sensor.guest_room_sensor_sensor
+    - binary_sensor.hallway_bathroom_sensor
+    - binary_sensor.kitchen_sensor
+    - binary_sensor.laundry_room_sensor_sensor
     - binary_sensor.remote_ui
     - binary_sensor.rpi_power_status
     - binary_sensor.updater
-    - sensor.april_s_nest_precipitation
-    - sensor.april_s_nest_realfeel_temperature
-    - sensor.april_s_nest_wind
+    - binary_sensor.workshop_sensor
+    - sensor.accuweather_precipitation
+    - sensor.accuweather_temperature
+    - sensor.accuweather_wind
     - switch.bedroom_air_filter
     - switch.bunny_s_switch
     - switch.patio_lights
 
   exclude_entity_globs:
+    - binary_sensor.april_mpb*
+    - binary_sensor.april_s_work*
+    - binary_sensor.cottontail*
+    - binary_sensor.hotot*
     - sensor.april_s_iphone*
     - sensor.april_s_phone*
     - sensor.bunny_s_ipad*
@@ -54,16 +63,19 @@ filter:
     - script.work_at_home_scene
 
 entity_config:
-  binary_sensor.hallway_bathroom_motion:
+  sensor.guest_room_temperature:
+    linked_battery_sensor: ssensor.guest_room_sensor_battery_level
+    low_battery_threshold: 33
+  sensor.hallway_bathroom_temperature:
     linked_battery_sensor: sensor.hallway_bathroom_sensor_battery_level
     low_battery_threshold: 33
-  binary_sensor.kitchen_motion:
+  sensor.kitchen_temperature:
     linked_battery_sensor: sensor.kitchen_sensor_battery_level
     low_battery_threshold: 33
-  binary_sensor.laundry_room_motion:
+  sensor.laundry_room_temperature:
     linked_battery_sensor: sensor.laundry_room_sensor_battery_level
     low_battery_threshold: 33
-  binary_sensor.workshop_motion:
+  sensor.workshop_temperature:
     linked_battery_sensor: sensor.workshop_sensor_battery_level
     low_battery_threshold: 33
   switch.bedroom_fan:
