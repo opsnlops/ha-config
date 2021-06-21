@@ -64,7 +64,7 @@ filter:
 
 entity_config:
   sensor.guest_room_temperature:
-    linked_battery_sensor: ssensor.guest_room_sensor_battery_level
+    linked_battery_sensor: sensor.guest_room_sensor_battery_level
     low_battery_threshold: 33
   sensor.hallway_bathroom_temperature:
     linked_battery_sensor: sensor.hallway_bathroom_sensor_battery_level
