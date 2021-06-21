@@ -15,14 +15,9 @@ filter:
     - sensor
 
   exclude_entities:
-    - binary_sensor.guest_room_sensor_sensor
-    - binary_sensor.hallway_bathroom_sensor
-    - binary_sensor.kitchen_sensor
-    - binary_sensor.laundry_room_sensor_sensor
     - binary_sensor.remote_ui
     - binary_sensor.rpi_power_status
     - binary_sensor.updater
-    - binary_sensor.workshop_sensor
     - sensor.accuweather_precipitation
     - sensor.accuweather_temperature
     - sensor.accuweather_wind
@@ -41,7 +36,6 @@ filter:
     - sensor.hewlett_packard*
     - sensor.natphone*
     - sensor.nattipad*
-    - sensor.speedtest*
 
   # These are here because HomeKit does a weird thing. It sends an "on"
   # command, and then an "off" command when you activate a scene. I'm not
