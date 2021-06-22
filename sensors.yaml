@@ -72,3 +72,14 @@
         {% set degree = states('sensor.wind_bearing')|float %}
         {{ direction[((degree+11.25)/22.5)|int] }}
       friendly_name: "Wind Direction"
+
+# On devices that have a "previous reading" for energy, show the difference
+- platform: template
+  sensors:
+    bedroom_fan_current_energy:
+      value_template: >-
+        {% set current = states('sensor.bedroom_fan_energy') | float %}
+        {% set previous = states('sensor.bedroom_fan_energy_previous_reading') | float %}
+        {{ current - previous }}
+      friendly_name: "Bedroom Fan Current Energy"
+      unit_of_measurement: "kWh"
