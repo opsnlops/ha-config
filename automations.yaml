@@ -195,6 +195,37 @@
       topic: "home/bedroom/temperature"
       payload_template: "{{ states.sensor.bedroom_temperature.state }}"
 
+# Half Bathroom
+- alias: "MQTT - Half Bathroom Motion"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.half_bathroom_motion"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/half_bathroom/motion"
+      payload_template: "{{ states.binary_sensor.half_bathroom_motion.state }}"
+
+- alias: "MQTT - Half Bathroom Temperature"
+  trigger:
+    platform: state
+    entity_id: "sensor.half_bathroom_temperature"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/half_bathroom/temperature"
+      payload_template: "{{ states.sensor.half_bathroom_temperature.state }}"
+
+- alias: "MQTT - Half Bathroom Room Humidity"
+  trigger:
+    platform: state
+    entity_id: "sensor.half_bathroom_relative_humidity"
+  action:
+    service: mqtt.publish
+    data:
+      topic: "home/half_bathroom/humidity"
+      payload_template: "{{ states.sensor.half_bathroom_relative_humidity.state }}"
+
 # Hallway Bathroom
 - alias: "MQTT - Hallway Bathroom Motion"
   trigger:

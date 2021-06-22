@@ -13,6 +13,13 @@
 
 - platform: template
   sensors:
+    half_bathroom_motion:
+      friendly_name: "Half Bathroom Motion"
+      device_class: motion
+      value_template: "{{ is_state('sensor.half_bathroom_burglar', '8') }}"
+
+- platform: template
+  sensors:
     hallway_bathroom_motion:
       friendly_name: "Hallway Bathroom Motion"
       device_class: motion
