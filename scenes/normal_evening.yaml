@@ -155,6 +155,7 @@ entities:
     state: "on"
     brightness: 128
   fan.guest_room_fan:
+    state: "on"
     speed: "medium"
 
   #
