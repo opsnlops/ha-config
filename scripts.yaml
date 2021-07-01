@@ -81,3 +81,35 @@ work_at_home_scene:
       entity_id: scene.work_at_home
 
 ### End HomeKit Automation Scripts
+
+### Guest Room Fan Mappings
+
+turn_on_guest_room_fan_to_specified_power:
+  alias: Turn on the guest room fan to specified power
+  sequence:
+    - service: light.turn_on
+      data:
+        brightness_pct: "{{ percentage|float }}"
+        transition: 0
+      target:
+        entity_id: light.guest_room_fan_as_light
+  mode: single
+turn_off_guest_room_fan:
+  alias: Turn off the guest room fan
+  sequence:
+    - service: light.turn_off
+      target:
+        entity_id: light.guest_room_fan_as_light
+      data:
+        transition: 0
+  mode: single
+turn_on_guest_room_fan_to_2_3_power:
+  alias: Turn on the guest room fan to 2/3 power
+  sequence:
+    - service: light.turn_on
+      data:
+        brightness_pct: 66
+        transition: 0
+      target:
+        entity_id: light.guest_room_fan_as_light
+  mode: single

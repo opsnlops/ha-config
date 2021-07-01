@@ -66,3 +66,22 @@ frontend:
 media_player:
   - platform: mpd
     host: 127.0.0.1
+
+# Templated fan to make the guest room fan look like a fan to HA
+fan:
+  - platform: template
+    fans:
+      guest_room_fan:
+        friendly_name: Guest Room Fan
+        unique_id: a24ab224-89c8-4052-b55f-22af8d88e183
+        value_template: "{{ states('light.guest_room_fan_as_light') }}"
+        percentage_template: "{{ state_attr('light.guest_room_fan_as_light','brightness')|float / 2.55 }}"
+        turn_on:
+          service: script.turn_on_guest_room_fan_to_2_3_power
+        turn_off:
+          service: script.turn_off_guest_room_fan
+        set_percentage:
+          service: script.turn_on_guest_room_fan_to_specified_power
+          data:
+            percentage: "{{ percentage }}"
+        speed_count: 3
