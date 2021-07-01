@@ -18,6 +18,7 @@ filter:
     - binary_sensor.remote_ui
     - binary_sensor.rpi_power_status
     - binary_sensor.updater
+    - light.guest_room_fan_as_light
     - sensor.accuweather_precipitation
     - sensor.accuweather_temperature
     - sensor.accuweather_wind
