@@ -331,4 +331,10 @@ Please Note: If this doesn't work, you can check to see if your switch is within
       <Group index="7" label="Switch_MultiLevel_Start/Stop_Fan" max_associations="5" />
     </Associations>
   </CommandClass>
+
+  <CommandClass id="38">
+    <Instance index="1" label="Fan/Light" />
+    <Instance index="2" endpoint="1" label="Light" />
+    <Instance index="3" endpoint="2" label="Fan" />
+  </CommandClass>
 </Product>
