@@ -70,13 +70,14 @@ fan:
         friendly_name: "Guest Room Fan"
         unique_id: a24ab224-89c8-4052-b55f-22af8d88e183
         value_template: >-
-          {% if is_state(light.guest_room_fan_as_light', 'on') %}
+          {% if is_state('light.guest_room_fan_as_light', 'on') %}
             on
           {% else %}
             off
           {% endif %}
         percentage_template: "{{ (state_attr('light.guest_room_fan_as_light','brightness') | int /255*100) | int}}"
         turn_on:
+          # Default to medium, rather than the last used
           service: script.turn_on_guest_room_fan_to_2_3_power
         turn_off:
           service: light.turn_off
