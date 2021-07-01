@@ -112,7 +112,7 @@ entities:
     state: "off"
   switch.family_room_floor_fan:
     state: "off"
-  switch.office_fan:
+  switch.office_floor_fan:
     state: "off"
   switch.office_window_fan:
     state: "off"
