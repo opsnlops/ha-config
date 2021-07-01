@@ -2,22 +2,7 @@ name: Goodnight
 entities:
   light.hallway_bathroom_stars:
     state: "off"
-  light.bedroom_fairy_light_1:
-    state: "off"
-  light.bedroom_fairy_light_2:
-    state: "off"
-  light.bedroom_left_nightstand_lamp:
-    brightness: 99
-    state: "off"
-    xy_color:
-      - 0.2209
-      - 0.0794
-  light.bedroom_right_nightstand_lamp:
-    brightness: 89
-    state: "off"
-    xy_color:
-      - 0.2202
-      - 0.08
+
   light.dining_room_bookshelf:
     brightness: 76
     state: "off"
@@ -98,56 +83,42 @@ entities:
     xy_color:
       - 0.2117
       - 0.1087
+  
+  # Bedroom
+  light.bedroom_fairy_light_1:
+    state: "off"
+  light.bedroom_fairy_light_2:
+    state: "off"
+  light.bedroom_left_nightstand_lamp:
+    state: "off"
+  light.bedroom_right_nightstand_lamp:
+    state: "off"
+  light.bedroom_window_light:
+    state: "off"
 
   # Family Room
-
   light.pink_lamp:
-    brightness: 254
     state: "off"
-    xy_color:
-      - 0.455
-      - 0.3857
   light.purple_lamp:
-    brightness: 254
     state: "off"
-    xy_color:
-      - 0.455
-      - 0.3857
   light.yellow_lamp:
-    brightness: 254
     state: "off"
-    xy_color:
-      - 0.455
-      - 0.3857
   light.living_room_fairy_lights:
     state: "off"
   light.living_room_fireplace_backlight:
-    brightness: 109
     state: "off"
-    xy_color:
-      - 0.6073
-      - 0.3711
   light.living_room_sofa:
-    brightness: 104
     state: "off"
-    xy_color:
-      - 0.2915
-      - 0.3036
   light.living_room_tv_backlighting:
-    brightness: 142
     state: "off"
-    xy_color:
-      - 0.474
-      - 0.4103
   light.over_fireplace:
-    brightness: 254
     state: "off"
-    xy_color:
-      - 0.2513
-      - 0.1382
+  switch.family_room_ceiling_fan:
+    state: "off"
+  switch.family_room_floor_fan:
+    state: "off"
 
   # Office
-
   light.office_computer_table_lamp:
     state: "off"
   light.office_desk_edge_light:
@@ -162,6 +133,16 @@ entities:
     state: "off"
   light.lava_lamp:
     state: "off"
+  switch.office_fan:
+    state: "off"
+  switch.office_window_fan:
+    state: "off"
+
+  # Guest Room
+  fan.guest_room_fan:
+    speed: "off"
+  light.guest_room_overhead_light:
+    state: "off"
 
   light.hallway_light:
     state: "off"
@@ -173,14 +154,4 @@ entities:
     state: "off"
 
   light.patio_lights:
-    state: "off"
-
-  # Make sure the non-bedroom fans are off
-  switch.family_room_ceiling_fan:
-    state: "off"
-  switch.family_room_floor_fan:
-    state: "off"
-  switch.office_fan:
-    state: "off"
-  switch.office_window_fan:
     state: "off"

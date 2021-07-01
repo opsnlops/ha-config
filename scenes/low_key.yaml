@@ -2,22 +2,7 @@ name: Low Key
 entities:
   light.hallway_bathroom_stars:
     state: "on"
-  light.bedroom_fairy_light_1:
-    state: "off"
-  light.bedroom_fairy_light_2:
-    state: "off"
-  light.bedroom_left_nightstand_lamp:
-    brightness: 33
-    state: "on"
-    xy_color:
-      - 0.5435
-      - 0.3978
-  light.bedroom_right_nightstand_lamp:
-    brightness: 30
-    state: "on"
-    xy_color:
-      - 0.5435
-      - 0.3978
+
   light.dining_room_bookshelf:
     brightness: 48
     state: "on"
@@ -162,6 +147,35 @@ entities:
     state: "off"
   light.lava_lamp:
     state: "off"
+
+  # Bedroom
+  light.bedroom_fairy_light_1:
+    state: "off"
+  light.bedroom_fairy_light_2:
+    state: "off"
+  light.bedroom_left_nightstand_lamp:
+    brightness: 33
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bedroom_right_nightstand_lamp:
+    brightness: 30
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bedroom_window_light:
+    brightness: 154
+    state: "on"
+    xy_color:
+      - 0.158
+      - 0.05
+
+  # Guest Room
+  light.guest_room_overhead_light:
+    brightness: 40
+    state: "on"
 
   light.patio_lights:
     state: "off"
