@@ -191,6 +191,8 @@ entities:
     state: "on"
   light.lava_lamp:
     state: "off"
+  switch.office_ceiling_fan:
+    state: "on"
 
   light.hallway_light:
     state: "on"

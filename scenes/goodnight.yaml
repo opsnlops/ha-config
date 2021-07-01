@@ -133,6 +133,8 @@ entities:
     state: "off"
   light.lava_lamp:
     state: "off"
+  switch.office_ceiling_fan:
+    state: "off"
   switch.office_floor_fan:
     state: "off"
   switch.office_window_fan:

@@ -17,3 +17,6 @@ entities:
 
   light.lava_lamp:
     state: "on"
+
+  switch.office_ceiling_fan:
+    state: "on"
