@@ -78,7 +78,12 @@ fan:
         percentage_template: "{{ (state_attr('light.guest_room_fan_as_light','brightness') | int /255*100) | int}}"
         turn_on:
           # Default to medium, rather than the last used
-          service: script.turn_on_guest_room_fan_to_2_3_power
+          service: light.turn_on
+          data:
+            brightness_pct: 66
+            transition: 0
+          target:
+            entity_id: light.guest_room_fan_as_light
         turn_off:
           service: light.turn_off
           entity_id: light.guest_room_fan_as_light
