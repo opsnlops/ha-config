@@ -473,3 +473,92 @@
     data:
       topic: "thing/office/computer_microphone/state"
       payload_template: "{{ states.binary_sensor.april_s_work_mac_mini_microphone_in_use.state }}"
+
+#######
+#
+# Inovelli Switch LED Notifications
+#
+#  See https://nathanfiscus.github.io/inovelli-notification-calc/
+#
+
+# Make the light on the switch next to the half bathroom red
+# if there's someone in the bathroom
+# Half Bathroom
+- alias: "Notification - Half Bath Occupied"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.half_bathroom_motion"
+    to: "on"
+  action:
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 18
+        parameter: 6
+        value: 10
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 18
+        parameter: 5
+        value: 254
+- alias: "Notification - Half Bath Empty"
+  trigger:
+    platform: state
+    entity_id: "binary_sensor.half_bathroom_motion"
+    to: "off"
+    for: "00:00:30"
+  action:
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 18
+        parameter: 6
+        value: 5
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 18
+        parameter: 5
+        value: 81
+
+# Send a notifcation when the front door unlocks
+- alias: "Notification - Front Door Unlocked"
+  trigger:
+    platform: state
+    entity_id:
+      - "lock.front_door"
+      - "lock.back_door"
+    to: "unlocked"
+  action:
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 18
+        parameter: 8
+        value: 68094506
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 20
+        parameter: 16
+        value: 34474539
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 21
+        parameter: 16
+        value: 34474539
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 22
+        parameter: 16
+        value: 34474539
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 24
+        parameter: 16
+        value: 34474539
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 28
+        parameter: 24
+        value: 68094507
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 29
+        parameter: 8
+        value: 68094506
