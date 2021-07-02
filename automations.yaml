@@ -552,3 +552,8 @@
         node_id: 29
         parameter: 8
         value: 68094506
+    - service: zwave.set_config_parameter
+      data:
+        node_id: 30
+        parameter: 8
+        value: 68094506
