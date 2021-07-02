@@ -490,33 +490,23 @@
     entity_id: "binary_sensor.half_bathroom_motion"
     to: "on"
   action:
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 18
-        parameter: 6
-        value: 10
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 18
-        parameter: 5
-        value: 254
+    service: zwave.set_config_parameter
+    data:
+      node_id: 18
+      parameter: 8
+      value: 72353534
 - alias: "Notification - Half Bath Empty"
   trigger:
     platform: state
     entity_id: "binary_sensor.half_bathroom_motion"
     to: "off"
-    for: "00:00:30"
+    for: "00:00:15"
   action:
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 18
-        parameter: 6
-        value: 5
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 18
-        parameter: 5
-        value: 81
+    service: zwave.set_config_parameter
+    data:
+      node_id: 18
+      parameter: 8
+      value: 67326
 
 # Send a notifcation when the front door unlocks
 - alias: "Notification - Front Door Unlocked"
