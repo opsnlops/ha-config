@@ -194,6 +194,16 @@ entities:
   switch.office_ceiling_fan:
     state: "on"
 
+  # Workshop
+  light.workshop_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.workshop_fairy_lights:
+    state: "on"
+
   light.hallway_light:
     state: "on"
     brightness: 134

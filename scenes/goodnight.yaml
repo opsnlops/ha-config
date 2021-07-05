@@ -146,6 +146,12 @@ entities:
   light.guest_room_overhead_light:
     state: "off"
 
+  # Workshop
+  light.workshop_lamp:
+    state: "off"
+  light.workshop_fairy_lights:
+    state: "off"
+
   light.hallway_light:
     state: "off"
 

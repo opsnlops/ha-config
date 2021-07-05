@@ -177,6 +177,16 @@ entities:
     brightness: 40
     state: "on"
 
+  # Workshop
+  light.workshop_lamp:
+    brightness: 35
+    state: "on"
+    xy_color:
+      - 0.5409
+      - 0.3978
+  light.workshop_fairy_lights:
+    state: "off"
+
   light.patio_lights:
     state: "off"
 
