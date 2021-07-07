@@ -81,3 +81,6 @@ entity_config:
     type: outlet
   switch.living_room_heater:
     type: outlet
+  binary_sensor.guest_room_smoke:
+    linked_battery_sensor: sensor.guest_room_smoke_alarm_battery_level
+    low_battery_threshold: 50
