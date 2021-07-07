@@ -46,3 +46,21 @@
       friendly_name: "Workshop Motion"
       device_class: motion
       value_template: "{{ is_state('sensor.workshop_burglar', '8') }}"
+
+#
+# Smoke and CO alarms
+#
+- platform: template
+  sensors:
+    guest_room_smoke:
+      friendly_name: "Guest Room Smoke"
+      unique_id: "c142accc-aa1e-4dd3-9720-03ab269c95f3"
+      device_class: smoke
+      value_template: "{{ is_state('sensor.guest_room_smoke_alarm_smoke', '2') }}"
+- platform: template
+  sensors:
+    guest_room_carbon_monoxide:
+      friendly_name: "Guest Room Carbon Monoxide"
+      unique_id: "533e7932-a0b2-440b-8380-842c56fe8617"
+      device_class: safety
+      value_template: "{{ is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '2') }}"

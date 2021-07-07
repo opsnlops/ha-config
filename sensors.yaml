@@ -83,3 +83,63 @@
         {{ current - previous }}
       friendly_name: "Bedroom Fan Current Energy"
       unit_of_measurement: "kWh"
+
+#
+# Smoke and CO alarms
+#
+- platform: template
+  sensors:
+    guest_room_fire_alarm_status:
+      friendly_name: "Guest Room Fire Alarm Status"
+      unique_id: "7c6635be-2a59-4301-8a75-0cb9c7493104"
+      value_template: >-
+        {% if is_state('sensor.guest_room_smoke_alarm_smoke', '3') %}
+          Testing
+        {% elif is_state('sensor.guest_room_smoke_alarm_smoke', '2') %}
+          Smoke
+        {% elif is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '2') %}
+          CO
+        {% elif is_state('sensor.guest_room_smoke_alarm_smoke', '6') or is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '6') %}
+          Silenced
+        {% elif is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '5') %}
+          CO_EOL
+        {% else %}
+          Clear
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.guest_room_smoke_alarm_smoke', '3') %}
+          mdi:cloud-alert
+        {% elif is_state('sensor.guest_room_smoke_alarm_smoke', '2') %}
+          mdi:fire
+        {% elif is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '2') %}
+          mdi:cloud-alert
+        {% elif is_state('sensor.guest_room_smoke_alarm_smoke', '6') or is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '6') %}
+          mdi:volume-mute
+        {% elif is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '5') %}
+          mdi:cloud-alert
+        {% else %}
+          mdi:smoke-detector
+        {% endif %}
+- platform: template
+  sensors:
+    guest_room_fire_alarm_health:
+      friendly_name: "Guest Room Fire Alarm Health"
+      unique_id: "c079bc5d-cb90-496e-a993-fed3c55730c3"
+      value_template: >-
+        {% if is_state('sensor.guest_room_smoke_alarm_system', '5') %}
+          Healthy
+        {% elif is_state('sensor.guest_room_smoke_alarm_system', '1') %}
+          Malfunction Detected
+        {% elif is_state('sensor.guest_room_smoke_alarm_system', '0')  %}
+          Malfunction Clear
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.guest_room_smoke_alarm_system'', '5') %}
+          mdi:check-decagram
+        {% elif is_state('sensor.guest_room_smoke_alarm_system', '1') %}
+          mdi:alert
+        {% elif is_state('sensor.guest_room_smoke_alarm_system', '0')  %}
+          mdi:alert-circle-check
+        {% else %}
+          mdi:help-rhombus
+        {% endif %}
