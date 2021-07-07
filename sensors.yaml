@@ -134,7 +134,7 @@
           Malfunction Clear
         {% endif %}
       icon_template: >-
-        {% if is_state('sensor.guest_room_smoke_alarm_system'', '5') %}
+        {% if is_state('sensor.guest_room_smoke_alarm_system', '5') %}
           mdi:check-decagram
         {% elif is_state('sensor.guest_room_smoke_alarm_system', '1') %}
           mdi:alert
