@@ -10,6 +10,13 @@
     include_domains:
       - light
 
+    exclude_domains:
+      - binary_sensor
+      - climate
+      - fan
+      - switch
+      - sensor
+
     exclude_entities:
       - light.guest_room_fan_as_light
 
@@ -23,6 +30,9 @@
       - fan
       - switch
       - sensor
+
+    exclude_domains:
+      - light
 
     exclude_entities:
       - binary_sensor.remote_ui
