@@ -4,7 +4,7 @@
 
 # There's so many devices that this is broken up into two bridges. There's a
 # limit to how many devices one bridge can have in HomeKit.
-- name: Home Assistant (Lights)
+- name: HA (Lights)
   mode: bridge
   filter:
     include_domains:
@@ -14,7 +14,7 @@
       - light.guest_room_fan_as_light
 
 # The one for non-lights
-- name: Home Assistant (Non-lights)
+- name: HA (Non-lights)
   mode: bridge
   filter:
     include_domains:
