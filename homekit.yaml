@@ -2,85 +2,94 @@
 # This is an Apple household, we use HomeKit pretty heavily
 #
 
-name: Home Assistant on rex
-mode: bridge
+# There's so many devices that this is broken up into two bridges. There's a
+# limit to how many devices one bridge can have in HomeKit.
+- name: Home Assistant (Lights)
+  mode: bridge
+  filter:
+    include_domains:
+      - light
 
-filter:
-  include_domains:
-    - binary_sensor
-    - climate
-    - fan
-    - light
-    - switch
-    - sensor
+    exclude_entities:
+      - light.guest_room_fan_as_light
 
-  exclude_entities:
-    - binary_sensor.remote_ui
-    - binary_sensor.rpi_power_status
-    - binary_sensor.updater
-    - light.guest_room_fan_as_light
-    - sensor.accuweather_precipitation
-    - sensor.accuweather_temperature
-    - sensor.accuweather_wind
-    - switch.bedroom_air_filter
-    - switch.bunny_s_switch
-    - switch.patio_lights
+# The one for non-lights
+- name: Home Assistant (Non-lights)
+  mode: bridge
+  filter:
+    include_domains:
+      - binary_sensor
+      - climate
+      - fan
+      - switch
+      - sensor
 
-  exclude_entity_globs:
-    - binary_sensor.april_mpb*
-    - binary_sensor.april_s_work*
-    - binary_sensor.cottontail*
-    - binary_sensor.hotot*
-    - sensor.april_s_iphone*
-    - sensor.april_s_phone*
-    - sensor.bunny_s_ipad*
-    - sensor.hewlett_packard*
-    - sensor.natphone*
-    - sensor.nattipad*
+    exclude_entities:
+      - binary_sensor.remote_ui
+      - binary_sensor.rpi_power_status
+      - binary_sensor.updater
+      - sensor.accuweather_precipitation
+      - sensor.accuweather_temperature
+      - sensor.accuweather_wind
+      - switch.bedroom_air_filter
+      - switch.bunny_s_switch
+      - switch.patio_lights
 
-  # These are here because HomeKit does a weird thing. It sends an "on"
-  # command, and then an "off" command when you activate a scene. I'm not
-  # sure why it does that, but these scripts allow me to turn on scenes and
-  # ignore the off command. (See scripts.yaml)
-  include_entities:
-    - script.away_from_home_scene
-    - script.bedtime_scene
-    - script.blue_fire_scene
-    - script.cooking_time_scene
-    - script.good_morning_scene
-    - script.goodnight_scene
-    - script.guest_room_the_wind
-    - script.kitchen_cleanup_scene
-    - script.lazy_afternoon_scene
-    - script.low_key_scene
-    - script.normal_evening_scene
-    - script.sleepy_time_scene
-    - script.up_late_scene
-    - script.work_at_home_scene
+    exclude_entity_globs:
+      - binary_sensor.april_mpb*
+      - binary_sensor.april_s_work*
+      - binary_sensor.cottontail*
+      - binary_sensor.hotot*
+      - sensor.april_s_iphone*
+      - sensor.april_s_phone*
+      - sensor.bunny_s_ipad*
+      - sensor.hewlett_packard*
+      - sensor.natphone*
+      - sensor.nattipad*
 
-entity_config:
-  sensor.guest_room_temperature:
-    linked_battery_sensor: sensor.guest_room_sensor_battery_level
-    low_battery_threshold: 33
-  sensor.half_bathroom_temperature:
-    linked_battery_sensor: sensor.half_bathroom_sensor_battery_level
-    low_battery_threshold: 33
-  sensor.hallway_bathroom_temperature:
-    linked_battery_sensor: sensor.hallway_bathroom_sensor_battery_level
-    low_battery_threshold: 33
-  sensor.kitchen_temperature:
-    linked_battery_sensor: sensor.kitchen_sensor_battery_level
-    low_battery_threshold: 33
-  sensor.laundry_room_temperature:
-    linked_battery_sensor: sensor.laundry_room_sensor_battery_level
-    low_battery_threshold: 33
-  sensor.workshop_temperature:
-    linked_battery_sensor: sensor.workshop_sensor_battery_level
-    low_battery_threshold: 33
-  switch.bedroom_fan:
-    type: outlet
-  switch.living_room_heater:
-    type: outlet
-  binary_sensor.guest_room_smoke:
-    linked_battery_sensor: sensor.guest_room_smoke_alarm_battery_level
-    low_battery_threshold: 50
+    # These are here because HomeKit does a weird thing. It sends an "on"
+    # command, and then an "off" command when you activate a scene. I'm not
+    # sure why it does that, but these scripts allow me to turn on scenes and
+    # ignore the off command. (See scripts.yaml)
+    include_entities:
+      - script.away_from_home_scene
+      - script.bedtime_scene
+      - script.blue_fire_scene
+      - script.cooking_time_scene
+      - script.good_morning_scene
+      - script.goodnight_scene
+      - script.guest_room_the_wind
+      - script.kitchen_cleanup_scene
+      - script.lazy_afternoon_scene
+      - script.low_key_scene
+      - script.normal_evening_scene
+      - script.sleepy_time_scene
+      - script.up_late_scene
+      - script.work_at_home_scene
+
+  entity_config:
+    sensor.guest_room_temperature:
+      linked_battery_sensor: sensor.guest_room_sensor_battery_level
+      low_battery_threshold: 33
+    sensor.half_bathroom_temperature:
+      linked_battery_sensor: sensor.half_bathroom_sensor_battery_level
+      low_battery_threshold: 33
+    sensor.hallway_bathroom_temperature:
+      linked_battery_sensor: sensor.hallway_bathroom_sensor_battery_level
+      low_battery_threshold: 33
+    sensor.kitchen_temperature:
+      linked_battery_sensor: sensor.kitchen_sensor_battery_level
+      low_battery_threshold: 33
+    sensor.laundry_room_temperature:
+      linked_battery_sensor: sensor.laundry_room_sensor_battery_level
+      low_battery_threshold: 33
+    sensor.workshop_temperature:
+      linked_battery_sensor: sensor.workshop_sensor_battery_level
+      low_battery_threshold: 33
+    switch.bedroom_fan:
+      type: outlet
+    switch.living_room_heater:
+      type: outlet
+    binary_sensor.guest_room_smoke:
+      linked_battery_sensor: sensor.guest_room_smoke_alarm_battery_level
+      low_battery_threshold: 50
