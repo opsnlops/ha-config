@@ -6,16 +6,10 @@
 # limit to how many devices one bridge can have in HomeKit.
 - name: HA (Lights)
   mode: bridge
+  port: 21666
   filter:
     include_domains:
       - light
-
-    exclude_domains:
-      - binary_sensor
-      - climate
-      - fan
-      - switch
-      - sensor
 
     exclude_entities:
       - light.guest_room_fan_as_light
@@ -23,6 +17,7 @@
 # The one for non-lights
 - name: HA (Non-lights)
   mode: bridge
+  port: 22666
   filter:
     include_domains:
       - binary_sensor
@@ -30,9 +25,6 @@
       - fan
       - switch
       - sensor
-
-    exclude_domains:
-      - light
 
     exclude_entities:
       - binary_sensor.remote_ui
