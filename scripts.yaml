@@ -91,3 +91,101 @@ guest_room_the_wind:
       data_template:
         brightness_pct: "1"
         transition: 0
+
+# Taken from https://community.home-assistant.io/t/inovelli-led-strip-lzw45-pixel-effects-script/275264
+lzw45_pixel_effect:
+  alias: LZW45 Pixel Effect
+  description: Sets the pixel effects for the Inovelli LZW45 LED Strip
+  mode: restart
+  fields:
+    service:
+      description: (required) The name of the service.
+        OpenZwave (Beta) -> 'ozw.set_config_parameter'
+        OpenZwave (1.4) -> 'zwave.set_config_parameter'
+      example: ozw.set_config_parameter
+    lzw45:
+      description: (required) The entity_id for the lzw45 LED Strip.
+      example: light.lzw45_light_strip_level
+    effect:
+      description: (required) The desired effect - static, blink, breath, color-wipe, color-wipe-reverse-inverse, color-wipe-random, random-color, single-dynamic, multi-dynamic, rainbow, rainbow-cycle, scan, dual-scan, fade, running-lights, twinkle, twinkle-random, twinkle-fade, twinkle-fade-random, sparkle, flash-sparkle, hyper-sparkle, strobe, blink-rainbow, chase-white, chase-color, chase-random, chase-rainbow, chase-flash, chase-flash-random, chase-rainbow-white, chase-blackout, chase-blackout-rainbow, color-sweep-random, running-color, running-red-blue, running-random, larson-scanner, comet, fireworks, fireworks-random, merry-christmas, circus-combustus, halloween, aurora
+      example: breath
+    brightness_pct:
+      description: (optional) The brightness percent, 0 - 99.  Defaults to 99 if omitted.
+      example: "99"
+  variables:
+    service: >
+      {{ service | default('ozw.set_config_parameter') }}
+    node_id: >
+      {%- if lzw45 is not defined %}
+        0
+      {%- else %}
+        {%- set node_id = state_attr(lzw45, 'node_id') %}
+        {{ node_id if node_id else 0 }}
+      {%- endif %}
+    byte1: >
+      {%- set effect = effect | default('static') | lower | replace(' ', '-') %}
+      {%- set effects = [
+        'static',
+        'blink',
+        'breath',
+        'color-wipe',
+        'color-wipe-reverse-inverse',
+        'color-wipe-random',
+        'random-color',
+        'single-dynamic',
+        'multi-dynamic',
+        'rainbow',
+        'rainbow-cycle',
+        'scan',
+        'dual-scan',
+        'fade',
+        'running-lights',
+        'twinkle',
+        'twinkle-random',
+        'twinkle-fade',
+        'twinkle-fade-random',
+        'sparkle',
+        'flash-sparkle',
+        'hyper-sparkle',
+        'strobe',
+        'blink-rainbow',
+        'chase-white',
+        'chase-color',
+        'chase-random',
+        'chase-rainbow',
+        'chase-flash',
+        'chase-flash-random',
+        'chase-rainbow-white',
+        'chase-blackout',
+        'chase-blackout-rainbow',
+        'color-sweep-random',
+        'running-color',
+        'running-red-blue',
+        'running-random',
+        'larson-scanner',
+        'comet',
+        'fireworks',
+        'fireworks-random',
+        'merry-christmas',
+        'circus-combustus',
+        'halloween',
+        'aurora'
+      ] %}
+      {{ effects.index(effect) + 1 if effect in effects else 1 }}
+    byte2: >
+      {%- set pct = (brightness_pct | default(99)) | int %}
+      {%- if 0 <= pct <= 99 %}
+        {{ pct }}
+      {%- else %}
+        99
+      {%- endif %}
+    bytes: >
+      {{ byte2 * 2**8 + byte1 }}
+  sequence:
+    - condition: template
+      value_template: "{{ node_id != 0 }}"
+    - service: "{{ service }}"
+      data:
+        node_id: "{{ node_id }}"
+        parameter: 31
+        value: "{{ bytes }}"
