@@ -20,3 +20,7 @@ sensor.laundry_room_relative_humidity:
 sensor.workshop_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
+
+# Door and window sensors
+binary_sensor.entryway_door:
+  device_class: door

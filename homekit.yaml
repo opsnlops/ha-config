@@ -95,3 +95,6 @@
     binary_sensor.guest_room_smoke:
       linked_battery_sensor: sensor.guest_room_smoke_alarm_battery_level
       low_battery_threshold: 50
+    binary_sensor.entryway_door:
+      linked_battery_sensor: sensor.entryway_door_sensor_battery_level
+      low_battery_threshold: 33
