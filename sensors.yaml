@@ -154,7 +154,7 @@
           Testing
         {% elif is_state('sensor.family_room_smoke_detector_smoke', '2') %}
           Smoke
-        {% elif is_state('sensor.family_room_smoke_detector_carbon_monoxide, '2') %}
+        {% elif is_state('sensor.family_room_smoke_detector_carbon_monoxide', '2') %}
           CO
         {% elif is_state('sensor.family_room_smoke_detector_smoke', '6') or is_state('sensor.family_room_smoke_detector_carbon_monoxide', '6') %}
           Silenced
