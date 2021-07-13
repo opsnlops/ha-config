@@ -174,8 +174,7 @@ entities:
 
   # Guest Room
   light.guest_room_overhead_light:
-    brightness: 40
-    state: "on"
+    state: "off"
   light.guest_room_left_lamp:
     brightness: 30
     state: "on"
@@ -188,7 +187,6 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
-
 
   # Workshop
   light.workshop_lamp:
