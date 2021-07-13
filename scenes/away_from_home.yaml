@@ -12,12 +12,6 @@ entities:
     state: "off"
   light.dining_room_fairy_lights:
     state: "off"
-  light.guest_room_bunny_lamp:
-    state: "off"
-  light.guest_room_nightstand:
-    state: "off"
-  light.guest_room_stars:
-    state: "off"
   light.hallway_stars:
     state: "off"
 
@@ -91,6 +85,10 @@ entities:
   light.guest_room_overhead_light:
     state: "off"
   fan.guest_room_fan:
+    state: "off"
+  light.guest_room_left_lamp:
+    state: "off"
+  light.guest_room_right_lamp:
     state: "off"
 
   # Workshop

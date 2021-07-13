@@ -11,20 +11,6 @@ entities:
       - 0.0408
   light.dining_room_fairy_lights:
     state: "on"
-  light.guest_room_bunny_lamp:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.4592
-      - 0.4102
-  light.guest_room_nightstand:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.4592
-      - 0.4102
-  light.guest_room_stars:
-    state: "on"
   light.hallway_stars:
     state: "on"
   light.kitchen_cooktop_north:
@@ -153,10 +139,22 @@ entities:
   # Guest Room
   light.guest_room_overhead_light:
     state: "on"
-    brightness: 128
+    brightness: 90
   fan.guest_room_fan:
     state: "on"
     speed: "medium"
+  light.guest_room_left_lamp:
+    brightness: 180
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.guest_room_right_lamp:
+    brightness: 180
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
 
   #
   # Office

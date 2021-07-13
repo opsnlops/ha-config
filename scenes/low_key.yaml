@@ -154,7 +154,7 @@ entities:
   light.bedroom_fairy_light_2:
     state: "off"
   light.bedroom_left_nightstand_lamp:
-    brightness: 33
+    brightness: 30
     state: "on"
     xy_color:
       - 0.5435
@@ -176,6 +176,19 @@ entities:
   light.guest_room_overhead_light:
     brightness: 40
     state: "on"
+  light.guest_room_left_lamp:
+    brightness: 30
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.guest_room_right_lamp:
+    brightness: 30
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+
 
   # Workshop
   light.workshop_lamp:
