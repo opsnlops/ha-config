@@ -98,3 +98,9 @@
     binary_sensor.entryway_door:
       linked_battery_sensor: sensor.entryway_door_sensor_battery_level
       low_battery_threshold: 33
+    binary_sensor.family_room_smoke:
+      linked_battery_sensor: sensor.family_room_smoke_detector_battery_level
+      low_battery_threshold: 50
+    binary_sensor.bunnys_room_smoke:
+      linked_battery_sensor: sensor.bunnys_room_smoke_detector_battery_level
+      low_battery_threshold: 50
