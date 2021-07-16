@@ -84,6 +84,8 @@ entities:
   # Guest Room
   light.guest_room_overhead_light:
     state: "off"
+  light.guest_room_stars:
+    state: "off"
   fan.guest_room_fan:
     state: "off"
   light.guest_room_left_lamp:

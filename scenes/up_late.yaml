@@ -26,18 +26,6 @@ entities:
       - 0.1383
   light.dining_room_fairy_lights:
     state: "on"
-  light.guest_room_bunny_lamp:
-    brightness: 178
-    state: "on"
-    xy_color:
-      - 0.5012
-      - 0.3794
-  light.guest_room_nightstand:
-    brightness: 160
-    state: "on"
-    xy_color:
-      - 0.5012
-      - 0.3794
   light.guest_room_stars:
     state: "on"
   light.hallway_stars:
