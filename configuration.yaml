@@ -100,5 +100,3 @@ fan:
           data_template:
             brightness_pct: "1"
             transition: 0
-        preset_modes:
-          - "breezy"
