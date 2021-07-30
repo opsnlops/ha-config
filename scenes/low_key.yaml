@@ -85,7 +85,7 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
-  light.living_room_fairy_lights:
+  switch.family_room_fairy_lights
     state: "off"
   light.living_room_fireplace_backlight:
     brightness: 31

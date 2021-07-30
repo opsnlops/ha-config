@@ -94,7 +94,7 @@ entities:
       - 0.1898
       - 0.2324
 
-  light.living_room_fairy_lights:
+  switch.family_room_fairy_lights:
     state: "off"
 
   # Office
