@@ -131,7 +131,7 @@ entities:
     state: "off"
   light.office_fairy_lights:
     state: "off"
-  light.lava_lamp:
+  switch.lava_lamp:
     state: "off"
 
   # Bedroom

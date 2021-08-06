@@ -189,7 +189,7 @@ entities:
       - 0.372
   light.office_fairy_lights:
     state: "on"
-  light.lava_lamp:
+  switch.lava_lamp:
     state: "off"
   switch.office_ceiling_fan:
     state: "on"
