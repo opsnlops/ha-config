@@ -27,6 +27,7 @@
       - sensor
 
     exclude_entities:
+      - binary_sensor.carport_sensor
       - binary_sensor.guest_room_sensor_sensor
       - binary_sensor.half_bathroom_sensor
       - binary_sensor.kitchen_sensor
@@ -75,6 +76,9 @@
       - script.work_at_home_scene
 
   entity_config:
+    binary_sensor.carport_motion:
+      linked_battery_sensor: sensor.carport_sensor_battery_level
+      low_battery_threshold: 33
     sensor.guest_room_temperature:
       linked_battery_sensor: sensor.guest_room_sensor_battery_level
       low_battery_threshold: 33

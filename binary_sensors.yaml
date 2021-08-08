@@ -6,6 +6,12 @@
 #
 - platform: template
   sensors:
+    carport_motion:
+      friendly_name: "Carport Motion"
+      device_class: motion
+      value_template: "{{ is_state('sensor.carport_burglar', '8') }}"
+- platform: template
+  sensors:
     guest_room_motion:
       friendly_name: "Guest Room Motion"
       device_class: motion
