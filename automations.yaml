@@ -643,7 +643,7 @@
       is_volume_muted: true
     target:
       entity_id: media_player.family_room_receiver
-- alias: "Long Press: Unute the Family Room Receiver"
+- alias: "Long Press: Unmute the Family Room Receiver"
   initial_state: on
   trigger:
     - platform: event
