@@ -141,7 +141,7 @@ entities:
   # Workshop
   light.workshop_lamp:
     state: "off"
-  light.workshop_fairy_lights:
+  switch.workshop_fairy_lights:
     state: "off"
 
   light.hallway_light:

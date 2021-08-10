@@ -201,7 +201,7 @@ entities:
     xy_color:
       - 0.1358
       - 0.0445
-  light.workshop_fairy_lights:
+  switch.workshop_fairy_lights:
     state: "on"
 
   light.hallway_light:
