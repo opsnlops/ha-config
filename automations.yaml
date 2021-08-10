@@ -579,3 +579,94 @@
   action:
     service: homeassistant.turn_on
     entity_id: scene.normal_evening
+
+#######
+#
+# Buttons
+#
+#  These are the buttons around the house that make things do things
+#
+
+# Top Button (On)
+- alias: "Top Short Press: Normal Evening Button"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "test_switch"
+        event: 1002
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.normal_evening
+- alias: "Top Long Press: Low Key Button"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "test_switch"
+        event: 1003
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.low_key
+
+# Second Button (🔆)
+- alias: "Second: Turn on the aurora"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "test_switch"
+        event: 2002
+  action:
+    service: script.lzw45_pixel_effect
+    data:
+      service: zwave.set_config_parameter
+      lzw45: light.workshop_light_strip
+      effect: aurora
+      brightness_pct: 99
+
+# Third Button (🔅)
+- alias: "Short Press: Mute the Family Room Receiver"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "test_switch"
+        event: 3002
+  action:
+    service: media_player.volume_mute
+    data:
+      is_volume_muted: true
+    target:
+      entity_id: media_player.family_room_receiver
+- alias: "Long Press: Unute the Family Room Receiver"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "test_switch"
+        event: 3003
+  action:
+    service: media_player.volume_mute
+    data:
+      is_volume_muted: false
+    target:
+      entity_id: media_player.family_room_receiver
+
+# Bottom Button (Off)
+- alias: "Bedtime Button"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "test_switch"
+        event: 4002
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.goodnight
