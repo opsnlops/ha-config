@@ -1,0 +1,34 @@
+#
+# Triggered when there's motion outside via an automation
+#
+
+name: Carport Motion
+entities:
+
+  light.back_door_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  
+  light.back_corner_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
+  light.front_door_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
+  light.carport_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
