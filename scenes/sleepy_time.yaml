@@ -41,3 +41,10 @@ entities:
 
   light.patio_lights:
     state: "off"
+
+  light.carport_light:
+    brightness: 48
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978

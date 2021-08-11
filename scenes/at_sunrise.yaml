@@ -14,3 +14,5 @@ entities:
     state: "off"
   light.front_door_light:
     state: "off"
+  light.carport_light:
+    state: "off"

@@ -44,3 +44,11 @@ entities:
   light.bedroom_door_light:
     brightness: 254
     state: "on"
+
+  # Lights in the carport
+  light.carport_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
