@@ -17,6 +17,42 @@
     service: homeassistant.turn_on
     entity_id: scene.at_sunrise
 
+# If there's motion in the carport, and it's after 10:30pm, trigger
+# a scene that makes the lights brighter
+- alias: "Carport: Brighten the lights on outdoor motion at night"
+  trigger:
+     platform: state
+     entity_id: binary_sensor.carport_motion
+     to: "on"
+  condition:
+    condition: or
+    conditions:
+      - condition: time
+        after: "22:30:00"
+      - condition: sun
+        before: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.carport_motion
+# ...and turn it back off after the motion stops
+- alias: "Carport: Go back to normal after five minutes"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.carport_motion
+    to: "off"
+    for:
+      minutes: 5
+  condition:
+    condition: or
+    conditions:
+      - condition: time
+        after: "22:30:00"
+      - condition: sun
+        before: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.sleepy_time
+
 # Turn on the lights if someone comes home and it's after sunset
 - alias: "Someone comes home"
   trigger:
@@ -77,7 +113,7 @@
       entity_id: scene.low_key
 
 # Turn on the lights in the hallway bathroom when it's dark and motion is detected
-- alias: Turn on the hallway bathroom stars with motion at night
+- alias: Turn on the hallway bathroom stars if there's motion
   trigger:
     platform: state
     entity_id: binary_sensor.hallway_bathroom_motion
@@ -90,17 +126,13 @@
     service: light.turn_on
     entity_id: light.hallway_bathroom_stars
 
-- alias: Turn off the hallway bathroom stars if it's night time
+- alias: Turn off the hallway bathroom stars once motion stops
   trigger:
     platform: state
     entity_id: binary_sensor.hallway_bathroom_motion
     to: "off"
     for:
-      minutes: 10
-  condition:
-    - condition: time
-      after: "21:00:00"
-      before: "07:00:00"
+      minutes: 15
   action:
     service: light.turn_off
     entity_id: light.hallway_bathroom_stars
