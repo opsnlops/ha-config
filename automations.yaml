@@ -21,9 +21,9 @@
 # a scene that makes the lights brighter
 - alias: "Carport: Brighten the lights on outdoor motion at night"
   trigger:
-     platform: state
-     entity_id: binary_sensor.carport_motion
-     to: "on"
+    platform: state
+    entity_id: binary_sensor.carport_motion
+    to: "on"
   condition:
     condition: or
     conditions:
@@ -505,6 +505,47 @@
     data:
       topic: "thing/office/computer_microphone/state"
       payload_template: "{{ states.binary_sensor.april_s_work_mac_mini_microphone_in_use.state }}"
+
+######
+#
+# Alerts
+#
+
+- alias: "Alert - Entryway Door"
+  id: "alert_entryway_door"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entryway_door
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "{{ trigger.to_state.name }}"
+      data:
+        push:
+          sound: "shake.caf"
+      message: >-
+        {% if trigger.to_state.state == 'on' %}
+          Someone opened the Entryway Door
+        {% else %}
+          Someone closed the Entryway Door
+        {% endif %}
+
+- alias: "Alert - UPS Changed State"
+  id: "alert_ups_changed_state"
+  trigger:
+    platform: state
+    entity_id:
+      - "sensor.belgian_hare_ups_status"
+      - "sensor.network_ups_status"
+      - "sensor.office_ups_status"
+  action:
+    service: notify.aprils_devices
+    data:
+      title: "{{ trigger.to_state.name }}"
+      message: "New State: {{ trigger.to_state.state }}"
+      data:
+        push:
+          sound: "shake.caf"
 
 #######
 #
