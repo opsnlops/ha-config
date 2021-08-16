@@ -3,24 +3,90 @@
 sensor.guest_room_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
+  state_class: measurement
 sensor.half_bathroom_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
+  state_class: measurement
 sensor.hallway_bathroom_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
+  state_class: measurement
 sensor.kitchen_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
+  state_class: measurement
 sensor.laundry_room_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
+  state_class: measurement
 
 # ...and the Aerotec
 sensor.workshop_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
+  state_class: measurement
 
 # Door and window sensors
 binary_sensor.entryway_door:
   device_class: door
+
+###
+#
+# Device Classes
+#
+sensor.bedroom_air_filter_energy:
+  state_class: measurement
+  device_class: energy
+sensor.bedroom_air_filter_power:
+  state_class: measurement
+  device_class: power
+
+sensor.bedroom_fan_power:
+  state_class: measurement
+  device_class: power
+sensor.bedroom_fan_energy:
+  state_class: measurement
+  device_class: energy
+
+sensor.family_room_ceiling_fan_energy:
+  state_class: measurement
+  device_class: energy
+sensor.family_room_ceiling_fan_power:
+  state_class: measurement
+  device_class: power
+
+sensor.guest_room_fan_controller_energy:
+  state_class: measurement
+  device_class: energy
+sensor.guest_room_fan_controller_power:
+  state_class: measurement
+  device_class: power
+
+sensor.kitchen_scene_controller_energy:
+  state_class: measurement
+  device_class: energy
+sensor.kitchen_scene_controller_power:
+  state_class: measurement
+  device_class: power
+
+sensor.office_ceiling_fan_energy:
+  state_class: measurement
+  device_class: energy
+sensor.office_ceiling_fan_power:
+  state_class: measurement
+  device_class: power
+
+sensor.office_window_fan_energy:
+  state_class: measurement
+  device_class: energy
+sensor.office_window_fan_power:
+  state_class: measurement
+  device_class: power
+
+sensor.workshop_light_strip_energy:
+  state_class: measurement
+  device_class: energy
+sensor.workshop_light_strip_power:
+  state_class: measurement
+  device_class: power
