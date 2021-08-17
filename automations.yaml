@@ -519,7 +519,7 @@
   action:
     service: notify.aprils_devices
     data_template:
-      title: "{{ trigger.to_state.name }}"
+      title: "🚪 {{ trigger.to_state.name }}"
       data:
         push:
           sound: "shake.caf"
@@ -528,6 +528,27 @@
           Someone opened the Entryway Door
         {% else %}
           Someone closed the Entryway Door
+        {% endif %}
+
+- alias: "Alert - Flamethrower State"
+  id: "alert_flamethrower_state"
+  trigger:
+    platform: state
+    entity_id:
+      - "switch.office_flamethrowers"
+      - "switch.family_room_flamethrower"
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "🪵 {{ trigger.to_state.name }}"
+      data:
+        push:
+          sound: "shake.caf"
+      message: >-
+        {% if trigger.to_state.state == 'on' %}
+          🔥 Flamethrower On 🔥
+        {% else %}
+          💦 Flamethrower Off 😌
         {% endif %}
 
 - alias: "Alert - UPS Changed State"
@@ -541,7 +562,7 @@
   action:
     service: notify.aprils_devices
     data:
-      title: "{{ trigger.to_state.name }}"
+      title: "🔋 {{ trigger.to_state.name }}"
       message: "New State: {{ trigger.to_state.state }}"
       data:
         push:
