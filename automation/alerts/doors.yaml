@@ -1,0 +1,19 @@
+- alias: "Alert - Entryway Door"
+  id: "alert_entryway_door"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entryway_door
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "🚪 {{ trigger.to_state.name }}"
+      data:
+        push:
+          sound: "shake.caf"
+      message: >-
+        {% if trigger.to_state.state == 'on' %}
+          Someone opened the Entryway Door
+        {% else %}
+          Someone closed the Entryway Door
+        {% endif %}
+  

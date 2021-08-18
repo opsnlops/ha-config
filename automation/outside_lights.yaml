@@ -1,0 +1,63 @@
+- alias: "Run At Sunset 20 minutes before the actual sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:20:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.at_sunset
+
+# Turn off the outside lights at sunrise
+- alias: "Turn off the outside lights at sunrise"
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "00:20:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.at_sunrise
+
+# If there's motion in the carport, and it's after 10:30pm, trigger
+# a scene that makes the lights brighter
+- alias: "Carport: Brighten the lights on outdoor motion at night"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.carport_motion
+    to: "on"
+  condition:
+    condition: or
+    conditions:
+      - condition: time
+        after: "22:30:00"
+      - condition: sun
+        before: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.carport_motion
+# ...and turn it back off after the motion stops
+- alias: "Carport: Go back to normal after five minutes"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.carport_motion
+    to: "off"
+    for:
+      minutes: 5
+  condition:
+    condition: or
+    conditions:
+      - condition: time
+        after: "22:30:00"
+      - condition: sun
+        before: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.sleepy_time
+
+# Dim the outside lights around bedtime
+- alias: "Dim the outside lights at sleep time"
+  trigger:
+    platform: time
+    at: "22:30:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.sleepy_time

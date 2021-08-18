@@ -1,0 +1,26 @@
+# Turn on the lights if someone comes home and it's after sunset
+- alias: "Someone comes home"
+  trigger:
+    platform: state
+    entity_id: group.all_furries
+    to: "home"
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+      - condition: sun
+        before: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.normal_evening
+
+# Trigger the "Away from Home" scene when we're all gone
+- alias: "Everyone leaves the house"
+  trigger:
+    platform: state
+    entity_id: group.all_furries
+    to: "not_home"
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.away_from_home

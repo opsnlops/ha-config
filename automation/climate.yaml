@@ -1,0 +1,11 @@
+ # Push the value of the rain we got yesterday into a retained mqtt topic
+- alias: "Push previous day rain total to MQTT"
+  trigger:
+    - platform: time
+      at: "00:00:01"
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "internal/rain_in_prior"
+      retain: true
+      payload: "{{ states.sensor.rain_amount.state }}"
