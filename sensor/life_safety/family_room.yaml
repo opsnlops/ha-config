@@ -1,0 +1,56 @@
+- platform: template
+  sensors:
+    family_room_smoke_detector_status:
+      friendly_name: "Family Room Smoke Detector Status"
+      unique_id: "3882f009-7385-4189-8b96-5f658c5c92d9"
+      value_template: >-
+        {% if is_state('sensor.family_room_smoke_detector_smoke', '3') %}
+          Testing
+        {% elif is_state('sensor.family_room_smoke_detector_smoke', '2') %}
+          Smoke
+        {% elif is_state('sensor.family_room_smoke_detector_carbon_monoxide', '2') %}
+          CO
+        {% elif is_state('sensor.family_room_smoke_detector_smoke', '6') or is_state('sensor.family_room_smoke_detector_carbon_monoxide', '6') %}
+          Silenced
+        {% elif is_state('sensor.family_room_smoke_detector_carbon_monoxide', '5') %}
+          CO_EOL
+        {% else %}
+          Clear
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.family_room_smoke_detector_smoke', '3') %}
+          mdi:cloud-alert
+        {% elif is_state('sensor.family_room_smoke_detector_smoke', '2') %}
+          mdi:fire
+        {% elif is_state('sensor.family_room_smoke_detector_carbon_monoxide', '2') %}
+          mdi:cloud-alert
+        {% elif is_state('sensor.family_room_smoke_detector_smoke', '6') or is_state('sensor.family_room_smoke_detector_carbon_monoxide', '6') %}
+          mdi:volume-mute
+        {% elif is_state('sensor.family_room_smoke_detector_carbon_monoxide', '5') %}
+          mdi:cloud-alert
+        {% else %}
+          mdi:smoke-detector
+        {% endif %}
+- platform: template
+  sensors:
+    family_room_smoke_detector_health:
+      friendly_name: "Family Room Smoke Detector Health"
+      unique_id: "8e296815-6b81-4ec5-aa00-26b66a03066e"
+      value_template: >-
+        {% if is_state('sensor.family_room_smoke_detector_system', '5') %}
+          Healthy
+        {% elif is_state('sensor.family_room_smoke_detector_system', '1') %}
+          Malfunction Detected
+        {% elif is_state('sensor.family_room_smoke_detector_system', '0')  %}
+          Malfunction Clear
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.family_room_smoke_detector_system', '5') %}
+          mdi:check-decagram
+        {% elif is_state('sensor.family_room_smoke_detector_system', '1') %}
+          mdi:alert
+        {% elif is_state('sensor.family_room_smoke_detector_system', '0')  %}
+          mdi:alert-circle-check
+        {% else %}
+          mdi:help-rhombus
+        {% endif %}

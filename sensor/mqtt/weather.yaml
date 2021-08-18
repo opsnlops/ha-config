@@ -1,0 +1,62 @@
+# Weather
+
+# This data comes from dutch, which is reading a sensor on the roof of the
+# house and publishing the data via MQTT. 🏡
+- platform: mqtt
+  name: "Outside Temperature"
+  state_topic: "weather/Acurite-5n1/temperature_F"
+  unit_of_measurement: "°F"
+  device_class: temperature
+  icon: mdi:thermometer
+
+- platform: mqtt
+  name: "Outside Humidity"
+  state_topic: "weather/Acurite-5n1/humidity"
+  unit_of_measurement: "%"
+  device_class: humidity
+  icon: mdi:water-percent
+
+- platform: mqtt
+  name: "Wind Bearing"
+  state_topic: "weather/Acurite-5n1/wind_dir_deg"
+  unit_of_measurement: "deg"
+  icon: mdi:compass
+
+- platform: mqtt
+  name: "Wind Speed (Avg)"
+  state_topic: "weather/Acurite-5n1/wind_avg_mi_h"
+  unit_of_measurement: "mph"
+  icon: mdi:weather-windy
+
+- platform: mqtt
+  name: "Rain Amount"
+  state_topic: "weather/Acurite-5n1/rain_in"
+  unit_of_measurement: "in"
+  icon: mdi:weather-rainy
+### End MQTT
+
+# This allows me to see how much rain has come in today, rather than
+# over the lifetime of the senor
+- platform: mqtt
+  state_topic: "internal/rain_in_prior"
+  name: "rain_in_prior"
+  unit_of_measurement: "in"
+- platform: template
+  sensors:
+    rain_today:
+      value_template: >
+        {%- if not (is_state("sensor.rain_amount","unknown") or is_state("sensor.rain_in_prior","unknown") )-%}
+        {{ ((states.sensor.rain_amount.state | float) - (states.sensor.rain_in_prior.state | float)) | max (0) | round(2) }}
+        {%- endif -%}
+      friendly_name: "Rain Today"
+      unit_of_measurement: "in"
+
+# Show the wind in human units
+- platform: template
+  sensors:
+    wind_direction:
+      value_template: >
+        {% set direction = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] %}
+        {% set degree = states('sensor.wind_bearing')|float %}
+        {{ direction[((degree+11.25)/22.5)|int] }}
+      friendly_name: "Wind Direction"
