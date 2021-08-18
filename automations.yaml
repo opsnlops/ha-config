@@ -535,7 +535,7 @@
   trigger:
     platform: state
     entity_id:
-      - "switch.office_flamethrowers"
+      - "switch.office_flamethrower"
       - "switch.family_room_flamethrower"
   action:
     service: notify.aprils_devices
