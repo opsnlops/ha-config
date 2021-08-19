@@ -14,7 +14,7 @@
           sound: "shake.caf"
       message: >-
         {% if trigger.to_state.state == 'on' %}
-          Someone opened the {{ trigger.to_state.name }}
+          The {{ trigger.to_state.name }} is now open
         {% else %}
-          Someone closed the {{ trigger.to_state.name }}
+          The {{ trigger.to_state.name }} is now closed
         {% endif %}
