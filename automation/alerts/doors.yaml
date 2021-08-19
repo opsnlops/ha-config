@@ -1,8 +1,10 @@
-- alias: "Alert - Entryway Door"
-  id: "alert_entryway_door"
+- alias: "Alert - Exterior Door"
+  id: "alert_exterior_doors"
   trigger:
     platform: state
-    entity_id: binary_sensor.entryway_door
+    entity_id:
+      - binary_sensor.front_door
+      - binary_sensor.entryway_door
   action:
     service: notify.aprils_devices
     data_template:
@@ -12,8 +14,7 @@
           sound: "shake.caf"
       message: >-
         {% if trigger.to_state.state == 'on' %}
-          Someone opened the Entryway Door
+          Someone opened the {{ trigger.to_state.name }}
         {% else %}
-          Someone closed the Entryway Door
+          Someone closed the {{ trigger.to_state.name }}
         {% endif %}
-  
