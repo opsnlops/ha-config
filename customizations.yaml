@@ -70,6 +70,13 @@ sensor.kitchen_scene_controller_power:
   state_class: measurement
   device_class: power
 
+sensor.mud_room_window_fan_energy:
+  state_class: measurement
+  device_class: energy
+sensor.mud_room_window_fan_power:
+  state_class: measurement
+  device_class: power  
+
 sensor.office_ceiling_fan_energy:
   state_class: measurement
   device_class: energy
