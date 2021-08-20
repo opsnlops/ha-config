@@ -16,3 +16,16 @@
         title: "🌡 South Whidbey Weather"
         message: >-
           It's {{ states('sensor.outside_temperature') }}{{ state_attr('sensor.outside_temperature', 'unit_of_measurement') }} outside
+
+- alias: "Bot - Locate Bunny"
+  id: "bot_locate_bunny_comamnd"
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: "/locate-bunny"
+  action:
+    - service: telegram_bot.send_location
+      data:
+        latitude: "{{ state_attr('person.april', 'latitude') }}"
+        longitude: "{{ state_attr('person.april', 'longitude') }}"
