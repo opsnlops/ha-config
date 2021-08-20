@@ -6,4 +6,4 @@
   api_key: !secret telegram_bot_key
   allowed_chat_ids:
     - !secret bunny_telegram_id
-
+    - !secret aprils_nest_telegram_group_id
