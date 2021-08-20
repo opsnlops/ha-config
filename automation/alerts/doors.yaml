@@ -19,3 +19,24 @@
         {% else %}
           The {{ trigger.to_state.name }} is now closed
         {% endif %}
+
+- alias: "Alert - Doors Locked / Unlocked"
+  id: "alert_doors_locked_unlocked"
+  trigger:
+    platform: state
+    entity_id:
+      - lock.back_door
+      - lock.front_door
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "🔐 {{ trigger.to_state.name }}"
+      data:
+        push:
+          sound: "shake.caf"
+      message: >-
+        {% if trigger.to_state.state == 'locked' %}
+          🔒 {{ trigger.to_state.name }} has been locked 👍🏻
+        {% else %}
+          🔓 {{ trigger.to_state.name }} has been unlocked! 🚨
+        {% endif %}
