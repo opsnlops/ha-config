@@ -34,4 +34,9 @@
       data:
         push:
           sound: "shake.caf"
-      message: "{{ trigger.to_state.name }} is now {{ trigger.to_state.state }}"
+      message: >-
+        {% if trigger.to_state.state == 'locked' %}
+          🔒 {{ trigger.to_state.name }} has been locked 👍🏻
+        {% else %}
+          🔓 {{ trigger.to_state.name }} has been unlocked! 🚨
+        {% endif %}
