@@ -1,0 +1,27 @@
+- alias: "Alert - Home Assistant State Online"
+  id: "alert_home_assistant_state_online"
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "🖥 Home Assistant Online"
+      data:
+        push:
+          sound: "shake.caf"
+      message: "Hello! 👋🏻 Home Assistant is now online!"
+
+- alias: "Alert - Home Assistant State Offline"
+  id: "alert_home_assistant_state_offline"
+  trigger:
+    platform: homeassistant
+    event: shutdown
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "🖥 Home Assistant Offline"
+      data:
+        push:
+          sound: "shake.caf"
+      message: "Farewell! Home Assistant is shutting down 💤"
