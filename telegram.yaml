@@ -1,0 +1,9 @@
+#
+# April's Nest Telegram Bot!
+#
+
+- platform: polling
+  api_key: !secret telegram_bot_key
+  allowed_chat_ids:
+    - !secret bunny_telegram_id
+
