@@ -23,7 +23,7 @@
     platform: event
     event_type: telegram_command
     event_data:
-      command: "/locate-bunny"
+      command: "/locate_bunny"
   action:
     - service: telegram_bot.send_location
       data:
