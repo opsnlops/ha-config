@@ -30,3 +30,18 @@
         target: "{{ trigger.event.data.chat_id }}"
         latitude: "{{ state_attr('person.april', 'latitude') }}"
         longitude: "{{ state_attr('person.april', 'longitude') }}"
+
+- alias: "Bot - Agni"
+  id: "bot_agni_comamnd"
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: "/agni"
+  action:
+    - service: telegram_bot.send_message
+      data:
+        target: "{{ trigger.event.data.chat_id }}"
+        title: "🐾 Second Life"
+        message: >-
+          There are {{ states('sensor.second_life_concurrency') }} {{ state_attr('sensor.second_life_concurrency', 'unit_of_measurement') }} logged into Second Life
