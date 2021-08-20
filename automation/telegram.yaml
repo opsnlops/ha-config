@@ -27,5 +27,6 @@
   action:
     - service: telegram_bot.send_location
       data:
+        target: "{{ trigger.event.data.chat_id }}"
         latitude: "{{ state_attr('person.april', 'latitude') }}"
         longitude: "{{ state_attr('person.april', 'longitude') }}"
