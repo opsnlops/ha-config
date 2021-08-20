@@ -3,6 +3,7 @@
   trigger:
     platform: state
     entity_id:
+      - binary_sensor.back_door
       - binary_sensor.front_door
       - binary_sensor.entryway_door
   action:

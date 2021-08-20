@@ -28,6 +28,8 @@ sensor.workshop_relative_humidity:
   state_class: measurement
 
 # Door and window sensors
+binary_sensor.back_door:
+  device_class: door
 binary_sensor.entryway_door:
   device_class: door
 binary_sensor.front_door:
