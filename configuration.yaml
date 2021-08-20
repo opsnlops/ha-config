@@ -70,11 +70,14 @@ notify:
   - platform: telegram
     name: bunny_telegram
     chat_id: !secret bunny_telegram_id
+  - platform: telegram
+    name: aprils_nest_telegram_group
+    chat_id: !secret aprils_nest_telegram_group_id
   - name: aprils_devices
     platform: group
     services:
       - service: mobile_app_april_s_phone
-      - service: bunny_telegram
+      - service: aprils_nest_telegram_group
 
 # Templated fan to make the guest room fan look like a fan to HA
 fan:
