@@ -42,7 +42,7 @@ binary_sensor.family_room_east_window:
   device_class: window
 binary_sensor.family_room_west_window:
   device_class: window
-binary_sesnor.laundry_room_window:
+binary_sensor.laundry_room_window:
   device_class: window
 
 ###
