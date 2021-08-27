@@ -4,8 +4,10 @@
     platform: state
     entity_id:
       - binary_sensor.back_door
-      - binary_sensor.front_door
+      - binary_sensor.bedroom_door
       - binary_sensor.entryway_door
+      - binary_sensor.forbidden_door
+      - binary_sensor.front_door
   action:
     service: notify.aprils_devices
     data_template:

@@ -1,0 +1,21 @@
+- alias: "Alert - Windows"
+  id: "alert_windows"
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.family_room_east_window
+      - binary_sensor.family_room_west_window
+      - binary_sensor.laundry_room_window
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "🪟 {{ trigger.to_state.name }}"
+      data:
+        push:
+          sound: "shake.caf"
+      message: >-
+        {% if trigger.to_state.state == 'on' %}
+          The {{ trigger.to_state.name }} is now open
+        {% else %}
+          The {{ trigger.to_state.name }} is now closed
+        {% endif %}
