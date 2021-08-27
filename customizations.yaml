@@ -34,10 +34,11 @@ binary_sensor.bedroom_door:
   device_class: door
 binary_sensor.entryway_door:
   device_class: door
+binary_sensor.forbidden_door:
+  device_class: door
 binary_sensor.front_door:
   device_class: door
-binary_sensor.office_forbidden_door:
-  device_class: door
+
 binary_sensor.family_room_east_window:
   device_class: window
 binary_sensor.family_room_west_window:
