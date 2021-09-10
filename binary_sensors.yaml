@@ -45,6 +45,14 @@
       device_class: motion
       value_template: "{{ is_state('sensor.laundry_room_burglar', '8') }}"
 
+# Inovelli LZW60
+- platform: template
+  sensors:
+    mud_room_motion:
+      friendly_name: "Mud Room Motion"
+      device_class: motion
+      value_template: "{{ is_state('sensor.mud_room_burglar', '8') }}"
+
 # This one is an Aeotec MutliSensor 6
 - platform: template
   sensors:
