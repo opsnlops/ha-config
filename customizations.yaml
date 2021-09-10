@@ -20,8 +20,10 @@ sensor.laundry_room_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
   state_class: measurement
-
-# ...and the Aerotec
+sensor.mud_room_relative_humidity:
+  unit_of_measurement: "%"
+  device_class: humidity
+  state_class: measurement
 sensor.workshop_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
