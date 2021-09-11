@@ -159,4 +159,4 @@
       friendly_name: "Workshop Carbon Monoxide"
       unique_id: "ef32759d-d3a9-4401-ae2c-2ea2d62c0f6b"
       device_class: gas
-      value_template: "{{ is_state('sensor.workshop_smoke_detector_carbon_monoxide, '2') }}"
+      value_template: "{{ is_state('sensor.workshop_smoke_detector_carbon_monoxide', '2') }}"
