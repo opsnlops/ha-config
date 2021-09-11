@@ -1,0 +1,56 @@
+- platform: template
+  sensors:
+    kitchen_fire_alarm_status:
+      friendly_name: "Kitchen Fire Alarm Status"
+      unique_id: "a6d3dbdc-8d3b-4e98-b2ef-f9c725f5ab08"
+      value_template: >-
+        {% if is_state('sensor.kitchen_smoke_detector_smoke', '3') %}
+          Testing
+        {% elif is_state('sensor.kitchen_smoke_detector_smoke', '2') %}
+          Smoke
+        {% elif is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '2') %}
+          CO
+        {% elif is_state('sensor.kitchen_smoke_detector_smoke', '6') or is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '6') %}
+          Silenced
+        {% elif is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '5') %}
+          CO_EOL
+        {% else %}
+          Clear
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.kitchen_smoke_detector_smoke', '3') %}
+          mdi:cloud-alert
+        {% elif is_state('sensor.kitchen_smoke_detector_smoke', '2') %}
+          mdi:fire
+        {% elif is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '2') %}
+          mdi:cloud-alert
+        {% elif is_state('sensor.kitchen_smoke_detector_smoke', '6') or is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '6') %}
+          mdi:volume-mute
+        {% elif is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '5') %}
+          mdi:cloud-alert
+        {% else %}
+          mdi:smoke-detector
+        {% endif %}
+- platform: template
+  sensors:
+    kitchen_fire_alarm_health:
+      friendly_name: "Kitchen Fire Alarm Health"
+      unique_id: "bb8180b5-33e7-4fc0-a65c-b092b8dd4d3e"
+      value_template: >-
+        {% if is_state('sensor.kitchen_smoke_detector_system', '5') %}
+          Healthy
+        {% elif is_state('sensor.kitchen_smoke_detector_system', '1') %}
+          Malfunction Detected
+        {% elif is_state('sensor.kitchen_smoke_detector_system', '0')  %}
+          Malfunction Clear
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.kitchen_smoke_detector_system', '5') %}
+          mdi:check-decagram
+        {% elif is_state('sensor.kitchen_smoke_detector_system', '1') %}
+          mdi:alert
+        {% elif is_state('sensor.kitchen_smoke_detector_system', '0')  %}
+          mdi:alert-circle-check
+        {% else %}
+          mdi:help-rhombus
+        {% endif %}
