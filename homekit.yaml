@@ -45,7 +45,7 @@
       - switch.patio_lights
 
     exclude_entity_globs:
-      - binary_sensor.april_mpb*
+      - binary_sensor.april_mbp*
       - binary_sensor.april_s_work*
       - binary_sensor.cottontail*
       - binary_sensor.hotot*
