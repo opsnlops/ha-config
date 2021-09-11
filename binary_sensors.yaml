@@ -128,3 +128,35 @@
       unique_id: "1bd9c920-b042-4319-a35f-879fb3071abd"
       device_class: gas
       value_template: "{{ is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '2') }}"
+
+# Mud Room
+- platform: template
+  sensors:
+    mud_room_smoke:
+      friendly_name: "Mud Room Smoke"
+      unique_id: "71dc046e-08de-4b1a-8bdb-a8a0697f82b8"
+      device_class: smoke
+      value_template: "{{ is_state('sensor.mud_room_smoke_detector_smoke', '2') }}"
+- platform: template
+  sensors:
+    mud_room_carbon_monoxide:
+      friendly_name: "Mud Room Carbon Monoxide"
+      unique_id: "1ec45101-f16d-4b74-b41a-29725f9a0b4f"
+      device_class: gas
+      value_template: "{{ is_state('sensor.mud_room_smoke_detector_carbon_monoxide', '2') }}"
+
+# Workshop
+- platform: template
+  sensors:
+    workshop_smoke:
+      friendly_name: "Workshop Smoke"
+      unique_id: "eb960bf7-dbde-42c0-b891-1f573e7c58e3"
+      device_class: smoke
+      value_template: "{{ is_state('sensor.workshop_smoke_detector_smoke', '2') }}"
+- platform: template
+  sensors:
+    workshop_carbon_monoxide:
+      friendly_name: "Workshop Carbon Monoxide"
+      unique_id: "ef32759d-d3a9-4401-ae2c-2ea2d62c0f6b"
+      device_class: gas
+      value_template: "{{ is_state('sensor.workshop_smoke_detector_carbon_monoxide, '2') }}"
