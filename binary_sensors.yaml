@@ -64,34 +64,8 @@
 #
 # Smoke and CO alarms
 #
-- platform: template
-  sensors:
-    guest_room_smoke:
-      friendly_name: "Guest Room Smoke"
-      unique_id: "c142accc-aa1e-4dd3-9720-03ab269c95f3"
-      device_class: smoke
-      value_template: "{{ is_state('sensor.guest_room_smoke_alarm_smoke', '2') }}"
-- platform: template
-  sensors:
-    guest_room_carbon_monoxide:
-      friendly_name: "Guest Room Carbon Monoxide"
-      unique_id: "533e7932-a0b2-440b-8380-842c56fe8617"
-      device_class: safety
-      value_template: "{{ is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '2') }}"
-- platform: template
-  sensors:
-    family_room_smoke:
-      friendly_name: "Family Room Smoke"
-      unique_id: "9b5cba89-81ad-4d13-a03b-e0b427eaaaac"
-      device_class: smoke
-      value_template: "{{ is_state('sensor.family_room_smoke_detector_smoke', '2') }}"
-- platform: template
-  sensors:
-    family_room_carbon_monoxide:
-      friendly_name: "Family Room Carbon Monoxide"
-      unique_id: "78967f4b-5390-4e6a-b764-28ec03e2dc3f"
-      device_class: safety
-      value_template: "{{ is_state('sensor.family_room_smoke_detector_carbon_monoxide', '2') }}"
+
+# Bunny's Room
 - platform: template
   sensors:
     bunnys_room_smoke:
@@ -104,5 +78,53 @@
     bunnys_room_carbon_monoxide:
       friendly_name: "Bunny's Room Carbon Monoxide"
       unique_id: "a6a57840-ab4a-492c-bcb6-01390f079101"
-      device_class: safety
+      device_class: gas
       value_template: "{{ is_state('sensor.bunnys_room_smoke_detector_carbon_monoxide', '2') }}"
+
+# Family Room
+- platform: template
+  sensors:
+    family_room_smoke:
+      friendly_name: "Family Room Smoke"
+      unique_id: "9b5cba89-81ad-4d13-a03b-e0b427eaaaac"
+      device_class: smoke
+      value_template: "{{ is_state('sensor.family_room_smoke_detector_smoke', '2') }}"
+- platform: template
+  sensors:
+    family_room_carbon_monoxide:
+      friendly_name: "Family Room Carbon Monoxide"
+      unique_id: "78967f4b-5390-4e6a-b764-28ec03e2dc3f"
+      device_class: gas
+      value_template: "{{ is_state('sensor.family_room_smoke_detector_carbon_monoxide', '2') }}"
+
+# Guest Room
+- platform: template
+  sensors:
+    guest_room_smoke:
+      friendly_name: "Guest Room Smoke"
+      unique_id: "c142accc-aa1e-4dd3-9720-03ab269c95f3"
+      device_class: smoke
+      value_template: "{{ is_state('sensor.guest_room_smoke_alarm_smoke', '2') }}"
+- platform: template
+  sensors:
+    guest_room_carbon_monoxide:
+      friendly_name: "Guest Room Carbon Monoxide"
+      unique_id: "533e7932-a0b2-440b-8380-842c56fe8617"
+      device_class: gas
+      value_template: "{{ is_state('sensor.guest_room_smoke_alarm_carbon_monoxide', '2') }}"
+
+# Kitchen
+- platform: template
+  sensors:
+    kitchen_smoke:
+      friendly_name: "Kitchen Smoke"
+      unique_id: "34db2aff-49bb-4a7f-bc7a-7b5a473bfe0d"
+      device_class: smoke
+      value_template: "{{ is_state('sensor.kitchen_smoke_detector_smoke', '2') }}"
+- platform: template
+  sensors:
+    kitchen_carbon_monoxide:
+      friendly_name: "Kitchen Carbon Monoxide"
+      unique_id: "1bd9c920-b042-4319-a35f-879fb3071abd"
+      device_class: gas
+      value_template: "{{ is_state('sensor.kitchen_smoke_detector_carbon_monoxide', '2') }}"
