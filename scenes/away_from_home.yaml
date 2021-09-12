@@ -125,6 +125,8 @@ entities:
   switch.office_window_fan:
     state: "off"
 
-  # Turn off the fireplace
+  # Turn off the flamethrowers 🔥
   switch.office_flamethrower:
+    state: "off"
+  switch.family_room_flamethrower:
     state: "off"
