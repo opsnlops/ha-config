@@ -29,6 +29,15 @@ sensor.workshop_relative_humidity:
   device_class: humidity
   state_class: measurement
 
+# Flag the air quality sensors as something HomeKit understands
+sensor.outside_pm_1um:
+  state_class: measurement
+sensor.outside_pm_2_5um:
+  device_class: pm25
+  state_class: measurement
+sensor.outside_pm_10um:
+  state_class: measurement
+
 # Door and window sensors
 binary_sensor.back_door:
   device_class: door
