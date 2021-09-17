@@ -1,13 +1,25 @@
+#
+# Set up the lights in the office for a normal cold and wet
+# Seattle work day
+#
+
 name: Work at Home
 entities:
+  # On the desk
   light.office_computer_table_lamp:
-    brightness: 254
     state: "on"
+    brightness: 254
     xy_color:
       - 0.455
       - 0.3857
-  light.office_fairy_lights:
+  light.office_desk_edge_light:
     state: "on"
+    brightness: 254
+    xy_color:
+      - 0.455
+      - 0.3857
+
+  # On the filing cabinet
   light.office_filing_cabinet_lamp:
     brightness: 165
     state: "on"
@@ -15,8 +27,15 @@ entities:
       - 0.455
       - 0.3857
 
-  switch.lava_lamp:
+  # On the floor
+  light.office_floor_light:
+    brightness: 230
     state: "on"
+    xy_color:
+      - 0.2444
+      - 0.0978
 
-  switch.office_ceiling_fan:
+  light.office_stars:
+    state: "on"
+  switch.lava_lamp:
     state: "on"
