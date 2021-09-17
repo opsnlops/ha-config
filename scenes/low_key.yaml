@@ -132,7 +132,7 @@ entities:
       - 0.3978
   light.office_floor_light:
     state: "off"
-  light.office_fairy_lights:
+  switch.office_stars:
     state: "off"
   switch.lava_lamp:
     state: "off"

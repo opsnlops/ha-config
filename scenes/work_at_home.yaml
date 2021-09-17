@@ -35,7 +35,7 @@ entities:
       - 0.2444
       - 0.0978
 
-  light.office_stars:
+  switch.office_stars:
     state: "on"
   switch.lava_lamp:
     state: "on"

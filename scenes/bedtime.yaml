@@ -94,7 +94,7 @@ entities:
     xy_color:
       - 0.1718
       - 0.7406
-  light.office_fairy_lights:
+  switch.office_stars:
     state: "off"
   light.office_filing_cabinet_lamp:
     brightness: 76
