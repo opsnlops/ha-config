@@ -6,7 +6,7 @@
 name: Work at Home
 entities:
   # On the desk
-  light.office_computer_table_lamp:
+  light.office_desk_light:
     state: "on"
     brightness: 254
     xy_color:
@@ -20,7 +20,7 @@ entities:
       - 0.3857
 
   # On the filing cabinet
-  light.office_filing_cabinet_lamp:
+  light.office_filing_cabinet_light:
     brightness: 165
     state: "on"
     xy_color:
