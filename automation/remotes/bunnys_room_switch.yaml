@@ -1,0 +1,87 @@
+#######
+#
+# Bunny's Room Switch
+#
+#  This is the switch that's in my bedroom. Sometimes I just don't wanna
+#  yell at the lights, and I'd rather press a button.
+#
+
+# Top Button (On)
+- alias: "Bunny's Room Switch: Bedtime"
+  id: "73b88f1a-01e2-4f25-b23c-69472298c824"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "bunnys_room_switch"
+        event: 1002
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.bedtime
+
+# Second Button (🔆)
+- alias: "Bunny's Room Switch: Turn on the fan"
+  id: "e82fdfec-6bd6-4b88-8935-c18b4bd222d9"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "bunnys_room_switch"
+        event: 2002
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.bedroom_fan
+- alias: "Bunny's Room Switch: Turn off the fan"
+  id: "79b17581-21ac-41bb-a369-1846e2b73f94"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "bunnys_room_switch"
+        event: 2003
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.bedroom_fan
+
+# Third Button (🔅)
+- alias: "Bunny's Room Switch: Brighten the outside lights"
+  id: "986a79a3-1917-43c8-96e9-762ead770999"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "bunnys_room_switch"
+        event: 3002
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.at_sunset
+- alias: "Bunny's Room Switch: Make it dark again"
+  id: "7387a1d9-3d17-4144-a96f-56bfb0d63343"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "bunnys_room_switch"
+        event: 3003
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.sleepy_time
+
+# Bottom Button (hue)
+- alias: "Bunny's Room Switch: Goodnite Button 🌕"
+  id: "91e74adb-bffb-404d-ae51-4a129037e69b"
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: "bunnys_room_switch"
+        event: 4002
+  action:
+    service: homeassistant.turn_on
+    entity_id: scene.goodnight
