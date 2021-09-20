@@ -9,8 +9,7 @@ entities:
     xy_color:
       - 0.1374
       - 0.0408
-  light.dining_room_fairy_lights:
-    state: "on"
+
   light.kitchen_cooktop_north:
     brightness: 124
     state: "on"
