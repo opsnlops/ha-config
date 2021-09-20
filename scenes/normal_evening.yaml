@@ -11,8 +11,6 @@ entities:
       - 0.0408
   light.dining_room_fairy_lights:
     state: "on"
-  light.hallway_stars:
-    state: "on"
   light.kitchen_cooktop_north:
     brightness: 124
     state: "on"
@@ -188,7 +186,7 @@ entities:
       - 0.606
       - 0.372
   switch.office_stars:
-    state: "on"
+    state: "off"
   switch.lava_lamp:
     state: "off"
   switch.office_ceiling_fan:

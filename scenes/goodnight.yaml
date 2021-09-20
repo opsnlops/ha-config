@@ -11,8 +11,6 @@ entities:
       - 0.3612
   light.dining_room_fairy_lights:
     state: "off"
-  light.hallway_stars:
-    state: "off"
 
   # Kitchen
   light.kitchen_cooktop_north:

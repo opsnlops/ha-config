@@ -28,8 +28,6 @@ entities:
     state: "on"
   light.guest_room_stars:
     state: "on"
-  light.hallway_stars:
-    state: "on"
   light.kitchen_counter_north:
     brightness: 82
     state: "on"

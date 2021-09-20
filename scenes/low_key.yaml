@@ -11,8 +11,7 @@ entities:
       - 0.3978
   light.dining_room_fairy_lights:
     state: "off"
-  light.hallway_stars:
-    state: "off"
+
   light.kitchen_cooktop_north:
     brightness: 45
     state: "on"
