@@ -34,6 +34,9 @@ homekit: !include homekit.yaml
 
 zone: !include zones.yaml
 
+# Enable streaming cameras
+stream:
+
 # Enable ZWave! This might be better in it's own file eventually
 zwave:
   usb_path: /dev/ttyACM0
