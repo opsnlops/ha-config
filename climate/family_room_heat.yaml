@@ -1,0 +1,19 @@
+- platform: generic_thermostat
+  name: "Family Room Heat"
+  id: family_room_heat
+  unique_id: "ff25b40d-706a-46f1-9c80-18ab06eb4e3d"
+  heater: switch.family_room_flamethrower
+  target_sensor: sensor.family_room_temperature
+  min_temp: 50
+  max_temp: 90
+  ac_mode: false
+  target_temp: 68
+  cold_tolerance: 2
+  hot_tolerance: 0.5
+  min_cycle_duration:
+    seconds: 60
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 50
+  precision: 0.5
