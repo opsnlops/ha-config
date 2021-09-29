@@ -15,4 +15,4 @@
     minutes: 3
   initial_hvac_mode: "off"
   away_temp: 50
-  precision: 0.25
+  precision: 0.5
