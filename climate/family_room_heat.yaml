@@ -7,7 +7,7 @@
   max_temp: 90
   ac_mode: false
   target_temp: 68
-  cold_tolerance: 2
+  cold_tolerance: 1.5
   hot_tolerance: 0.5
   min_cycle_duration:
     seconds: 60
@@ -15,4 +15,4 @@
     minutes: 3
   initial_hvac_mode: "off"
   away_temp: 50
-  precision: 0.5
+  precision: 0.25
