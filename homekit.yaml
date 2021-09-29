@@ -52,6 +52,11 @@
       - switch.kitchen_scene_controller_switch
       - switch.patio_lights
 
+      # These are provided from the thermostat function
+      - sensor.family_room_temperature
+      - sensor.family_room_temperature_hue
+      - sensor.office_temperature
+
     exclude_entity_globs:
       - binary_sensor.april_mbp*
       - binary_sensor.april_s_work*
