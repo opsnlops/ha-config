@@ -1,0 +1,213 @@
+#
+# Make all of the lights bright and time for cleaning
+#
+
+name: Clean all the Things
+entities:
+  light.dining_room_bookshelf:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
+  light.kitchen_cooktop_north:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_cooktop_south:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_1:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_2:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_3:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_4:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_5:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_hanging_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_over_fridge_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.pink_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.purple_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.yellow_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  switch.family_room_fairy_lights:
+    state: "on"
+  light.living_room_fireplace_backlight:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.living_room_sofa:
+    brightness: 140
+    state: "on"
+    xy_color:
+      - 0.2513
+      - 0.1382
+  light.over_fireplace:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.living_room_tv_backlighting:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.2513
+      - 0.1382
+
+  # Bedroom
+  light.bedroom_fairy_light_1:
+    state: "on"
+  light.bedroom_fairy_light_2:
+    state: "on"
+  light.bedroom_left_nightstand_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_right_nightstand_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_window_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
+  # Guest Room
+  light.guest_room_stars:
+    state: "on"
+  light.guest_room_overhead_light:
+    state: "on"
+    brightness: 100
+  fan.guest_room_fan:
+    state: "on"
+    speed: "medium"
+  light.guest_room_left_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.guest_room_right_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
+  #
+  # Office
+  #
+  # All of the lights are blue except for some fire effects
+  #
+  light.office_desk_edge_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_desk_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_filing_cabinet_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_floor_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  switch.office_stars:
+    state: "on"
+  switch.lava_lamp:
+    state: "off"
+
+  # Workshop
+  light.workshop_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  switch.workshop_fairy_lights:
+    state: "on"
+
+  light.hallway_light:
+    state: "on"
+    brightness: 254
+
+  light.entryway_lights:
+    state: "on"
+    brightness: 254
+
+  light.laundry_room_light:
+    state: "on"
+    brightness: 254
