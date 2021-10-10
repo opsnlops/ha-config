@@ -47,6 +47,7 @@
       - sensor.accuweather_precipitation
       - sensor.accuweather_temperature
       - sensor.accuweather_wind
+      - sensor.family_room_eco2
       - switch.bedroom_air_filter
       - switch.bunny_s_switch
       - switch.kitchen_scene_controller_switch
