@@ -84,6 +84,21 @@ notify:
       - service: mobile_app_april_s_phone
       - service: aprils_nest_telegram_group
 
+# Toss our metrics to influxdb so we can keep lots of history
+influxdb:
+  api_version: 2
+  ssl: false
+  host: 10.3.2.5
+  port: 8086
+  token: !secret influxdb_token
+  organization: !secret influxdb_organization
+  bucket: "Home Assistant"
+  tags:
+    source: HA
+  tags_attributes:
+    - friendly_name
+  default_measurement: units
+
 # Templated fan to make the guest room fan look like a fan to HA
 fan:
   - platform: template
