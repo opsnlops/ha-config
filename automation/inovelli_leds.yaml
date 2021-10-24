@@ -14,9 +14,10 @@
     entity_id: "binary_sensor.half_bathroom_motion"
     to: "on"
   action:
-    service: zwave.set_config_parameter
+    service: zwave_js.bulk_set_partial_config_parameters
+    target:
+      entity_id: switch.family_room_ceiling_fan
     data:
-      node_id: 18
       parameter: 8
       value: 72353534
 - alias: "Notification - Half Bath Empty"
@@ -26,9 +27,10 @@
     to: "off"
     for: "00:00:15"
   action:
-    service: zwave.set_config_parameter
+    service: zwave_js.bulk_set_partial_config_parameters
+    target:
+      entity_id: switch.family_room_ceiling_fan
     data:
-      node_id: 18
       parameter: 8
       value: 67326
 
