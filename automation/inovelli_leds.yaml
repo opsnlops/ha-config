@@ -43,44 +43,13 @@
       - "lock.back_door"
     to: "unlocked"
   action:
-    - service: zwave.set_config_parameter
+    - service: zwave_js.bulk_set_partial_config_parameters
+      target:
+        entity_id:
+          - switch.family_room_ceiling_fan
+          - switch.kitchen_scene_controller
+          - switch.office_ceiling_fan
       data:
-        node_id: 18
-        parameter: 8
-        value: 68094506
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 20
-        parameter: 16
-        value: 34474539
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 21
-        parameter: 16
-        value: 34474539
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 22
-        parameter: 16
-        value: 34474539
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 24
-        parameter: 16
-        value: 34474539
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 28
-        parameter: 24
-        value: 68094507
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 29
-        parameter: 8
-        value: 68094506
-    - service: zwave.set_config_parameter
-      data:
-        node_id: 30
         parameter: 8
         value: 68094506
 
