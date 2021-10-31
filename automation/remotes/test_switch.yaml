@@ -41,7 +41,7 @@
   action:
     service: script.lzw45_pixel_effect
     data:
-      service: zwave.set_config_parameter
+      service: zwave_js.bulk_set_partial_config_parameters
       lzw45: light.workshop_light_strip
       effect: aurora
       brightness_pct: 99
