@@ -1,0 +1,20 @@
+- alias: "Alert - Water Detected"
+  id: "alert_water_detected"
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.hot_water_heater_leak
+      - binary_sensor.pressure_tank_leak
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "💧 {{ trigger.to_state.name }}"
+      data:
+        push:
+          sound: "3rd_Party_Critical_Haptic.caf"
+      message: >-
+        {% if trigger.to_state.state == 'on' %}
+          ⚠️ {{ trigger.to_state.name }} detects water
+        {% else %}
+          🥳 {{ trigger.to_state.name }} detection cleared
+        {% endif %}
