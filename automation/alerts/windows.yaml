@@ -6,6 +6,7 @@
       - binary_sensor.family_room_east_window
       - binary_sensor.family_room_west_window
       - binary_sensor.laundry_room_window
+      - binary_sensor.mud_room_window
   action:
     service: notify.aprils_devices
     data_template:
