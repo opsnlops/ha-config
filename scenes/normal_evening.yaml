@@ -1,7 +1,5 @@
 name: Normal Evening
 entities:
-  light.hallway_bathroom_stars:
-    state: "on"
 
   light.dining_room_bookshelf:
     brightness: 155
@@ -200,6 +198,14 @@ entities:
       - 0.0445
   switch.workshop_fairy_lights:
     state: "on"
+
+  # Hallway Bathroom
+  light.hallway_bathroom_stars:
+    state: "on"
+  light.hallway_bathroom_mirror_light:
+    state: "on"
+    brightness: 111
+
 
   light.hallway_light:
     state: "on"

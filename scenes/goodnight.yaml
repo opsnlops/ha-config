@@ -1,15 +1,16 @@
 name: Goodnight
 entities:
-  light.hallway_bathroom_stars:
-    state: "off"
-
   light.dining_room_bookshelf:
     brightness: 76
     state: "off"
     xy_color:
       - 0.6213
       - 0.3612
-  light.dining_room_fairy_lights:
+
+  # Hallway Bathroom
+  light.hallway_bathroom_stars:
+    state: "off"
+  light.hallway_bathroom_mirror_light:
     state: "off"
 
   # Kitchen
@@ -67,7 +68,7 @@ entities:
     xy_color:
       - 0.2117
       - 0.1087
-  
+
   # Bedroom
   light.bedroom_fairy_light_1:
     state: "off"
@@ -152,4 +153,10 @@ entities:
     state: "off"
 
   light.patio_lights:
+    state: "off"
+
+  # Turn off the flamethrowers 🔥
+  climate.family_room_heat:
+    state: "off"
+  climate.office_heat:
     state: "off"

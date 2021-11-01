@@ -28,25 +28,6 @@ entities:
   light.guest_room_stars:
     state: "on"
 
-  light.kitchen_counter_north:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.5021
-      - 0.4135
-  light.kitchen_counter_south:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.5023
-      - 0.4135
-  light.kitchen_pantry_overhead:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.2296
-      - 0.0831
-
   # Family Room
   light.pink_lamp:
     brightness: 152
@@ -95,42 +76,22 @@ entities:
   switch.family_room_fairy_lights:
     state: "off"
 
-  # Office
-  light.office_computer_table_lamp:
-    brightness: 247
-    state: "on"
-    xy_color:
-      - 0.5023
-      - 0.4135
-  switch.office_stars:
+  # Kitchen
+  light.kitchen_cooktop_north:
     state: "off"
-  light.office_filing_cabinet_lamp:
-    brightness: 193
-    state: "on"
-    xy_color:
-      - 0.5023
-      - 0.4135
-  light.office_overhead_east:
-    brightness: 58
-    state: "on"
-    xy_color:
-      - 0.2037
-      - 0.0712
-  light.office_overhead_north:
-    brightness: 68
-    state: "on"
-    xy_color:
-      - 0.2177
-      - 0.078
-  light.office_overhead_south:
-    brightness: 73
-    state: "on"
-    xy_color:
-      - 0.2163
-      - 0.077
-  light.office_overhead_west:
-    brightness: 114
-    state: "on"
-    xy_color:
-      - 0.5023
-      - 0.4135
+  light.kitchen_cooktop_south:
+    state: "off"
+  light.kitchen_counter_light_1:
+    state: "off"
+  light.kitchen_counter_light_2:
+    state: "off"
+  light.kitchen_counter_light_3:
+    state: "off"
+  light.kitchen_counter_light_4:
+    state: "off"
+  light.kitchen_counter_light_5:
+    state: "off"
+  light.kitchen_hanging_light:
+    state: "off"
+  light.kitchen_over_fridge_light:
+    state: "off"

@@ -6,9 +6,6 @@
 
 name: Good Morning
 entities:
-  light.hallway_bathroom_stars:
-    state: "on"
-
   # Bedroom
   light.bedroom_fairy_light_1:
     state: "on"
@@ -168,3 +165,10 @@ entities:
       - 0.3291
   switch.office_stars:
     state: "off"
+
+  # Hallway Bathroom
+  light.hallway_bathroom_stars:
+    state: "on"
+  light.hallway_bathroom_mirror_light:
+    state: "on"
+    brightness: 254

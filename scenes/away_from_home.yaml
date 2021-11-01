@@ -1,4 +1,5 @@
-name: Away from Home
+name:
+  Away from Home
   #
   # This is the scene that's used when I'm outta the house. It looks
   # a lot like "Goodnight." It turns off everything other than the
@@ -6,11 +7,15 @@ name: Away from Home
   #
 
 entities:
-  light.hallway_bathroom_stars:
-    state: "off"
   light.dining_room_bookshelf:
     state: "off"
   light.dining_room_fairy_lights:
+    state: "off"
+
+  # Hallway Bathroom
+  light.hallway_bathroom_stars:
+    state: "off"
+  light.hallway_bathroom_mirror_light:
     state: "off"
 
   # Kitchen
@@ -124,7 +129,7 @@ entities:
     state: "off"
 
   # Turn off the flamethrowers 🔥
-  switch.office_flamethrower:
+  climate.family_room_heat:
     state: "off"
-  switch.family_room_flamethrower:
+  climate.office_heat:
     state: "off"

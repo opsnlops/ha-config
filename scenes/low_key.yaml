@@ -1,7 +1,5 @@
 name: Low Key
 entities:
-  light.hallway_bathroom_stars:
-    state: "on"
 
   light.dining_room_bookshelf:
     brightness: 48
@@ -189,6 +187,13 @@ entities:
       - 0.3978
   switch.workshop_fairy_lights:
     state: "off"
+
+  # Hallway Bathroom
+  light.hallway_bathroom_stars:
+    state: "on"
+  light.hallway_bathroom_mirror_light:
+    state: "on"
+    brightness: 28
 
   light.patio_lights:
     state: "off"
