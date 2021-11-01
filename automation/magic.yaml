@@ -21,24 +21,4 @@
     - service: scene.turn_on
       entity_id: scene.low_key
 
-# Turn on the lights in the hallway bathroom when motion is detected
-- alias: Turn on the hallway bathroom stars if there's motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.hallway_bathroom_motion
-    to: "on"
-  action:
-    service: light.turn_on
-    entity_id: light.hallway_bathroom_stars
-
-- alias: Turn off the hallway bathroom stars once motion stops
-  trigger:
-    platform: state
-    entity_id: binary_sensor.hallway_bathroom_motion
-    to: "off"
-    for:
-      minutes: 15
-  action:
-    service: light.turn_off
-    entity_id: light.hallway_bathroom_stars
   
