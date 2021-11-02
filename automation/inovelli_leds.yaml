@@ -33,22 +33,3 @@
     data:
       parameter: 8
       value: 67326
-
-# Send a notifcation when the front door unlocks
-- alias: "Notification - Front Door Unlocked"
-  trigger:
-    platform: state
-    entity_id:
-      - "lock.front_door"
-      - "lock.back_door"
-    to: "unlocked"
-  action:
-    - service: zwave_js.bulk_set_partial_config_parameters
-      target:
-        entity_id:
-          - switch.family_room_ceiling_fan
-          - switch.kitchen_scene_controller
-          - switch.office_ceiling_fan
-      data:
-        parameter: 8
-        value: 68094506
