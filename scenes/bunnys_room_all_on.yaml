@@ -1,0 +1,24 @@
+name: Bunnys Room All On
+entities:
+  light.bedroom_fairy_light_1:
+    state: "on"
+  light.bedroom_fairy_light_2:
+    state: "on"
+  light.bedroom_left_nightstand_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_right_nightstand_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_window_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
