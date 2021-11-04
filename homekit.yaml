@@ -32,7 +32,7 @@
       - switch.patio_lights
 
     exclude_entity_globs:
-      - switch.*_flamethower_camera
+      - switch.*_flamethrower_camera
       - switch.sonoff_test*
       - switch.test_plug_2*
       - switch.sk6812*
