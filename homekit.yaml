@@ -32,9 +32,12 @@
       - switch.patio_lights
 
     exclude_entity_globs:
+      - switch.*_flamethower_camera
       - switch.sonoff_test*
       - switch.test_plug_2*
       - switch.sk6812*
+      - switch.*_restart_in_safe_mode
+      - switch.ws2812b*
 
     # These are here because HomeKit does a weird thing. It sends an "on"
     # command, and then an "off" command when you activate a scene. I'm not
