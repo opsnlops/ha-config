@@ -14,6 +14,11 @@
     exclude_entities:
       - light.guest_room_fan_as_light
 
+    exclude_entity_globs:
+      - light.sk6812*
+      - light.ws2812b*
+
+
 # The one for non-lights
 - name: HA (Non-lights)
   mode: bridge
@@ -28,6 +33,7 @@
       - switch.bedroom_air_filter
       - switch.bunny_s_switch
       - switch.bunnys_room_scene_controller
+      - switch.family_room_fairy_lights
       - switch.kitchen_scene_controller
       - switch.patio_lights
 
