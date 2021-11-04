@@ -20,88 +20,22 @@
   port: 22666
   filter:
     include_domains:
-      - binary_sensor
       - climate
       - fan
       - switch
-      - sensor
 
     exclude_entities:
-      - binary_sensor.back_door_access_control_lock_jammed
-      - binary_sensor.back_door_low_battery_level
-      - binary_sensor.front_door_low_battery_level
-      - binary_sensor.guest_room_fan_controller_sensor
-      - binary_sensor.guest_room_sensor_sensor
-      - binary_sensor.guest_room_smoke_alarm_sensor
-      - binary_sensor.half_bathroom_sensor
-      - binary_sensor.hallway_bathroom_sensor
-      - binary_sensor.kitchen_sensor
-      - binary_sensor.kitchen_smoke_detector_sensor
-      - binary_sensor.laundry_room_sensor_sensor
-      - binary_sensor.mud_room_sensor
-      - binary_sensor.mud_room_smoke_detector_sensor
-      - binary_sensor.remote_ui
-      - binary_sensor.rpi_power_status
-      - binary_sensor.updater
-      - binary_sensor.workshop_sensor
-      - binary_sensor.workshop_smoke_detector_sensor
-      - sensor.accuweather_precipitation
-      - sensor.accuweather_temperature
-      - sensor.accuweather_wind
-      - sensor.family_room_eco2
-      - sensor.freezer_temperature
-      - sensor.fridge_temperature
-      - sensor.office_co2_equivalent
       - switch.bedroom_air_filter
       - switch.bunny_s_switch
       - switch.bunnys_room_scene_controller
       - switch.kitchen_scene_controller
       - switch.patio_lights
 
-      # These are provided from the thermostat function
-      - sensor.family_room_temperature
-      - sensor.family_room_temperature_hue
-      - sensor.office_temperature
-      - sensor.office_temperature_hue
-
     exclude_entity_globs:
-      - binary_sensor.april_mbp*
-      - binary_sensor.april_s_work*
-      - binary_sensor.cottontail*
-      - binary_sensor.hotot*
       - switch.sonoff_test*
       - switch.test_plug_2*
-      - switch.ws2812b*
-      - sensor.sk6812*
-      - sensor.ws2812b*
-      - sensor.april_s_iphone*
-      - sensor.april_s_phone*
-      - sensor.bunny_s_ipad*
-      - sensor.hewlett_packard*
-      - sensor.natphone*
-      - sensor.nattipad*
-      - switch.*_flamethrower_camera
-      - switch.*_restart_in_safe_mode
       - switch.sk6812*
-      - sensor.office_ups*
-      - sensor.network_ups*
-      - sensor.belgian_hare_ups*
-      - binary_sensor.sonoff_test*
-      - binary_sensor.test_plug_2*
-      - binary_sensor.back_door_the*
-      - binary_sesnor.bunnys_room_smoke_*
-      - binary_sensor.carport_sensor_*
-      - binary_sensor.entryway_door_*
-      - binary_sensor.family_room_smoke_*
-      - binary_sensor.front_door_access*
-      - binary_sensor.front_door_home_security*
-      - binary_sensor.back_door_home_security*
-      - binary_sensor.back_door_power_management*
-      - binary_sensor.front_door_power_management*
-      - binary_sensor.front_doot_the*
-      - binary_sensor.*_flamethrower_camera
-      - sensor.aprils_nest_energy_monitor*
-      - sensor.bedroom_fan_electric_consumption*
+
     # These are here because HomeKit does a weird thing. It sends an "on"
     # command, and then an "off" command when you activate a scene. I'm not
     # sure why it does that, but these scripts allow me to turn on scenes and
@@ -121,6 +55,30 @@
       - script.sleepy_time_scene
       - script.up_late_scene
       - script.work_at_home_scene
+
+      # Smoke detectors
+      - binary_sensor.bunnys_room_smoke
+      - binary_sensor.family_room_smoke
+      - binary_sensor.guest_room_smoke
+      - binary_sensor.kitchen_smoke
+      - binary_sensor.mud_room_smoke
+      - binary_sensor.workshop_smoke
+
+      # Temperature sensors
+      - sensor.guest_room_temperature
+      - sensor.half_bathroom_temperature
+      - sensor.hallway_bathroom_temperature
+      - sensor.kitchen_temperature
+      - sensor.laundry_room_temperature
+      - sensor.mud_room_temperature
+      - sensor.workshop_temperature
+
+      # Doors
+      - binary_sensor.back_door
+      - binary_sensor.bedroom_door
+      - binary_sensor.entryway_door
+      - bunary_sensor.forbidden_door
+      - binary_sensor.front_door
 
   entity_config:
     binary_sensor.carport_motion:
@@ -148,8 +106,6 @@
       linked_battery_sensor: sensor.workshop_sensor_battery_level
       low_battery_threshold: 33
     switch.bedroom_fan:
-      type: outlet
-    switch.living_room_heater:
       type: outlet
     binary_sensor.guest_room_smoke:
       linked_battery_sensor: sensor.guest_room_smoke_alarm_battery_level
