@@ -57,7 +57,6 @@
       - script.cooking_time_scene
       - script.good_morning_scene
       - script.goodnight_scene
-      - script.guest_room_the_wind
       - script.kitchen_cleanup_scene
       - script.lazy_afternoon_scene
       - script.low_key_scene

@@ -83,14 +83,14 @@ work_at_home_scene:
 ### End HomeKit Automation Scripts
 
 # Goofy one to trigger the wind mode in the guest room
-guest_room_the_wind:
-  alias: "The Wind"
-  sequence:
-    - service: light.turn_on
-      entity_id: light.guest_room_fan_as_light
-      data_template:
-        brightness_pct: "1"
-        transition: 0
+#guest_room_the_wind:
+#  alias: "The Wind"
+#  sequence:
+#    - service: light.turn_on
+#      entity_id: light.guest_room_fan_as_light
+#      data_template:
+#        brightness_pct: "1"
+#        transition: 0
 
 # Taken from https://community.home-assistant.io/t/inovelli-led-strip-lzw45-pixel-effects-script/275264
 lzw45_pixel_effect:
