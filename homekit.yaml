@@ -39,6 +39,7 @@
 
     exclude_entity_globs:
       - switch.*_flamethrower_camera
+      - switch.deconz*
       - switch.sonoff_test*
       - switch.test_plug_2*
       - switch.sk6812*
