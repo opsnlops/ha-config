@@ -31,7 +31,7 @@
       - binary_sensor.back_door_home_security*
       - binary_sensor.back_door_low_battery_level
       - binary_sensor.back_door_power_management*
-      _ binary_sensor.back_door_the*
+      - binary_sensor.back_door_the*
       - binary_sesnor.bunnys_room_smoke_*
       - binary_sensor.carport_sensor_*
       - binary_sensor.entryway_door_*
