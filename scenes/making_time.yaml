@@ -1,0 +1,22 @@
+name: Making Time
+entities:
+
+  # Office
+  switch.office_stars:
+    state: "on"
+
+  # Workshop
+  light.workshop_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.workshop_light_strip:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.1358
+      - 0.0445
+  switch.workshop_fairy_lights:
+    state: "on"

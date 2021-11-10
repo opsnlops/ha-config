@@ -59,6 +59,7 @@
       - script.kitchen_cleanup_scene
       - script.lazy_afternoon_scene
       - script.low_key_scene
+      - script.making_time_scene
       - script.normal_evening_scene
       - script.sleepy_time_scene
       - script.up_late_scene

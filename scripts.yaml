@@ -56,6 +56,12 @@ low_key_scene:
     - service: scene.turn_on
       entity_id: scene.low_key
 
+making_time_scene:
+  alias: "Making Time"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.making_time
+
 normal_evening_scene:
   alias: "Normal Evening"
   sequence:
