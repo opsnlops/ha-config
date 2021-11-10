@@ -65,14 +65,6 @@
       - script.up_late_scene
       - script.work_at_home_scene
 
-      # Smoke detectors
-      - binary_sensor.bunnys_room_smoke
-      - binary_sensor.family_room_smoke
-      - binary_sensor.guest_room_smoke
-      - binary_sensor.kitchen_smoke
-      - binary_sensor.mud_room_smoke
-      - binary_sensor.workshop_smoke
-
       # Temperature sensors
       - sensor.entryway_temperature
       - sensor.guest_room_temperature
@@ -97,6 +89,22 @@
       - binary_sensor.family_room_west_window
       - binary_sensor.laundry_room_window
       - binary_sensor.mud_room_window
+
+      # Smoke Detectors
+      - binary_sensor.bunnys_room_smoke_detected
+      - binary_sensor.family_room_smoke_detected
+      - binary_sensor.guest_room_smoke_detected
+      - binary_sensor.kitchen_smoke_detected
+      - binary_sensor.mud_room_smoke_detected
+      - binary_sensor.workshop_smoke_detected
+
+      # Carbon Monoxide Detectors
+      - binary_sensor.bunnys_room_carbon_monoxide_detected
+      - binary_sensor.family_room_carbon_monoxide_detected
+      - binary_sensor.guest_room_carbon_monoxide_detected
+      - binary_sensor.kitchen_carbon_monoxide_detected
+      - binary_sensor.mud_room_carbon_monoxide_detected
+      - binary_sensor.workshop_carbon_monoxide_detected
 
   entity_config:
     binary_sensor.carport_motion:
@@ -125,18 +133,9 @@
       low_battery_threshold: 33
     switch.bedroom_fan:
       type: outlet
-    binary_sensor.guest_room_smoke:
-      linked_battery_sensor: sensor.guest_room_smoke_alarm_battery_level
-      low_battery_threshold: 50
     binary_sensor.entryway_door:
       linked_battery_sensor: sensor.entryway_door_sensor_battery_level
       low_battery_threshold: 33
-    binary_sensor.family_room_smoke:
-      linked_battery_sensor: sensor.family_room_smoke_detector_battery_level
-      low_battery_threshold: 50
-    binary_sensor.bunnys_room_smoke:
-      linked_battery_sensor: sensor.bunnys_room_smoke_detector_battery_level
-      low_battery_threshold: 50
     binary_sensor.back_door:
       linked_battery_sensor: sensor.back_door_sensor_battery_level
       low_battery_threshold: 33
