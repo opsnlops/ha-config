@@ -13,10 +13,9 @@ entities:
       - 0.455
       - 0.3857
   light.workshop_light_strip:
-    brightness: 254
+    brightness: 255
     state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
+    color_mode: color_temp
+    color_temp: 295
   switch.workshop_fairy_lights:
     state: "on"
