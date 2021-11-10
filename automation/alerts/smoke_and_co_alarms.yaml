@@ -1,0 +1,62 @@
+#
+# These are really important!
+#
+# If one of the smoke or CO alarms goes off, make a lot of noise
+# by sending a high priority alert!
+#
+
+- alias: "Alert - Smoke Detected"
+  id: "alert_smoke_detected"
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.bunnys_room_smoke_detected
+      - binary_sensor.family_room_smoke_detected
+      - binary_sensor.guest_room_smoke_detected
+      - binary_sensor.kitchen_smoke_detected
+      - binary_sensor.mud_room_smoke_detected
+      - binary_sensor.workshop_smoke_detected
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "⚠️ {{ trigger.to_state.name }} 👩🏼‍🚒"
+      data:
+        push:
+          sound:
+            name: "default"
+            critical: 1
+            volume: 1.0
+      message: >-
+        {% if trigger.to_state.state == 'on' %}
+          WARNING: {{ trigger.to_state.name }}
+        {% else %}
+          All clear: {{ trigger.to_state.name }}
+        {% endif %}
+
+- alias: "Alert - CO Detected"
+  id: "alert_co_detected"
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.bunnys_room_carbon_monoxide_detected
+      - binary_sensor.family_room_carbon_monoxide_detected
+      - binary_sensor.guest_room_carbon_monoxide_detected
+      - binary_sensor.kitchen_carbon_monoxide_detected
+      - binary_sensor.mud_room_carbon_monoxide_detected
+      - binary_sensor.workshop_carbon_monoxide_detected
+  action:
+    service: notify.aprils_devices
+    data_template:
+      title: "☣️ {{ trigger.to_state.name }} ⚠️"
+      data:
+        push:
+          sound:
+            name: "default"
+            critical: 1
+            volume: 1.0
+      message: >-
+        {% if trigger.to_state.state == 'on' %}
+          WARNING: {{ trigger.to_state.name }}
+        {% else %}
+          All clear: {{ trigger.to_state.name }}
+        {% endif %}
