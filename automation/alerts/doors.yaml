@@ -8,6 +8,8 @@
       - binary_sensor.entryway_door
       - binary_sensor.forbidden_door
       - binary_sensor.front_door
+      - binary_sensor.left_shed_door
+      - binary_sensor.right_shed_door
   action:
     service: notify.aprils_devices
     data_template:
