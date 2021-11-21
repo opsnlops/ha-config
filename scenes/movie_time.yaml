@@ -1,0 +1,103 @@
+name: Movie Time
+entities:
+
+  light.kitchen_cooktop_north:
+    state: "off"
+  light.kitchen_cooktop_south:
+    state: "off"
+  light.kitchen_counter_light_1:
+    brightness: 58
+    state: "on"
+    xy_color:
+      - 0.6915
+      - 0.3083
+  light.kitchen_counter_light_2:
+    brightness: 30
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.kitchen_counter_light_3:
+    brightness: 58
+    state: "on"
+    xy_color:
+      - 0.6915
+      - 0.3083
+  light.kitchen_counter_light_4:
+    brightness: 30
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978  
+light.kitchen_counter_light_5:
+    brightness: 58
+    state: "on"
+    xy_color:
+      - 0.6915
+      - 0.3083
+  light.kitchen_hanging_light:
+    brightness: 148
+    state: "on"
+    xy_color:
+      - 0.6915
+      - 0.3083 
+ light.kitchen_over_fridge_light:
+    brightness: 30
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+
+  light.pink_lamp:
+    brightness: 39
+    state: "on"
+    xy_color:
+      - 0.6915
+      - 0.3083
+  light.purple_lamp:
+    brightness: 39
+    state: "on"
+    xy_color:
+      - 0.6915
+      - 0.3083
+  light.yellow_lamp:
+    state: "off"
+  switch.family_room_fairy_lights:
+    state: "off"
+  light.living_room_fireplace_backlight:
+    state: "off"
+  light.living_room_sofa:
+    brightness: 48
+    state: "on"
+    xy_color:
+      - 0.1532
+      - 0.048
+  light.over_fireplace:
+    state: "off"
+  light.living_room_tv_backlighting:
+    color_mode: "color_temp"
+    color_temp: 153
+    brightness: 26
+    state: "on"
+  
+  #
+  # Office
+  #
+  light.office_desk_edge_light:
+    state: "off"
+  light.office_desk_light:
+    state: "off"
+  light.office_filing_cabinet_light:
+    state: "off"
+  light.office_floor_light:
+    state: "off"
+  switch.office_stars:
+    state: "off"
+  switch.lava_lamp:
+    state: "off"
+
+  # Workshop
+  light.workshop_lamp:
+    state: "off"
+  switch.workshop_fairy_lights:
+    state: "off"
