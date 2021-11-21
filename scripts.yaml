@@ -62,6 +62,12 @@ making_time_scene:
     - service: scene.turn_on
       entity_id: scene.making_time
 
+movie_time_scene:
+  alias: "Movie Time"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.movie_time
+
 normal_evening_scene:
   alias: "Normal Evening"
   sequence:

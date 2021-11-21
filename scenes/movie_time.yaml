@@ -29,7 +29,7 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978  
-light.kitchen_counter_light_5:
+  light.kitchen_counter_light_5:
     brightness: 58
     state: "on"
     xy_color:
@@ -41,7 +41,7 @@ light.kitchen_counter_light_5:
     xy_color:
       - 0.6915
       - 0.3083 
- light.kitchen_over_fridge_light:
+  light.kitchen_over_fridge_light:
     brightness: 30
     state: "on"
     xy_color:
