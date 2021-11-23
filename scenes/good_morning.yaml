@@ -172,3 +172,12 @@ entities:
   light.hallway_bathroom_mirror_light:
     state: "on"
     brightness: 254
+
+  # Laundry Room
+  light.laundry_room_cabinet:
+    brightness: 254
+    state: "on"
+    effect: "Solid"
+    xy_color:
+      - 0.3157
+      - 0.3291

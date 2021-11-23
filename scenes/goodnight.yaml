@@ -149,9 +149,6 @@ entities:
   light.entryway_lights:
     state: "off"
 
-  light.laundry_room_light:
-    state: "off"
-
   light.patio_lights:
     state: "off"
 
@@ -159,4 +156,11 @@ entities:
   climate.family_room_heat:
     state: "off"
   climate.office_heat:
+    state: "off"
+
+  # Laundry Room
+  light.laundry_room_light:
+    state: "off"
+
+  light.laundry_room_cabinet:
     state: "off"
