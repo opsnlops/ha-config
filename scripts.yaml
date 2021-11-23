@@ -79,9 +79,8 @@ normal_evening_scene:
         effect: aurora
     - service: script.wled_start_raving
       data:
-        wled: light.laundry_room_light
+        wled: light.laundry_room_cabinet
         brightness: 200
-
 
 sleepy_time_scene:
   alias: "Sleepy Time"
