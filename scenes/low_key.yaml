@@ -1,6 +1,5 @@
 name: Low Key
 entities:
-
   light.dining_room_bookshelf:
     brightness: 48
     state: "on"
@@ -206,5 +205,14 @@ entities:
     state: "on"
     brightness: 82
 
+  # Laundry Room
   light.laundry_room_light:
     state: "off"
+
+  light.laundry_room_cabinet:
+    brightness: 12
+    state: "on"
+    effect: "Solid"
+    xy_color:
+      - 0.5435
+      - 0.3978
