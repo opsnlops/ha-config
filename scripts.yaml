@@ -77,6 +77,11 @@ normal_evening_scene:
       data:
         lzw45: light.workshop_light_strip
         effect: aurora
+    - service: script.wled_start_raving
+      data:
+        wled: light.laundry_room_light
+        brightness: 200
+
 
 sleepy_time_scene:
   alias: "Sleepy Time"
@@ -97,6 +102,35 @@ work_at_home_scene:
       entity_id: scene.work_at_home
 
 ### End HomeKit Automation Scripts
+
+wled_start_raving:
+  alias: WLED - Start Raving
+  description: Makes a WLED device rave
+  mode: restart
+  fields:
+    wled:
+      description: (required) The entity_id of the WLED device
+      example: light.laundry_room_cabinet
+    brightness:
+      description: (required) The brightness of the light 0 .. 254
+      example: "69"
+  sequence:
+    - condition: template
+      value_template: "{{ wled is defined }}"
+    - service: light.turn_on
+      data:
+        brightness: "{{ brightness }}"
+      target:
+        entity_id: "{{ wled }}"
+    - service: wled.effect
+      target:
+        entity_id: "{{ wled }}"
+      data:
+        effect: Colortwinkles
+        intensity: 223
+        palette: Rainbow
+        reverse: false
+        speed: 250
 
 # Goofy one to trigger the wind mode in the guest room
 #guest_room_the_wind:
