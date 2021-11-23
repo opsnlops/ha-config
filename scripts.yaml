@@ -73,14 +73,14 @@ normal_evening_scene:
   sequence:
     - service: scene.turn_on
       entity_id: scene.normal_evening
-    - service: script.lzw45_pixel_effect
-      data:
-        lzw45: light.workshop_light_strip
-        effect: aurora
     - service: script.wled_start_raving
       data:
         wled: light.laundry_room_cabinet
         brightness: 200
+    - service: script.lzw45_pixel_effect
+      data:
+        lzw45: light.workshop_light_strip
+        effect: aurora
 
 sleepy_time_scene:
   alias: "Sleepy Time"
