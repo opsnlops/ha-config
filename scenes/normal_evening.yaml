@@ -1,13 +1,6 @@
 name: Normal Evening
 entities:
 
-  light.dining_room_bookshelf:
-    brightness: 155
-    state: "on"
-    xy_color:
-      - 0.1374
-      - 0.0408
-
   light.kitchen_cooktop_north:
     brightness: 124
     state: "on"
@@ -62,6 +55,8 @@ entities:
     xy_color:
       - 0.2117
       - 0.1087
+  
+  # Family Room
   light.pink_lamp:
     brightness: 254
     state: "on"

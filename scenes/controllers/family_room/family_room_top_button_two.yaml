@@ -1,0 +1,32 @@
+# Turn off everything
+
+name: Family Room Controller Top Button Two
+entities:
+  # Family Room
+  light.pink_lamp:
+    state: "off"
+  light.purple_lamp:
+    state: "off"
+  light.yellow_lamp:
+    state: "off"
+  switch.family_room_fairy_lights:
+    state: "of"
+  light.living_room_fireplace_backlight:
+    state: "off"
+  light.living_room_sofa:
+    state: "off"
+  light.over_fireplace:
+    state: "off"
+  light.living_room_tv_backlighting:
+    state: "off"
+
+  switch.family_room_ceiling_fan:
+    state: "off"
+  switch.family_room_floor_fan:
+    state: "off"
+
+  climate.family_room_heat:
+    state: "off"
+
+  media_player.family_room_receiver:
+    state: "off"
