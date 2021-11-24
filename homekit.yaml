@@ -33,6 +33,7 @@
       - switch.bunny_s_switch
       - switch.bunnys_room_scene_controller
       - switch.family_room_fairy_lights
+      - switch.family_room_scene_controller
       - switch.kitchen_scene_controller
       - switch.patio_lights
 
