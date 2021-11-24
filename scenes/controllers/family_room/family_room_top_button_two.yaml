@@ -10,7 +10,7 @@ entities:
   light.yellow_lamp:
     state: "off"
   switch.family_room_fairy_lights:
-    state: "of"
+    state: "off"
   light.living_room_fireplace_backlight:
     state: "off"
   light.living_room_sofa:
