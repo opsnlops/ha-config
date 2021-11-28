@@ -36,10 +36,12 @@
       - switch.family_room_scene_controller
       - switch.kitchen_scene_controller
       - switch.patio_lights
+      - switch.oil_heater
 
     exclude_entity_globs:
       - switch.coffee_monitor*
       - switch.deconz*
+      - switch.family_room_tv*
       - switch.*_flamethrower_camera
       - switch.fridge_power_monitor*
       - switch.sk6812*
