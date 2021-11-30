@@ -1,8 +1,8 @@
 name: Bunnys Room All Off
 entities:
-  light.bedroom_fairy_light_1:
+  switch.bedroom_fairy_light_1:
     state: "off"
-  light.bedroom_fairy_light_2:
+  switch.bedroom_fairy_light_2:
     state: "off"
   light.bedroom_left_nightstand_lamp:
     state: "off"

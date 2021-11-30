@@ -102,9 +102,9 @@ entities:
       - 0.1382
 
   # Bedroom
-  light.bedroom_fairy_light_1:
+  switch.bedroom_fairy_light_1:
     state: "on"
-  light.bedroom_fairy_light_2:
+  switch.bedroom_fairy_light_2:
     state: "on"
   light.bedroom_left_nightstand_lamp:
     brightness: 99
@@ -194,7 +194,7 @@ entities:
     state: "on"
 
   # Hallway Bathroom
-  light.hallway_bathroom_stars:
+  switch.hallway_bathroom_stars:
     state: "on"
   light.hallway_bathroom_mirror_light:
     state: "on"
