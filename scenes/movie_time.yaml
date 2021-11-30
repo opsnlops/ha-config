@@ -65,7 +65,7 @@ entities:
     state: "off"
   light.living_room_fireplace_backlight:
     state: "off"
-  light.living_room_sofa:
+  light.family_room_sofa:
     brightness: 48
     state: "on"
     xy_color:

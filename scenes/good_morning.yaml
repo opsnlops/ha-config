@@ -125,7 +125,7 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
-  light.living_room_sofa:
+  light.family_room_sofa:
     brightness: 254
     state: "on"
     xy_color:

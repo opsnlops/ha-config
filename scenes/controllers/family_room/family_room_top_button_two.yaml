@@ -13,7 +13,7 @@ entities:
     state: "off"
   light.living_room_fireplace_backlight:
     state: "off"
-  light.living_room_sofa:
+  light.family_room_sofa:
     state: "off"
   light.over_fireplace:
     state: "off"
