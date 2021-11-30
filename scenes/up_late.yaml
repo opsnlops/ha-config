@@ -26,7 +26,7 @@ entities:
       - 0.1383
   light.dining_room_fairy_lights:
     state: "on"
-  light.guest_room_stars:
+  switch.guest_room_stars:
     state: "on"
   light.kitchen_counter_north:
     brightness: 82

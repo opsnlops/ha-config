@@ -135,7 +135,7 @@ entities:
       - 0.3857
 
   # Guest Room
-  light.guest_room_stars:
+  switch.guest_room_stars:
     state: "on"
   light.guest_room_overhead_light:
     state: "on"

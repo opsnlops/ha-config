@@ -25,7 +25,7 @@ entities:
       - 0.455
       - 0.3857
 
-  light.guest_room_stars:
+  switch.guest_room_stars:
     state: "on"
 
   # Family Room
