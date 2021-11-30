@@ -93,7 +93,7 @@ entities:
       - 0.3291
 
   #Family Room
-  light.living_room_tv_backlighting:
+  light.family_room_tv_backlighting:
     brightness: 142
     state: "on"
     xy_color:

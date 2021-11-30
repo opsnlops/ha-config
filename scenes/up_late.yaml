@@ -72,7 +72,7 @@ entities:
     xy_color:
       - 0.2339
       - 0.1211
-  light.living_room_tv_backlighting:
+  light.family_room_tv_backlighting:
     brightness: 147
     state: "on"
     xy_color:

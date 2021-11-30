@@ -1,6 +1,5 @@
 name: Movie Time
 entities:
-
   light.kitchen_cooktop_north:
     state: "off"
   light.kitchen_cooktop_south:
@@ -28,7 +27,7 @@ entities:
     state: "on"
     xy_color:
       - 0.5435
-      - 0.3978  
+      - 0.3978
   light.kitchen_counter_light_5:
     brightness: 58
     state: "on"
@@ -40,7 +39,7 @@ entities:
     state: "on"
     xy_color:
       - 0.6915
-      - 0.3083 
+      - 0.3083
   light.kitchen_over_fridge_light:
     brightness: 30
     state: "on"
@@ -74,12 +73,12 @@ entities:
       - 0.048
   light.over_fireplace:
     state: "off"
-  light.living_room_tv_backlighting:
+  light.family_room_tv_backlighting:
     color_mode: "color_temp"
     color_temp: 153
     brightness: 26
     state: "on"
-  
+
   #
   # Office
   #
