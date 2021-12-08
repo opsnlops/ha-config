@@ -71,6 +71,8 @@ entities:
     state: "off"
   switch.lava_lamp:
     state: "off"
+  switch.office_heater:
+    state: "off"
 
   # Bedroom
   switch.bedroom_fairy_light_1:
