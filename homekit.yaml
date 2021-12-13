@@ -6,6 +6,8 @@
 # limit to how many devices one bridge can have in HomeKit.
 - name: HA (Lights)
   mode: bridge
+  ip_address: 10.3.2.5
+  advertise_ip: 10.3.2.5
   port: 21666
   filter:
     include_domains:
@@ -21,6 +23,8 @@
 # The one for non-lights
 - name: HA (Non-lights)
   mode: bridge
+  ip_address: 10.3.2.5
+  advertise_ip: 10.3.2.5
   port: 22666
   filter:
     include_domains:
