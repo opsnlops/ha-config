@@ -216,3 +216,6 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
+
+  switch.christmas_tree:
+    state: "off"

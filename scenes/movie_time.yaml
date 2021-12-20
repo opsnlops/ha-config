@@ -78,6 +78,8 @@ entities:
     color_temp: 153
     brightness: 26
     state: "on"
+  switch.christmas_tree:
+    state: "off"
 
   #
   # Office

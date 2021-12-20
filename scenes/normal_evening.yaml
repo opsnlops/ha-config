@@ -100,6 +100,8 @@ entities:
     xy_color:
       - 0.2513
       - 0.1382
+  switch.christmas_tree:
+    state: "on"
 
   # Bedroom
   switch.bedroom_fairy_light_1:

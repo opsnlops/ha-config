@@ -55,6 +55,8 @@ entities:
     state: "off"
   light.over_fireplace:
     state: "off"
+  switch.christmas_tree:
+    state: "off"
 
   # Office
   light.office_computer_table_lamp:

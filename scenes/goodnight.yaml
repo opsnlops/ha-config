@@ -102,6 +102,8 @@ entities:
     state: "off"
   switch.family_room_floor_fan:
     state: "off"
+  switch.christmas_tree:
+    state: "off"
 
   # Office
   light.office_computer_table_lamp:
