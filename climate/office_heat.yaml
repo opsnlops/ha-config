@@ -1,7 +1,7 @@
 - platform: generic_thermostat
   name: "Office Heat"
   unique_id: "064bf14a-8a30-4d82-987b-0a2a7659c2d4"
-  heater: switch.office_flamethrower
+  heater: switch.office_fireplace
   target_sensor: sensor.office_temperature
   min_temp: 50
   max_temp: 90
