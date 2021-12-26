@@ -47,6 +47,12 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.blue_lamp:
+    brightness: 187
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
 
   light.family_room_tv_backlighting:
     brightness: 225

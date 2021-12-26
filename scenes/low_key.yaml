@@ -81,6 +81,12 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
+  light.blue_lamp:
+    brightness: 68
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
   switch.family_room_fairy_lights:
     state: "off"
   light.living_room_fireplace_backlight:
