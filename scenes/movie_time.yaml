@@ -104,3 +104,6 @@ entities:
     state: "off"
   switch.workshop_fairy_lights:
     state: "off"
+
+  light.temp_office_lamp:
+    state: "off"

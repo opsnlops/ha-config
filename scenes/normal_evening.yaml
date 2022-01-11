@@ -219,3 +219,11 @@ entities:
   light.laundry_room_light:
     state: "on"
     brightness: 93
+
+
+  light.temp_office_lamp:
+    brightness: 100
+    state: "on"
+    xy_color:
+      - 0.2513
+      - 0.1382

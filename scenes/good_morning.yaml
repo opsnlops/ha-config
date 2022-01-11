@@ -187,3 +187,10 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
+
+  light.temp_office_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291

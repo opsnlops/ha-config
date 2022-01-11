@@ -39,3 +39,12 @@ entities:
     state: "on"
   switch.lava_lamp:
     state: "on"
+
+  # While the office is out of commission
+  light.temp_office_lamp:
+    state: "on"
+    brightness: 254
+    xy_color:
+      - 0.455
+      - 0.3857
+

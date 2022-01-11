@@ -225,3 +225,11 @@ entities:
 
   switch.christmas_tree:
     state: "off"
+
+
+  light.temp_office_lamp:
+    brightness: 38
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978

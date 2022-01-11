@@ -139,3 +139,6 @@ entities:
     state: "off"
   climate.office_heat:
     state: "off"
+
+  light.temp_office_lamp:
+    state: "off"

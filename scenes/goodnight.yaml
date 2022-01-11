@@ -170,3 +170,7 @@ entities:
 
   light.laundry_room_cabinet:
     state: "off"
+
+
+  light.temp_office_lamp:
+    state: "off"
