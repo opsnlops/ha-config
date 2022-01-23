@@ -106,6 +106,8 @@ entities:
     xy_color:
       - 0.2513
       - 0.1382
+  light.family_room_floor_fan_blue_led:
+    state: "on"
   switch.christmas_tree:
     state: "on"
 
@@ -132,6 +134,8 @@ entities:
     xy_color:
       - 0.2207
       - 0.079
+  light.bedroom_fan_blue_led:
+    state: "on"
 
   # Guest Room
   switch.guest_room_stars:

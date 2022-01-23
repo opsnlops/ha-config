@@ -57,6 +57,8 @@ entities:
     state: "off"
   light.over_fireplace:
     state: "off"
+  light.family_room_floor_fan_blue_led:
+    state: "off"
   switch.christmas_tree:
     state: "off"
 
@@ -88,6 +90,8 @@ entities:
   light.bedroom_right_nightstand_lamp:
     state: "off"
   light.bedroom_window_light:
+    state: "off"
+  light.bedroom_fan_blue_led:
     state: "off"
 
   # Guest Room

@@ -80,6 +80,8 @@ entities:
     state: "off"
   light.bedroom_window_light:
     state: "off"
+  light.bedroom_fan_blue_led:
+    state: "off"
 
   # Family Room
   light.pink_lamp:
@@ -103,6 +105,8 @@ entities:
   switch.family_room_ceiling_fan:
     state: "off"
   switch.family_room_floor_fan:
+    state: "off"
+  light.family_room_floor_fan_blue_led:
     state: "off"
   switch.christmas_tree:
     state: "off"

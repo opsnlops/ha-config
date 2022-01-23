@@ -89,6 +89,8 @@ entities:
       - 0.3978
   switch.family_room_fairy_lights:
     state: "off"
+  light.family_room_floor_fan_blue_led:
+    state: "off"
   light.living_room_fireplace_backlight:
     brightness: 31
     state: "on"
@@ -164,6 +166,8 @@ entities:
     xy_color:
       - 0.158
       - 0.05
+  light.bedroom_fan_blue_led:
+    state: "on"
 
   # Guest Room
   light.guest_room_overhead_light:

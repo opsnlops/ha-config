@@ -80,6 +80,8 @@ entities:
     color_temp: 153
     brightness: 26
     state: "on"
+  light.family_room_floor_fan_blue_led:
+    state: "off"
   switch.christmas_tree:
     state: "off"
 

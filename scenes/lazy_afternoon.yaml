@@ -53,6 +53,8 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.family_room_floor_fan_blue_led:
+    state: "on"
 
   light.family_room_tv_backlighting:
     brightness: 225
