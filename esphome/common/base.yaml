@@ -30,6 +30,10 @@ sensor:
     name: "${human_devicename} Uptime"
     update_interval: 60s
 
+binary_sensor:
+  - platform: status
+    name: "${human_devicename} Status"
+
 switch:
   - platform: restart
     name: "${human_devicename} Restart Normally"
@@ -37,3 +41,25 @@ switch:
     name: "${human_devicename} Restart in Safe Mode"
   - platform: shutdown
     name: "${human_devicename} Shutdown"
+
+#
+# Log to MQTT
+#
+#  "discovery" is false here because we use the HA API to talk to HA. MQTT is
+#  for debugging purposes only.
+#
+mqtt:
+  broker: 10.9.1.5
+  client_id: ${devicename}
+  discovery: false
+  discovery_retain: false
+  topic_prefix: esphome
+  log_topic: ${devicename}/logs
+  birth_message:
+    topic: esphome/status
+    payload: "${devicename} online"
+    retain: true
+  will_message:
+    topic: esphome/status
+    payload: "${devicename} offline"
+    retain: true

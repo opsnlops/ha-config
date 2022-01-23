@@ -21,5 +21,3 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: True
     name: "${human_devicename} Button"
-  - platform: status
-    name: "${human_devicename} Status"
