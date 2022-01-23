@@ -1,0 +1,31 @@
+substitutions:
+  devicename: family-room-air-quality
+  human_devicename: Family Room Air Quality
+  ip: 10.9.1.201
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+i2c:
+
+sensor:
+  - platform: sgp30
+    eco2:
+      name: "Family Room eCO2"
+      accuracy_decimals: 1
+      filters:
+        - sliding_window_moving_average:
+            window_size: 20
+            send_every: 20
+    tvoc:
+      name: "Family Room TVOC"
+      accuracy_decimals: 1
+      filters:
+        - sliding_window_moving_average:
+            window_size: 20
+            send_every: 20
+    store_baseline: yes
+    address: 0x58
+    update_interval: 1s

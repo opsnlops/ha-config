@@ -1,0 +1,73 @@
+esphome:
+  name: ${devicename}
+  platform: ESP8266
+  board: esp01_1m
+  esp8266_restore_from_flash: true
+
+logger:
+  baud_rate: 0 # (UART logging interferes with cse7766)
+
+# Device Specific Config
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "${human_devicename} Button"
+    on_press:
+      - switch.toggle: relay
+  - platform: status
+    name: "${human_devicename} Status"
+
+sensor:
+  - platform: cse7766
+    update_interval: 20s
+    current:
+      name: "${human_devicename} Current"
+      id: "${devicename}_current"
+      accuracy_decimals: 2
+    voltage:
+      name: "${human_devicename} Voltage"
+      id: "${devicename}_voltage"
+      accuracy_decimals: 2
+    power:
+      name: "${human_devicename} Power"
+      id: "${devicename}_power"
+      accuracy_decimals: 2
+  - platform: total_daily_energy
+    name: "${human_devicename} Total Daily Energy"
+    power_id: "${devicename}_power"
+    filters:
+      # Multiplication factor from W to kW is 0.001
+      - multiply: 0.001
+    unit_of_measurement: kWh
+switch:
+  - platform: gpio
+    name: "${human_devicename} Relay"
+    pin: GPIO12
+    id: relay
+    icon: ${icon}
+
+# Treat the Blue LED like any other light
+output:
+  - platform: esp8266_pwm
+    pin: GPIO13
+    inverted: True
+    id: led_blue
+
+light:
+  - platform: monochromatic
+    name: "${human_devicename} Blue LED"
+    output: led_blue
+    id: light_led_blue
+    icon: mdi:led-on
+    default_transition_length: 2s
+# If needed, here's how to revert the LED to just a normal
+# status light!
+#status_led:
+#  pin: GPIO13

@@ -1,0 +1,23 @@
+esphome:
+  name: ${devicename}
+  platform: ESP8266
+  board: esp01_1m
+
+logger:
+
+switch:
+  - platform: gpio
+    pin: GPIO4
+    name: "${human_devicename}"
+    restore_mode: restore_default_off
+    icon: "${icon}"
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO5
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "${human_devicename} Button"
+  - platform: status
+    name: "${human_devicename} Status"

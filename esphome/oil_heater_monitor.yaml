@@ -1,0 +1,10 @@
+substitutions:
+  devicename: oil_heater_monitor
+  human_devicename: Oil Heater Monitor
+  ip: 10.9.1.209
+  icon: "mdi:radiator"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/sonoff_s31.yaml

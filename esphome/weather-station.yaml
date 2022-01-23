@@ -1,0 +1,35 @@
+substitutions:
+  devicename: weather-station
+  human_devicename: Weather Station
+  ip: 10.9.1.200
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+uart:
+  rx_pin: GPIO16
+  baud_rate: 9600
+
+sensor:
+  - platform: pmsx003
+    type: PMSX003
+    pm_1_0:
+      name: "Particulate Matter <1.0µm Concentration"
+      filters:
+      - sliding_window_moving_average:
+          window_size: 20
+          send_every: 20
+    pm_2_5:
+      name: "Particulate Matter <2.5µm Concentration"
+      filters:
+      - sliding_window_moving_average:
+          window_size: 20
+          send_every: 20
+    pm_10_0:
+      name: "Particulate Matter <10.0µm Concentration"
+      filters:
+      - sliding_window_moving_average:
+          window_size: 20
+          send_every: 20

@@ -1,0 +1,23 @@
+# Stuff needed for Wifi to work!
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  manual_ip:
+    static_ip: ${ip}
+    gateway: 10.9.1.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${devicename}_recovery"
+    password: !secret esphome_recovery_wifi_password
+
+# Enable the captive portal if needed
+captive_portal:
+
+sensor:
+  - platform: wifi_signal
+    name: "${human_devicename} WiFi Signal"
+    update_interval: 60s
+    icon: mdi:wifi

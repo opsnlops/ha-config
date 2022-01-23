@@ -1,0 +1,100 @@
+substitutions:
+  devicename: office-air-monitor
+  human_devicename: Office Air Monitor
+  ip: 10.9.1.203
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+i2c:
+
+bme680_bsec:
+  # i2c address
+  # -----------
+  # Common values are:
+  # - 0x76
+  # - 0x77
+  # Default: 0x76
+  address: 0x77
+
+  # Temperature offset
+  # ------------------
+  # Useful if device is in enclosure and reads too high
+  # Default: 0
+  temperature_offset: 0
+
+  # IAQ calculation mode
+  # --------------------
+  # Available options:
+  # - static (for fixed position devices)
+  # - mobile (for on person or other moveable devices)
+  # Default: static
+  iaq_mode: static
+
+  # Sample rate
+  # -----------
+  # Available options:
+  # - lp (low power - samples every 3 seconds)
+  # - ulp (ultra low power - samples every 5 minutes)
+  # Default: lp
+  sample_rate: lp
+
+  # Interval at which to save BSEC state
+  # ------------------------------------
+  # Default: 6h
+  state_save_interval: 6h
+
+sensor:
+  - platform: bme680_bsec
+    temperature:
+      # Temperature in °C
+      name: "Office Temperature"
+      sample_rate: lp
+      filters:
+        - median
+    pressure:
+      # Pressure in hPa
+      name: "Office Pressure"
+      sample_rate: lp
+      filters:
+        - median
+    humidity:
+      # Relative humidity %
+      name: "Office Humidity"
+      sample_rate: lp
+      filters:
+        - median
+    gas_resistance:
+      # Gas resistance in Ω
+      name: "Office Gas Resistance"
+      filters:
+        - median
+    iaq:
+      # Indoor air quality value
+      name: "Office IAQ"
+      filters:
+        - median
+    iaq_accuracy:
+      # IAQ accuracy as a numeric value of 0, 1, 2, 3
+      name: "Office Numeric IAQ Accuracy"
+    co2_equivalent:
+      # CO2 equivalent estimate in ppm
+      name: "Office CO2 Equivalent"
+      device_class: "carbon_dioxide"
+      filters:
+        - median
+    breath_voc_equivalent:
+      # Volatile organic compounds equivalent estimate in ppm
+      name: "Office Breath VOC Equivalent"
+      device_class: "volatile_organic_compounds"
+      filters:
+        - median
+
+text_sensor:
+  - platform: bme680_bsec
+    iaq_accuracy:
+      # IAQ accuracy as a text value of Stabilizing, Uncertain, Calibrating, Calibrated
+      name: "Office IAQ Accuracy"
+

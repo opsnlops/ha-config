@@ -1,0 +1,22 @@
+substitutions:
+  devicename: fridge-monitor
+  human_devicename: Fridge Monitor
+  ip: 10.9.1.204
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+# Device Specific Config
+dallas:
+  - pin: 23
+    update_interval: 20s
+
+sensor:
+  - platform: dallas
+    address: 0xF100000D0579DF28
+    name: "Fridge Temperature"
+  - platform: dallas
+    address: 0x2E00000C91D69928
+    name: "Freezer Temperature"

@@ -1,0 +1,39 @@
+
+# Turn on the web server
+web_server:
+  ota: false
+
+text_sensor:
+  - platform: version
+    name: "${human_devicename} ESPHome Version"
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  password: !secret esphome_ota_password
+
+# esphome will (correctly) guess the timezone from whichever
+# of my devices is running the update
+time:
+  - platform: sntp
+    id: sntp_time
+    servers: 10.3.2.6
+    on_time_sync:
+      then:
+        - logger.log: "Time synced from dutch"
+
+# It's handy to have the uptime of the device recorded
+sensor: 
+  - platform: uptime
+    name: "${human_devicename} Uptime"
+    update_interval: 60s
+
+switch:
+  - platform: restart
+    name: "${human_devicename} Restart Normally"
+  - platform: safe_mode
+    name: "${human_devicename} Restart in Safe Mode"
+  - platform: shutdown
+    name: "${human_devicename} Shutdown"

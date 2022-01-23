@@ -1,0 +1,11 @@
+substitutions:
+  devicename: fridge_power_monitor
+  human_devicename: Fridge Power Monitor
+  ip: 10.9.1.205
+  icon: mdi:fridge-variant
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/sonoff_s31.yaml
+  

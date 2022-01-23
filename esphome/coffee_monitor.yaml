@@ -1,0 +1,11 @@
+substitutions:
+  devicename: coffee_monitor
+  human_devicename: Coffee Monitor
+  ip: 10.9.1.207
+  icon: mdi:coffee-maker
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/sonoff_s31.yaml
+  

@@ -1,0 +1,11 @@
+substitutions:
+  devicename: office_heater
+  human_devicename: Office Heater
+  ip: 10.9.1.210
+  icon: "mdi:radiator"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/sonoff_s31.yaml
+  
