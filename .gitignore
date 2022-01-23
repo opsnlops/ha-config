@@ -9,5 +9,5 @@
 secrets.yaml
 
 # Ignore parts of the esphome config
-esphome/.esphome/*
-esphome/venv-esphome/*
+esphome/.esphome
+esphome/venv-esphome
