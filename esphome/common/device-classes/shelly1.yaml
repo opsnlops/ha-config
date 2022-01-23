@@ -4,6 +4,8 @@ esphome:
   board: esp01_1m
 
 logger:
+  baud_rate: 9600
+  level: DEBUG
 
 switch:
   - platform: gpio
