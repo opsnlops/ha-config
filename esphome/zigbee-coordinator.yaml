@@ -12,6 +12,7 @@ esphome:
 
 packages:
   base: !include common/base.yaml
+  mqtt: !include common/mqtt.yaml
 
 external_components:
   - source: github://oxan/esphome-stream-server

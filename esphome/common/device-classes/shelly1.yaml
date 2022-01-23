@@ -7,6 +7,9 @@ logger:
   baud_rate: 9600
   level: DEBUG
 
+packages:
+  mqtt: !include  ../mqtt.yaml
+
 switch:
   - platform: gpio
     pin: GPIO4

@@ -4,4 +4,6 @@ esphome:
   board: esp32dev
 
 logger:
-  baud_rate: 9600
+
+packages:
+  mqtt: !include  ../mqtt.yaml
