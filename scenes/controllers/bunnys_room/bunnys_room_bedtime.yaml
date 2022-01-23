@@ -22,3 +22,5 @@ entities:
     xy_color:
       - 0.677
       - 0.3013
+  light.bedroom_fan_blue_led:
+    state: "on"

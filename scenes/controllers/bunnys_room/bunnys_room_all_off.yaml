@@ -12,3 +12,5 @@ entities:
     state: "off"
   switch.bedroom_fan:
     state: "off"
+  light.bedroom_fan_blue_led:
+    state: "off"

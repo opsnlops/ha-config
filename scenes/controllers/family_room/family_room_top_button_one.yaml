@@ -47,3 +47,5 @@ entities:
     xy_color:
       - 0.2513
       - 0.1382
+  light.family_room_floor_fan_blue_led:
+    state: "on"
