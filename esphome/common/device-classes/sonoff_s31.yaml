@@ -2,6 +2,10 @@ esphome:
   name: ${devicename}
   platform: ESP8266
   board: esp01_1m
+  esp8266_restore_from_flash: true
+
+preferences:
+  flash_write_interval: 10min
 
 logger:
   baud_rate: 0 # (UART logging interferes with cse7766)
