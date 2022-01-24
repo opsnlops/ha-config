@@ -1,7 +1,7 @@
 - platform: generic_thermostat
   name: "Family Room Heat"
   unique_id: "ff25b40d-706a-46f1-9c80-18ab06eb4e3d"
-  heater: switch.family_room_flamethrower
+  heater: switch.family_room_fireplace
   target_sensor: sensor.family_room_temperature
   min_temp: 50
   max_temp: 90

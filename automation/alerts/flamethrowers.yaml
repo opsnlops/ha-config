@@ -4,7 +4,7 @@
     platform: state
     entity_id:
       - "switch.office_fireplace"
-      - "switch.family_room_flamethrower"
+      - "switch.family_room_fireplace"
   action:
     service: notify.aprils_devices
     data_template:
