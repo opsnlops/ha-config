@@ -1,0 +1,51 @@
+substitutions:
+  devicename: bedroom_window_shade
+  human_devicename: Bedroom Window Shade
+  ip: 10.9.1.216
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+
+
+esphome:
+  includes:
+    - "custom_components/lc709203f/lc709203f.h"
+
+i2c:
+
+
+switch:
+  - platform: gpio
+    pin:
+      number: GPIO16
+      inverted: true
+    name: "${devicename} ledr"
+    id:  ${devicename}_ledr
+  - platform: gpio
+    pin:
+      number: GPIO17
+      inverted: true
+    name: "${devicename} ledb"
+    id:  ${devicename}_ledb
+  - platform: gpio
+    pin:
+      number: GPIO18
+      inverted: true
+    name: "${devicename} ledg"
+    id:  ${devicename}_ledg
+
+sensor:
+  - platform: lc709203f
+    address: "0x0B"
+    battery_voltage:
+      name: "${devicename} battery V"
+    battery_level:
+      name: "${devicename} battery lvl"
+    icversion:
+      name: "${devicename} ic"
+    cell_charge:
+      name: "${devicename} cell charge"
+    update_interval: 30s
