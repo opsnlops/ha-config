@@ -9,6 +9,7 @@
 #ifndef _LC709203F_H
 #define _LC709203F_H
 
+#include "esphome.h"
 
 #include "esphome/core/component.h"
 #include "esphome/components/sensor/sensor.h"
@@ -77,7 +78,7 @@ typedef enum {
  *            the LC709203F I2C LiPo monitor
  */
 // class LC709203F {
-class LC709203FComponent : public PollingComponent, public i2c::I2CDevice, public Sensor {
+class LC709203FComponent : public sensor::Sensor, public PollingComponent, public i2c::I2CDevice {
 public:
 
   bool begin( void );
