@@ -16,36 +16,15 @@ esphome:
 
 i2c:
 
-
-switch:
-  - platform: gpio
-    pin:
-      number: GPIO16
-      inverted: true
-    name: "${devicename} ledr"
-    id:  ${devicename}_ledr
-  - platform: gpio
-    pin:
-      number: GPIO17
-      inverted: true
-    name: "${devicename} ledb"
-    id:  ${devicename}_ledb
-  - platform: gpio
-    pin:
-      number: GPIO18
-      inverted: true
-    name: "${devicename} ledg"
-    id:  ${devicename}_ledg
-
 sensor:
   - platform: lc709203f
     address: "0x0B"
     battery_voltage:
-      name: "${devicename} battery V"
+      name: "${human_devicename} Battery Voltage"
     battery_level:
-      name: "${devicename} battery lvl"
+      name: "${human_devicename} Battery Level"
     icversion:
-      name: "${devicename} ic"
+      name: "${human_devicename} IC Version"
     cell_charge:
-      name: "${devicename} cell charge"
-    update_interval: 30s
+      name: "${human_devicename} Cell Charge"
+    update_interval: 20s
