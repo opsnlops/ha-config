@@ -1,0 +1,10 @@
+substitutions:
+  devicename: bedroom_air_filter
+  human_devicename: Bedroom Air Filter
+  ip: 10.9.1.217
+  icon: "mdi:air-filter"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/athom_smart_plug.yaml
