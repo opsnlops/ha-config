@@ -22,8 +22,16 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: True
     name: "${human_devicename} Button"
-    on_press:
-      - switch.toggle: relay
+    on_multi_click:
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - switch.toggle: relay
+      - timing:
+          - ON for at least 4s
+        then:
+          - button.press: restart_button
   - platform: status
     name: "${human_devicename} Status"
 

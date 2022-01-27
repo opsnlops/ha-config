@@ -34,10 +34,13 @@ binary_sensor:
   - platform: status
     name: "${human_devicename} Status"
 
-switch:
+button:
   - platform: restart
+    id: restart_button
     name: "${human_devicename} Restart Normally"
   - platform: safe_mode
     name: "${human_devicename} Restart in Safe Mode"
+    id: power_button
   - platform: shutdown
     name: "${human_devicename} Shutdown"
+    id: shutdown_button
