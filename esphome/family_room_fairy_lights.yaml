@@ -1,0 +1,11 @@
+substitutions:
+  devicename: family_room_fairy_lights
+  human_devicename: Family Room Fairy Lights
+  ip: 10.9.1.218
+  icon: mdi:string-lights
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/sonoff_s31.yaml
+ 

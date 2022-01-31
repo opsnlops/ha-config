@@ -1,0 +1,10 @@
+substitutions:
+  devicename: office_floor_fan
+  human_devicename: Office Floor Fan
+  ip: 10.9.1.219
+  icon: mdi:fan
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/sonoff_s31.yaml
