@@ -108,6 +108,8 @@ entities:
       - 0.1382
   light.family_room_floor_fan_blue_led:
     state: "on"
+  light.family_room_fairy_lights_blue_led:
+    state: "on"
   switch.christmas_tree:
     state: "on"
 

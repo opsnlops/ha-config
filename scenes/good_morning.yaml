@@ -147,6 +147,8 @@ entities:
       - 0.3291
   light.family_room_floor_fan_blue_led:
     state: "on"
+  light.family_room_fairy_lights_blue_led:
+    state: "on"
 
   # Office
   light.office_desk_light:

@@ -91,6 +91,8 @@ entities:
     state: "off"
   light.family_room_floor_fan_blue_led:
     state: "off"
+  light.family_room_fairy_lights_blue_led:
+    state: "off"
   light.living_room_fireplace_backlight:
     brightness: 31
     state: "on"
