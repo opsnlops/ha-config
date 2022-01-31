@@ -10,7 +10,7 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "${devicename}_recovery"
+    ssid: "${devicename}"
     password: !secret esphome_recovery_wifi_password
 
 # Enable the captive portal if needed
