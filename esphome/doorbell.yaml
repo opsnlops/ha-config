@@ -1,0 +1,18 @@
+substitutions:
+  devicename: doorbell
+  human_devicename: Doorbell
+  ip: 10.9.1.221
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+
+binary_sensor:
+  - platform: gpio
+    pin: 14
+    name: "Doorbell"
+    filters:
+      - delayed_off: 50ms
+
