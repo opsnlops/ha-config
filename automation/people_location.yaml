@@ -12,8 +12,8 @@
       - condition: sun
         before: sunrise
   action:
-    service: homeassistant.turn_on
-    entity_id: scene.normal_evening
+    service: script.turn_on
+    entity_id: script.normal_evening_scene
 
 # Trigger the "Away from Home" scene when we're all gone
 - alias: "Everyone leaves the house"
@@ -22,5 +22,5 @@
     entity_id: group.all_furries
     to: "not_home"
   action:
-    service: homeassistant.turn_on
-    entity_id: scene.away_from_home
+    service: script.turn_on
+    entity_id: script.away_from_home_scene

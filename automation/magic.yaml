@@ -18,7 +18,5 @@
         entity_id: person.april
         state: home
   action:
-    - service: scene.turn_on
-      entity_id: scene.low_key
-
-  
+    - service: script.turn_on
+      entity_id: script.low_key_scene

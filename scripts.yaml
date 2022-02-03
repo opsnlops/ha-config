@@ -7,6 +7,8 @@ away_from_home_scene:
   sequence:
     - service: scene.turn_on
       entity_id: scene.away_from_home
+      data:
+        transition: 30
 
 bedtime_scene:
   alias: "Bedtime"
@@ -25,24 +27,32 @@ cooking_time_scene:
   sequence:
     - service: scene.turn_on
       entity_id: scene.cooking_time
+      data:
+        transition: 3
 
 good_morning_scene:
   alias: "Good Morning"
   sequence:
     - service: scene.turn_on
       entity_id: scene.good_morning
+      data:
+        transition: 30
 
 goodnight_scene:
   alias: "Goodnight"
   sequence:
     - service: scene.turn_on
       entity_id: scene.goodnight
+      data:
+        transition: 60
 
 kitchen_cleanup_scene:
   alias: "Kitchen Cleanup"
   sequence:
     - service: scene.turn_on
       entity_id: scene.kitchen_cleanup
+      data:
+        transition: 2.5
 
 lazy_afternoon_scene:
   alias: "Lazy Afternoon"
@@ -55,6 +65,8 @@ low_key_scene:
   sequence:
     - service: scene.turn_on
       entity_id: scene.low_key
+      data:
+        transition: 20
 
 making_time_scene:
   alias: "Making Time"
@@ -67,12 +79,16 @@ movie_time_scene:
   sequence:
     - service: scene.turn_on
       entity_id: scene.movie_time
+      data:
+        transition: 7
 
 normal_evening_scene:
   alias: "Normal Evening"
   sequence:
     - service: scene.turn_on
       entity_id: scene.normal_evening
+      data:
+        transition: 3
     - service: script.wled_start_raving
       data:
         wled: light.laundry_room_cabinet
