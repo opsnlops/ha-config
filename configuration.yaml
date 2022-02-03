@@ -21,7 +21,7 @@ http:
 
 # Text to speech
 tts:
-  - platform: google_translate
+  - platform: cloud
 
 group: !include groups.yaml
 automation manual: !include_dir_merge_list automation/
