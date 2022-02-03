@@ -13,6 +13,7 @@ binary_sensor:
   - platform: gpio
     pin: 14
     name: "Doorbell"
+    icon: mdi:doorbell
     filters:
-      - delayed_off: 50ms
+      - delayed_off: 150ms
 
