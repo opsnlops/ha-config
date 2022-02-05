@@ -28,3 +28,11 @@ sensor:
     cell_charge:
       name: "${human_devicename} Cell Charge"
     update_interval: 20s
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 23
+      inverted: true
+    name: "${human_devicename} Low Battery"
+    icon: "mdi:battery-20"
