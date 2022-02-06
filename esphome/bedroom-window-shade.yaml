@@ -8,8 +8,6 @@ packages:
   base: !include common/base.yaml
   esp32: !include common/device-classes/esp32.yaml
 
-
-
 esphome:
   includes:
     - "custom_components/lc709203f/lc709203f.h"
@@ -23,8 +21,6 @@ sensor:
       name: "${human_devicename} Battery Voltage"
     battery_level:
       name: "${human_devicename} Battery Level"
-    icversion:
-      name: "${human_devicename} IC Version"
     cell_charge:
       name: "${human_devicename} Cell Charge"
     update_interval: 20s
@@ -36,3 +32,6 @@ binary_sensor:
       inverted: true
     name: "${human_devicename} Low Battery"
     icon: "mdi:battery-20"
+    filters:
+      - delayed_off: 1s
+      - delayed_on: 1s

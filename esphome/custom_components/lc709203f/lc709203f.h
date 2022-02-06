@@ -106,7 +106,6 @@ public:
   //  added to align with esphome
   void set_cellVoltage_sensor( sensor::Sensor *cellVoltage)       { cellVoltage_    = cellVoltage; }
   void set_cellRemPercent_sensor( sensor::Sensor *cellRemPercent) { cellRemPercent_ = cellRemPercent; }
-  void set_icversion_sensor( sensor::Sensor *icversion)           { icversion_      = icversion; }
   void set_cellCharge_sensor( sensor::Sensor *cellCharge)         { cellCharge_     = cellCharge; }
   void setup() override;
   void update() override;
@@ -119,7 +118,6 @@ protected:
   // added for esphome
   sensor::Sensor *cellVoltage_;
   sensor::Sensor *cellRemPercent_;
-  sensor::Sensor *icversion_;
   sensor::Sensor *cellCharge_;
 
 };
