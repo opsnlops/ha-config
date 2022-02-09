@@ -33,5 +33,5 @@ binary_sensor:
     name: "${human_devicename} Low Battery"
     icon: "mdi:battery-20"
     filters:
-      - delayed_off: 1s
-      - delayed_on: 1s
+      - delayed_off: 5s
+      - delayed_on: 5s
