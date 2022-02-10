@@ -1,5 +1,5 @@
 substitutions:
-  devicename: bedroom_window_shade
+  devicename: bedroom-window-shade
   human_devicename: Bedroom Window Shade
   ip: 10.9.1.216
 
