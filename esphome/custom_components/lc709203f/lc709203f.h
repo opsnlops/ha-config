@@ -78,7 +78,7 @@ typedef enum {
  *            the LC709203F I2C LiPo monitor
  */
 // class LC709203F {
-class LC709203FComponent : public sensor::Sensor, public PollingComponent, public i2c::I2CDevice {
+class LC709203FComponent : public PollingComponent, public i2c::I2CDevice {
 public:
 
   bool begin( void );
@@ -119,6 +119,12 @@ protected:
   sensor::Sensor *cellVoltage_;
   sensor::Sensor *cellRemPercent_;
   sensor::Sensor *cellCharge_;
+
+  enum ErrorCode {
+    NONE = 0,
+    COMMUNICATION_FAILED,
+    WRONG_CHIP_ID,
+  } error_code_{NONE};
 
 };
 

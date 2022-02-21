@@ -42,25 +42,7 @@ namespace esphome
 
         uint8_t i2c_address = LC709203F_I2C_ADDR;
 
-        /*!
-         *    @brief  Sets up the hardware and initializes I2C
-         *    @param
-         *    @return True if initialization was successful, otherwise false.
-         */
-        bool LC709203FComponent::begin(void)
-        {
-
-            ESP_LOGCONFIG(TAG, "Starting up LC709203F sensor");
-            Wire.begin();
-            setPowerMode(LC709203F_POWER_OPERATE);
-            setTemperatureMode(LC709203F_TEMPERATURE_THERMISTOR);
-
-            setCellCapacity(LC709203F_APA_3000MAH);
-            setCellProfile(LC709203_NOM3p7_Charge4p2);
-
-            return true;
-        }
-
+    
         /*   added update and setup and dump_config for esphome
          */
 
@@ -69,8 +51,24 @@ namespace esphome
          */
         void LC709203FComponent::setup()
         {
-
-            ESP_LOGCONFIG(TAG, "Setting Up LC709203F sensor");
+           
+            ESP_LOGCONFIG(TAG, "Setting up LC709203F...");
+             /*
+            uint16_t version = 0;
+            if (!this->read_byte_16(LC709203F_RO_ICVERSION, &version)) {
+                ESP_LOGE(TAG, "Unable to get IC version: %d", version);
+                this->error_code_ = COMMUNICATION_FAILED;
+                this->mark_failed();
+                return;
+            }
+            if (version != 0x60) {
+                ESP_LOGI(TAG, "Got IC version %d", version);
+                this->error_code_ = WRONG_CHIP_ID;
+                this->mark_failed();
+                return;
+            }
+            */
+            
             Wire.begin();
             setPowerMode(LC709203F_POWER_OPERATE);
             setTemperatureMode(LC709203F_TEMPERATURE_I2C);
@@ -83,7 +81,7 @@ namespace esphome
          */
         void LC709203FComponent::update()
         {
-
+            ESP_LOGV(TAG, "Updating values...");
             uint16_t cuv_mV = cellVoltage_mV();
             uint16_t rempct = cellRemainingPercent10();
             uint16_t celchg = cellStateOfCharge();

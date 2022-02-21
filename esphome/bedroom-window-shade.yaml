@@ -19,11 +19,29 @@ sensor:
     address: "0x0B"
     battery_voltage:
       name: "${human_devicename} Battery Voltage"
+      filters:
+        - quantile:
+            window_size: 15
+            send_every: 10
+            send_first_at: 5
+            quantile: 0.9
     battery_level:
       name: "${human_devicename} Battery Level"
+      filters:
+        - quantile:
+            window_size: 15
+            send_every: 10
+            send_first_at: 5
+            quantile: 0.9
     cell_charge:
       name: "${human_devicename} Cell Charge"
-    update_interval: 20s
+      filters:
+        - quantile:
+            window_size: 15
+            send_every: 10
+            send_first_at: 5
+            quantile: 0.9
+    update_interval: 2s
 
 binary_sensor:
   - platform: gpio
@@ -33,5 +51,5 @@ binary_sensor:
     name: "${human_devicename} Low Battery"
     icon: "mdi:battery-20"
     filters:
-      - delayed_off: 5s
-      - delayed_on: 5s
+      - delayed_off: 20s
+      - delayed_on: 20s
