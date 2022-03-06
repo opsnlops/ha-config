@@ -1,0 +1,15 @@
+creatures_trashy_volume:
+  name: Trashy Volume
+  initial: 20
+  min: 0
+  max: 30
+  step: 1
+  mode: slider
+
+creatures_trashy_sleep_time:
+  name: Trashy Sleep Time
+  initial: 3600
+  min: 5
+  max: 3600000
+  step: 1
+  mode: box
