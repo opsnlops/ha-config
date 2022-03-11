@@ -68,20 +68,22 @@ sensor:
 
   - platform: bme680_bsec
     temperature:
-      # Temperature in °C
-      name: "Weather Station Temperature"
+      # Temperature in °F
+      name: "Outside Temperature"
       sample_rate: lp
+      unit_of_measurement: "°F"
       filters:
         - median
+        - lambda: return x * (9.0/5.0) + 32.0;
     pressure:
       # Pressure in hPa
-      name: "Outside Pressure"
+      name: "Outside Barometer"
       sample_rate: lp
       filters:
         - median
     humidity:
       # Relative humidity %
-      name: "Weather Station Humidity"
+      name: "Outside Humidity"
       sample_rate: lp
       filters:
         - median
