@@ -8,6 +8,38 @@ packages:
   base: !include common/base.yaml
   esp32: !include common/device-classes/esp32.yaml
 
+i2c:
+
+bme680_bsec:
+  address: 0x77
+
+  # Temperature offset
+  # ------------------
+  # Useful if device is in enclosure and reads too high
+  # Default: 0
+  temperature_offset: 0
+
+  # IAQ calculation mode
+  # --------------------
+  # Available options:
+  # - static (for fixed position devices)
+  # - mobile (for on person or other moveable devices)
+  # Default: static
+  iaq_mode: static
+
+  # Sample rate
+  # -----------
+  # Available options:
+  # - lp (low power - samples every 3 seconds)
+  # - ulp (ultra low power - samples every 5 minutes)
+  # Default: lp
+  sample_rate: lp
+
+  # Interval at which to save BSEC state
+  # ------------------------------------
+  # Default: 6h
+  state_save_interval: 2h
+
 uart:
   rx_pin: GPIO16
   baud_rate: 9600
@@ -33,3 +65,54 @@ sensor:
       - sliding_window_moving_average:
           window_size: 20
           send_every: 20
+
+  - platform: bme680_bsec
+    temperature:
+      # Temperature in °C
+      name: "Weather Station Temperature"
+      sample_rate: lp
+      filters:
+        - median
+    pressure:
+      # Pressure in hPa
+      name: "Outside Pressure"
+      sample_rate: lp
+      filters:
+        - median
+    humidity:
+      # Relative humidity %
+      name: "Weather Station Humidity"
+      sample_rate: lp
+      filters:
+        - median
+    gas_resistance:
+      # Gas resistance in Ω
+      name: "Outside Gas Resistance"
+      filters:
+        - median
+    iaq:
+      # Indoor air quality value
+      name: "Outside IAQ"
+      filters:
+        - median
+    iaq_accuracy:
+      # IAQ accuracy as a numeric value of 0, 1, 2, 3
+      name: "Outside Numeric IAQ Accuracy"
+    co2_equivalent:
+      # CO2 equivalent estimate in ppm
+      name: "Outside CO2 Equivalent"
+      device_class: "carbon_dioxide"
+      filters:
+        - median
+    breath_voc_equivalent:
+      # Volatile organic compounds equivalent estimate in ppm
+      name: "Outside Breath VOC Equivalent"
+      device_class: "volatile_organic_compounds"
+      filters:
+        - median
+
+text_sensor:
+  - platform: bme680_bsec
+    iaq_accuracy:
+      # IAQ accuracy as a text value of Stabilizing, Uncertain, Calibrating, Calibrated
+      name: "Outside IAQ Accuracy"
