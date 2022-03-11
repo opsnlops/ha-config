@@ -1,8 +1,0 @@
-
-# Show the number of folks logged into agni
-
-- platform: mqtt
-  name: "Second Life Concurrency"
-  state_topic: "external/secondlife/concurrency"
-  unit_of_measurement: "resis"
-  icon: mdi:account-group
