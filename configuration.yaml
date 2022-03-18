@@ -35,6 +35,9 @@ homekit: !include homekit.yaml
 
 zone: !include zones.yaml
 
+# Templated lights
+light: !include lights.yaml
+
 # Enable streaming cameras
 ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg

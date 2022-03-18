@@ -1,0 +1,19 @@
+
+#
+# This templates define lights that wrap the groups, mostly
+# so that I can expose the groups to HomeKit
+
+- platform: template
+  lights:
+    family_room_lights:
+      value_template: "{{ states('group.family_room_lights') }}"
+      turn_on:
+        - service: light.turn_on
+          data:
+            entity_id: 
+              - group.family_room_lights
+      turn_off:
+        - service: light.turn_off
+          data:
+            entity_id: 
+              - group.family_room_lights

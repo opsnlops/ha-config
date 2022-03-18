@@ -22,9 +22,10 @@
   port: 22666
   filter:
 
-    # Include all of the themrostats
+    # Include all of the themrostats and fans
     include_entity_globs:
       - climate.*
+      - fan.*
 
     # These are here because HomeKit does a weird thing. It sends an "on"
     # command, and then an "off" command when you activate a scene. I'm not
