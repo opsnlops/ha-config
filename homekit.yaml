@@ -22,6 +22,9 @@
       - light.half_bathroom_lights
       - light.laundry_room_lights
 
+      # Just to be goofy
+      - light.family_room_clock
+
 # The one for non-lights
 - name: HA (Non-lights)
   mode: bridge
