@@ -1,6 +1,27 @@
 #
+# Let's be goofy and allow Siri to turn off the clock :)
+#
+
+- platform: template
+  lights:
+    family_room_clock:
+      friendly_name: "Family Room Clock"
+      value_template: "{{ states('input_boolean.creatures_clocky_yellow_display_on') }}"
+      turn_on:
+        - service: input_boolean.turn_on
+          data:
+            entity_id:
+              - input_boolean.creatures_clocky_yellow_display_on
+      turn_off:
+        - service: input_boolean.turn_off
+          data:
+            entity_id:
+              - input_boolean.creatures_clocky_yellow_display_on
+
+#
 # This templates define lights that wrap the groups, mostly
 # so that I can expose the groups to HomeKit
+#
 
 - platform: template
   lights:
