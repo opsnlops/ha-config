@@ -10,16 +10,9 @@
   advertise_ip: 10.3.2.5
   port: 21666
   filter:
-    include_domains:
-      - light
 
-    exclude_entities:
-      - light.guest_room_fan_as_light
-
-    exclude_entity_globs:
-      - light.sk6812*
-      - light.ws2812b*
-      - light.kitchen_plate*
+    include_entities:
+      - light.pink_lamp
 
 # The one for non-lights
 - name: HA (Non-lights)
@@ -28,32 +21,10 @@
   advertise_ip: 10.3.2.5
   port: 22666
   filter:
-    include_domains:
-      - climate
-      - fan
-      - switch
 
-    exclude_entities:
-      - switch.bedroom_air_filter
-      - switch.bunny_s_switch
-      - switch.bunnys_room_scene_controller
-      - switch.family_room_fairy_lights
-      - switch.family_room_scene_controller
-      - switch.kitchen_scene_controller
-      - switch.patio_lights
-      - switch.oil_heater
-
-    exclude_entity_globs:
-      - switch.coffee_monitor*
-      - switch.deconz*
-      - switch.family_room_tv*
-      - switch.flamethrower_camera_*
-      - switch.*_flamethrower_camera
-      - switch.fridge_power_monitor*
-      - switch.sk6812*
-      - switch.*_restart_in_safe_mode
-      - switch.ws2812b*
-      - switch.zigbee_coordinator_*
+    # Include all of the themrostats
+    include_globs:
+      - climate.*
 
     # These are here because HomeKit does a weird thing. It sends an "on"
     # command, and then an "off" command when you activate a scene. I'm not
