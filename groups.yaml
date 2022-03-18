@@ -1,5 +1,3 @@
-
-
 # Everyone in the household
 all_furries:
   name: All Furries
@@ -13,4 +11,20 @@ safety_lights:
   entities:
     - light.front_porch_light
     - light.bedroom_door_light
-    
+
+family_room_lights:
+  name: Family Room Lights
+  entities:
+    - light.pink_lamp
+    - light.blue_lamp
+    - light.yellow_lamp
+    - light.purple_lamp
+    - light.temp_office_lamp
+    - light.family_room_fairy_lights
+    - light.over_fireplace
+    - light.living_room_fireplace_backlight
+    - light.family_room_sofa
+    - light.family_room_tv_backlighting
+    - light.family_room_fairy_lights_blue_led
+    - light.family_room_floor_fan_blue_led
+    - light.family_room_tv_power_blue_led
