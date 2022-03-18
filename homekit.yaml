@@ -10,9 +10,17 @@
   advertise_ip: 10.3.2.5
   port: 21666
   filter:
-
     include_entities:
       - light.family_room_lights
+      - light.kitchen_lights
+      - light.office_lights
+      - light.workshop_lights
+      - light.bunnys_room_lights
+      - light.guest_room_lights
+      - light.hallway_lights
+      - light.hallway_bathroom_lights
+      - light.half_bathroom_lights
+      - light.laundry_room_lights
 
 # The one for non-lights
 - name: HA (Non-lights)
@@ -21,11 +29,9 @@
   advertise_ip: 10.3.2.5
   port: 22666
   filter:
-
     # Include all of the themrostats and fans
     include_entity_globs:
       - climate.*
-      - fan.*
 
     # These are here because HomeKit does a weird thing. It sends an "on"
     # command, and then an "off" command when you activate a scene. I'm not
@@ -88,6 +94,9 @@
       - binary_sensor.kitchen_carbon_monoxide_detected
       - binary_sensor.mud_room_carbon_monoxide_detected
       - binary_sensor.workshop_carbon_monoxide_detected
+
+      # Fans
+      - fan.guest_room_fan
 
   entity_config:
     binary_sensor.carport_motion:
