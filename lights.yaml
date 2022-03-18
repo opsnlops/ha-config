@@ -1,4 +1,3 @@
-
 #
 # This templates define lights that wrap the groups, mostly
 # so that I can expose the groups to HomeKit
@@ -6,14 +5,29 @@
 - platform: template
   lights:
     family_room_lights:
+      name: "Family Room Lights"
       value_template: "{{ states('group.family_room_lights') }}"
       turn_on:
         - service: homeassistant.turn_on
           data:
-            entity_id: 
+            entity_id:
               - group.family_room_lights
       turn_off:
         - service: homeassistant.turn_off
           data:
-            entity_id: 
+            entity_id:
               - group.family_room_lights
+
+    kitchen_lights:
+      name: "Kitchen Lights"
+      value_template: "{{ states('group.kitchen_lights') }}"
+      turn_on:
+        - service: homeassistant.turn_on
+          data:
+            entity_id:
+              - group.kitchen_lights
+      turn_off:
+        - service: homeassistant.turn_off
+          data:
+            entity_id:
+              - group.kitchen_lights
