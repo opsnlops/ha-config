@@ -12,7 +12,7 @@
   filter:
 
     include_entities:
-      - light.pink_lamp
+      - light.family_room_lights
 
 # The one for non-lights
 - name: HA (Non-lights)
