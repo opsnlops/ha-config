@@ -29,6 +29,19 @@ family_room_lights:
     - light.family_room_floor_fan_blue_led
     - light.family_room_tv_power_blue_led
 
+kitchen_lights:
+  name: Kitchen Lights
+  entities:
+    - light.kitchen_cooktop_north
+    - light.kitchen_cooktop_south
+    - light.kitchen_hanging_light
+    - light.kitchen_counter_light_1
+    - light.kitchen_counter_light_2
+    - light.kitchen_counter_light_3
+    - light.kitchen_counter_light_4
+    - light.kitchen_counter_light_5
+    - light.kitchen_over_fridge_light
+
 office_lights:
   name: Office Lights
   entities:
