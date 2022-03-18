@@ -8,12 +8,12 @@
     family_room_lights:
       value_template: "{{ states('group.family_room_lights') }}"
       turn_on:
-        - service: light.turn_on
+        - service: homeassitant.turn_on
           data:
             entity_id: 
               - group.family_room_lights
       turn_off:
-        - service: light.turn_off
+        - service: homeassitant.turn_off
           data:
             entity_id: 
               - group.family_room_lights
