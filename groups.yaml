@@ -62,6 +62,8 @@ workshop_lights:
     - light.workshop_fan_blue_led
     - light.printer_table_lamp
     - switch.workshop_fairy_lights
+    - light.sable_printer_blue_led
+    - light.oil_heater_monitor_blue_led
 
 bunnys_room_lights:
   name: Bunny's Room Lights
@@ -74,3 +76,46 @@ bunnys_room_lights:
     - light.bedroom_air_filter_blue_led
     - switch.bedroom_fairy_light_1
     - switch.bedroom_fairy_light_2
+
+outside_lights:
+  name: Outside Lights
+  entities:
+    - light.front_door_light
+    - light.patio_lights
+    - light.back_door_light
+    - light.bedroom_door_light
+    - light.back_corner_light
+    - light.back_patio_east
+    - light.back_patio_west
+    - light.carport_light
+
+guest_room_lights:
+  name: Guest Room Lights
+  entities:
+    - light.guest_room_left_lamp
+    - light.guest_room_right_lamp
+    - light.guest_room_overhead_light
+    - switch.guest_room_stars
+
+hallway_lights:
+  name: Hallway Lights
+  entities:
+     - light.hallway_light
+     - light.entryway_lights
+
+hallway_bathroom_lights:
+  name: Hallway Bathroom Lights
+  entities:
+    - light.hallway_bathroom_mirror_light
+    - switch.hallway_bathroom_stars
+
+half_bathroom_lights:
+  name: Half Bathroom Lights
+  entities:
+    - switch.half_bathroom_stars
+
+laundry_room_lights:
+  name: Laundry Room Lights
+  entities:
+    - light.laundry_room_cabinet
+    - light.laundry_room_light
