@@ -63,14 +63,14 @@ workshop_lights:
     - light.printer_table_lamp
     - switch.workshop_fairy_lights
 
-  bunnys_room_lights:
-    name: Bunny's Room Lights
-    entities:
-      - light.bedroom_window_light
-      - light.bedroom_right_nightstand_lamp
-      - light.bedroom_left_nightstand_lamp
-      - light.bedroom_fairy_lights_blue_led
-      - light.bedroom_fan_blue_led
-      - light.bedroom_air_filter_blue_led
-      - switch.bedroom_fairy_light_1
-      - switch.bedroom_fairy_light_2
+bunnys_room_lights:
+  name: Bunny's Room Lights
+  entities:
+    - light.bedroom_window_light
+    - light.bedroom_right_nightstand_lamp
+    - light.bedroom_left_nightstand_lamp
+    - light.bedroom_fairy_lights_blue_led
+    - light.bedroom_fan_blue_led
+    - light.bedroom_air_filter_blue_led
+    - switch.bedroom_fairy_light_1
+    - switch.bedroom_fairy_light_2
