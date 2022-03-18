@@ -5,7 +5,7 @@
 - platform: template
   lights:
     family_room_lights:
-      name: "Family Room Lights"
+      friendly_name: "Family Room Lights"
       value_template: "{{ states('group.family_room_lights') }}"
       turn_on:
         - service: homeassistant.turn_on
@@ -18,8 +18,10 @@
             entity_id:
               - group.family_room_lights
 
+- platform: template
+  lights:
     kitchen_lights:
-      name: "Kitchen Lights"
+      friendly_name: "Kitchen Lights"
       value_template: "{{ states('group.kitchen_lights') }}"
       turn_on:
         - service: homeassistant.turn_on
