@@ -20,7 +20,7 @@ family_room_lights:
     - light.yellow_lamp
     - light.purple_lamp
     - light.temp_office_lamp
-    - light.family_room_fairy_lights
+    - switch.family_room_fairy_lights
     - light.over_fireplace
     - light.living_room_fireplace_backlight
     - light.family_room_sofa
@@ -28,3 +28,15 @@ family_room_lights:
     - light.family_room_fairy_lights_blue_led
     - light.family_room_floor_fan_blue_led
     - light.family_room_tv_power_blue_led
+
+office_lights:
+  name: Office Lights
+  entities:
+    - light.office_desk_edge_light
+    - light.office_desk_light
+    - light.office_filing_cabinet_light
+    - light.office_floor_fan_blue_led
+    - light.office_window_fan_blue_led
+    - light.office_floor_light
+    - switch.lava_lamp
+    - switch.office_stars
