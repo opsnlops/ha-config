@@ -100,6 +100,16 @@
 
       # Fans
       - fan.guest_room_fan
+      - switch.bedroom_fan
+      - switch.family_room_ceiling_fan
+      - switch.family_room_floor_fan
+      - switch.office_ceiling_fan
+      - switch.office_floor_fan
+      - switch.office_window_fan
+      - switch.workshop_fan
+
+      # Other things
+      - switch.office_heater
 
   entity_config:
     binary_sensor.carport_motion:
