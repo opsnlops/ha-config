@@ -3,53 +3,22 @@ substitutions:
   human_devicename: Bedroom Window Shade
   ip: 10.9.1.216
 
+  # Things for roller blinds
+  my_stepper: my_stepper
+  speed: 600 steps/s
+  report_in: "0"
+  endstop: "10000"
+
+  # These are the pins next to the v5 / GND pins. Yes, they're in this order.
+  pina: GPIO13
+  pinb: GPIO12
+  pinc: GPIO14
+  pind: GPIO27
+
 packages:
   wifi: !include common/wifi.yaml
   base: !include common/base.yaml
   esp32: !include common/device-classes/esp32.yaml
 
-esphome:
-  includes:
-    - "custom_components/lc709203f/lc709203f.h"
 
-i2c:
-
-sensor:
-  - platform: lc709203f
-    address: "0x0B"
-    battery_voltage:
-      name: "${human_devicename} Battery Voltage"
-      filters:
-        - quantile:
-            window_size: 15
-            send_every: 10
-            send_first_at: 5
-            quantile: 0.9
-    battery_level:
-      name: "${human_devicename} Battery Level"
-      filters:
-        - quantile:
-            window_size: 15
-            send_every: 10
-            send_first_at: 5
-            quantile: 0.9
-    cell_charge:
-      name: "${human_devicename} Cell Charge"
-      filters:
-        - quantile:
-            window_size: 15
-            send_every: 10
-            send_first_at: 5
-            quantile: 0.9
-    update_interval: 2s
-
-binary_sensor:
-  - platform: gpio
-    pin:
-      number: 23
-      inverted: true
-    name: "${human_devicename} Low Battery"
-    icon: "mdi:battery-20"
-    filters:
-      - delayed_off: 20s
-      - delayed_on: 20s
+<<: !include common/roller_shade.yaml

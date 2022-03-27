@@ -1,0 +1,185 @@
+# Based on :
+# https://github.com/RoadkillUK/Motor-on-a-Roller-Blind-for-ESPHOME
+
+esphome:
+  on_boot:
+    - priority: -200.0
+      then:
+        - stepper.report_position: # Set stepper to global variable
+            id: $my_stepper
+            position: !lambda return id(${my_stepper}_global);
+        - stepper.set_target: # Set stepper to global variable
+            id: $my_stepper
+            target: !lambda return id(${my_stepper}_global);
+        - if: # If blind is Closed
+            condition:
+              - lambda: "return id(${my_stepper}_global) == 0;"
+            then: # Publish state etc.
+              - cover.template.publish:
+                  id: blinded
+                  state: CLOSED
+                  current_operation: IDLE
+        - if: # If blind is Open
+            condition:
+              - lambda: "return id(${my_stepper}_global) == id(endstop);"
+            then: # Publish state etc.
+              - cover.template.publish:
+                  id: blinded
+                  state: OPEN
+                  current_operation: IDLE
+        - if: # If blind is Neither
+            condition:
+              - lambda: "return (id(${my_stepper}_global) != 0) && (id(${my_stepper}_global) != id(endstop));"
+            then: #  # Publish state etc.
+              - cover.template.publish:
+                  id: blinded
+                  position: !lambda "return (float(float(id($my_stepper).current_position) / float(id(endstop))));"
+                  current_operation: IDLE
+
+stepper:
+  - platform: uln2003
+    id: $my_stepper
+    pin_a: $pina
+    pin_b: $pinb
+    pin_c: $pinc
+    pin_d: $pind
+    max_speed: ${speed}
+    sleep_when_done: True
+    acceleration: 300
+    deceleration: 300
+
+globals:
+  - id: ${my_stepper}_global # Integer for storing the stepper position in case of reboot
+    type: int
+    restore_value: True
+    initial_value: "0"
+
+  - id: openclosed # Boolean to store OPEN/CLOSED state
+    type: bool
+    restore_value: True
+    initial_value: "0"
+
+  - id: endstop # Variable for storing ENDSTOP (how far to move stepper)
+    type: int
+    restore_value: True
+    initial_value: ${endstop}
+
+  - id: settingmode # Integer for Setup Mode
+    type: int
+    restore_value: no
+    initial_value: "0"
+
+  - id: report_in
+    type: bool
+    restore_value: no
+    initial_value: "${report_in}"
+
+cover:
+  - platform: template
+    name: $human_devicename
+    id: blinded
+    open_action:
+      then:
+        - logger.log: "Opening"
+        - stepper.set_target: # Send stepper to endstop
+            id: $my_stepper
+            target: !lambda return id(endstop);
+        - if:
+            condition:
+              lambda: "return id(report_in) == 1;" # If Reporting is Selected
+            then:
+              - while:
+                  condition:
+                    lambda: "return id($my_stepper).current_position != id(endstop);"
+                  then:
+                    - cover.template.publish:
+                        id: blinded
+                        position: !lambda "return (float(float(id($my_stepper).current_position) / float(id(endstop))));"
+                        current_operation: OPENING
+                    - delay: 1000 ms
+            else:
+              - wait_until: # Wait until endstop reached
+                  lambda: "return (id($my_stepper).current_position == id(endstop));"
+        - globals.set: # Set global to current position
+            id: ${my_stepper}_global
+            value: !lambda return id($my_stepper).current_position;
+        - globals.set: # Set toggle to OPEN (No need for 'optimistic mode')
+            id: openclosed
+            value: "1"
+        - cover.template.publish:
+            id: blinded
+            state: OPEN
+            current_operation: IDLE
+    close_action:
+      then:
+        - logger.log: "Closing"
+        - stepper.set_target: # Send stepper to 0
+            id: $my_stepper
+            target: "0"
+        - if:
+            condition:
+              lambda: "return id(report_in) == 1;"
+            then:
+              - while:
+                  condition:
+                    lambda: "return id($my_stepper).current_position != 0;"
+                  then:
+                    - cover.template.publish:
+                        id: blinded
+                        position: !lambda "return (float(float(id($my_stepper).current_position) / float(id(endstop))));"
+                        current_operation: CLOSING
+                    - delay: 1000 ms
+            else:
+              - wait_until: # Wait until endstop reached
+                  lambda: "return (id($my_stepper).current_position == id(endstop));"
+        - globals.set: # Set global to current position
+            id: ${my_stepper}_global
+            value: !lambda return id($my_stepper).current_position;
+        - globals.set: # Set toggle to CLOSED (No need for 'optimistic mode')
+            id: openclosed
+            value: "0"
+        - cover.template.publish:
+            id: blinded
+            state: CLOSED
+            current_operation: IDLE
+    position_action:
+      then:
+        - stepper.set_target:
+            id: $my_stepper
+            target: !lambda return int(id(endstop) * pos);
+        - if:
+            condition:
+              lambda: "return id(report_in) == 1;"
+            then:
+              - while:
+                  condition:
+                    lambda: "return id($my_stepper).current_position != int(id(endstop) * pos);"
+                  then:
+                    - cover.template.publish:
+                        id: blinded
+                        position: !lambda "return (float(float(id($my_stepper).current_position) / float(id(endstop))));"
+                    - delay: 1000 ms
+            else:
+              - wait_until: # Wait until endstop reached
+                  lambda: "return id($my_stepper).current_position == (int(id(endstop) * pos));"
+        - globals.set: # Set global to current position
+            id: ${my_stepper}_global
+            value: !lambda return id($my_stepper).current_position;
+        - cover.template.publish:
+            id: blinded
+            position: !lambda "return (float(float(id($my_stepper).current_position) / float(id(endstop))));"
+            current_operation: IDLE
+    stop_action:
+      then:
+        - stepper.set_target:
+            id: $my_stepper
+            target: !lambda return id($my_stepper).current_position;
+        - globals.set: # Set global to current position
+            id: ${my_stepper}_global
+            value: !lambda return id($my_stepper).current_position;
+        - cover.template.publish:
+            id: blinded
+            position: !lambda "return (float(float(id($my_stepper).current_position) / float(id(endstop))));"
+            current_operation: IDLE
+    has_position: true
+    device_class: shade
