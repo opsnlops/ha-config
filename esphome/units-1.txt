@@ -10,14 +10,3 @@ family_room_fairy_lights.yaml
 family_room_floor_fan.yaml
 family_room_tv_power_monitor.yaml
 fridge-monitor.yaml
-fridge_power_monitor.yaml
-office-air-monitor.yaml
-office-fireplace.yaml
-office_floor_fan.yaml
-office_heater.yaml
-office_window_fan.yaml
-oil_heater_monitor.yaml
-sable_printer.yaml
-weather-station.yaml
-workshop_fan.yaml
-zigbee-coordinator.yaml
