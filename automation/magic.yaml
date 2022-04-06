@@ -45,3 +45,5 @@
       entity_id: input_number.creatures_clocky_family_room_led_ring_brightness
       data:
         value: 0
+      target:
+        entity_id: input_number.creatures_clocky_family_room_led_ring_brightness
