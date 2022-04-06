@@ -20,3 +20,28 @@
   action:
     - service: script.turn_on
       entity_id: script.low_key_scene
+
+# Start a countdown to 9:00pm on the Family Room Clock
+- alias: "Count down to Low Key on the Family Room Clock"
+  initial_state: true
+  trigger:
+    platform: time
+    at: "20:59:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - sun
+          - mon
+          - tue
+          - wed
+          - thu
+      - condition: state
+        entity_id: person.april
+        state: home
+  action:
+    - service: input_number.set_value
+      entity_id: input_number.creatures_clocky_family_room_led_ring_brightness
+      data:
+        value: 0
