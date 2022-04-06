@@ -6,17 +6,17 @@
   lights:
     family_room_clock:
       friendly_name: "Family Room Clock"
-      value_template: "{{ states('input_boolean.creatures_clocky_yellow_display_on') }}"
+      value_template: "{{ states('input_boolean.creatures_clocky_family_room_display_on') }}"
       turn_on:
         - service: input_boolean.turn_on
           data:
             entity_id:
-              - input_boolean.creatures_clocky_yellow_display_on
+              - input_boolean.creatures_clocky_family_room_display_on
       turn_off:
         - service: input_boolean.turn_off
           data:
             entity_id:
-              - input_boolean.creatures_clocky_yellow_display_on
+              - input_boolean.creatures_clocky_family_room_display_on
 
 #
 # This templates define lights that wrap the groups, mostly
