@@ -22,7 +22,7 @@
 - alias: "Carport: Brighten the lights on outdoor motion at night"
   trigger:
     platform: state
-    entity_id: binary_sensor.carport_motion
+    entity_id: binary_sensor.test_motion_sensor
     to: "on"
   condition:
     condition: or
@@ -38,7 +38,7 @@
 - alias: "Carport: Go back to normal after five minutes"
   trigger:
     platform: state
-    entity_id: binary_sensor.carport_motion
+    entity_id: binary_sensor.test_motion_sensor
     to: "off"
     for:
       minutes: 5
