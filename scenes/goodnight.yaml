@@ -102,7 +102,7 @@ entities:
     state: "off"
   light.over_fireplace:
     state: "off"
-  switch.family_room_ceiling_fan:
+  fan.family_room_ceiling_fan:
     state: "off"
   switch.family_room_floor_fan:
     state: "off"

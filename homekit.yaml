@@ -99,9 +99,9 @@
       - binary_sensor.workshop_carbon_monoxide_detected
 
       # Fans
+      - fan.family_room_ceiling_fan
       - fan.guest_room_fan
       - switch.bedroom_fan
-      - switch.family_room_ceiling_fan
       - switch.family_room_floor_fan
       - switch.office_ceiling_fan
       - switch.office_floor_fan

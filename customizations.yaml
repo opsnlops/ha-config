@@ -75,13 +75,6 @@ sensor.bedroom_fan_energy:
   state_class: measurement
   device_class: energy
 
-sensor.family_room_ceiling_fan_energy:
-  state_class: measurement
-  device_class: energy
-sensor.family_room_ceiling_fan_power:
-  state_class: measurement
-  device_class: power
-
 sensor.guest_room_fan_controller_energy:
   state_class: measurement
   device_class: energy
