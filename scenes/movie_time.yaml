@@ -46,7 +46,12 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
-
+  light.yellow_lamp:
+    brightness: 39
+    state: "on"
+    xy_color:
+      - 0.6915
+      - 0.3083
   light.pink_lamp:
     brightness: 39
     state: "on"
@@ -54,12 +59,6 @@ entities:
       - 0.6915
       - 0.3083
   light.purple_lamp:
-    brightness: 39
-    state: "on"
-    xy_color:
-      - 0.6915
-      - 0.3083
-  light.yellow_lamp:
     state: "off"
   light.blue_lamp:
     state: "off"

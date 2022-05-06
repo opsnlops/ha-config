@@ -29,20 +29,20 @@ entities:
     state: "on"
 
   # Family Room
-  light.pink_lamp:
-    brightness: 152
-    state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
   light.purple_lamp:
-    brightness: 152
+    brightness: 187
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.yellow_lamp:
-    brightness: 187
+    brightness: 152
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.pink_lamp:
+    brightness: 152
     state: "on"
     xy_color:
       - 0.455
