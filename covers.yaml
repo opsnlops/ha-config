@@ -1,0 +1,55 @@
+#
+# Templated covers
+#
+
+- platform: template
+  covers:
+    bedroom_small_window_shade_homekit:
+      friendly_name: "Bedroom Small Window Shade HomeKit"
+      value_template: >
+        {{ states('cover.bedroom_small_window_shade') }}
+      device_class: shade
+      set_cover_position:
+        service: cover.set_cover_position
+        data_template:
+          entity_id: cover.bedroom_small_window_shade
+          position: >
+            {{100 - position}}
+      open_cover:
+        service: cover.close_cover
+        data:
+          entity_id: cover.bedroom_small_window_shade
+      close_cover:
+        service: cover.open_cover
+        data:
+          entity_id: cover.bedroom_small_window_shade
+      stop_cover:
+        service: cover.stop_cover
+        data:
+          entity_id: cover.bedroom_small_window_shade
+
+- platform: template
+  covers:
+    bedroom_large_window_shade_homekit:
+      friendly_name: "Bedroom Large Window Shade HomeKit"
+      value_template: >
+        {{ states('cover.bedroom_large_window_shade') }}
+      device_class: shade
+      set_cover_position:
+        service: cover.set_cover_position
+        data_template:
+          entity_id: cover.bedroom_large_window_shade
+          position: >
+            {{100 - position}}
+      open_cover:
+        service: cover.close_cover
+        data:
+          entity_id: cover.bedroom_large_window_shade
+      close_cover:
+        service: cover.open_cover
+        data:
+          entity_id: cover.bedroom_large_window_shade
+      stop_cover:
+        service: cover.stop_cover
+        data:
+          entity_id: cover.bedroom_large_window_shade

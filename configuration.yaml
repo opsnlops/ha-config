@@ -38,6 +38,9 @@ zone: !include zones.yaml
 # Templated lights
 light: !include lights.yaml
 
+# Templated covers
+cover: !include covers.yaml
+
 # Enable streaming cameras
 ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
