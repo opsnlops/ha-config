@@ -5,9 +5,9 @@ substitutions:
 
   # Things for roller blinds
   my_stepper: my_stepper
-  speed: 600 steps/s
+  speed: 700 steps/s
   report_in: "0"
-  endstop: "10000"
+  endstop: "5000"
 
   # These are the pins next to the v5 / GND pins. Yes, they're in this order.
   pina: GPIO13

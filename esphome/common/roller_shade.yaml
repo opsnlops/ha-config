@@ -45,8 +45,8 @@ stepper:
     pin_d: $pind
     max_speed: ${speed}
     sleep_when_done: True
-    acceleration: 300
-    deceleration: 300
+    acceleration: 400
+    deceleration: 400
 
 globals:
   - id: ${my_stepper}_global # Integer for storing the stepper position in case of reboot
