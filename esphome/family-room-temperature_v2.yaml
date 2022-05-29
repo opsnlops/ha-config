@@ -1,0 +1,23 @@
+substitutions:
+  devicename: family-room-temperature-v2
+  human_devicename: Family Room Temperature V2
+  ip: 10.9.1.224
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+display:
+  - platform: lcd_gpio
+    dimensions: 16x2
+    data_pins:
+      - 5
+      - 18
+      - 19
+      - 21
+    enable_pin: 23
+    rs_pin: 22
+    lambda: |-
+      // Print the current time
+      it.strftime("%I:%M:%S %p\n%m/%d/%Y", id(sntp_time).now());
