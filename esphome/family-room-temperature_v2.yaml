@@ -15,9 +15,32 @@ display:
       - 5
       - 18
       - 19
-      - 21
-    enable_pin: 23
-    rs_pin: 22
+      - 33
+    enable_pin: 25
+    rs_pin: 26
     lambda: |-
       // Print the current time
       it.strftime("%I:%M:%S %p\n%m/%d/%Y", id(sntp_time).now());
+
+
+i2c:
+
+sensor:
+  - platform: bme280
+    temperature:
+      name: "Family Room Temperature V2"
+      oversampling: 16x
+      filters:
+        - lambda: return x * (9.0/5.0) + 32.0;
+      unit_of_measurement: "°F"
+      icon: mdi:thermometer-lines
+    pressure:
+      name: "Family Room Pressure V2"
+      oversampling: 16x
+      icon: mdi:chart-line-variant
+    humidity:
+      name: "Family Room Humidity V2"
+      oversampling: 16x
+      icon: mdi:water-percent
+    address: 0x77
+    update_interval: 20s

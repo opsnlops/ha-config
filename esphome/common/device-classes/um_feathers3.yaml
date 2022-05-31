@@ -1,0 +1,17 @@
+esphome:
+  name: ${devicename}
+
+esp32:
+  variant: esp32s3
+  board: um_feathers3
+  framework:
+    type: arduino
+    version: 2.0.3RC1
+
+preferences:
+  flash_write_interval: 10min
+
+logger:
+
+packages:
+  mqtt: !include  ../mqtt.yaml
