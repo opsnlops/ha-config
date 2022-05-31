@@ -19,9 +19,9 @@ display:
     enable_pin: 25
     rs_pin: 26
     lambda: |-
-      // Print the current time
+      // Print the current state of things
       it.printf("%.1fF %s\n%.1fF %.1fF %.0f%%", id(family_room_temperature).state, id(heater_state).state.c_str(), 
-                id(current_set_point).state, id(family_room_humidity).state, id(outside_temperature).state);
+                id(current_set_point).state, id(outside_temperature).state, id(family_room_humidity).state);
 
 i2c:
 
