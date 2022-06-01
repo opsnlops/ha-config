@@ -103,6 +103,7 @@
       - fan.guest_room_fan
       - switch.bedroom_fan
       - switch.family_room_floor_fan
+      - switch.laundry_room_window_fan
       - switch.office_ceiling_fan
       - switch.office_floor_fan
       - switch.office_window_fan
