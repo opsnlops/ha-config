@@ -1,0 +1,10 @@
+substitutions:
+  devicename: bunnys_bathroom_fairy_lights
+  human_devicename: Bunnys Bathroom Fairy Lights
+  ip: 10.9.1.225
+  icon: "mdi:string-lights"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/athom_smart_plug.yaml
