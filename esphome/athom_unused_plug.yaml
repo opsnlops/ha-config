@@ -1,0 +1,10 @@
+substitutions:
+  devicename: athom_unused_plug
+  human_devicename: Athom Unused Plug
+  ip: 10.9.1.226
+  icon: "mdi:power-socket-us"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/athom_smart_plug.yaml
