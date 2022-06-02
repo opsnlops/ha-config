@@ -1,8 +1,8 @@
 substitutions:
-  devicename: athom_unused_plug
-  human_devicename: Athom Unused Plug
+  devicename: bunnys_room_bed_fan
+  human_devicename: Bunny's Room Bed Fan
   ip: 10.9.1.226
-  icon: "mdi:power-socket-us"
+  icon: "mdi:fan"
 
 packages:
   wifi: !include common/wifi.yaml
