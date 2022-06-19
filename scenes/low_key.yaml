@@ -100,11 +100,11 @@ entities:
       - 0.374
 
   light.family_room_sofa:
-    brightness: 56
+    brightness: 66
     state: "on"
     xy_color:
-      - 0.612
-      - 0.374
+      - 0.1532
+      - 0.048
   light.over_fireplace:
     brightness: 15
     state: "on"
