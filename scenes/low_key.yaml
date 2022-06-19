@@ -96,8 +96,8 @@ entities:
     brightness: 31
     state: "on"
     xy_color:
-      - 0.5411
-      - 0.3979
+      - 0.1532
+      - 0.048
 
   light.family_room_sofa:
     brightness: 56
