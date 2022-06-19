@@ -93,18 +93,18 @@ entities:
   light.family_room_floor_fan_blue_led:
     state: "off"
   light.living_room_fireplace_backlight:
-    brightness: 31
+    brightness: 43
     state: "on"
     xy_color:
-      - 0.1532
-      - 0.048
+      - 0.612
+      - 0.374
 
   light.family_room_sofa:
-    brightness: 74
+    brightness: 56
     state: "on"
     xy_color:
-      - 0.1532
-      - 0.048
+      - 0.612
+      - 0.374
   light.over_fireplace:
     brightness: 15
     state: "on"
@@ -232,7 +232,7 @@ entities:
     state: "off"
 
   light.temp_office_lamp:
-    brightness: 38
+    brightness: 92
     state: "on"
     xy_color:
       - 0.1532
