@@ -4,8 +4,8 @@ entities:
     brightness: 48
     state: "on"
     xy_color:
-      - 0.5409
-      - 0.3978
+      - 0.1532
+      - 0.048
   light.dining_room_fairy_lights:
     state: "off"
 
@@ -67,8 +67,8 @@ entities:
     brightness: 68
     state: "on"
     xy_color:
-      - 0.5435
-      - 0.3978
+      - 0.1532
+      - 0.048
   light.purple_lamp:
     brightness: 68
     state: "on"
@@ -79,8 +79,8 @@ entities:
     brightness: 68
     state: "on"
     xy_color:
-      - 0.5435
-      - 0.3978
+      - 0.1532
+      - 0.048
   light.blue_lamp:
     brightness: 68
     state: "on"
@@ -231,10 +231,9 @@ entities:
   switch.christmas_tree:
     state: "off"
 
-
   light.temp_office_lamp:
     brightness: 38
     state: "on"
     xy_color:
-      - 0.5435
-      - 0.3978
+      - 0.1532
+      - 0.048
