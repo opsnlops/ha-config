@@ -64,7 +64,7 @@ entities:
       - 0.5435
       - 0.3978
   light.pink_lamp:
-    brightness: 68
+    brightness: 79
     state: "on"
     xy_color:
       - 0.1532
@@ -76,7 +76,7 @@ entities:
       - 0.5409
       - 0.3978
   light.yellow_lamp:
-    brightness: 68
+    brightness: 99
     state: "on"
     xy_color:
       - 0.1532
@@ -100,7 +100,7 @@ entities:
       - 0.048
 
   light.family_room_sofa:
-    brightness: 56
+    brightness: 74
     state: "on"
     xy_color:
       - 0.1532
