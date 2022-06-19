@@ -92,7 +92,7 @@ entities:
     state: "off"
   light.blue_lamp:
     state: "off"
-  switch.family_room_fairy_lights:
+  light.family_room_fairy_lights:
     state: "off"
   light.living_room_fireplace_backlight:
     state: "off"
@@ -107,8 +107,6 @@ entities:
   switch.family_room_floor_fan:
     state: "off"
   light.family_room_floor_fan_blue_led:
-    state: "off"
-  light.family_room_fairy_lights_blue_led:
     state: "off"
   switch.christmas_tree:
     state: "off"

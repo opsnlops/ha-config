@@ -47,7 +47,7 @@ entities:
     state: "off"
   light.blue_lamp:
     state: "off"
-  switch.family_room_fairy_lights:
+  light.family_room_fairy_lights:
     state: "off"
   light.living_room_fireplace_backlight:
     state: "off"

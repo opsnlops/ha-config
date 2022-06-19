@@ -80,8 +80,9 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
-  switch.family_room_fairy_lights:
+  light.family_room_fairy_lights:
     state: "on"
+    brightness: 254
   light.living_room_fireplace_backlight:
     brightness: 109
     state: "on"
@@ -107,8 +108,6 @@ entities:
       - 0.2513
       - 0.1382
   light.family_room_floor_fan_blue_led:
-    state: "on"
-  light.family_room_fairy_lights_blue_led:
     state: "on"
   switch.christmas_tree:
     state: "on"

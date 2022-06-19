@@ -20,12 +20,11 @@ family_room_lights:
     - light.yellow_lamp
     - light.purple_lamp
     - light.temp_office_lamp
-    - switch.family_room_fairy_lights
+    - light.family_room_fairy_lights
     - light.over_fireplace
     - light.living_room_fireplace_backlight
     - light.family_room_sofa
     - light.family_room_tv_backlighting
-    - light.family_room_fairy_lights_blue_led
     - light.family_room_floor_fan_blue_led
     - light.family_room_tv_power_blue_led
 
@@ -100,8 +99,8 @@ guest_room_lights:
 hallway_lights:
   name: Hallway Lights
   entities:
-     - light.hallway_light
-     - light.entryway_lights
+    - light.hallway_light
+    - light.entryway_lights
 
 hallway_bathroom_lights:
   name: Hallway Bathroom Lights
