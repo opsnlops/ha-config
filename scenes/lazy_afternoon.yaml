@@ -2,9 +2,7 @@ name: Lazy Afternoon
 entities:
   switch.hallway_bathroom_stars:
     state: "on"
-  switch.bedroom_fairy_light_1:
-    state: "off"
-  switch.bedroom_fairy_light_2:
+  light.bunnys_room_fairy_lights:
     state: "off"
   light.bedroom_left_nightstand_lamp:
     brightness: 254

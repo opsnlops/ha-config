@@ -145,10 +145,9 @@ entities:
     state: "off"
 
   # Bedroom
-  switch.bedroom_fairy_light_1:
-    state: "off"
-  switch.bedroom_fairy_light_2:
-    state: "off"
+  light.bunnys_room_fairy_lights:
+    state: "on"
+    brightness: 50
   light.bedroom_left_nightstand_lamp:
     brightness: 30
     state: "on"

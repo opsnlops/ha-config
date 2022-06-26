@@ -70,11 +70,9 @@ bunnys_room_lights:
     - light.bedroom_window_light
     - light.bedroom_right_nightstand_lamp
     - light.bedroom_left_nightstand_lamp
-    - light.bedroom_fairy_lights_blue_led
     - light.bedroom_fan_blue_led
     - light.bedroom_air_filter_blue_led
-    - switch.bedroom_fairy_light_1
-    - switch.bedroom_fairy_light_2
+    - light.bunnys_room_fairy_lights
 
 outside_lights:
   name: Outside Lights

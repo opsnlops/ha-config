@@ -1,9 +1,8 @@
 name: Bunnys Room Bedtime
 entities:
-  switch.bedroom_fairy_light_1:
+  light.bunnys_room_fairy_lights:
     state: "on"
-  switch.bedroom_fairy_light_2:
-    state: "on"
+    brightness: 50
   light.bedroom_left_nightstand_lamp:
     brightness: 61
     state: "on"
