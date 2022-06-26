@@ -1,0 +1,10 @@
+substitutions:
+  devicename: family_room_ac_power_monitor
+  human_devicename: Family Room A/C Power Monitor
+  ip: 10.9.1.227
+  icon: "mdi:printer-3d"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/athom_smart_plug.yaml
