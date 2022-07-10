@@ -89,7 +89,7 @@ entities:
       - 0.3978
   light.family_room_fairy_lights:
     state: "on"
-    brightness: 1
+    brightness_pct: 7
   light.family_room_floor_fan_blue_led:
     state: "off"
   light.living_room_fireplace_backlight:
@@ -147,7 +147,7 @@ entities:
   # Bedroom
   light.bunnys_room_fairy_lights:
     state: "on"
-    brightness: 50
+    brightness_pct: 40
   light.bedroom_left_nightstand_lamp:
     brightness: 30
     state: "on"
