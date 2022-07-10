@@ -89,7 +89,7 @@ entities:
       - 0.3978
   light.family_room_fairy_lights:
     state: "on"
-    brightness_pct: 7
+    brightness: 21
   light.family_room_floor_fan_blue_led:
     state: "off"
   light.living_room_fireplace_backlight:
