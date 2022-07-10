@@ -109,7 +109,7 @@ hallway_bathroom_lights:
 half_bathroom_lights:
   name: Half Bathroom Lights
   entities:
-    - switch.half_bathroom_stars
+    - light.half_bathroom_fairy_lights
 
 laundry_room_lights:
   name: Laundry Room Lights
