@@ -110,6 +110,8 @@ half_bathroom_lights:
   name: Half Bathroom Lights
   entities:
     - light.half_bathroom_fairy_lights
+    - light.half_bathroom_ceiling_light
+    - light.half_bathroom_vanity_light
 
 laundry_room_lights:
   name: Laundry Room Lights

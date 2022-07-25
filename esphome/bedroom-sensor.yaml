@@ -1,0 +1,21 @@
+substitutions:
+  devicename: bedroom-sensor
+  human_devicename: Bedroom Sensor
+  ip: 10.9.1.228
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+esp32_ble_tracker:
+
+ble_client:
+  - mac_address: EC:94:CB:59:B9:6E
+    id: ble_bedjet
+
+climate:
+  - platform: bedjet
+    id: bunny_bed_fan
+    name: "Bunny Bed Fan"
+    ble_client_id: ble_bedjet

@@ -213,6 +213,14 @@ entities:
     state: "on"
     brightness: 254
 
+  # Half Bathroom
+  light.half_bathroom_ceiling_light:
+    state: "on"
+    brightness: 254
+  light.half_bathroom_vanity_light:
+    state: "on"
+    brightness: 254
+
   light.hallway_light:
     state: "on"
     brightness: 254

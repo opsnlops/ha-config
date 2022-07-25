@@ -110,6 +110,14 @@ entities:
   switch.workshop_fairy_lights:
     state: "off"
 
+  # Half Bathroom
+  light.half_bathroom_ceiling_light:
+    state: "off"
+  light.half_bathroom_vanity_light:
+    state: "off"
+  switch.half_bathroom_ceiling_fan:
+    state: "off"
+
   light.hallway_light:
     state: "off"
 
