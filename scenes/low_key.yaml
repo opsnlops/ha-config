@@ -198,10 +198,13 @@ entities:
     state: "off"
   light.workshop_stairs:
     state: "on"
-    brightness: 40
-    xy_color:
-      - 0.1532
-      - 0.048
+    brightness: 79
+    rgbww_color:
+      - 1
+      - 0
+      - 255
+      - 0
+      - 0
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:
