@@ -206,6 +206,7 @@ entities:
     state: "on"
   light.workshop_stairs:
     state: "on"
+    color_temp: 411
     brightness: 60
 
   # Hallway Bathroom

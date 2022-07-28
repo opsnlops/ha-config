@@ -22,3 +22,4 @@ entities:
   light.workshop_stairs:
     state: "on"
     brightness: 255
+    color_temp: 411
