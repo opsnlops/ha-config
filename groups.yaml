@@ -63,6 +63,7 @@ workshop_lights:
     - switch.workshop_fairy_lights
     - light.sable_printer_blue_led
     - light.oil_heater_monitor_blue_led
+    - light.workshop_stairs
 
 bunnys_room_lights:
   name: Bunny's Room Lights

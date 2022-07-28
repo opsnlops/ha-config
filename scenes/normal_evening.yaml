@@ -204,6 +204,9 @@ entities:
       - 0.0445
   switch.workshop_fairy_lights:
     state: "on"
+  light.workshop_stairs:
+    state: "on"
+    brightness: 60
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:

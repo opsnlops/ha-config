@@ -196,6 +196,8 @@ entities:
       - 0.3978
   switch.workshop_fairy_lights:
     state: "off"
+  light.workshop_stairs:
+    state: "off"
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:
