@@ -64,6 +64,8 @@ workshop_lights:
     - light.sable_printer_blue_led
     - light.oil_heater_monitor_blue_led
     - light.workshop_stairs
+    - light.workshop_left_light
+    - light.workshop_right_light
 
 bunnys_room_lights:
   name: Bunny's Room Lights
