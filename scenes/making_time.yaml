@@ -12,6 +12,18 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.workshop_left_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.workshop_right_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.workshop_light_strip:
     brightness: 255
     state: "on"

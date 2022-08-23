@@ -194,6 +194,21 @@ entities:
     xy_color:
       - 0.5409
       - 0.3978
+
+  light.workshop_left_light:
+    brightness: 120
+    state: "on"
+    xy_color:
+      - 0.5409
+      - 0.3978
+
+  light.workshop_right_light:
+    brightness: 120
+    state: "on"
+    xy_color:
+      - 0.5409
+      - 0.3978
+
   switch.workshop_fairy_lights:
     state: "off"
   light.workshop_stairs:
