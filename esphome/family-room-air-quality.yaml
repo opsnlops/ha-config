@@ -10,6 +10,10 @@ packages:
 
 i2c:
 
+esp32_ble_tracker:
+    
+bluetooth_proxy:
+
 sensor:
   - platform: sgp30
     eco2:
