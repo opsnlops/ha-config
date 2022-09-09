@@ -1,0 +1,18 @@
+substitutions:
+  devicename: bunnys-room-temperature
+  human_devicename: Bunnys Room Temperature
+  ip: 10.9.1.231
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp8266: !include common/device-classes/esp8266.yaml
+
+i2c:
+  sda: GPIO2
+  scl: GPIO0
+
+sensor:
+  - platform: mcp9808
+    name: "Bunnys Room Temperature"
+    update_interval: 20s

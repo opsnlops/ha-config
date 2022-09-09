@@ -1,0 +1,16 @@
+substitutions:
+  devicename: workshop-temperature
+  human_devicename: Workshop Temperature
+  ip: 10.9.1.230
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp8266: !include common/device-classes/esp8266.yaml
+
+i2c:
+
+sensor:
+  - platform: mcp9808
+    name: "Workshop Temperature"
+    update_interval: 20s

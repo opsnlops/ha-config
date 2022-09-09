@@ -1,0 +1,82 @@
+substitutions:
+  devicename: family-room-thermostat-lcd
+  human_devicename: Family Room Thermostat LCD
+  ip: 10.9.1.229
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+
+display:
+  - platform: ili9341
+    model: TFT 2.4
+    cs_pin: 27 
+    reset_pin: 26
+    dc_pin: 25
+    led_pin: 35
+    
+    lambda: |-
+      it.fill(COLOR_BLACK);
+      it.print(0, 0, id(my_font), id(my_red), TextAlign::TOP_LEFT, "Hello World!");
+
+  - platform: lcd_gpio
+    dimensions: 16x2
+    data_pins:
+      - 5
+      - 18
+      - 19
+      - 33
+    enable_pin: 25
+    rs_pin: 26
+    lambda: |-
+      // Print the current state of things
+      it.printf("%.1fF %s\n%.1fF %.1fF %.0f%%", id(family_room_temperature_lcd).state, id(heater_state).state.c_str(), 
+                id(current_set_point).state, id(outside_temperature).state, id(family_room_humidity_lcd).state);
+
+i2c:
+
+sensor:
+  - platform: bme280
+    temperature:
+      name: "Family Room Temperature"
+      id: family_room_temperature_lcd
+      oversampling: 16x
+      filters:
+        - lambda: return x * (9.0/5.0) + 32.0;
+      unit_of_measurement: "°F"
+      icon: mdi:thermometer-lines
+    pressure:
+      name: "Family Room Pressure"
+      id: family_room_pressure_lcd
+      oversampling: 16x
+      icon: mdi:chart-line-variant
+    humidity:
+      name: "Family Room Humidity"
+      id: family_room_humidity_lcd
+      oversampling: 16x
+      icon: mdi:water-percent
+    address: 0x77
+    update_interval: 20s
+
+  # Import some data from Home Assistant
+  - platform: homeassistant
+    name: "Current Set Point"
+    id: current_set_point
+    entity_id: climate.family_room_heat
+    attribute: temperature
+    internal: true
+  - platform: homeassistant
+    id: outside_temperature
+    name: "Outside Temperature"
+    entity_id: sensor.outside_temperature
+    internal: true
+
+text_sensor:
+  - platform: homeassistant
+    name: "Heater State"
+    id: heater_state
+    entity_id: climate.family_room_heat
+    attribute: hvac_action
+    internal: true

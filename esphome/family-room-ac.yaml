@@ -1,0 +1,44 @@
+substitutions:
+  devicename: family-room-ac
+  human_devicename: Family Room AC
+  ip: 10.9.1.232
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+
+
+remote_receiver:
+  id: rcvr
+  pin:
+    number: GPIO26
+    inverted: true
+    mode:
+      input: true
+      pullup: true
+  # high 55% tolerance is recommended for some remote control units
+  tolerance: 55%  
+
+remote_transmitter:
+  pin: GPIO25
+  # Infrared remotes use a 50% carrier signal
+  carrier_duty_percent: 50%
+
+climate:
+  - platform: whynter
+    name: "Family Room AC"
+    use_fahrenheit: true
+    receiver_id: rcvr
+    supports_heat: false
+    sensor: ac_temperature
+
+i2c:
+
+sensor:
+  - platform: mcp9808
+    name: "Family Room AC Temperature"
+    id: ac_temperature
+    update_interval: 10s
+    internal: true
