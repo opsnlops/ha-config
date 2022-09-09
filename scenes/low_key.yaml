@@ -6,8 +6,6 @@ entities:
     xy_color:
       - 0.1532
       - 0.048
-  light.dining_room_fairy_lights:
-    state: "off"
 
   light.kitchen_cooktop_north:
     brightness: 45
@@ -106,11 +104,11 @@ entities:
       - 0.1532
       - 0.048
   light.over_fireplace:
-    brightness: 15
+    brightness: 30
     state: "on"
     xy_color:
-      - 0.5409
-      - 0.3978
+      - 0.1532
+      - 0.048
   light.family_room_tv_backlighting:
     brightness: 69
     state: "on"
