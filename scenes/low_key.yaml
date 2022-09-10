@@ -104,7 +104,7 @@ entities:
       - 0.1532
       - 0.048
   light.over_fireplace:
-    brightness: 30
+    brightness: 12
     state: "on"
     xy_color:
       - 0.1532
