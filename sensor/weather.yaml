@@ -28,6 +28,7 @@
   state_characteristic: value_min
   max_age:
     hours: 24
+  sampling_size: 10000
 
 - platform: statistics
   name: "Outside Temperature 24 Hour Max"
@@ -35,6 +36,7 @@
   state_characteristic: value_max
   max_age:
     hours: 24
+  sampling_size: 10000
 
 - platform: statistics
   name: "Outside Wind Speed 24 Hour Max"
@@ -42,3 +44,4 @@
   state_characteristic: value_max
   max_age:
     hours: 24
+  sampling_size: 10000
