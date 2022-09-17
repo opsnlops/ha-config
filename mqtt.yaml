@@ -10,3 +10,41 @@ birth_message:
 will_message:
   topic: "home/homeassistant/status"
   payload: "offline"
+
+# MQTT Powered Sensors
+
+# Weather
+
+# This data comes from dutch, which is reading a sensor on the roof of the
+# house and publishing the data via MQTT. 🏡
+sensor:
+  - name: "Acurite Outside Temperature"
+    state_topic: "weather/Acurite-5n1/temperature_F"
+    unit_of_measurement: "°F"
+    device_class: temperature
+    icon: mdi:thermometer
+
+  - name: "Acurite Outside Humidity"
+    state_topic: "weather/Acurite-5n1/humidity"
+    unit_of_measurement: "%"
+    device_class: humidity
+    icon: mdi:water-percent
+
+  - name: "Wind Bearing"
+    state_topic: "weather/Acurite-5n1/wind_dir_deg"
+    unit_of_measurement: "deg"
+    icon: mdi:compass
+
+  - name: "Wind Speed (Avg)"
+    state_topic: "weather/Acurite-5n1/wind_avg_mi_h"
+    unit_of_measurement: "mph"
+    icon: mdi:weather-windy
+
+  - name: "Rain Amount"
+    state_topic: "weather/Acurite-5n1/rain_in"
+    unit_of_measurement: "in"
+    icon: mdi:weather-rainy
+
+  - state_topic: "internal/rain_in_prior"
+    name: "rain_in_prior"
+    unit_of_measurement: "in"
