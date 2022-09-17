@@ -35,6 +35,7 @@ sensor:
     state_topic: "weather/Acurite-5n1/wind_avg_mi_h"
     unit_of_measurement: "mph"
     icon: mdi:weather-windy
+    state_class: measurement
 
   - name: "Rain Amount"
     state_topic: "weather/Acurite-5n1/rain_in"

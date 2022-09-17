@@ -1,4 +1,3 @@
-
 # This allows me to see how much rain has come in today, rather than
 # over the lifetime of the senor
 
@@ -21,3 +20,25 @@
         {% set degree = states('sensor.wind_bearing')|float %}
         {{ direction[((degree+11.25)/22.5)|int] }}
       friendly_name: "Wind Direction"
+
+# Use the stats platform to keep track of 24 hour metrics
+- platform: statistics
+  name: "Outside Temperature 24 Hour Min"
+  entity_id: sensor.outside_temperature
+  state_characteristic: value_min
+  max_age:
+    hours: 24
+
+- platform: statistics
+  name: "Outside Temperature 24 Hour Max"
+  entity_id: sensor.outside_temperature
+  state_characteristic: value_max
+  max_age:
+    hours: 24
+
+- platform: statistics
+  name: "Outside Wind Speed 24 Hour Max"
+  entity_id: sensor.wind_speed_avg
+  state_characteristic: value_max
+  max_age:
+    hours: 24
