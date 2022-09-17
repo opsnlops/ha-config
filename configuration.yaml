@@ -69,6 +69,23 @@ frontend:
 # Telegram bot config
 telegram_bot: !include telegram.yaml
 
+# Use PostgreSQL for our recorder DB
+recorder:
+  db_url: !secret pgsql_connection_uri
+  db_retry_wait: 15 # Wait 15 seconds before retrying
+  exclude:
+    domains:
+      - automation
+      - updater
+    entity_globs:
+      - sensor.weather_*
+    entities:
+      - sun.sun # Don't record sun data
+      - sensor.last_boot # Comes from 'systemmonitor' sensor platform
+      - sensor.date
+    event_types:
+      - call_service # Don't record service calls
+
 # Notification group for alerts
 notify:
   - platform: telegram
