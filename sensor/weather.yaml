@@ -26,6 +26,7 @@
   name: "Outside Temperature 24 Hour Min"
   entity_id: sensor.outside_temperature
   state_characteristic: value_min
+  icon: mdi:thermometer-chevron-down
   max_age:
     hours: 24
 
@@ -33,6 +34,7 @@
   name: "Outside Temperature 24 Hour Max"
   entity_id: sensor.outside_temperature
   state_characteristic: value_max
+  icon: mdi:thermometer-chevron-up
   max_age:
     hours: 24
 
@@ -40,5 +42,6 @@
   name: "Outside Wind Speed 24 Hour Max"
   entity_id: sensor.wind_speed_avg
   state_characteristic: value_max
+  icon: mdi:windsock
   max_age:
     hours: 24
