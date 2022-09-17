@@ -4,12 +4,6 @@
 
 broker: 127.0.0.1
 discovery: true
-birth_message:
-  topic: "home/homeassistant/status"
-  payload: "online"
-will_message:
-  topic: "home/homeassistant/status"
-  payload: "offline"
 
 # MQTT Powered Sensors
 
