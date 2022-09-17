@@ -5,9 +5,9 @@
 broker: 127.0.0.1
 discovery: true
 
-# MQTT Powered Sensors
+# MQTT Sourced Sensors
 
-# Weather
+# ⛅️ Weather
 
 # This data comes from dutch, which is reading a sensor on the roof of the
 # house and publishing the data via MQTT. 🏡
@@ -17,12 +17,14 @@ sensor:
     unit_of_measurement: "°F"
     device_class: temperature
     icon: mdi:thermometer
+    state_class: measurement
 
   - name: "Acurite Outside Humidity"
     state_topic: "weather/Acurite-5n1/humidity"
     unit_of_measurement: "%"
     device_class: humidity
     icon: mdi:water-percent
+    state_class: measurement
 
   - name: "Wind Bearing"
     state_topic: "weather/Acurite-5n1/wind_dir_deg"
@@ -38,6 +40,7 @@ sensor:
     state_topic: "weather/Acurite-5n1/rain_in"
     unit_of_measurement: "in"
     icon: mdi:weather-rainy
+    state_class: total_increasing
 
   - state_topic: "internal/rain_in_prior"
     name: "rain_in_prior"
