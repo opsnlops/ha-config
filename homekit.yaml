@@ -62,6 +62,7 @@
       - sensor.guest_room_temperature
       - sensor.half_bathroom_temperature
       - sensor.hallway_bathroom_temperature
+      - sensor.outside_temperature
       - sensor.kitchen_temperature
       - sensor.laundry_room_temperature
       - sensor.mud_room_temperature
