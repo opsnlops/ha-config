@@ -11,3 +11,7 @@ secrets.yaml
 # Ignore parts of the esphome config
 esphome/.esphome
 esphome/venv-esphome
+
+# IntelliJ
+.idea/
+*.iml
