@@ -1,5 +1,5 @@
 # This allows me to see how much rain has come in today, rather than
-# over the lifetime of the senor
+# over the lifetime of the sensor
 
 - platform: template
   sensors:

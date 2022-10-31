@@ -59,6 +59,8 @@ input_number: !include input_number.yaml
 
 climate: !include_dir_merge_list climate/
 
+camera: !include_dir_merge_list camera/
+
 # Enable iOS stuff
 ios: !include ios.yaml
 
