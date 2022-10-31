@@ -1,0 +1,10 @@
+substitutions:
+  devicename: workshop_panel_switch
+  human_devicename: Workshop Panel Switch
+  ip: 10.9.1.234
+  icon: "mdi:alarm-panel"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/athom_smart_plug.yaml
