@@ -1,0 +1,300 @@
+header_cards:
+  justify_content: right
+  badges: null
+  cards:
+    - type: custom:mushroom-chips-card
+      chips:
+        - type: entity
+          entity: sensor.office_panel_battery_level
+          content_info: state
+          style: |
+            ha-card {
+              background: rgba(0,0,0,255);
+            }
+        - type: entity
+          entity: sensor.outside_pm_2_5um
+          content_info: state
+          style: |
+            ha-card {
+              background: rgba(0,0,0,255);
+            }
+        - type: entity
+          entity: sensor.aprils_nest_energy_monitor_electric_consumption_w
+          content_info: state
+          style: |
+            ha-card {
+              background: rgba(0,0,0,255);
+            }
+views:
+  - title: Office
+    path: dashboard
+    panel: false
+    badges: []
+    cards:
+      - type: custom:simple-clock-card
+        use_military: false
+        hide_seconds: true
+        font_size: 3.5rem
+        padding_size: 30px
+      - type: entities
+        entities:
+          - entity: scene.work_at_home
+          - entity: scene.normal_evening
+            icon: mdi:palette
+        state_color: true
+        title: Lights
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: Office
+            entities:
+              - entity: sensor.office_temperature
+            line_color: purple
+            line_width: 8
+            font_size: 70
+            hours_to_show: 8
+            points_per_hour: 30
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: Outside
+            entities:
+              - entity: sensor.outside_temperature
+            line_color: red
+            line_width: 8
+            font_size: 70
+            hours_to_show: 8
+            points_per_hour: 20
+          - type: custom:mini-graph-card
+            name: Wind
+            entities:
+              - entity: sensor.wind_speed_avg
+            line_color: blue
+            line_width: 8
+            font_size: 70
+            hours_to_show: 8
+            points_per_hour: 20
+      - type: entities
+        entities:
+          - entity: group.office_lights
+            name: Lights
+            secondary_info: none
+          - entity: switch.lava_lamp
+          - entity: switch.office_ceiling_fan
+          - entity: switch.office_floor_fan
+          - entity: switch.office_window_fan
+        state_color: true
+        show_header_toggle: false
+      - type: custom:mushroom-climate-card
+        entity: climate.office_heat
+        name: Heat
+        show_temperature_control: true
+        hvac_modes:
+          - heat
+          - 'off'
+        primary_info: name
+  - theme: Backend-selected
+    title: Climate
+    path: climate
+    badges: []
+    cards:
+      - type: weather-forecast
+        entity: weather.accuweather
+        secondary_info_attribute: humidity
+        show_forecast: false
+        name: Whidbey Island
+      - type: entities
+        entities:
+          - entity: sensor.outside_temperature
+            name: Local Temperature
+            secondary_info: last-updated
+          - entity: sensor.acurite_outside_temperature
+          - entity: sensor.rain_today
+            icon: mdi:weather-pouring
+          - entity: sensor.airnow_aqi
+            name: AQI
+          - entity: sensor.wind_speed_avg
+            secondary_info: last-changed
+          - entity: sensor.wind_direction
+            icon: mdi:compass
+            name: Wind Direction
+          - entity: sensor.outside_humidity
+          - entity: sensor.outside_barometer
+          - entity: sensor.accuweather_cloud_ceiling
+            name: Cloud Ceiling
+            secondary_info: last-changed
+          - entity: sensor.accuweather_precipitation
+            name: Precipitation
+            secondary_info: last-changed
+          - entity: sensor.accuweather_pressure_tendency
+            name: Pressure Tendency
+          - entity: sensor.accuweather_uv_index
+            name: UV Index
+        footer:
+          type: graph
+          entity: sensor.outside_temperature
+          hours_to_show: 24
+          detail: 1
+        title: Whidbey Island Weather
+        state_color: true
+      - type: history-graph
+        entities:
+          - entity: weather.accuweather
+        hours_to_show: 24
+        refresh_interval: 0
+      - type: history-graph
+        entities:
+          - entity: sensor.bunnys_bathroom_temperature
+          - entity: sensor.bunnys_room_temperature
+          - entity: sensor.entryway_temperature
+          - entity: sensor.family_room_temperature
+          - entity: sensor.guest_room_temperature
+          - entity: sensor.half_bathroom_temperature
+          - entity: sensor.hallway_bathroom_temperature
+          - entity: sensor.kitchen_temperature
+          - entity: sensor.laundry_room_temperature
+          - entity: sensor.mud_room_temperature
+          - entity: sensor.office_temperature
+          - entity: sensor.workshop_temperature
+        refresh_interval: 0
+        title: Inside
+        hours_to_show: 24
+      - type: history-graph
+        entities:
+          - entity: sensor.outside_temperature
+          - entity: sensor.accuweather_temperature
+          - entity: sensor.acurite_outside_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Outside
+      - type: gauge
+        entity: sensor.airnow_aqi
+        min: 0
+        max: 300
+        name: Air Quality
+        severity:
+          green: 0
+          yellow: 51
+          red: 150
+      - type: entities
+        entities:
+          - entity: sensor.bunnys_bathroom_temperature
+            name: Bunny's Bathroom
+            secondary_info: last-updated
+          - entity: sensor.bunnys_room_temperature
+            name: Bedroom
+            secondary_info: last-updated
+          - entity: sensor.entryway_temperature
+            secondary_info: last-updated
+            name: Entryway
+          - entity: sensor.family_room_temperature
+            name: Family Room
+            secondary_info: last-updated
+          - entity: sensor.guest_room_temperature
+            secondary_info: last-updated
+            name: Guest Room
+          - entity: sensor.half_bathroom_temperature
+            name: Half Bathroom
+            secondary_info: last-updated
+          - entity: sensor.hallway_bathroom_temperature
+            name: Hallway Bathroom
+            secondary_info: last-updated
+          - entity: sensor.kitchen_temperature
+            name: Kitchen
+            secondary_info: last-updated
+          - entity: sensor.laundry_room_temperature
+            name: Laundry Room
+            secondary_info: last-updated
+          - entity: sensor.mud_room_temperature
+            secondary_info: last-updated
+            name: Mud Room
+          - entity: sensor.office_temperature
+            name: Office
+            secondary_info: last-updated
+          - entity: sensor.workshop_temperature
+            name: Workshop
+            secondary_info: last-updated
+          - entity: sensor.outside_temperature
+            name: Outside
+            secondary_info: last-updated
+        title: Temperature Right Now
+        show_header_toggle: false
+      - type: history-graph
+        entities:
+          - entity: sensor.bunnys_bathroom_humidity
+          - entity: sensor.entryway_humidity
+          - entity: sensor.family_room_humidity
+          - entity: sensor.guest_room_relative_humidity
+          - entity: sensor.half_bathroom_relative_humidity
+          - entity: sensor.hallway_bathroom_relative_humidity
+          - entity: sensor.kitchen_relative_humidity
+          - entity: sensor.laundry_room_relative_humidity
+          - entity: sensor.mud_room_relative_humidity
+          - entity: sensor.office_humidity
+          - entity: sensor.outside_humidity
+          - entity: sensor.workshop_relative_humidity
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Humidity
+      - type: history-graph
+        entities:
+          - entity: sensor.wind_speed_avg
+          - entity: sensor.wind_speed_max
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Wind
+      - type: history-graph
+        entities:
+          - entity: sensor.bunnys_bathroom_illuminance
+          - entity: sensor.kitchen_illuminance
+          - entity: sensor.hallway_bathroom_illuminance
+          - entity: sensor.laundry_room_illuminance
+          - entity: sensor.guest_room_illuminance
+          - entity: sensor.half_bathroom_illuminance
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Luminance
+      - type: history-graph
+        entities:
+          - entity: sensor.wind_direction
+        refresh_interval: 0
+        title: Wind Direction
+        hours_to_show: 5
+      - type: entities
+        entities:
+          - entity: sensor.outside_pm_1um
+            secondary_info: last-updated
+          - entity: sensor.outside_pm_2_5um
+            secondary_info: last-updated
+          - entity: sensor.outside_pm_10um
+            secondary_info: last-updated
+          - entity: sensor.family_room_eco2
+          - entity: sensor.family_room_tvoc
+            secondary_info: last-updated
+          - entity: sensor.office_breath_voc_equivalent
+          - entity: sensor.office_co2_equivalent
+          - entity: sensor.office_iaq
+        title: Air Quailty
+      - type: entities
+        entities:
+          - entity: sensor.airnow_aqi
+          - entity: sensor.wind_speed_avg
+            name: Wind Speed
+          - entity: sensor.wind_bearing
+        state_color: true
+      - type: history-graph
+        entities:
+          - entity: sensor.bunnys_room_light_level
+          - entity: sensor.family_room_light_level
+          - entity: sensor.office_light_level
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Light Levels
+      - type: history-graph
+        entities:
+          - entity: sensor.family_room_pressure
+          - entity: sensor.office_pressure
+          - entity: sensor.outside_barometer
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Barometric Pressure

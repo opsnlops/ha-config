@@ -1,0 +1,76 @@
+header_cards:
+  justify_content: right
+  badges: null
+  cards:
+    - type: custom:mushroom-chips-card
+      chips:
+        - type: entity
+          entity: sensor.kitchen_panel_battery_level
+          content_info: state
+          style: |
+            ha-card {
+              background: rgba(0,0,0,255);
+            }
+views:
+  - title: Kitchen
+    path: dashboard
+    panel: false
+    badges: []
+    cards:
+      - type: custom:simple-clock-card
+        use_military: false
+        hide_seconds: true
+        font_size: 4rem
+        padding_size: 30px
+      - type: custom:mushroom-title-card
+        title: >-
+          Outside: {{ states('sensor.outside_temperature') }}°F
+
+          Kitchen: {{ states('sensor.kitchen_temperature') }}°F
+
+          Wind: {{ states('sensor.wind_speed_avg')|round }} MPH
+
+          Smoke: {{ states('sensor.outside_pm_2_5um') }} µg/m³
+
+          Power: {{
+          "{0:,.0f}".format(states('sensor.aprils_nest_energy_monitor_electric_consumption_w')|round)
+          }} W
+        alignment: center
+      - type: entities
+        entities:
+          - entity: scene.normal_evening
+            icon: mdi:palette
+          - entity: scene.cooking_time
+          - entity: scene.kitchen_cleanup
+          - entity: scene.low_key
+        state_color: true
+        title: Lights
+      - type: custom:mushroom-light-card
+        entity: light.kitchen_lights
+        layout: horizontal
+        use_light_color: false
+        show_brightness_control: true
+        show_color_control: true
+        collapsible_controls: true
+        fill_container: false
+      - type: custom:mushroom-light-card
+        entity: light.patio_lights
+        layout: horizontal
+        use_light_color: false
+        show_brightness_control: true
+        show_color_control: true
+        collapsible_controls: true
+        fill_container: false
+      - type: custom:mushroom-lock-card
+        entity: lock.front_door
+        layout: horizontal
+      - type: history-graph
+        entities:
+          - entity: sensor.outside_temperature
+          - entity: sensor.kitchen_temperature
+        hours_to_show: 8
+      - type: custom:weather-radar-card
+        zoom_level: 9
+        marker_longitude: !secret home_longitude
+        marker_latitude: !secret home_latitude
+        show_marker: true
