@@ -1,0 +1,80 @@
+header_cards:
+  justify_content: right
+  badges: null
+  cards:
+    - type: custom:mushroom-chips-card
+      chips:
+        - type: entity
+          entity: sensor.workshop_panel_battery_level
+          content_info: state
+          style: |
+            ha-card {
+              background: rgba(0,0,0,255);
+            }
+views:
+  - theme: ios-dark-mode-light-blue-alternative
+    title: Workshop
+    path: dashboard
+    panel: false
+    badges: []
+    cards:
+      - type: custom:simple-clock-card
+        use_military: false
+        hide_seconds: true
+        font_size: 4rem
+        padding_size: 30px
+      - type: custom:mushroom-title-card
+        title: >-
+          Outside: {{ states('sensor.outside_temperature') }}°F
+
+          Workshop: {{ states('sensor.workshop_temperature') }}°F
+
+          Wind: {{ states('sensor.wind_speed_avg')|round }} MPH
+
+          Smoke: {{ states('sensor.outside_pm_2_5um') }} µg/m³
+
+          Power: {{
+          "{0:,.0f}".format(states('sensor.aprils_nest_energy_monitor_electric_consumption_w')|round)
+          }} W
+        alignment: center
+      - type: entities
+        entities:
+          - entity: scene.making_time
+            icon: mdi:palette
+          - entity: scene.normal_evening
+          - entity: scene.low_key
+          - entity: light.printer_table_lamp
+        state_color: true
+      - type: horizontal-stack
+        cards:
+          - type: gauge
+            entity: sensor.mable_job_percentage
+            name: Mable
+          - type: gauge
+            entity: sensor.sable_current_progress
+            name: Sable
+      - type: entities
+        entities:
+          - entity: sensor.mable_estimated_finish_time
+            name: Mable Finish
+          - entity: sensor.sable_print_time
+            name: Sable Print Time
+          - entity: sensor.mable_current_state
+          - entity: sensor.sable_state
+            name: Sable State
+          - entity: select.sable_lights_preset
+          - entity: sensor.sable_printer_power
+        title: Printers
+        state_color: false
+      - show_state: true
+        show_name: true
+        camera_view: auto
+        type: picture-entity
+        entity: camera.sable
+        camera_image: camera.sable
+      - show_state: true
+        show_name: true
+        camera_view: auto
+        type: picture-entity
+        entity: camera.mable
+        camera_image: camera.mable

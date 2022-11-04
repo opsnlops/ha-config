@@ -51,9 +51,9 @@ views:
               - entity: sensor.office_temperature
             line_color: purple
             line_width: 8
-            font_size: 70
+            font_size: 100
             hours_to_show: 8
-            points_per_hour: 30
+            points_per_hour: 20
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
@@ -62,18 +62,18 @@ views:
               - entity: sensor.outside_temperature
             line_color: red
             line_width: 8
-            font_size: 70
+            font_size: 75
             hours_to_show: 8
-            points_per_hour: 20
+            points_per_hour: 5
           - type: custom:mini-graph-card
             name: Wind
             entities:
               - entity: sensor.wind_speed_avg
             line_color: blue
             line_width: 8
-            font_size: 70
+            font_size: 75
             hours_to_show: 8
-            points_per_hour: 20
+            points_per_hour: 10
       - type: entities
         entities:
           - entity: group.office_lights
