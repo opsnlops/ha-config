@@ -6,6 +6,7 @@
       - "sensor.belgian_hare_ups_status"
       - "sensor.network_ups_status"
       - "sensor.office_ups_status"
+      - "sensor.workbench_ups_status"
   action:
     service: notify.aprils_devices
     data:
