@@ -1,0 +1,15 @@
+substitutions:
+  devicename: bunnys_bathroom_bluetooth_proxy
+  human_devicename: Bunnys Bathroom Bluetooth Proxy
+  ip: 10.9.1.235
+  icon: "mdi:bluetooth-connect"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/esp32.yaml
+
+
+bluetooth_proxy:
+  active: true
+
