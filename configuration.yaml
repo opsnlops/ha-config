@@ -6,6 +6,7 @@ default_config:
 
 homeassistant:
   name: April's Nest
+  country: US
   latitude: !secret home_latitude
   longitude: !secret home_longitude
   elevation: !secret home_elevation
