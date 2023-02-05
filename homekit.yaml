@@ -32,9 +32,6 @@
   advertise_ip: 10.3.2.5
   port: 22666
   filter:
-    # Include all of the themrostats and fans
-    include_entity_globs:
-      - climate.*
 
     # These are here because HomeKit does a weird thing. It sends an "on"
     # command, and then an "off" command when you activate a scene. I'm not
@@ -113,6 +110,14 @@
       # Covers
       - cover.bedroom_large_window_shade_homekit
       - cover.bedroom_small_window_shade_homekit
+
+      # Climate Control
+      - climate.family_room_heat
+      - climate.office_heat
+      - climate.bunnys_room_heater
+      - climate.guest_room_heater
+      - climate.hallway_bathroom_heater
+      - climate.bunnys_bathroom_heater
 
       # Other things
       - switch.office_heater
