@@ -1,0 +1,28 @@
+substitutions:
+  devicename: garden-shed
+  human_devicename: Garden Shed
+  ip: 10.9.1.236
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+
+light:
+  - platform: neopixelbus
+    type: GRB
+    variant: WS2811
+    pin: GPIO13
+    num_leds: 10
+    name: "Garden Shed Lights"
+
+sensor:
+  - platform: adc
+    pin: GPIO32
+    name: "Garden Shed Solar Panel Output"
+    update_interval: 10s
+  - platform: adc
+    pin: GPIO33
+    name: "Garden Shed Battery"
+    update_interval: 10s
