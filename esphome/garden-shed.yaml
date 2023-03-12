@@ -16,13 +16,16 @@ light:
     pin: GPIO13
     num_leds: 10
     name: "Garden Shed Lights"
+    icon: mdi:string-lights
 
 sensor:
   - platform: adc
     pin: GPIO32
     name: "Garden Shed Solar Panel Output"
     update_interval: 10s
+    icon: mdi:solar-power-variant
   - platform: adc
     pin: GPIO33
     name: "Garden Shed Battery"
     update_interval: 10s
+    icon: mdi:car-battery
