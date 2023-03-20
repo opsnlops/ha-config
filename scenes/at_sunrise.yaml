@@ -16,3 +16,5 @@ entities:
     state: "off"
   light.carport_light:
     state: "off"
+  light.garden_shed_lights:
+    state: "off"

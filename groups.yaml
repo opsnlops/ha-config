@@ -88,6 +88,7 @@ outside_lights:
     - light.back_patio_east
     - light.back_patio_west
     - light.carport_light
+    - light.garden_shed_lights
 
 guest_room_lights:
   name: Guest Room Lights

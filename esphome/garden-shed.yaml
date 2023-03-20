@@ -23,7 +23,6 @@ modbus:
 
 modbus_controller:
   - id: epever
-    ## the Modbus device addr
     address: 0x1
     modbus_id: mod_bus_epever
     command_throttle: 500ms
@@ -48,7 +47,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_voltage
-    name: "${human_devicename} Battery voltage"
+    name: "${human_devicename} Battery Voltage"
     address: 0x331A
     register_type: read
     value_type: U_WORD
@@ -70,9 +69,9 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: pv_input_voltage
-    name: "${human_devicename} PV array input voltage"
+    name: "${human_devicename} PV Array Input Voltage"
     address: 0x3100
-    unit_of_measurement: "V" ## for any other unit the value is returned in minutes
+    unit_of_measurement: "V"
     register_type: read
     value_type: U_WORD
     accuracy_decimals: 1
@@ -82,9 +81,9 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: pv_input_current
-    name: "${human_devicename} PV array input current"
+    name: "${human_devicename} PV Array Input Current"
     address: 0x3101
-    unit_of_measurement: "A" ## for any other unit the value is returned in minutes
+    unit_of_measurement: "A"
     register_type: read
     value_type: U_WORD
     accuracy_decimals: 2
@@ -94,9 +93,9 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: pv_input_power
-    name: "${human_devicename} PV array input power"
+    name: "${human_devicename} PV Array Input Power"
     address: 0x3102
-    unit_of_measurement: "W" ## for any other unit the value is returned in minutes
+    unit_of_measurement: "W"
     register_type: read
     value_type: U_DWORD_R
     accuracy_decimals: 1
@@ -106,7 +105,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_voltage
-    name: "${human_devicename} Charging voltage"
+    name: "${human_devicename} Charging Coltage"
     address: 0x3104
     unit_of_measurement: "V"
     register_type: read
@@ -118,7 +117,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_current
-    name: "${human_devicename} Charging current"
+    name: "${human_devicename} Charging Current"
     address: 0x3105
     unit_of_measurement: "A"
     register_type: read
@@ -130,7 +129,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_power
-    name: "${human_devicename} Charging power"
+    name: "${human_devicename} Charging Power"
     address: 0x3106
     unit_of_measurement: "W"
     register_type: read
@@ -142,7 +141,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: load_voltage
-    name: "${human_devicename} Load voltage"
+    name: "${human_devicename} Load Voltage"
     address: 0x310C
     unit_of_measurement: "V"
     register_type: read
@@ -166,7 +165,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: load_power
-    name: "${human_devicename} Load power"
+    name: "${human_devicename} Load Power"
     address: 0x310E
     unit_of_measurement: "W"
     register_type: read
@@ -178,7 +177,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_temperature
-    name: "${human_devicename} Battery temperature"
+    name: "${human_devicename} Battery Temperature"
     address: 0x3110
     unit_of_measurement: °C
     register_type: read
@@ -190,7 +189,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: device_temperature
-    name: "${human_devicename} Device temperature"
+    name: "${human_devicename} Device Temperature"
     address: 0x3111
     unit_of_measurement: °C
     register_type: read
@@ -202,7 +201,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: power_components_temperature
-    name: "${human_devicename} Power components temperature"
+    name: "${human_devicename} Power Components Temperature"
     address: 0x3112
     unit_of_measurement: °C
     register_type: read
@@ -224,7 +223,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: remote_battery_temperature
-    name: "${human_devicename} Remote battery temperature"
+    name: "${human_devicename} Remote Battery Temperature"
     address: 0x311B
     unit_of_measurement: °C
     register_type: read
@@ -235,7 +234,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_volt_settings
-    name: "${human_devicename} Remote real voltage"
+    name: "${human_devicename} Remote Real Voltage"
     address: 0x311D
     register_type: read
     value_type: S_WORD
@@ -256,7 +255,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: Battery_status_temp
-    name: "${human_devicename} Battery status temperature"
+    name: "${human_devicename} Battery Status Temperature"
     address: 0x3200
     register_type: read
     value_type: U_WORD
@@ -266,7 +265,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: Charger_status
-    name: "${human_devicename} Charger status"
+    name: "${human_devicename} Charger Status"
     address: 0x3201
     register_type: read
     value_type: U_WORD
@@ -275,7 +274,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_current
-    name: "${human_devicename} Battery current"
+    name: "${human_devicename} Battery Current"
     address: 0x331B
     register_type: read
     value_type: S_DWORD_R
