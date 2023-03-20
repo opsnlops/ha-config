@@ -2,30 +2,285 @@ substitutions:
   devicename: garden-shed
   human_devicename: Garden Shed
   ip: 10.9.1.236
+  updates: 20s
 
 packages:
   wifi: !include common/wifi.yaml
   base: !include common/base.yaml
   esp32: !include common/device-classes/esp32.yaml
 
+uart:
+  id: mod_bus
+  tx_pin: 22
+  rx_pin: 23
+  baud_rate: 115200
+  stop_bits: 1
+
+modbus:
+  #flow_control_pin: GPIO19
+  send_wait_time: 500ms
+  id: mod_bus_epever
+
+modbus_controller:
+  - id: epever
+    ## the Modbus device addr
+    address: 0x1
+    modbus_id: mod_bus_epever
+    command_throttle: 500ms
+    setup_priority: -10
+    update_interval: 7s
+
+
+output:
+  - platform: gpio
+    id: light_relay
+    pin: 5
+    inverted: true
 
 light:
-  - platform: neopixelbus
-    type: GRB
-    variant: WS2811
-    pin: GPIO13
-    num_leds: 10
-    name: "Garden Shed Lights"
+  - platform: binary
+    name: "${human_devicename} Lights"
+    id: garden_shed_lights
+    output: light_relay
     icon: mdi:string-lights
 
 sensor:
-  - platform: adc
-    pin: GPIO32
-    name: "Garden Shed Solar Panel Output"
-    update_interval: 10s
-    icon: mdi:solar-power-variant
-  - platform: adc
-    pin: GPIO33
-    name: "Garden Shed Battery"
-    update_interval: 10s
-    icon: mdi:car-battery
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: battery_voltage
+    name: "${human_devicename} Battery voltage"
+    address: 0x331A
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 1
+    unit_of_measurement: "V"
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: charging_mode
+    name: "${human_devicename} Charging Mode"
+    address: 0x3008
+    unit_of_measurement: ""
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 0
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: pv_input_voltage
+    name: "${human_devicename} PV array input voltage"
+    address: 0x3100
+    unit_of_measurement: "V" ## for any other unit the value is returned in minutes
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: pv_input_current
+    name: "${human_devicename} PV array input current"
+    address: 0x3101
+    unit_of_measurement: "A" ## for any other unit the value is returned in minutes
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 2
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: pv_input_power
+    name: "${human_devicename} PV array input power"
+    address: 0x3102
+    unit_of_measurement: "W" ## for any other unit the value is returned in minutes
+    register_type: read
+    value_type: U_DWORD_R
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: charging_voltage
+    name: "${human_devicename} Charging voltage"
+    address: 0x3104
+    unit_of_measurement: "V"
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: charging_current
+    name: "${human_devicename} Charging current"
+    address: 0x3105
+    unit_of_measurement: "A"
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: charging_power
+    name: "${human_devicename} Charging power"
+    address: 0x3106
+    unit_of_measurement: "W"
+    register_type: read
+    value_type: U_DWORD_R
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: load_voltage
+    name: "${human_devicename} Load voltage"
+    address: 0x310C
+    unit_of_measurement: "V"
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: load_current
+    name: "${human_devicename} Load Current"
+    address: 0x310D
+    unit_of_measurement: "A"
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 2
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: load_power
+    name: "${human_devicename} Load power"
+    address: 0x310E
+    unit_of_measurement: "W"
+    register_type: read
+    value_type: U_DWORD_R
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: battery_temperature
+    name: "${human_devicename} Battery temperature"
+    address: 0x3110
+    unit_of_measurement: °C
+    register_type: read
+    value_type: S_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: device_temperature
+    name: "${human_devicename} Device temperature"
+    address: 0x3111
+    unit_of_measurement: °C
+    register_type: read
+    value_type: S_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: power_components_temperature
+    name: "${human_devicename} Power components temperature"
+    address: 0x3112
+    unit_of_measurement: °C
+    register_type: read
+    value_type: S_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: battery_soc
+    name: "${human_devicename} Battery SOC"
+    address: 0x311A
+    unit_of_measurement: "%"
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 0
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: remote_battery_temperature
+    name: "${human_devicename} Remote battery temperature"
+    address: 0x311B
+    unit_of_measurement: °C
+    register_type: read
+    value_type: S_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: battery_volt_settings
+    name: "${human_devicename} Remote real voltage"
+    address: 0x311D
+    register_type: read
+    value_type: S_WORD
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: Battery_status_volt
+    name: "${human_devicename} Battery Status"
+    address: 0x3200
+    register_type: read
+    value_type: U_WORD
+    bitmask: 7  #(Bits 0-3)
+    accuracy_decimals: 0
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: Battery_status_temp
+    name: "${human_devicename} Battery status temperature"
+    address: 0x3200
+    register_type: read
+    value_type: U_WORD
+    bitmask: 0x38  #(Bits 4-7)
+    accuracy_decimals: 0
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: Charger_status
+    name: "${human_devicename} Charger status"
+    address: 0x3201
+    register_type: read
+    value_type: U_WORD
+    accuracy_decimals: 0
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: battery_current
+    name: "${human_devicename} Battery current"
+    address: 0x331B
+    register_type: read
+    value_type: S_DWORD_R
+    register_count: 2
+    accuracy_decimals: 2
+    unit_of_measurement: "A"
+    filters:
+      - multiply: 0.01
