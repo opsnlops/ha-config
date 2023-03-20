@@ -2,7 +2,6 @@ substitutions:
   devicename: garden-shed
   human_devicename: Garden Shed
   ip: 10.9.1.236
-  updates: 20s
 
 packages:
   wifi: !include common/wifi.yaml
@@ -27,7 +26,7 @@ modbus_controller:
     modbus_id: mod_bus_epever
     command_throttle: 500ms
     setup_priority: -10
-    update_interval: 7s
+    update_interval: 20s
 
 
 output:
