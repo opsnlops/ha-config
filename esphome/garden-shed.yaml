@@ -104,7 +104,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_voltage
-    name: "${human_devicename} Charging Coltage"
+    name: "${human_devicename} Charging Voltage"
     address: 0x3104
     unit_of_measurement: "V"
     register_type: read
