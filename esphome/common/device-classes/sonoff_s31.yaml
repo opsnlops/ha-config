@@ -63,6 +63,7 @@ switch:
     pin: GPIO12
     id: relay
     icon: ${icon}
+    restore_mode: RESTORE_DEFAULT_ON
 
 # Treat the Blue LED like any other light
 output:
