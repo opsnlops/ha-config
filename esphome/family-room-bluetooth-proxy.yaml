@@ -1,0 +1,13 @@
+substitutions:
+  devicename: family-room-bluetooth-proxy
+  human_devicename: Family Room Bluetooth Proxy
+  ip: 10.9.1.228
+  icon: "mdi:bluetooth-connect"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+bluetooth_proxy:
+  active: true
