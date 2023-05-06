@@ -54,7 +54,7 @@ script:
       - delay: 11s
       - switch.turn_off: zBSL
       - logger.log: "Please try update with cc-bsl tool now"
-      - logger.log: "cc-bsl usage: cc-bsl.py -p socket://10.9.1.75:6638 -evw firmware.hex"
+      - logger.log: "cc-bsl usage: cc2538-bsl.py -p socket://10.9.1.75:6638 -evw firmware.hex"
       
 switch:
   - platform: gpio
