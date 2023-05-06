@@ -17,7 +17,7 @@ zeroconf:
     port: 80
     txt:
       name: ${devicename}
-      charger: eppever
+      charger: epever
       protocol: modbus
       update_interval: 20s
 
