@@ -8,6 +8,19 @@ packages:
   base: !include common/base.yaml
   esp32: !include common/device-classes/esp32.yaml
 
+external_components:
+  - source: github://syssi/esphome-zeroconf@main
+
+zeroconf:
+  - service: solar_monitor
+    protocol: tcp
+    port: 80
+    txt:
+      name: ${devicename}
+      charger: eppever
+      protocol: modbus
+      update_interval: 20s
+
 uart:
   id: mod_bus
   tx_pin: 22
