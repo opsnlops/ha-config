@@ -4,18 +4,22 @@ substitutions:
 
 esphome:
   name: ${devicename}
-  project:
-    name: tubeszb.cc2642p2_poe
-    version: "1.1"
   platform: ESP32
   board: esp-wrover-kit
+  project:
+    name: tubezb.cc2652-poe
+    version: "3.0"
 
 packages:
   base: !include common/base.yaml
   mqtt: !include common/mqtt.yaml
 
 external_components:
-  - source: github://oxan/esphome-stream-server
+  - source: github://tube0013/esphome-stream-server-v2
+  - source: github://syssi/esphome-zeroconf@main
+
+dashboard_import:
+  package_import_url: github://tube0013/tube_gateways/models/retired/tubeszb-cc2652-poe/firmware/esphome/tubeszb-cc2652-poe.yaml
 
 ethernet:
   type: LAN8720
@@ -38,10 +42,6 @@ logger:
 api:
   reboot_timeout: 0s
 
-dashboard_import:
-  package_import_url: github://tube0013/tube_gateways/esphome/tube_zb_gw_cc2652p2_olimex_POE.yaml
-
-
 script:
   - id: fw_update_mode
     then:
@@ -54,7 +54,7 @@ script:
       - delay: 11s
       - switch.turn_off: zBSL
       - logger.log: "Please try update with cc-bsl tool now"
-      - logger.log: "cc-bsl usage: cc-bsl.py -p socket://ip-of-gw:6638 -evw firmware.hex"
+      - logger.log: "cc-bsl usage: cc-bsl.py -p socket://10.9.1.75:6638 -evw firmware.hex"
       
 switch:
   - platform: gpio
@@ -62,27 +62,28 @@ switch:
     id: zRST_gpio
     inverted: yes
     restore_mode: ALWAYS_OFF
-  - platform: template
-    name: "${human_devicename} zRST"
-    id: zRST
-    turn_on_action:
-      - switch.turn_on: zRST_gpio
-      - delay: 15ms
-      - switch.turn_off: zRST_gpio
-      
+
   - platform: gpio
     pin: 32
-    name: "${human_devicename} zBSL"
+    name: "${human_devicename} Zigbee Module Bootloader Pin"
     id: zBSL
     inverted: yes
     restore_mode: ALWAYS_OFF
-    
+
+button:
   - platform: template
-    name: "${human_devicename} Prep the cc2652p2 for firmware update"
-    turn_on_action:
+    name: "${human_devicename} Zigbee Module Reset"
+    id: zRST
+    on_press:
+      - switch.turn_on: zRST_gpio
+      - delay: 15ms
+      - switch.turn_off: zRST_gpio
+
+  - platform: template
+    name: "${human_devicename} Trigger Zigbee Module Bootloader"
+    disabled_by_default: true
+    on_press:
       - script.execute: fw_update_mode
-    turn_off_action:
-      - switch.toggle: zRST
 
 uart:
   id: uart_bus
@@ -90,7 +91,23 @@ uart:
   tx_pin: GPIO16
   baud_rate: 115200
 
-
 stream_server:
   uart_id: uart_bus
   port: 6638
+  id: ss
+
+binary_sensor:
+  - platform: stream_server
+    stream_server: ss
+    name: "${human_devicename} TubesZB Serial Connected"
+
+zeroconf:
+  - service: tubeszb
+    protocol: tcp
+    port: 6638
+    txt:
+      version: 1.0
+      name: TubesZB
+      radio_type: znp
+      baud_rate: 115200
+      data_flow_control: software
