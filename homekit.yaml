@@ -158,3 +158,9 @@
     binary_sensor.front_door:
       linked_battery_sensor: sensor.front_door_battery_level
       low_battery_threshold: 33
+    cover.bedroom_small_window_shade_homekit:
+      linked_battery_sensor: sensor.bedroom_small_window_shade_battery
+      low_battery_threshold: 50
+    cover.bedroom_large_window_shade_homekit:
+      linked_battery_sensor: sensor.bedroom_large_window_shade_battery
+      low_battery_threshold: 50
