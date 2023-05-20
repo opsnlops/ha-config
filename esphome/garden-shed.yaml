@@ -64,6 +64,7 @@ sensor:
     register_type: read
     value_type: U_WORD
     accuracy_decimals: 1
+    device_class: battery
     unit_of_measurement: "V"
     filters:
       - multiply: 0.01
