@@ -64,7 +64,7 @@ sensor:
     register_type: read
     value_type: U_WORD
     accuracy_decimals: 1
-    device_class: battery
+    icon: mdi:battery
     unit_of_measurement: "V"
     filters:
       - multiply: 0.01
@@ -232,6 +232,7 @@ sensor:
     register_type: read
     value_type: U_WORD
     accuracy_decimals: 0
+    device_class: battery
 
   - platform: modbus_controller
     modbus_controller_id: epever
