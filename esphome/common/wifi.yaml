@@ -16,8 +16,20 @@ wifi:
 # Enable the captive portal if needed
 captive_portal:
 
+mdns:
+  disabled: false
+
 sensor:
   - platform: wifi_signal
     name: "${human_devicename} WiFi Signal"
     update_interval: 60s
     icon: mdi:wifi
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${human_devicename} IP Address"
+    ssid:
+      name: "${human_devicename} Connected SSID"
+    mac_address:
+      name: "${human_devicename} Mac Address"
