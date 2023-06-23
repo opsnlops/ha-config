@@ -111,3 +111,8 @@ zeroconf:
       radio_type: znp
       baud_rate: 115200
       data_flow_control: software
+
+text_sensor:
+  - platform: ethernet_info
+    ip_address:
+      name: "${human_devicename} IP Address"
