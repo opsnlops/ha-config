@@ -3,6 +3,9 @@ esphome:
   platform: ESP8266
   board: esp01_1m
   esp8266_restore_from_flash: true
+  project:
+    name: "Shelly.1"
+    version: "1.0"
 
 preferences:
   flash_write_interval: 10min

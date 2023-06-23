@@ -8,8 +8,3 @@ packages:
   wifi: !include common/wifi.yaml
   base: !include common/base.yaml
   shelly1: !include common/device-classes/shelly1.yaml
-
-esphome:
-  project:
-    name: "april.ai_flamethrowers"
-    version: "2.0.0"
