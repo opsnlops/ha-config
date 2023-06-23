@@ -7,6 +7,7 @@ wifi:
     static_ip: ${ip}
     gateway: 10.9.1.1
     subnet: 255.255.255.0
+    dns1: 10.9.1.1
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
