@@ -35,7 +35,7 @@ text_sensor:
     bssid:
       name: "${human_devicename} Connected BSSID"
     mac_address:
-      name: "${human_devicename} Mac Address"
+      name: "${human_devicename} MAC Address"
     # This is really verbose and likely to bloat the history
     #scan_results:
     #  name: "${human_devicename} Latest Scan Results"

@@ -1,0 +1,26 @@
+
+#
+# Stuff needed to get an Olimex PoE esp32 talking on the wired network
+#
+
+ethernet:
+  type: LAN8720
+  mdc_pin: GPIO23
+  mdio_pin: GPIO18
+  clk_mode: GPIO17_OUT
+  phy_addr: 0
+  power_pin: GPIO12
+
+  manual_ip:
+    static_ip: ${ip}
+    gateway: 10.9.1.1
+    subnet: 255.255.255.0
+    dns1: 10.9.1.1
+
+mdns:
+  disabled: false
+
+text_sensor:
+  - platform: ethernet_info
+    ip_address:
+      name: "${human_devicename} IP Address"
