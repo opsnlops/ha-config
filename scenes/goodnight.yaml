@@ -132,6 +132,8 @@ entities:
     state: "off"
   switch.office_heater:
     state: "off"
+  switch.gray_fan:
+    state: "off"
 
   # Guest Room
   fan.guest_room_fan:

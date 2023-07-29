@@ -79,6 +79,8 @@ entities:
     state: "off"
   switch.office_heater:
     state: "off"
+  switch.gray_fan:
+    state: "off"
 
   # Bedroom
   light.bunnys_room_fairy_lights:

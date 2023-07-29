@@ -192,8 +192,8 @@ entities:
     state: "off"
   switch.lava_lamp:
     state: "off"
-  switch.office_ceiling_fan:
-    state: "on"
+  #switch.office_ceiling_fan:
+  #  state: "on"
 
   # Workshop
   light.workshop_lamp:
