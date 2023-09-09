@@ -101,3 +101,12 @@ entities:
     state: "off"
   light.kitchen_over_fridge_light:
     state: "off"
+
+
+  # Bunny's Bathroom
+  light.bunnys_bathroom_shower:
+    brightness: 160
+    state: "on"
+    xy_color:
+      - 0.1898
+      - 0.2324

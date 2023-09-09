@@ -228,6 +228,14 @@ entities:
     state: "on"
     brightness: 111
 
+  # Bunny's Bathroom
+  light.bunnys_bathroom_shower:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.2513
+      - 0.1382
+
   light.hallway_light:
     state: "on"
     brightness: 134

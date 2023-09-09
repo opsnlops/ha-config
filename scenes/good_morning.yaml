@@ -199,3 +199,11 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
+
+  # Bunny's Bathroom
+  light.bunnys_bathroom_shower:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291

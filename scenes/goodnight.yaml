@@ -167,6 +167,11 @@ entities:
   switch.half_bathroom_ceiling_fan:
     state: "off"
 
+  # Bunny's Bathroom
+  light.bunnys_bathroom_shower:
+    state: "off"
+
+
   light.hallway_light:
     state: "off"
 
