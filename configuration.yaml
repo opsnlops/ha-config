@@ -30,7 +30,6 @@ automation ui: !include automations.yaml
 script: !include scripts.yaml
 scene: !include_dir_list scenes/
 
-discovery:
 
 homekit: !include homekit.yaml
 
