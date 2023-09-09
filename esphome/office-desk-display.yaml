@@ -1,0 +1,56 @@
+substitutions:
+  devicename: office-desk-display
+  human_devicename: Office Desk Display
+  ip: 10.9.1.238
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+
+spi:
+  clk_pin: 18
+  mosi_pin: 23
+
+display:
+  - platform: ssd1325_spi
+    model: "SSD1325 128x64"
+    reset_pin: 15
+    cs_pin: 5
+    dc_pin: 13
+    lambda: |-
+      // Draw the graph at position [x=10,y=20]
+      it.graph(10, 20, id(single_temperature_graph));
+
+graph:
+  # Show bare-minimum auto-ranged graph
+  - id: single_temperature_graph
+    sensor: outside_temperature
+    duration: 1h
+    width: 151
+    height: 51
+
+
+sensor:
+
+  # Import some data from Home Assistant
+  - platform: homeassistant
+    name: "Current Set Point"
+    id: current_set_point
+    entity_id: climate.family_room_heat
+    attribute: temperature
+    internal: true
+  - platform: homeassistant
+    id: outside_temperature
+    name: "Outside Temperature"
+    entity_id: sensor.outside_temperature
+    internal: true
+
+text_sensor:
+  - platform: homeassistant
+    name: "Heater State"
+    id: heater_state
+    entity_id: climate.family_room_heat
+    attribute: hvac_action
+    internal: true
