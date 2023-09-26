@@ -1,7 +1,4 @@
 
-# Turn on the web server
-web_server:
-  ota: false
 
 text_sensor:
   - platform: version

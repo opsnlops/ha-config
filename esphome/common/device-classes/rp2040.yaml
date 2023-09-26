@@ -1,0 +1,12 @@
+esphome:
+  name: ${devicename}
+
+rp2040:
+  board: rpipicow
+  framework:
+    platform_version: https://github.com/maxgerhardt/platform-raspberrypi.git
+
+preferences:
+  flash_write_interval: 10min
+
+logger:

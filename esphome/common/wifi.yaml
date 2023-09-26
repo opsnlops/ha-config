@@ -9,14 +9,6 @@ wifi:
     subnet: 255.255.255.0
     dns1: 10.9.1.1
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: "${devicename}"
-    password: !secret esphome_recovery_wifi_password
-
-# Enable the captive portal if needed
-captive_portal:
-
 mdns:
   disabled: false
 

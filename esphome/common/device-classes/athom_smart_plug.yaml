@@ -10,6 +10,9 @@ esphome:
 preferences:
   flash_write_interval: 10min
 
+# Turn on the web server
+web_server:
+
 dashboard_import:
   package_import_url: github://athom-tech/athom-configs/athom-smart-plug.yaml
 

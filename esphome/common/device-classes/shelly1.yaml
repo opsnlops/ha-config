@@ -10,6 +10,9 @@ esphome:
 preferences:
   flash_write_interval: 10min
 
+# Turn on the web server
+web_server:
+
 logger:
   baud_rate: 9600
   level: DEBUG

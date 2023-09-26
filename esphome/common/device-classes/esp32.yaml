@@ -3,6 +3,9 @@ esphome:
   platform: ESP32
   board: esp32dev
 
+# Turn on the web server
+web_server:
+
 preferences:
   flash_write_interval: 10min
 
