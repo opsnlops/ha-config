@@ -7,5 +7,5 @@ substitutions:
 packages:
   wifi: !include common/wifi.yaml
   base: !include common/base.yaml
-  sonoff_s31: !include common/device-classes/athom_smart_plug.yaml
+  sonoff_s31: !include common/device-classes/athom_smart_plug_v2.yaml
 
