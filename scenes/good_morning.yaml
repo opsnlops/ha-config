@@ -207,3 +207,9 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
+  light.bunnys_bathroom_vanity:
+    state: "on"
+    brightness: 255
+  light.bunnys_bathroom_over_tub:
+    state: "on"
+    brightness: 255
