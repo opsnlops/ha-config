@@ -1,0 +1,145 @@
+substitutions:
+  devicename: family-room-thermostat-lcd
+  human_devicename: Family Room Thermostat LCD
+  ip: 10.9.1.241
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+logger:
+
+spi:
+  clk_pin: 18
+  mosi_pin: 23
+  miso_pin: 19
+
+output:
+  - platform: ledc
+    pin: GPIO32
+    id: backlight_pwm
+
+# Define a monochromatic, dimmable light for the backlight
+light:
+  - platform: monochromatic
+    output: backlight_pwm
+    name: "Display Backlight"
+    id: back_light
+    restore_mode: ALWAYS_ON
+
+sensor:
+  # Import some data from Home Assistant
+  - platform: homeassistant
+    name: "Current Set Point"
+    id: current_set_point
+    entity_id: climate.family_room_heat
+    attribute: temperature
+    internal: true
+  - platform: homeassistant
+    id: outside_temperature
+    name: "Outside Temperature"
+    entity_id: sensor.outside_temperature
+    internal: true
+  - platform: homeassistant
+    id: family_room_temperature
+    name: "Family Room Temperature"
+    entity_id: sensor.family_room_temperature
+    internal: true
+  - platform: homeassistant
+    id: wind
+    entity_id: sensor.wind_speed_avg
+    internal: true
+  - platform: homeassistant
+    id: power
+    entity_id: sensor.aprils_nest_energy_monitor_electric_consumption_w
+    internal: true
+
+
+
+text_sensor:
+  - platform: homeassistant
+    name: "Heater State"
+    id: heater_state
+    entity_id: climate.family_room_heat
+    attribute: hvac_action
+    internal: true
+
+
+
+
+display:
+  - platform: ili9xxx
+    model: ili9341
+    rotation: 270
+    reset_pin: 22
+    cs_pin: 5
+    dc_pin: 17
+    lambda: |-
+      it.fill(Color::BLACK);
+        
+      // Outside
+      it.print(1, 1, id(font2), "Outside");
+      it.printf(2, 13, id(font3), id(outside_temp_color), "%.1fF", id(outside_temperature).state);
+      
+      // Wind
+      it.print(50, 1, id(font2), "Wind");
+      it.printf(52, 13, id(font3), "%.0f", id(wind).state);
+      
+      // Power
+      it.print(85, 1, id(font2), "Power");
+      it.printf(86, 13, id(font3), "%.0f", id(power).state);
+      
+      // Current Temperature
+      it.printf(280, 190, id(font2), id(family_room_temp_color), "%.1fF", id(family_room_temperature).state);
+      
+      // Show a graph of the temperatures
+      it.graph(0, 60, id(temperature_graph));
+      
+      // Clock
+      it.strftime(it.get_width(), 200, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
+      
+
+graph:
+  # Show bare-minimum auto-ranged graph
+  - id: temperature_graph
+    duration: 1h
+    width: 300
+    height: 130
+    border: false
+    y_grid: 5
+    traces:
+      - sensor: outside_temperature
+        line_type: DASHED
+        line_thickness: 2
+        color: outside_temp_color
+      - sensor: family_room_temperature
+        line_type: SOLID
+        line_thickness: 2
+        color: family_room_temp_color
+
+color:
+  - id: clock_color
+    hex: bd041f
+
+  - id: outside_temp_color
+    hex: 31ecf3
+
+  - id: family_room_temp_color
+    hex: b414ef
+
+font:
+  - file: "fonts/FreeSans.ttf"
+    id: font2
+    size: 16
+
+  - file: "fonts/FreeSansBold.ttf"
+    id: font3
+    size: 14
+
+  - file:
+      type: gfonts
+      family: Permanent Marker
+      weight: 400
+    id: clock_font
+    size: 36
