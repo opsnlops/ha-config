@@ -16,20 +16,60 @@ spi:
 display:
   - platform: ssd1325_spi
     model: "SSD1325 128x64"
-    reset_pin: 15
+    reset_pin: 22
     cs_pin: 5
-    dc_pin: 13
+    dc_pin: 17
     lambda: |-
-      // Draw the graph at position [x=10,y=20]
-      it.graph(10, 20, id(single_temperature_graph));
+     
+      // Outside
+      it.print(1, 1, id(font2), "Outside");
+      it.printf(2, 13, id(font3), "%.1fF", id(outside_temperature).state);
+      
+      // Wind
+      it.print(50, 1, id(font2), "Wind");
+      it.printf(52, 13, id(font3), "%.0f", id(wind).state);
+      
+      // Power
+      it.print(85, 1, id(font2), "Power");
+      it.printf(86, 13, id(font3), "%.0f", id(power).state);
+      
+      // Current Office Temperature
+      it.printf(85, 40, id(font2), "%.1fF", id(office_temperature).state);
+      
+      // Show a graph of the temperatures
+      it.graph(0, 29, id(temperature_graph));
+      
+      // Clock
+      it.strftime(77, 52, id(clock_font), "%l:%M:%S", id(sntp_time).now());
 
 graph:
   # Show bare-minimum auto-ranged graph
-  - id: single_temperature_graph
-    sensor: outside_temperature
+  - id: temperature_graph
     duration: 1h
-    width: 151
-    height: 51
+    width: 74
+    height: 35
+    border: false
+    y_grid: 5
+    traces:
+      - sensor: outside_temperature
+        line_type: DASHED
+        line_thickness: 2
+      - sensor: office_temperature
+        line_type: SOLID
+        line_thickness: 1
+
+font:
+  - file: "fonts/FreeSans.ttf"
+    id: font2
+    size: 12
+
+  - file: "fonts/FreeSansBold.ttf"
+    id: font3
+    size: 14
+
+  - file: "fonts/FreeSans.ttf"
+    id: clock_font
+    size: 12
 
 
 sensor:
@@ -38,7 +78,7 @@ sensor:
   - platform: homeassistant
     name: "Current Set Point"
     id: current_set_point
-    entity_id: climate.family_room_heat
+    entity_id: climate.office_heat
     attribute: temperature
     internal: true
   - platform: homeassistant
@@ -46,11 +86,16 @@ sensor:
     name: "Outside Temperature"
     entity_id: sensor.outside_temperature
     internal: true
-
-text_sensor:
   - platform: homeassistant
-    name: "Heater State"
-    id: heater_state
-    entity_id: climate.family_room_heat
-    attribute: hvac_action
+    id: office_temperature
+    name: "Office Temperature"
+    entity_id: sensor.office_temperature
+    internal: true
+  - platform: homeassistant
+    id: wind
+    entity_id: sensor.wind_speed_avg
+    internal: true
+  - platform: homeassistant
+    id: power
+    entity_id: sensor.aprils_nest_energy_monitor_electric_consumption_w
     internal: true
