@@ -24,7 +24,7 @@ output:
 light:
   - platform: monochromatic
     output: backlight_pwm
-    name: "Display Backlight"
+    name: "${human_devicename} Display Backlight"
     id: back_light
     restore_mode: ALWAYS_ON
 
@@ -54,7 +54,10 @@ sensor:
     id: power
     entity_id: sensor.aprils_nest_energy_monitor_electric_consumption_w
     internal: true
-
+  - platform: homeassistant
+    id: co2
+    entity_id: sensor.co2_monitor_co2
+    internal: true
 
 
 text_sensor:
@@ -66,13 +69,12 @@ text_sensor:
     internal: true
 
 
-
-
 display:
   - platform: ili9xxx
     model: ili9341
     rotation: 270
     reset_pin: 22
+    data_rate: 10Mhz
     cs_pin: 5
     dc_pin: 17
     lambda: |-
@@ -80,21 +82,26 @@ display:
         
       // Outside
       it.print(1, 1, id(font2), "Outside");
-      it.printf(2, 13, id(font3), id(outside_temp_color), "%.1fF", id(outside_temperature).state);
+      it.printf(2, 19, id(font3), id(outside_temp_color), "%.1fF", id(outside_temperature).state);
       
       // Wind
-      it.print(50, 1, id(font2), "Wind");
-      it.printf(52, 13, id(font3), "%.0f", id(wind).state);
+      it.print(85, 1, id(font2), "Wind");
+      it.printf(86, 19, id(font3), "%.0f", id(wind).state);
       
       // Power
-      it.print(85, 1, id(font2), "Power");
-      it.printf(86, 13, id(font3), "%.0f", id(power).state);
+      it.print(160, 1, id(font2), "Power");
+      it.printf(161, 19, id(font3), "%.0f", id(power).state);
+      
+      // CO2
+      it.print(235, 1, id(font2), "CO2");
+      it.printf(236, 19, id(font3), "%.0f", id(co2).state);
       
       // Current Temperature
-      it.printf(280, 190, id(font2), id(family_room_temp_color), "%.1fF", id(family_room_temperature).state);
+      it.printf(200, 190, id(font2), id(family_room_temp_color), "%.1fF", id(family_room_temperature).state);
       
       // Show a graph of the temperatures
-      it.graph(0, 60, id(temperature_graph));
+      it.graph(1, 52, id(temperature_graph));
+      it.graph(161, 52, id(co2_graph));
       
       // Clock
       it.strftime(it.get_width(), 200, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
@@ -103,20 +110,29 @@ display:
 graph:
   # Show bare-minimum auto-ranged graph
   - id: temperature_graph
-    duration: 1h
-    width: 300
-    height: 130
+    duration: 2h
+    width: 158
+    height: 80
     border: false
-    y_grid: 5
+    y_grid: 2
     traces:
-      - sensor: outside_temperature
-        line_type: DASHED
-        line_thickness: 2
-        color: outside_temp_color
       - sensor: family_room_temperature
         line_type: SOLID
         line_thickness: 2
         color: family_room_temp_color
+
+  - id: co2_graph
+    duration: 2h
+    width: 158
+    height: 80
+    border: false
+    y_grid: 100
+    traces:
+      - sensor: co2
+        line_type: SOLID
+        line_thickness: 2
+        color: family_room_temp_color
+
 
 color:
   - id: clock_color
@@ -131,11 +147,11 @@ color:
 font:
   - file: "fonts/FreeSans.ttf"
     id: font2
-    size: 16
+    size: 18
 
   - file: "fonts/FreeSansBold.ttf"
     id: font3
-    size: 14
+    size: 26
 
   - file:
       type: gfonts
