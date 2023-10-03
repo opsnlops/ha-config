@@ -86,7 +86,7 @@ display:
       
       // Wind
       it.print(85, 1, id(font2), "Wind");
-      it.printf(86, 19, id(font3), "%.0f", id(wind).state);
+      it.printf(86, 19, id(font3), "%.1f", id(wind).state);
       
       // Power
       it.print(160, 1, id(font2), "Power");
@@ -94,14 +94,20 @@ display:
       
       // CO2
       it.print(235, 1, id(font2), "CO2");
-      it.printf(236, 19, id(font3), "%.0f", id(co2).state);
-      
-      // Current Temperature
-      it.printf(200, 190, id(font2), id(family_room_temp_color), "%.1fF", id(family_room_temperature).state);
+      it.printf(236, 19, id(font3), id(co2_color), "%.0f", id(co2).state);
       
       // Show a graph of the temperatures
       it.graph(1, 52, id(temperature_graph));
+      it.print(1, 134, id(caption_font), id(caption_color), "Family Room Temp");
+      
       it.graph(161, 52, id(co2_graph));
+      it.print(161, 134, id(caption_font), id(caption_color), "CO2");
+      
+      
+      // State
+      it.printf(1, 158, id(state_font), id(state_color), "Current: %.1fF", id(family_room_temperature).state);
+      it.printf(1, 184, id(state_font), id(state_color), "Set Point: %.1fF", id(current_set_point).state);
+      it.printf(1, 210, id(state_font), id(state_color), "State: %s", id(heater_state).state.c_str());
       
       // Clock
       it.strftime(it.get_width(), 200, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
@@ -131,18 +137,27 @@ graph:
       - sensor: co2
         line_type: SOLID
         line_thickness: 2
-        color: family_room_temp_color
+        color: co2_color
 
 
 color:
   - id: clock_color
-    hex: bd041f
+    hex: ef52d3
 
   - id: outside_temp_color
     hex: 31ecf3
 
+  - id: co2_color
+    hex: d40023
+
   - id: family_room_temp_color
     hex: b414ef
+
+  - id: caption_color
+    hex: 26402c
+
+  - id: state_color
+    hex: ec8b19
 
 font:
   - file: "fonts/FreeSans.ttf"
@@ -153,9 +168,20 @@ font:
     id: font3
     size: 26
 
+  - file: "fonts/FreeSans.ttf"
+    id: caption_font
+    size: 12
+
   - file:
       type: gfonts
       family: Permanent Marker
       weight: 400
     id: clock_font
-    size: 36
+    size: 34
+
+  - file:
+      type: gfonts
+      family: Sarabun
+      weight: 400
+    id: state_font
+    size: 24
