@@ -110,7 +110,7 @@ display:
       it.printf(1, 210, id(state_font), id(state_color), "State: %s", id(heater_state).state.c_str());
       
       // Clock
-      it.strftime(it.get_width(), 200, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
+      it.strftime(it.get_width(), 195, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
       
 
 graph:
