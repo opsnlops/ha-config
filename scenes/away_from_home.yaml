@@ -136,6 +136,10 @@ entities:
     state: "off"
   light.bunnys_bathroom_over_tub:
     state: "off"
+  light.bunnys_bathroom_mirror_1:
+    state: "off"
+  light.bunnys_bathroom_mirror_2:
+    state: "off"
 
   light.hallway_light:
     state: "off"

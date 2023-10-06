@@ -196,7 +196,7 @@ entities:
 
   # Bunny's Bathroom
   light.bunnys_bathroom_shower:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
@@ -207,3 +207,15 @@ entities:
   light.bunnys_bathroom_over_tub:
     state: "on"
     brightness: 255
+  light.bunnys_bathroom_mirror_1:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.bunnys_bathroom_mirror_2:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
