@@ -80,12 +80,6 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
-  light.kitchen_hanging_light:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.3157
-      - 0.3291
   light.dining_room_bookshelf:
     brightness: 254
     state: "on"

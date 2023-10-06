@@ -28,7 +28,7 @@ entities:
     brightness: 255
     state: "on"
     color_mode: color_temp
-    color_temp: 295
+    color_temp_kelvin: 2702
   switch.workshop_fairy_lights:
     state: "on"
   light.workshop_stairs:

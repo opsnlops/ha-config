@@ -55,12 +55,6 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
-  light.kitchen_hanging_light:
-    brightness: 104
-    state: "on"
-    xy_color:
-      - 0.5435
-      - 0.3978
   light.pink_lamp:
     brightness: 79
     state: "on"
@@ -218,6 +212,13 @@ entities:
       - 255
       - 0
       - 0
+  light.workshop_light_strip:
+    state: "on"
+    brightness: 60
+    color_mode: hs
+    hs_color:
+      - 255.059
+      - 100
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:

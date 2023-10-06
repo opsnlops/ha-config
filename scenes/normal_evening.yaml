@@ -42,12 +42,6 @@ entities:
     xy_color:
       - 0.1543
       - 0.0919
-  light.kitchen_hanging_light:
-    brightness: 208
-    state: "on"
-    xy_color:
-      - 0.1571
-      - 0.1989
   light.kitchen_over_fridge_light:
     brightness: 149
     state: "on"
@@ -220,6 +214,14 @@ entities:
     state: "on"
     color_temp: 411
     brightness: 60
+  light.workshop_light_strip:
+    state: "on"
+    brightness: 93
+    color_mode: hs
+    hs_color:
+      - 263.226
+      - 60.784
+
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:

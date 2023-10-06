@@ -117,6 +117,9 @@ entities:
     state: "off"
   light.workshop_stairs:
     state: "off"
+  light.workshop_light_strip:
+    state: "off"
+
 
   # Half Bathroom
   light.half_bathroom_ceiling_light:
