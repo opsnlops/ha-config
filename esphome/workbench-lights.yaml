@@ -16,4 +16,5 @@ light:
     variant: SK6812
     pin: GPIO13
     num_leds: 144
+    icon: mdi:led-strip
     name: "Workbench Test Lights"
