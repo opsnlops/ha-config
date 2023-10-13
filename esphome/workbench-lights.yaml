@@ -1,0 +1,19 @@
+substitutions:
+  devicename: workbench-lights
+  human_devicename: Workbench Lights
+  ip: 10.9.1.242
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+logger:
+
+light:
+  - platform: neopixelbus
+    type: GRBW
+    variant: SK6812
+    pin: GPIO13
+    num_leds: 144
+    name: "Workbench Test Lights"
