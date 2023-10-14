@@ -6,14 +6,14 @@
 # This data comes from dutch, which is reading a sensor on the roof of the
 # house and publishing the data via MQTT. 🏡
 sensor:
-  - name: "Acurite Outside Temperature"
+  - name: "Outside Temperature"
     state_topic: "weather/Acurite-5n1/temperature_F"
     unit_of_measurement: "°F"
     device_class: temperature
     icon: mdi:thermometer
     state_class: measurement
 
-  - name: "Acurite Outside Humidity"
+  - name: "Outside Humidity"
     state_topic: "weather/Acurite-5n1/humidity"
     unit_of_measurement: "%"
     device_class: humidity
