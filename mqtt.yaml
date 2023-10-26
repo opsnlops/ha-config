@@ -40,3 +40,11 @@ sensor:
   - state_topic: "internal/rain_in_prior"
     name: "rain_in_prior"
     unit_of_measurement: "in"
+
+  # Include the Overly Gendered Thermometer
+  - name: "Overly Gendered Thermometer Temperature"
+    state_topic: "weather/Acurite-606TX/temperature_F"
+    unit_of_measurement: "°F"
+    device_class: temperature
+    icon: mdi:thermometer
+    state_class: measurement

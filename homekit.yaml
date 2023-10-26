@@ -112,7 +112,7 @@
       - cover.bedroom_small_window_shade_homekit
 
       # Climate Control
-      - climate.family_room_ac
+      #- climate.family_room_ac
       - climate.family_room_heat
       - climate.office_heat
       - climate.bunnys_room_heater

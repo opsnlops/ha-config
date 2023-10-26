@@ -77,6 +77,15 @@ bunnys_room_lights:
     - light.bedroom_air_filter_blue_led
     - light.bunnys_room_fairy_lights
 
+bunnys_bathroom_lights:
+  name: Bunny's Bathroom Lights
+  entities:
+    - light.bunnys_bathroom_mirror_1
+    - light.bunnys_bathroom_mirror_2
+    - light.bunnys_bathroom_over_tub
+    - light.bunnys_bathroom_shower
+    - light.bunnys_bathroom_vanity
+
 outside_lights:
   name: Outside Lights
   entities:
