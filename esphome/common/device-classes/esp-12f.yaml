@@ -1,0 +1,12 @@
+esphome:
+  name: ${devicename}
+  platform: esp8266
+  board: d1_mini
+
+# Turn on the web server
+web_server:
+
+preferences:
+  flash_write_interval: 10min
+
+logger:

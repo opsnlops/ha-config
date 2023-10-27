@@ -1,0 +1,15 @@
+esphome:
+  name: ${devicename}
+  platform: ESP32
+  board: lolin_s2_mini
+
+# Turn on the web server
+web_server:
+
+preferences:
+  flash_write_interval: 10min
+
+logger:
+
+packages:
+  mqtt: !include  ../mqtt.yaml
