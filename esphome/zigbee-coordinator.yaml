@@ -15,7 +15,10 @@ packages:
   mqtt: !include common/mqtt.yaml
 
 external_components:
-  - source: github://tube0013/esphome-stream-server-v2
+  # This isn't building on the most recent version of esphome. See:
+  # https://github.com/tube0013/esphome-stream-server-v2/pull/7
+  #- source: github://tube0013/esphome-stream-server-v2
+  - source: github://ctvedt/esphome-stream-server-v2
   - source: github://syssi/esphome-zeroconf@main
 
 dashboard_import:
@@ -37,7 +40,14 @@ ethernet:
 # Enable logging
 logger:
   level: DEBUG
-  
+
+# Turn on the web server
+web_server:
+
+preferences:
+  flash_write_interval: 10min
+
+
 # Enable Home Assistant API
 api:
   reboot_timeout: 0s
