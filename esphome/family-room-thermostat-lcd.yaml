@@ -105,9 +105,9 @@ display:
       
       
       // State
-      it.printf(1, 158, id(state_font), id(state_color), "Current: %.1fF", id(family_room_temperature).state);
-      it.printf(1, 184, id(state_font), id(state_color), "Set Point: %.1fF", id(current_set_point).state);
-      it.printf(1, 210, id(state_font), id(state_color), "State: %s", id(heater_state).state.c_str());
+      it.printf(1, 155, id(state_font), id(state_color), "Current: %.1fF", id(family_room_temperature).state);
+      it.printf(1, 181, id(state_font), id(state_color), "Set Point: %.1fF", id(current_set_point).state);
+      it.printf(1, 207, id(state_font), id(state_color), "State: %s", id(heater_state).state.c_str());
       
       // Clock
       it.strftime(it.get_width(), 195, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
