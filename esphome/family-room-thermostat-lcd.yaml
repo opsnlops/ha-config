@@ -51,10 +51,6 @@ sensor:
     entity_id: sensor.wind_speed_avg
     internal: true
   - platform: homeassistant
-    id: wind_direction
-    entity_id: sensor.wind_direction
-    internal: true
-  - platform: homeassistant
     id: power
     entity_id: sensor.aprils_nest_energy_monitor_electric_consumption_w
     internal: true
@@ -70,7 +66,11 @@ text_sensor:
     entity_id: climate.family_room_heat
     attribute: hvac_action
     internal: true
-
+  - platform: homeassistant
+    name: "Wind Direction"
+    id: wind_direction
+    entity_id: sensor.wind_direction
+    internal: true
 
 display:
   - platform: ili9xxx
@@ -89,15 +89,15 @@ display:
       
       // Wind
       it.print(85, 1, id(font2), "Wind");
-      it.printf(86, 19, id(font3), "%.0f %s", id(wind).state, id(wind_direction).state);
-      
+      it.printf(86, 19, id(font3), "%.0f %s", id(wind).state, id(wind_direction).state.c_str());
+
       // Power
-      it.print(160, 1, id(font2), "Power");
-      it.printf(161, 19, id(font3), "%.0f", id(power).state);
+      it.print(175, 1, id(font2), "Power");
+      it.printf(176, 19, id(font3), "%.0f", id(power).state);
       
       // CO2
-      it.print(235, 1, id(font2), "CO2");
-      it.printf(236, 19, id(font3), id(co2_color), "%.0f", id(co2).state);
+      it.print(250, 1, id(font2), "CO2");
+      it.printf(251, 19, id(font3), id(co2_color), "%.0f", id(co2).state);
       
       // Show a graph of the temperatures
       it.graph(1, 52, id(temperature_graph));
