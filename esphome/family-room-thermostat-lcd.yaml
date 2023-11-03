@@ -172,6 +172,10 @@ font:
     size: 26
 
   - file: "fonts/FreeSans.ttf"
+    id: wind_direction_font
+    size: 26
+
+  - file: "fonts/FreeSans.ttf"
     id: caption_font
     size: 12
 
