@@ -61,6 +61,8 @@ entities:
     state: "off"
   switch.christmas_tree:
     state: "off"
+  light.family_room_thermostat_lcd_display_backlight:
+    state: "off"
 
   # Office
   light.office_computer_table_lamp:

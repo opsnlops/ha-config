@@ -48,12 +48,7 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
-  light.kitchen_hanging_light:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
+
 
   # Laundry Room
   light.laundry_room_cabinet:

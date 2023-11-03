@@ -78,6 +78,9 @@ entities:
     xy_color:
       - 0.1898
       - 0.2324
+  light.family_room_thermostat_lcd_display_backlight:
+    state: "on"
+    brightness: 255
 
   switch.family_room_fairy_lights:
     state: "off"

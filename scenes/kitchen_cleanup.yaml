@@ -1,52 +1,50 @@
 name: Kitchen Cleanup
 entities:
   light.kitchen_cooktop_north:
-    brightness: 188
+    brightness: 50
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
   light.kitchen_cooktop_south:
-    brightness: 188
+    brightness: 50
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
   light.kitchen_counter_light_1:
-    brightness: 200
+    brightness: 50
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
   light.kitchen_counter_light_2:
-    brightness: 200
+    brightness: 96
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
   light.kitchen_counter_light_3:
-    brightness: 200
+    brightness: 96
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
   light.kitchen_counter_light_4:
-    brightness: 200
+    brightness: 96
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
   light.kitchen_counter_light_5:
-    brightness: 200
+    brightness: 50
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
   light.kitchen_over_fridge_light:
-    brightness: 200
+    brightness: 50
     state: "on"
     xy_color:
       - 0.5023
       - 0.4135
-  switch.patio_lights:
-    state: "on"

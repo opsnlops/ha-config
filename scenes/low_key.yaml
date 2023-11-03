@@ -109,6 +109,9 @@ entities:
     xy_color:
       - 0.1532
       - 0.048
+  light.family_room_thermostat_lcd_display_backlight:
+    brightness: 100
+    state: "on"
   light.office_desk_edge_light:
     brightness: 25
     state: "on"

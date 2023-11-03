@@ -142,6 +142,9 @@ entities:
     state: "on"
   light.family_room_fairy_lights_blue_led:
     state: "on"
+  light.family_room_thermostat_lcd_display_backlight:
+    state: "on"
+    brightness: 255
 
   # Office
   light.office_desk_light:

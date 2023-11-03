@@ -105,6 +105,9 @@ entities:
     state: "on"
   switch.christmas_tree:
     state: "on"
+  light.family_room_thermostat_lcd_display_backlight:
+    state: "on"
+    brightness: 255
 
   # Bedroom
   light.bunnys_room_fairy_lights:
