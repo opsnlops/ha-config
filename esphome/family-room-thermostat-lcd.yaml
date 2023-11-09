@@ -117,11 +117,11 @@ display:
       it.printf(1, 207, id(state_font), id(state_color), "State: %s", id(heater_state).state.c_str());
    
       // Wind
-      it.print(195, 155, id(font2), "Wind");
-      it.printf(196, 173, id(font3), "%.0f %s", id(wind).state, id(wind_direction).state);
+      it.print(181, 155, id(font2), "Wind");
+      it.printf(181, 173, id(font3), "%.0f %s", id(wind).state, id(wind_direction).state.c_str());
 
       // Clock
-      it.strftime(it.get_width(), 195, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
+      it.strftime(181, 195, id(clock_font), id(clock_color), "%l:%M%P", id(sntp_time).now());
       
 
 graph:
