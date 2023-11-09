@@ -92,8 +92,8 @@ display:
       it.printf(2, 19, id(font3), id(outside_temp_color), "%.1fF", id(outside_temperature).state);
       
       // Rain
-      it.print(85, 1, id(font2), "Rain");
-      it.printf(86, 19, id(font3), "%.2f\"", id(rain).state);
+      it.print(95, 1, id(font2), "Rain");
+      it.printf(96, 19, id(font3), "%.2f\"", id(rain).state);
 
       // Power
       it.print(175, 1, id(font2), "Power");
