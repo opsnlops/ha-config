@@ -58,6 +58,10 @@ sensor:
     id: co2
     entity_id: sensor.co2_monitor_co2
     internal: true
+  - platform: homeassistant
+    id: rain
+    entity_id: sensor.rain_today
+    internal: true
 
 text_sensor:
   - platform: homeassistant
@@ -87,9 +91,9 @@ display:
       it.print(1, 1, id(font2), "Outside");
       it.printf(2, 19, id(font3), id(outside_temp_color), "%.1fF", id(outside_temperature).state);
       
-      // Wind
-      it.print(85, 1, id(font2), "Wind");
-      it.printf(86, 19, id(font3), "%.0f %s", id(wind).state, id(wind_direction).state.c_str());
+      // Rain
+      it.print(85, 1, id(font2), "Rain");
+      it.printf(86, 19, id(font3), "%.2f\"", id(rain).state);
 
       // Power
       it.print(175, 1, id(font2), "Power");
@@ -111,7 +115,11 @@ display:
       it.printf(1, 155, id(state_font), id(state_color), "Current: %.1fF", id(family_room_temperature).state);
       it.printf(1, 181, id(state_font), id(state_color), "Set Point: %.1fF", id(current_set_point).state);
       it.printf(1, 207, id(state_font), id(state_color), "State: %s", id(heater_state).state.c_str());
-      
+   
+      // Wind
+      it.print(195, 155, id(font2), "Wind");
+      it.printf(196, 173, id(font3), "%.0f %s", id(wind).state, id(wind_direction).state);
+
       // Clock
       it.strftime(it.get_width(), 195, id(clock_font), id(clock_color), TextAlign::TOP_RIGHT, "%l:%M%P", id(sntp_time).now());
       
