@@ -2,10 +2,64 @@ substitutions:
   devicename: office-presence
   human_devicename: Office Presence
   ip: 10.9.1.237
+  uart_tx_pin: GPIO1
+  uart_rx_pin: GPIO3
+  gpio_pin: GPIO5
 
 packages:
   base: !include common/base.yaml
   ethernet: !include common/olimex-ethernet.yaml
   esp32: !include common/device-classes/esp32.yaml
-  mmwave: !include common/leapmmw_sensor.yaml
 
+logger:
+  baud_rate: 0  # The sensor is using UART 0, which gets in the way of the logging
+  logs:
+    sensor: DEBUG
+    script: ERROR
+
+uart:
+  id: uart_bus
+  tx_pin: ${uart_tx_pin}
+  rx_pin: ${uart_rx_pin}
+  baud_rate: 115200
+
+
+dfrobot_sen0395:
+  id: mmWave
+
+binary_sensor:
+  # Information coming from uart bus
+  - platform: dfrobot_sen0395
+    name: "${human_devicename} Detected via UART"
+
+  # Information coming from dedicated gpio (gpio_pin)
+  - platform: gpio
+    name: "${human_devicename} Detected via GPIO"
+    device_class: motion
+    pin:
+      number: ${gpio_pin}
+      mode: INPUT_PULLDOWN
+
+switch:
+  # Switch to turn on/off detection
+  - platform: dfrobot_sen0395
+    dfrobot_sen0395_id: mmWave
+    type: sensor_active
+    name: "${human_devicename} Mmwave Active"
+    restore_mode: ALWAYS_ON
+
+  - platform: dfrobot_sen0395
+    dfrobot_sen0395_id: mmWave
+    type: presence_via_uart
+    name: "${human_devicename} Detect via UART"
+
+  - platform: dfrobot_sen0395
+    dfrobot_sen0395_id: mmWave
+    type: start_after_boot
+    name: "${human_devicename} Start After Boot"
+
+  - platform: dfrobot_sen0395
+    dfrobot_sen0395_id: mmWave
+    type: turn_on_led
+    name: "${human_devicename} Turn on LED"
+  
