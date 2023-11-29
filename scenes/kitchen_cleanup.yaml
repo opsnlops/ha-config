@@ -48,3 +48,21 @@ entities:
     xy_color:
       - 0.5023
       - 0.4135
+  light.right_kitchen_window:
+    brightness: 50
+    state: "on"
+    xy_color:
+      - 0.5023
+      - 0.4135
+  light.left_kitchen_window:
+    brightness: 50
+    state: "on"
+    xy_color:
+      - 0.5023
+      - 0.4135
+  light.kitchen_table:
+    brightness: 100
+    state: "on"
+    xy_color:
+      - 0.5023
+      - 0.4135

@@ -37,6 +37,12 @@ entities:
     state: "off"
   light.kitchen_over_fridge_light:
     state: "off"
+  light.right_kitchen_window:
+    state: "off"
+  light.left_kitchen_window:
+    state: "off"
+  light.kitchen_table:
+    state: "off"
 
   # Family Room
   light.pink_lamp:

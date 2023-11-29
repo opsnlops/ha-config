@@ -100,11 +100,18 @@ entities:
     state: "off"
   light.kitchen_counter_light_5:
     state: "off"
-  light.kitchen_hanging_light:
-    state: "off"
   light.kitchen_over_fridge_light:
     state: "off"
-
+  light.right_kitchen_window:
+    state: "off"
+  light.left_kitchen_window:
+    state: "off"
+  light.kitchen_table:
+    brightness: 225
+    state: "on"
+    xy_color:
+      - 0.1898
+      - 0.2324
 
   # Bunny's Bathroom
   light.bunnys_bathroom_shower:

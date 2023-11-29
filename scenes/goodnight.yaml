@@ -63,11 +63,13 @@ entities:
       - 0.1571
       - 0.1989
   light.kitchen_over_fridge_light:
-    brightness: 149
     state: "off"
-    xy_color:
-      - 0.2117
-      - 0.1087
+  light.right_kitchen_window:
+    state: "off"
+  light.left_kitchen_window:
+    state: "off"
+  light.kitchen_table:
+    state: "off"
 
   # Bedroom
   light.bunnys_room_fairy_lights:

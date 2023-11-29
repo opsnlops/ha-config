@@ -48,6 +48,24 @@ entities:
     xy_color:
       - 0.2117
       - 0.1087
+  light.right_kitchen_window:
+    brightness: 140
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.left_kitchen_window:
+    brightness: 140
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_table:
+    brightness: 140
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
 
   # Family Room
   light.pink_lamp:

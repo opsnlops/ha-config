@@ -33,53 +33,72 @@ entities:
 
   # Kitchen
   light.kitchen_cooktop_north:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
   light.kitchen_cooktop_south:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
   light.kitchen_counter_light_1:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
   light.kitchen_counter_light_2:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
   light.kitchen_counter_light_3:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
   light.kitchen_counter_light_4:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
   light.kitchen_counter_light_5:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
   light.kitchen_over_fridge_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.3157
       - 0.3291
+  light.right_kitchen_window:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.left_kitchen_window:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.kitchen_table:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+
   light.dining_room_bookshelf:
     brightness: 254
     state: "on"
