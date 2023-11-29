@@ -62,4 +62,4 @@ switch:
     dfrobot_sen0395_id: mmWave
     type: turn_on_led
     name: "${human_devicename} Turn on LED"
-  
+
