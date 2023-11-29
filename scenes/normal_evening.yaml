@@ -49,23 +49,23 @@ entities:
       - 0.2117
       - 0.1087
   light.right_kitchen_window:
-    brightness: 140
+    brightness: 100
     state: "on"
     xy_color:
-      - 0.455
-      - 0.3857
+      - 0.4881
+      - 0.4149
   light.left_kitchen_window:
-    brightness: 140
+    brightness: 100
     state: "on"
     xy_color:
-      - 0.455
-      - 0.3857
+      - 0.4881
+      - 0.4149
   light.kitchen_table:
-    brightness: 140
+    brightness: 100
     state: "on"
     xy_color:
-      - 0.455
-      - 0.3857
+      - 0.4881
+      - 0.4149
 
   # Family Room
   light.pink_lamp:
