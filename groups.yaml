@@ -32,6 +32,9 @@ kitchen_lights:
     - light.kitchen_counter_light_4
     - light.kitchen_counter_light_5
     - light.kitchen_over_fridge_light
+    - light.right_kitchen_window
+    - light.left_kitchen_window
+    - light.kitchen_table
 
 office_lights:
   name: Office Lights
