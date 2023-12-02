@@ -105,3 +105,176 @@ sensor:
     device_class: temperature
     icon: mdi:thermometer
     state_class: measurement
+
+
+  # My EV charger (sparky)
+  - name: "Sparky Session Energy"
+    state_topic: "openevse/sparky/session_energy"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "w"
+    device_class: "power"
+    state_class: measurement
+
+  - name: "Sparky Session Elapsed Time"
+    state_topic: "openevse/sparky/session_elapsed"
+    unit_of_measurement: "s"
+    device_class: "duration"
+
+  - name: "Sparky Shaper Live Power"
+    state_topic: "openevse/sparky/shaper_live_pwr"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "w"
+    device_class: "power"
+    state_class: measurement
+
+  - name: "Sparky Shaper Smoothed Live Power"
+    state_topic: "openevse/sparky/shaper_smoothed_live_pwr"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "w"
+    device_class: "power"
+    state_class: measurement
+
+  - name: "Sparky Shaper Max Power"
+    state_topic: "openevse/sparky/shaper_max_pwr"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "w"
+    device_class: "power"
+    state_class: measurement
+
+  - name: "Sparky Shaper Current Available"
+    state_topic: "openevse/sparky/shaper_cur"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "A"
+    device_class: "current"
+    state_class: measurement
+
+  - name: "Sparky Shaper Updated"
+    state_topic: "openevse/sparky/updated"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "A"
+    device_class: "current"
+    state_class: measurement
+
+  - name: "Sparky Power"
+    state_topic: "openevse/sparky/power"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "w"
+    device_class: "power"
+    state_class: measurement
+
+  - name: "Sparky Watt Hour"
+    state_topic: "openevse/sparky/watthour"
+    value_template: "{{ value | round(1) }}"
+    unit_of_measurement: "Wh"
+    device_class: "energy"
+    state_class: measurement
+
+  - name: "Sparky Uptime"
+    state_topic: "openevse/sparky/uptime"
+    unit_of_measurement: "s"
+    device_class: "duration"
+
+  - name: "Sparky Energy - Day"
+    state_topic: "openevse/sparky/total_day"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "kW"
+    device_class: "power"
+    state_class: measurement
+
+  - name: "Sparky Energy - Week"
+    state_topic: "openevse/sparky/total_week"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "kW"
+    device_class: "power"
+    state_class: total_increasing
+
+  - name: "Sparky Energy - Month"
+    state_topic: "openevse/sparky/total_month"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "kW"
+    device_class: "power"
+    state_class: total_increasing
+
+  - name: "Sparky Energy - Year"
+    state_topic: "openevse/sparky/total_year"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "kW"
+    device_class: "power"
+    state_class: total_increasing
+
+  - name: "Sparky Energy - All Time"
+    state_topic: "openevse/sparky/total_energy"
+    value_template: "{{ value | round(2) }}"
+    unit_of_measurement: "kW"
+    device_class: "power"
+    state_class: total
+
+  - name: "Sparky WiFi SRSSI"
+    state_topic: "openevse/sparky/srssi"
+    unit_of_measurement: "dBm"
+    device_class: "signal_strength"
+
+  - name: "Sparky Total Switches"
+    state_topic: "openevse/sparky/total_switches"
+    state_class: total
+
+  - name: "Sparky State"
+    state_topic: "openevse/sparky/state"
+    icon: mdi:car-electric
+    value_template: >
+      {% set map = {
+      '0': 'Unknown',
+      '1': 'No Vehicle Connected',
+      '2': 'Connected',
+      '3': 'Charging',
+      '4': 'Vent Required',
+      '5': 'Diode Check Failed',
+      '6': 'GFCI Fault',
+      '7': 'No Ground',
+      '8': 'Stuck Relay',
+      '9': 'GFCI Self-Test Failure',
+      '10': 'Over Temperature',
+      '254': 'Sleeping',
+      '255': 'Disabled',
+       } %}
+       {{ map[value] if value in map else 'Error' }}
+
+  - name: "Sparky Current Amps"
+    state_topic: "openevse/sparky/amp"
+    value_template: "{{ value | multiply(0.001) | round(2) }}"
+    unit_of_measurement: "A"
+    device_class: "current"
+
+  - name: "Sparky Temperature"
+    state_topic: "openevse/sparky/temp"
+    value_template: "{{ value | multiply(0.1) | round(2) }}"
+    unit_of_measurement: "°C"
+    device_class: "temperature"
+
+  - name: "Sparky LCD Color"
+    state_topic: "openevse/sparky/colour"
+    icon: mdi:format-color-fill
+    value_template: >
+      {% set map = {
+      '0': 'Off',
+      '1': 'Red',
+      '2': 'Green',
+      '3': 'Yellow',
+      '4': 'Blue',
+      '5': 'Violet',
+      '6': 'Teal',
+      '7': 'White',
+       } %}
+       {{ map[value] if value in map else 'Unknown' }}
+
+binary_sensor:
+
+  - name: "Sparky Shaper Enabled"
+    state_topic: "openevse/sparky/shaper"
+    payload_on: 1
+    payload_off: 0
+
+  - name: "Sparky Shaper Updated"
+    state_topic: "openevse/sparky/shaper_updated"
+    payload_on: "true"
+    payload_off: "false"
