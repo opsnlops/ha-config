@@ -10,6 +10,7 @@
         {%- endif -%}
       friendly_name: "Rain Today"
       unit_of_measurement: "in"
+      device_class: precipitation
 
 # Show the wind in human units
 - platform: template

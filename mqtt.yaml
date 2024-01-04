@@ -31,9 +31,10 @@ sensor:
     unit_of_measurement: "mph"
     icon: mdi:weather-windy
     state_class: measurement
+    device_class: wind_speed
 
   - name: "UV Index"
-    state_topic: "weather/Acurite-Atlas/wind_avg_mi_h"
+    state_topic: "weather/Acurite-Atlas/uv"
     unit_of_measurement: "uv"
     icon: mdi:sun-wireless
     state_class: measurement
@@ -59,6 +60,7 @@ sensor:
     unit_of_measurement: "in"
     icon: mdi:weather-rainy
     state_class: total_increasing
+    device_class: precipitation
 
   - state_topic: "internal/rain_in_prior"
     name: "rain_in_prior"
@@ -89,6 +91,7 @@ sensor:
     unit_of_measurement: "mph"
     icon: mdi:weather-windy
     state_class: measurement
+    device_class: wind_speed
 
   - name: "Rain Amount Roof"
     state_topic: "weather/Acurite-5n1/rain_in"
