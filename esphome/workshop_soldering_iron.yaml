@@ -1,0 +1,181 @@
+substitutions:
+  devicename: workshop_soldering_iron
+  human_devicename: Workshop Soldering Iron
+  ip: 10.9.1.244
+  uart_tx_pin: GPIO1
+  uart_rx_pin: GPIO3
+  gpio_pin: GPIO5
+  icon: "mdi:soldering-iron"
+
+packages:
+  base: !include common/base.yaml
+  ethernet: !include common/olimex-ethernet.yaml
+  esp32: !include common/device-classes/esp32.yaml
+
+logger:
+
+ble_client:
+  - mac_address: C4:D7:FD:D8:39:AF
+    id: soldering_iron_1
+
+sensor:
+  - platform: ble_client
+    type: characteristic
+    ble_client_id: soldering_iron_1
+    id: PINECIL_BULK_DATA
+    service_uuid: '9eae1000-9d0d-48c5-aa55-33e27f9bc533'
+    characteristic_uuid: '9eae1001-9d0d-48c5-aa55-33e27f9bc533'
+    lambda: |-
+      uint32_t *data = (uint32_t *)(x.data());
+      
+      id(TEMP_TIP).    publish_state(data[0]);
+      id(TEMP_SET).    publish_state(data[1]);
+      id(DC_VOLTAGE).  publish_state(data[2]*0.1);
+      id(TEMP_HANDLE). publish_state(data[3]*0.1);
+      id(POWER_PWM).   publish_state(data[4]);
+
+      //convert the 0-255 PWM value into a % that HA can display
+      id(POWER_PC).    publish_state(((float)data[4]/255.0*100.0));
+      
+      switch (data[5]) {
+        case 0:
+          id(POWER_SRC).publish_state("DC");
+          break;
+        case 1:
+          id(POWER_SRC).publish_state("QC");
+          break;
+        case 2:
+          id(POWER_SRC).publish_state("PD With VBus");
+          break;
+        case 3:
+          id(POWER_SRC).publish_state("PD No VBus");
+          break;
+      }
+      
+      id(TIP_RES). publish_state(data[6]*0.1);
+      id(UPTIME).  publish_state(data[7]*0.1);
+      id(MOVEMENT).publish_state(data[8]*0.1);
+      id(MAX_TEMP).publish_state(data[9]);
+      id(RAW_TIP). publish_state(data[10]*0.001);
+      id(HALL).    publish_state(data[11]);
+      
+      switch (data[12]) {
+        case 0:
+          id(OPERATING_MODE).publish_state("Idle");
+          break;
+        case 1:
+          id(OPERATING_MODE).publish_state("Soldering");
+          break;
+        case 2:
+          id(OPERATING_MODE).publish_state("Boost");
+          break;
+        case 3:
+          id(OPERATING_MODE).publish_state("Sleeping");
+          break;
+        case 4:
+          id(OPERATING_MODE).publish_state("Settings");
+          break;
+        case 5:
+          id(OPERATING_MODE).publish_state("Debug");
+          break;
+      }
+      
+      id(EST_WATTS).publish_state(data[13]*0.1);
+
+      return {};
+    update_interval: 500ms
+    notify: False
+
+  - platform: template
+    name: "Pinecil Tip Temp"
+    id: TEMP_TIP
+    device_class: "temperature"
+    accuracy_decimals: 0
+
+  - platform: template
+    name: "Pinecil Set Temp"
+    id: TEMP_SET
+    device_class: "temperature"
+    accuracy_decimals: 0
+
+  - platform: template
+    name: "Pinecil DC Voltage"
+    id: DC_VOLTAGE
+    device_class: "voltage"
+    unit_of_measurement: "V"
+    accuracy_decimals: 1
+
+  - platform: template
+    name: "Pinecil Handle Temp"
+    id: TEMP_HANDLE
+    device_class: "temperature"
+    accuracy_decimals: 1
+
+  - platform: template
+    name: "Pinecil Power PWM"
+    id: POWER_PWM
+    state_class: "measurement"
+    accuracy_decimals: 0
+
+  - platform: template
+    name: "Pinecil Power %"
+    id: POWER_PC
+    device_class: "power_factor"
+    unit_of_measurement: "%"
+    accuracy_decimals: 1
+
+  - platform: template
+    name: "Pinecil Tip Resistance"
+    id: TIP_RES
+    state_class: "measurement"
+    unit_of_measurement: "Ω"
+    accuracy_decimals: 1
+
+  - platform: template
+    name: "Pinecil Uptime"
+    id: UPTIME
+    device_class: "duration"
+    unit_of_measurement: "s"
+    accuracy_decimals: 1
+
+  - platform: template
+    name: "Pinecil Last Movement Time"
+    id: MOVEMENT
+    device_class: "duration"
+    unit_of_measurement: "s"
+    accuracy_decimals: 1
+
+  - platform: template
+    name: "Pinecil Max Temp"
+    id: MAX_TEMP
+    device_class: "temperature"
+    accuracy_decimals: 0
+
+  - platform: template
+    name: "Pinecil Raw Tip Voltage"
+    id: RAW_TIP
+    device_class: "voltage"
+    unit_of_measurement: "mV"
+    accuracy_decimals: 0
+
+  - platform: template
+    name: "Pincil Hall Effect Strength"
+    id: HALL
+    state_class: "measurement"
+    accuracy_decimals: 0
+
+  - platform: template
+    name: "Pinecil Est. Watts"
+    id: EST_WATTS
+    device_class: "power"
+    unit_of_measurement: "W"
+    accuracy_decimals: 1
+
+text_sensor:
+  - platform: template
+    name: "Pinecil Power Source"
+    id: POWER_SRC
+
+  - platform: template
+    name: "Pinecil Operating Mode"
+    id: OPERATING_MODE
