@@ -53,5 +53,5 @@ entities:
       - 0.455
       - 0.3857
 
-  #light.garden_shed_lights:
-  #  state: "on"
+  light.garden_shed_lights:
+    state: "on"
