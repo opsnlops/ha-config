@@ -30,7 +30,6 @@ automation ui: !include automations.yaml
 script: !include scripts.yaml
 scene: !include_dir_list scenes/
 
-
 homekit: !include homekit.yaml
 
 zone: !include zones.yaml
@@ -114,3 +113,9 @@ influxdb:
   tags_attributes:
     - friendly_name
   default_measurement: units
+
+# The firewall
+opnsense:
+  url: !secret opnsense_url
+  api_secret: !secret opnsense_secret
+  api_key: !secret opnsense_key
