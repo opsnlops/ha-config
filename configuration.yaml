@@ -113,9 +113,3 @@ influxdb:
   tags_attributes:
     - friendly_name
   default_measurement: units
-
-# The firewall
-opnsense:
-  url: !secret opnsense_url
-  api_secret: !secret opnsense_secret
-  api_key: !secret opnsense_key
