@@ -17,4 +17,4 @@ light:
     pin: GPIO13
     num_leds: 144
     icon: mdi:led-strip
-    name: "Workbench Test Lights"
+    name: "Workbench Lights"

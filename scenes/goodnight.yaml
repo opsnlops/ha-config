@@ -164,6 +164,10 @@ entities:
     state: "off"
   light.workshop_light_strip:
     state: "off"
+  light.sewing_table_light:
+    state: "off"
+  light.workbench_lights:
+    state: "off"
 
 
   # Half Bathroom

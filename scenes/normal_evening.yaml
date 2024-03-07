@@ -242,6 +242,22 @@ entities:
     hs_color:
       - 263.226
       - 60.784
+  light.sewing_table_light:
+    state: "on"
+    brightness: 255
+    rgbw_color:
+      - 0
+      - 3
+      - 60
+      - 0
+  light.workbench_lights:
+    state: "on"
+    brightness: 255
+    rgbw_color:
+      - 0
+      - 3
+      - 60
+      - 0
 
 
   # Hallway Bathroom

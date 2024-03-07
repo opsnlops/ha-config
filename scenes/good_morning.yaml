@@ -241,3 +241,43 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
+
+  # Workshop
+  light.workshop_lamp:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.workshop_left_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.workshop_right_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.workshop_stairs:
+    state: "on"
+    brightness: 255
+    color_temp_kelvin: 6535
+  light.sewing_table_light:
+    state: "on"
+    brightness: 166
+    rgbw_color:
+      - 254
+      - 255
+      - 250
+      - 255
+  light.workbench_lights:
+    state: "on"
+    brightness: 166
+    rgbw_color:
+      - 254
+      - 255
+      - 250
+      - 255
