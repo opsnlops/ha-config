@@ -51,21 +51,24 @@ binary_sensor:
 
 sensor:
   - platform: cse7766
-    update_interval: 10s
     current:
       name: "${human_devicename} Current"
       filters:
         - lambda: if (x < 0.060) return 0.0; else return x;   #For the chip will report less than 3w power when no load is connected
-
+        - skip_initial: 1
+        - throttle_average: 20s
 
     voltage:
       name: "${human_devicename} Voltage"
+      filters:
+        - skip_initial: 1
+        - throttle_average: 20s
     power:
       name: "${human_devicename} Power"
       id: power_sensor
       filters:
         - lambda: if (x < 3.0) return 0.0; else return x;    #For the chip will report less than 3w power when no load is connected
-
+        - throttle_average: 20s
 
     energy:
       name: "${human_devicename} Energy"
@@ -74,6 +77,7 @@ sensor:
       filters:
         # Multiplication factor from W to kW is 0.001
         - multiply: 0.001
+        - throttle_average: 20s
       on_value:
         then:
           - lambda: |-
