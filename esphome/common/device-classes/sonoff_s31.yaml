@@ -43,19 +43,27 @@ binary_sensor:
 
 sensor:
   - platform: cse7766
-    update_interval: 20s
     current:
       name: "${human_devicename} Current"
       id: "${devicename}_current"
       accuracy_decimals: 2
+      filters:
+        - skip_initial: 1
+        - throttle_average: 20s
     voltage:
       name: "${human_devicename} Voltage"
       id: "${devicename}_voltage"
       accuracy_decimals: 2
+      filters:
+        - skip_initial: 1
+        - throttle_average: 20s
     power:
       name: "${human_devicename} Power"
       id: "${devicename}_power"
       accuracy_decimals: 2
+      filters:
+        - skip_initial: 1
+        - throttle_average: 20s
   - platform: total_daily_energy
     name: "${human_devicename} Total Daily Energy"
     power_id: "${devicename}_power"
@@ -63,6 +71,7 @@ sensor:
       # Multiplication factor from W to kW is 0.001
       - multiply: 0.001
     unit_of_measurement: kWh
+
 switch:
   - platform: gpio
     name: "${human_devicename} Relay"
