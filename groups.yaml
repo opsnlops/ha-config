@@ -61,6 +61,8 @@ workshop_lights:
     - light.workshop_stairs
     - light.workshop_left_light
     - light.workshop_right_light
+    - light.sewing_table_light
+    - light.workbench_lights
 
 bunnys_room_lights:
   name: Bunny's Room Lights
