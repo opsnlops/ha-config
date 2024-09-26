@@ -15,6 +15,7 @@
       - light.kitchen_lights
       - light.office_lights
       - light.workshop_lights
+      - light.bunnys_bathroom_lights
       - light.bunnys_room_lights
       - light.guest_room_lights
       - light.hallway_lights
@@ -23,7 +24,7 @@
       - light.laundry_room_lights
 
       # Just to be goofy
-      - light.family_room_clock
+      #- light.family_room_clock
 
 # The one for non-lights
 - name: HA (Non-lights)
@@ -66,19 +67,9 @@
       - sensor.workshop_temperature
 
       # Doors
-      - binary_sensor.back_door
-      - binary_sensor.bedroom_door
-      - binary_sensor.entryway_door
-      - binary_sensor.forbidden_door
       - binary_sensor.front_door
       - binary_sensor.left_shed_door
       - binary_sensor.right_shed_door
-
-      # Windows
-      - binary_sensor.family_room_east_window
-      - binary_sensor.family_room_west_window
-      - binary_sensor.laundry_room_window
-      - binary_sensor.mud_room_window
 
       # Smoke Detectors
       - binary_sensor.bunnys_room_smoke_detected
@@ -101,24 +92,12 @@
       - fan.guest_room_fan
       - switch.bedroom_fan
       - switch.family_room_floor_fan
-      - switch.laundry_room_window_fan
       - switch.office_ceiling_fan
       - switch.office_floor_fan
-      - switch.office_window_fan
       - switch.workshop_fan
 
-      # Covers
-      - cover.bedroom_large_window_shade_homekit
-      - cover.bedroom_small_window_shade_homekit
-
       # Climate Control
-      #- climate.family_room_ac
       - climate.family_room_heat
-      - climate.office_heat
-      - climate.bunnys_room_heater
-      - climate.guest_room_heater
-      - climate.hallway_bathroom_heater
-      - climate.bunnys_bathroom_heater
 
       # Other things
       - switch.office_heater
@@ -159,9 +138,3 @@
     binary_sensor.front_door:
       linked_battery_sensor: sensor.front_door_battery_level
       low_battery_threshold: 33
-    cover.bedroom_small_window_shade_homekit:
-      linked_battery_sensor: sensor.bedroom_small_window_shade_battery
-      low_battery_threshold: 50
-    cover.bedroom_large_window_shade_homekit:
-      linked_battery_sensor: sensor.bedroom_large_window_shade_battery
-      low_battery_threshold: 50

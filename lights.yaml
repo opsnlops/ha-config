@@ -105,6 +105,22 @@
 
 - platform: template
   lights:
+    bunnys_room_lights:
+      friendly_name: "Bunny's Bathroom Lights"
+      value_template: "{{ states('group.bunnys_bathroom_lights') }}"
+      turn_on:
+        - service: homeassistant.turn_on
+          data:
+            entity_id:
+              - group.bunnys_bathroom_lights
+      turn_off:
+        - service: homeassistant.turn_off
+          data:
+            entity_id:
+              - group.bunnys_bathroom_lights
+
+- platform: template
+  lights:
     guest_room_lights:
       friendly_name: "Guest Room Lights"
       value_template: "{{ states('group.guest_room_lights') }}"
