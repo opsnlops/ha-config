@@ -99,14 +99,14 @@ entities:
       - 0.5435
       - 0.3978
   light.temp_office_lamp:
-    brightness: 92
+    brightness: 104
     state: "on"
     xy_color:
       - 0.1532
       - 0.048
-light.family_room_fairy_lights:
-    state: "on"
-    brightness: 21
+  light.family_room_fairy_lights:
+      state: "on"
+      brightness: 21
   light.family_room_floor_fan_blue_led:
     state: "off"
   light.living_room_fireplace_backlight:
@@ -323,9 +323,3 @@ light.family_room_fairy_lights:
   switch.christmas_tree:
     state: "off"
 
-  light.temp_office_lamp:
-    brightness: 92
-    state: "on"
-    xy_color:
-      - 0.1532
-      - 0.048

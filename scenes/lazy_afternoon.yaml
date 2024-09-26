@@ -51,6 +51,12 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.temp_office_lamp:
+    brightness: 152
+    state: "on"
+    xy_color:
+      - 0.445
+      - 0.3857
   light.family_room_floor_fan_blue_led:
     state: "on"
 
