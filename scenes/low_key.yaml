@@ -98,7 +98,13 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
-  light.family_room_fairy_lights:
+  light.temp_office_lamp:
+    brightness: 92
+    state: "on"
+    xy_color:
+      - 0.1532
+      - 0.048
+light.family_room_fairy_lights:
     state: "on"
     brightness: 21
   light.family_room_floor_fan_blue_led:
