@@ -34,12 +34,12 @@
   filter:
     include_entities:
       - camera.driveway
-    entity_config:
-      camera.driveway:
-        linked_motion_sensor: binary_sensor.driveway_person_detected
-        support_audio: True
-        video_codec: copy
-        stream_source: rtsp://10.3.2.2:7447/g6A5WqHSuCKg9BZV
+  entity_config:
+    camera.driveway:
+      linked_motion_sensor: binary_sensor.driveway_person_detected
+      support_audio: True
+      video_codec: copy
+      stream_source: rtsp://10.3.2.2:7447/g6A5WqHSuCKg9BZV
 
 
 
