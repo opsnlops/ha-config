@@ -41,9 +41,10 @@ sensor:
 
   - name: "Outside Light Level"
     state_topic: "weather/Acurite-Atlas/lux"
-    unit_of_measurement: "lux"
+    unit_of_measurement: "lx"
     icon: mdi:sun-wireless-outline
     state_class: measurement
+    device_class: illuminance
 
   - name: "Lighting Count"
     state_topic: "weather/Acurite-Atlas/strike_count"

@@ -22,6 +22,9 @@ sensor:
     address: 0x62
     co2:
       name: "${human_devicename} CO2"
+      device_class: "carbon_dioxide"
+      state_class: "measurement"
+      accuracy_decimals: 1
     temperature:
       name: "${human_devicename} Temperature"
     humidity:

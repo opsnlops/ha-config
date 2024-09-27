@@ -105,7 +105,7 @@
 
 - platform: template
   lights:
-    bunnys_room_lights:
+    bunnys_bathroom_lights:
       friendly_name: "Bunny's Bathroom Lights"
       value_template: "{{ states('group.bunnys_bathroom_lights') }}"
       turn_on:
