@@ -101,7 +101,7 @@
       video_codec: copy
       stream_source: rtsp://10.3.2.2:7447/Is9Efi6ozJgNn5ll
 
-- name: Front Door Camera
+- name: Mud Room Camera
   mode: accessory
   ip_address: 10.3.2.5
   port: 23006
