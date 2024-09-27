@@ -42,33 +42,45 @@
     camera.back_driveway:
       support_audio: True
       video_codec: copy
-      stream_source: rtsp://10.3.2.2:7447/nW1dAzhbJCu29V49
+      audio_packet_size: 564
+      linked_motion_sensor: binary_sensor.back_driveway_person_detected
+      stream_source: rtsp://10.3.2.2:7447/hC4NTqt6nGccRsmQ
     camera.carport:
       support_audio: True
       video_codec: copy
-      stream_source: rtsp://10.3.2.2:7447/L2bg6vBMX6L6WuVB
+      audio_packet_size: 564
+      linked_motion_sensor: binary_sensor.carport_person_detected
+      stream_source: rtsp://10.3.2.2:7447/oU27p2lABt2nlPo5
     camera.driveway:
-      linked_motion_sensor: binary_sensor.carport_camera_motion
+      linked_motion_sensor: binary_sensor.driveway_person_detected
       support_audio: True
       video_codec: copy
-      stream_source: rtsp://10.3.2.2:7447/Nst4Xp2LNUw0gpf2
+      audio_packet_size: 564
+      stream_source: rtsp://10.3.2.2:7447/jBFDXduYQYvsMFb3
     camera.family_room:
       support_audio: True
       video_codec: copy
+      audio_packet_size: 564
+      linked_motion_sensor: binary_sensor.family_room_camera_motion
       stream_source: rtsp://10.3.2.2:7447/7N7cAe7gT7MSxy6K
     camera.front_door:
       support_audio: True
       linked_doorbell_sensor: binary_sensor.doorbell
-      linked_motion_sensor: binary_sensor.front_door_motion
+      linked_motion_sensor: binary_sensor.front_door_person_detected
       video_codec: copy
-      stream_source: rtsp://10.3.2.2:7447/djtZtwNFjLaCCsrU
+      audio_packet_size: 564
+      stream_source: rtsp://10.3.2.2:7447/zkxAiIFk6JFgF71v
     camera.mud_room:
       support_audio: True
       video_codec: copy
+      audio_packet_size: 564
+      linked_motion_sensor: binary_sensor.mud_room_camera_motion
       stream_source: rtsp://10.3.2.2:7447/QwWp4ecs5zpJf6Hs
     camera.office:
       support_audio: True
       video_codec: copy
+      audio_packet_size: 564
+      linked_motion_sensor: binary_sensor.office_motion
       stream_source: rtsp://10.3.2.2:7447/UT8WinlVTvThnkLp
 
 
