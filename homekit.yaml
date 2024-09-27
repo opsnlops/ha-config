@@ -24,6 +24,28 @@
       - light.laundry_room_lights
 
 
+#
+# HA Recommends using accessory mode for cameras, so let's make a bunch
+#
+- name: Driveway Camera
+  mode: accessory
+  ip_address: 10.3.2.5
+  port: 23001
+  filter:
+    include_entities:
+      - camera.driveway
+    entity_config:
+      camera.driveway:
+        linked_motion_sensor: binary_sensor.driveway_person_detected
+        support_audio: True
+        video_codec: copy
+        stream_source: rtsp://10.3.2.2:7447/g6A5WqHSuCKg9BZV
+
+
+
+
+
+
 # Cameras
 - name: HA (Cameras)
   mode: bridge
@@ -33,11 +55,12 @@
     include_entities:
       - camera.back_driveway
       - camera.carport
-      - camera.driveway
       - camera.family_room
       - camera.front_door
       - camera.mud_room
       - camera.office
+
+
   entity_config:
     camera.back_driveway:
       support_audio: True
@@ -51,12 +74,6 @@
       audio_packet_size: 564
       linked_motion_sensor: binary_sensor.carport_person_detected
       stream_source: rtsp://10.3.2.2:7447/oU27p2lABt2nlPo5
-    camera.driveway:
-      linked_motion_sensor: binary_sensor.driveway_person_detected
-      support_audio: True
-      video_codec: copy
-      audio_packet_size: 564
-      stream_source: rtsp://10.3.2.2:7447/jBFDXduYQYvsMFb3
     camera.family_room:
       support_audio: True
       video_codec: copy
