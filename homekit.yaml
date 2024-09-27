@@ -49,6 +49,7 @@
       linked_motion_sensor: binary_sensor.carport_camera_motion
       support_audio: True
       video_codec: copy
+      stream_source: rtsp://10.3.2.2:7447/vate8H2M6bCWxH0D
     camera.family_room:
       support_audio: True
       video_codec: copy
