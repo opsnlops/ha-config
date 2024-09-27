@@ -230,8 +230,12 @@
       # Other Sensors
       - sensor.co2_monitor_co2
       - sensor.outside_light_level
+      - binary_sensor.office_presence_detected_via_gpio
+
 
   entity_config:
+    binary_sensor.office_presence_detected_via_gpio:
+      name: "Office Presence Detected"
     binary_sensor.carport_motion:
       linked_battery_sensor: sensor.carport_sensor_battery_level
       low_battery_threshold: 33

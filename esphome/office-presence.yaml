@@ -35,7 +35,7 @@ binary_sensor:
   # Information coming from dedicated gpio (gpio_pin)
   - platform: gpio
     name: "${human_devicename} Detected via GPIO"
-    device_class: motion
+    device_class: occupancy
     pin:
       number: ${gpio_pin}
       mode: INPUT_PULLDOWN
