@@ -54,7 +54,7 @@
       video_codec: copy
     camera.front_door:
       support_audio: True
-      linked_doorbell: binary_sensor.doorbell
+      linked_doorbell_sensor: binary_sensor.doorbell
       linked_motion_sensor: binary_sensor.front_door_motion
       video_codec: copy
     camera.mud_room:
