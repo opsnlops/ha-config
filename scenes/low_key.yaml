@@ -6,7 +6,6 @@ entities:
     xy_color:
       - 0.1532
       - 0.048
-
   light.kitchen_cooktop_north:
     brightness: 45
     state: "on"

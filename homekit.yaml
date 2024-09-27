@@ -23,8 +23,22 @@
       - light.half_bathroom_lights
       - light.laundry_room_lights
 
-      # Just to be goofy
-      #- light.family_room_clock
+
+# Cameras
+- name: HA (Cameras)
+  mode: bridge
+  ip_address: 10.3.2.5
+  port: 23666
+  filter:
+    include_entities:
+      - camera.back_driveway
+      - camera.carport
+      - camera.driveway
+      - camera.family_room
+      - camera.front_door
+      - camera.mud_room
+      - camera.office
+
 
 # The one for non-lights
 - name: HA (Non-lights)
