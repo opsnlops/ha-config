@@ -39,60 +39,90 @@
       linked_motion_sensor: binary_sensor.driveway_person_detected
       support_audio: True
       video_codec: copy
-      stream_source: rtsp://10.3.2.2:7447/g6A5WqHSuCKg9BZV
+      # HA doesn't like the 4k streams, so this is the 720p one
+      stream_source: rtsp://10.3.2.2:7447/z5SRvL307nRBC7Jo
 
-
-
-
-
-
-# Cameras
-- name: HA (Cameras)
-  mode: bridge
+- name: Back Driveway Camera
+  mode: accessory
   ip_address: 10.3.2.5
-  port: 23666
+  port: 23002
   filter:
     include_entities:
       - camera.back_driveway
-      - camera.carport
-      - camera.family_room
-      - camera.front_door
-      - camera.mud_room
-      - camera.office
-
-
   entity_config:
     camera.back_driveway:
       support_audio: True
       video_codec: copy
-      audio_packet_size: 564
       linked_motion_sensor: binary_sensor.back_driveway_person_detected
-      stream_source: rtsp://10.3.2.2:7447/hC4NTqt6nGccRsmQ
+      stream_source: rtsp://10.3.2.2:7447/Lvv9KVyRDXu4SxEL
+
+- name: Carport Camera
+  mode: accessory
+  ip_address: 10.3.2.5
+  port: 23003
+  filter:
+    include_entities:
+      - camera.carport
+  entity_config:
     camera.carport:
       support_audio: True
       video_codec: copy
       audio_packet_size: 564
       linked_motion_sensor: binary_sensor.carport_person_detected
       stream_source: rtsp://10.3.2.2:7447/oU27p2lABt2nlPo5
+
+- name: Family Room Camera
+  mode: accessory
+  ip_address: 10.3.2.5
+  port: 23004
+  filter:
+    include_entities:
+      - camera.family_room
+  entity_config:
     camera.family_room:
       support_audio: True
       video_codec: copy
       audio_packet_size: 564
       linked_motion_sensor: binary_sensor.family_room_camera_motion
       stream_source: rtsp://10.3.2.2:7447/7N7cAe7gT7MSxy6K
+
+- name: Front Door Camera
+  mode: accessory
+  ip_address: 10.3.2.5
+  port: 23005
+  filter:
+    include_entities:
+      - camera.front_door
+  entity_config:
     camera.front_door:
       support_audio: True
       linked_doorbell_sensor: binary_sensor.doorbell
       linked_motion_sensor: binary_sensor.front_door_person_detected
       video_codec: copy
-      audio_packet_size: 564
-      stream_source: rtsp://10.3.2.2:7447/zkxAiIFk6JFgF71v
+      stream_source: rtsp://10.3.2.2:7447/Is9Efi6ozJgNn5ll
+
+- name: Front Door Camera
+  mode: accessory
+  ip_address: 10.3.2.5
+  port: 23006
+  filter:
+    include_entities:
+      - camera.mudroom
+  entity_config:
     camera.mud_room:
       support_audio: True
       video_codec: copy
-      audio_packet_size: 564
       linked_motion_sensor: binary_sensor.mud_room_camera_motion
       stream_source: rtsp://10.3.2.2:7447/QwWp4ecs5zpJf6Hs
+
+- name: Office Camera
+  mode: accessory
+  ip_address: 10.3.2.5
+  port: 23007
+  filter:
+    include_entities:
+      - camera.office
+  entity_config:
     camera.office:
       support_audio: True
       video_codec: copy
@@ -101,8 +131,29 @@
       stream_source: rtsp://10.3.2.2:7447/UT8WinlVTvThnkLp
 
 
+#
+# Media Players
+#
+- name: Family Room Receiver (HA)
+  mode: accessory
+  ip_address: 10.3.2.5
+  port: 23010
+  filter:
+    include_entities:
+      - media_player.family_room_receiver
+  entity_config:
+    media_player.family_room_receiver:
+      feature_list:
+        - feature: on_off
+        - feature: play_pause
+        - feature: play_stop
+        - feature: toggle_mute
 
-# The one for non-lights
+
+
+#
+# General bridge for non-lights
+#
 - name: HA (Non-lights)
   mode: bridge
   ip_address: 10.3.2.5
@@ -176,20 +227,10 @@
       - switch.office_floor_fan
       - switch.workshop_fan
 
-      # Climate Control
-      - climate.family_room_heat
+      # Other Sensors
+      - sensor.co2_monitor_co2
+      - sensor.outside_light_level
 
-      # Media
-      - media_player.family_room_receiver
-
-
-  entity_config:
-    media_player.family_room_receiver:
-      feature_list:
-        - feature: on_off
-        - feature: play_pause
-        - feature: play_stop
-        - feature: toggle_mute
 
     binary_sensor.carport_motion:
       linked_battery_sensor: sensor.carport_sensor_battery_level
