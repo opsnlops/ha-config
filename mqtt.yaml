@@ -210,8 +210,8 @@ sensor:
     state_topic: "openevse/sparky/total_energy"
     value_template: "{{ value | round(2) }}"
     unit_of_measurement: "kW"
-    device_class: "power"
-    state_class: total
+    device_class: "energy"
+    state_class: total_increasing
 
   - name: "Sparky WiFi SRSSI"
     state_topic: "openevse/sparky/srssi"
