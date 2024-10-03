@@ -127,21 +127,21 @@ sensor:
   - name: "Sparky Shaper Live Power"
     state_topic: "openevse/sparky/shaper_live_pwr"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "w"
+    unit_of_measurement: "W"
     device_class: "power"
     state_class: measurement
 
   - name: "Sparky Shaper Smoothed Live Power"
     state_topic: "openevse/sparky/shaper_smoothed_live_pwr"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "w"
+    unit_of_measurement: "W"
     device_class: "power"
     state_class: measurement
 
   - name: "Sparky Shaper Max Power"
     state_topic: "openevse/sparky/shaper_max_pwr"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "w"
+    unit_of_measurement: "W"
     device_class: "power"
     state_class: measurement
 
@@ -162,7 +162,7 @@ sensor:
   - name: "Sparky Power"
     state_topic: "openevse/sparky/power"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "w"
+    unit_of_measurement: "W"
     device_class: "power"
     state_class: measurement
 
@@ -209,7 +209,7 @@ sensor:
   - name: "Sparky Energy - All Time"
     state_topic: "openevse/sparky/total_energy"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "kW"
+    unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
 
