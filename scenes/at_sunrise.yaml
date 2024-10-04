@@ -18,3 +18,7 @@ entities:
     state: "off"
   light.garden_shed_lights:
     state: "off"
+  light.outside_maple_tree_uplight:
+    state: "off"
+  light.outside_japanese_maple_light:
+    state: "off"

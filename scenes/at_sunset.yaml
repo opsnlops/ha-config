@@ -55,3 +55,21 @@ entities:
 
   light.garden_shed_lights:
     state: "on"
+
+
+  #
+  # Hue lights on the outside of the house
+  #
+  light.outside_japanese_maple_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
+  light.outside_maple_tree_uplight:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
