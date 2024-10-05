@@ -5,7 +5,7 @@ entities:
   light.bunnys_room_fairy_lights:
     state: "on"
     brightness: 50
-  switch.bedroom_fan:
+  fan.bedroom_fan:
     state: "on"
   light.bedroom_left_nightstand_lamp:
     brightness: 61

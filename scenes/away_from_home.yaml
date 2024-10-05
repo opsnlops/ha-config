@@ -166,17 +166,19 @@ entities:
     state: "off"
 
   # Make sure the fans are off
-  switch.bedroom_fan:
+  fan.bedroom_fan:
     state: "off"
   fan.family_room_ceiling_fan:
     state: "off"
-  switch.family_room_floor_fan:
+  fan.family_room_floor_fan:
     state: "off"
   switch.office_ceiling_fan:
     state: "off"
-  switch.office_floor_fan:
+  fan.office_floor_fan:
     state: "off"
   switch.office_window_fan:
+    state: "off"
+  fan.workshop_fan:
     state: "off"
 
   # Turn off the flamethrowers 🔥

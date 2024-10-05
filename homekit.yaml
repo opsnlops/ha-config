@@ -219,13 +219,13 @@
       - binary_sensor.workshop_carbon_monoxide_detected
 
       # Fans
+      - fan.bedroom_fan
       - fan.family_room_ceiling_fan
+      - fan.family_room_floor_fan
       - fan.guest_room_fan
-      - switch.bedroom_fan
-      - switch.family_room_floor_fan
       - switch.office_ceiling_fan
-      - switch.office_floor_fan
-      - switch.workshop_fan
+      - fan.office_floor_fan
+      - fan.workshop_fan
 
       # Other Sensors
       - sensor.co2_monitor_co2

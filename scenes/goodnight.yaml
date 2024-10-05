@@ -104,7 +104,7 @@ entities:
     state: "off"
   fan.family_room_ceiling_fan:
     state: "off"
-  switch.family_room_floor_fan:
+  fan.family_room_floor_fan:
     state: "off"
   light.family_room_floor_fan_blue_led:
     state: "off"
@@ -130,7 +130,7 @@ entities:
     state: "off"
   switch.office_ceiling_fan:
     state: "off"
-  switch.office_floor_fan:
+  fan.office_floor_fan:
     state: "off"
   switch.office_window_fan:
     state: "off"
