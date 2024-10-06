@@ -94,6 +94,7 @@ outside_lights:
     - light.back_patio_west
     - light.carport_light
     - light.garden_shed_lights
+    - light.outside_driveway_marker_light
     - light.outside_maple_tree_uplight
     - light.outside_japanese_maple_light
 
