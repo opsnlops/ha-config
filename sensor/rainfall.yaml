@@ -1,0 +1,11 @@
+
+#
+# Convert the rain gauge to mm
+#
+  - platform: template
+    sensors:
+      rain_today_mm:
+        unique_id: "fa7c3390-942b-11ef-b424-8b059de72258"
+        value_template: "{{ (states('sensor.rain_today') | float*25.4) | round(2) }}"
+        unit_of_measurement: mm
+        friendly_name: "Rain Today (mm)"
