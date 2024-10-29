@@ -20,6 +20,7 @@ logger:
 uart:
   rx_pin: RX
   baud_rate: 4800
+  parity: EVEN
 
 binary_sensor:
   - platform: gpio
@@ -67,6 +68,8 @@ sensor:
   - platform: total_daily_energy
     name: "${human_devicename} Total Daily Energy"
     power_id: "${devicename}_power"
+    device_class: "energy"
+    state_class: "total_increasing"
     filters:
       # Multiplication factor from W to kW is 0.001
       - multiply: 0.001

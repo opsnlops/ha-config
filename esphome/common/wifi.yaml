@@ -7,7 +7,8 @@ wifi:
     static_ip: ${ip}
     gateway: 10.9.1.1
     subnet: 255.255.255.0
-    dns1: 10.9.1.1
+    dns1: 10.3.2.3
+    dns2: 10.9.1.1
 
 mdns:
   disabled: false
@@ -16,7 +17,19 @@ sensor:
   - platform: wifi_signal
     name: "${human_devicename} WiFi Signal"
     update_interval: 60s
+    id: wifi_signal_db
     icon: mdi:wifi
+    entity_category: diagnostic
+
+  # Reports the WiFi signal strength in %
+  - platform: copy
+    source_id: wifi_signal_db
+    name: "${human_devicename} WiFi Signal Percent"
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "%"
+    entity_category: diagnostic
+    device_class: ""
 
 text_sensor:
   - platform: wifi_info
