@@ -262,9 +262,11 @@ entities:
       - 0.3157
       - 0.3291
   light.workshop_stairs:
-    state: "on"
     brightness: 255
-    color_temp_kelvin: 6535
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.329
   light.sewing_table_light:
     state: "on"
     brightness: 166
