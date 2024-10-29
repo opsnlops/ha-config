@@ -231,7 +231,7 @@ entities:
   switch.workshop_fairy_lights:
     state: "off"
   light.workshop_stairs:
-    brightness: 50
+    brightness: 120
     state: "on"
     xy_color:
       - 0.1532
