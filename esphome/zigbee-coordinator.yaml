@@ -32,7 +32,7 @@ ethernet:
   manual_ip:
     static_ip: 10.9.1.75 
     gateway: 10.9.1.1
-    subnet: 255.255.255.0  
+    subnet: 255.255.255.0
 
 # Enable logging
 logger:

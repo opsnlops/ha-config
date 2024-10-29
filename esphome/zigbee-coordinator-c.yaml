@@ -13,9 +13,8 @@ esp32:
   framework:
     type: esp-idf
 
-packages:
-  base: !include common/base.yaml
-  mqtt: !include common/mqtt.yaml
+# Don't use the base packages on this device, it will make things crash. I'm
+# not sure why. I suspect it's the use of IDF rather than Arduino.
 
 external_components:
   - source: github://oxan/esphome-stream-server
