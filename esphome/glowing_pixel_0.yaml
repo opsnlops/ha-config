@@ -1,0 +1,27 @@
+substitutions:
+  devicename: glowing_pixel_0
+  human_devicename: Glowing Pixel 0
+  ip: 10.9.1.222
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  rp2040: !include common/device-classes/rp2040.yaml
+
+logger:
+
+light:
+  - platform: rp2040_pio_led_strip
+    name: "${human_devicename} Pixel"
+    id: glowing_pixel
+    pin: GPIO16
+    num_leds: 1
+    pio: 0
+    rgb_order: RGB
+    chipset: WS2812B
+    effects:
+      - flicker:
+      - flicker:
+          name: Flicker Effect With Custom Values
+          alpha: 90%
+          intensity: 5.5%
