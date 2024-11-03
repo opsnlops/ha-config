@@ -1,0 +1,12 @@
+substitutions:
+  devicename: family-room-window-table-lights
+  human_devicename: Family Room Window Table Lights
+  ip: 10.9.1.211
+  icon: mdi:string-lights
+  max_power: "220.0" # watt
+  max_temp: "70.0" # °C
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  shelly2_dimmer: !include common/device-classes/shelly2_dimmer.yaml
