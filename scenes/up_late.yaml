@@ -23,8 +23,6 @@ entities:
     xy_color:
       - 0.287
       - 0.1383
-  light.dining_room_fairy_lights:
-    state: "on"
   switch.guest_room_stars:
     state: "on"
   light.kitchen_counter_north:
@@ -52,6 +50,9 @@ entities:
       - 0.5009
       - 0.3794
   light.family_room_fairy_lights:
+    state: "on"
+    brightness: 50
+  light.family_room_window_table_lights:
     state: "on"
     brightness: 50
   light.living_room_fireplace_backlight:

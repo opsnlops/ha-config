@@ -90,6 +90,8 @@ entities:
 
   switch.family_room_fairy_lights:
     state: "off"
+  light.family_room_window_table_lights:
+    state: "off"
 
   # Kitchen
   light.kitchen_cooktop_north:

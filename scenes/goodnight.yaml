@@ -94,6 +94,8 @@ entities:
     state: "off"
   light.family_room_fairy_lights:
     state: "off"
+  light.family_room_window_table_lights:
+    state: "off"
   light.living_room_fireplace_backlight:
     state: "off"
   light.family_room_sofa:
@@ -202,8 +204,6 @@ entities:
 
   # Turn off the flamethrowers 🔥
   climate.family_room_heat:
-    state: "off"
-  climate.office_heat:
     state: "off"
 
   # Laundry Room

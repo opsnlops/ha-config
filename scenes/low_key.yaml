@@ -106,6 +106,9 @@ entities:
   light.family_room_fairy_lights:
       state: "on"
       brightness: 21
+  light.family_room_window_table_lights:
+    state: "on"
+    brightness: 21
   light.family_room_floor_fan_blue_led:
     state: "off"
   light.living_room_fireplace_backlight:

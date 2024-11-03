@@ -139,6 +139,8 @@ entities:
       - 0.3291
   light.family_room_fairy_lights:
     state: "off"
+  light.family_room_window_table_lights:
+    state: "off"
   light.living_room_fireplace_backlight:
     brightness: 254
     state: "on"
