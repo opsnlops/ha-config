@@ -121,7 +121,7 @@ entities:
   light.bird_light:
     brightness: 1
     state: "on"
-    color_temp: 222
+    color_temp: 454
 
   light.family_room_sofa:
     brightness: 66
