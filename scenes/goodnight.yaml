@@ -114,6 +114,8 @@ entities:
     state: "off"
   light.family_room_thermostat_lcd_display_backlight:
     state: "off"
+  light.bird_light:
+    state: "off"
 
   # Office
   light.office_computer_table_lamp:

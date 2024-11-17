@@ -85,6 +85,8 @@ entities:
     state: "off"
   switch.christmas_tree:
     state: "off"
+  light.bird_light:
+    state: "off"
 
   #
   # Office

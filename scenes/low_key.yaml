@@ -118,6 +118,11 @@ entities:
       - 0.612
       - 0.374
 
+  light.bird_light:
+    brightness: 1
+    state: "on"
+    color_temp_kelvin: 2202
+
   light.family_room_sofa:
     brightness: 66
     state: "on"

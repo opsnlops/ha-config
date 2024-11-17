@@ -166,6 +166,10 @@ entities:
   light.family_room_thermostat_lcd_display_backlight:
     state: "on"
     brightness: 255
+  light.bird_light:
+    state: "on"
+    brightness: 80
+    color_temp_kelvin: 4504
 
   # Office
   light.office_desk_light:

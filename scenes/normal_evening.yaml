@@ -135,6 +135,10 @@ entities:
   light.family_room_thermostat_lcd_display_backlight:
     state: "on"
     brightness: 255
+  light.bird_light:
+    state: "on"
+    brightness: 59
+    color_temp_kelvin: 2604
 
   # Bedroom
   light.bunnys_room_fairy_lights:

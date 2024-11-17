@@ -85,6 +85,10 @@ entities:
     xy_color:
       - 0.5009
       - 0.3794
+  light.bird_light:
+    brightness: 30
+    state: "on"
+    color_temp_kelvin: 2400
   light.office_computer_table_lamp:
     brightness: 93
     state: "on"
