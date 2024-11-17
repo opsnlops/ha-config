@@ -169,7 +169,7 @@ entities:
   light.bird_light:
     state: "on"
     brightness: 80
-    color_temp_kelvin: 4504
+    color_temp: 454
 
   # Office
   light.office_desk_light:

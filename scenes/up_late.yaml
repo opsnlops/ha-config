@@ -88,7 +88,7 @@ entities:
   light.bird_light:
     brightness: 30
     state: "on"
-    color_temp_kelvin: 2400
+    color_temp: 383
   light.office_computer_table_lamp:
     brightness: 93
     state: "on"

@@ -138,7 +138,7 @@ entities:
   light.bird_light:
     state: "on"
     brightness: 59
-    color_temp_kelvin: 2604
+    color_temp: 382
 
   # Bedroom
   light.bunnys_room_fairy_lights:

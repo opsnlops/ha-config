@@ -90,7 +90,7 @@ entities:
   light.bird_light:
     brightness: 59
     state: "on"
-    color_temp_kelvin: 2604
+    color_temp: 383
 
   switch.family_room_fairy_lights:
     state: "off"
