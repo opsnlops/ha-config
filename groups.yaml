@@ -8,6 +8,7 @@ all_furries:
 family_room_lights:
   name: Family Room Lights
   entities:
+    - light.bird_light
     - light.pink_lamp
     - light.blue_lamp
     - light.yellow_lamp

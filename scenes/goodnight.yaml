@@ -82,6 +82,10 @@ entities:
     state: "off"
   light.bedroom_fan_blue_led:
     state: "off"
+  light.bedroom_dresser_left_lamp:
+    state: "off"
+  light.bedroom_dresser_right_lamp:
+    state: "off"
 
   # Family Room
   light.pink_lamp:

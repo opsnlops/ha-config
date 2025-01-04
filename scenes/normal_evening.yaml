@@ -145,25 +145,37 @@ entities:
     state: "on"
     brightness: 254
   light.bedroom_left_nightstand_lamp:
-    brightness: 99
+    brightness: 163
     state: "on"
     xy_color:
       - 0.2207
       - 0.079
   light.bedroom_right_nightstand_lamp:
-    brightness: 89
+    brightness: 163
     state: "on"
     xy_color:
-      - 0.2207
-      - 0.079
+      - 0.455
+      - 0.3857
   light.bedroom_window_light:
     brightness: 186
     state: "on"
     xy_color:
-      - 0.2207
-      - 0.079
+      - 0.455
+      - 0.3857
   light.bedroom_fan_blue_led:
     state: "on"
+  light.bedroom_dresser_left_lamp:
+    brightness: 200
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_dresser_right_lamp:
+    brightness: 200
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
 
   # Guest Room
   switch.guest_room_stars:

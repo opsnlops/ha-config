@@ -176,19 +176,31 @@ entities:
     state: "on"
     brightness_pct: 40
   light.bedroom_left_nightstand_lamp:
-    brightness: 30
+    brightness: 50
     state: "on"
     xy_color:
       - 0.5435
       - 0.3978
   light.bedroom_right_nightstand_lamp:
-    brightness: 30
+    brightness: 50
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bedroom_dresser_left_lamp:
+    brightness: 50
+    state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bedroom_dresser_right_lamp:
+    brightness: 50
     state: "on"
     xy_color:
       - 0.5435
       - 0.3978
   light.bedroom_window_light:
-    brightness: 154
+    brightness: 180
     state: "on"
     xy_color:
       - 0.158

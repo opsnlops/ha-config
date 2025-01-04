@@ -167,6 +167,18 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.bedroom_dresser_left_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_dresser_right_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
 
   # Guest Room
   switch.guest_room_stars:
