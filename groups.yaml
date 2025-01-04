@@ -67,6 +67,8 @@ workshop_lights:
 bunnys_room_lights:
   name: Bunny's Room Lights
   entities:
+    - light.bedroom_dresser_left_lamp
+    - light.bedroom_dresser_right_lamp
     - light.bedroom_window_light
     - light.bedroom_right_nightstand_lamp
     - light.bedroom_left_nightstand_lamp
