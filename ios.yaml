@@ -1,29 +1,29 @@
 
 #
-# Not much here yet. I'm still big in the Apple ecosystem.
+# These have been moved to the app so it's easy to configure
 #
 
-actions:
-  - name: iOS Unlock Front Door
-    background_color: "#f45c67"
-    label:
-      text: "Unlock Front Door"
-      color: "#eaeaea"
-    icon:
-      icon: door-closed
-      color: "#a9a9a9"
-    show_in_carplay: true
-    show_in_watch: true
-    use_custom_colors: true
-
-  - name: iOS Lock Front Door
-    background_color: "#2db761"
-    label:
-      text: "Lock Front Door"
-      color: "#eaeaea"
-    icon:
-      icon: door-closed-lock
-      color: "#a9a9a9"
-    show_in_carplay: true
-    show_in_watch: true
-    use_custom_colors: true
+#actions:
+#  - name: iOS Unlock Front Door
+#    background_color: "#f45c67"
+#    label:
+#      text: "Unlock Front Door"
+#      color: "#eaeaea"
+#    icon:
+#      icon: door-closed
+#      color: "#a9a9a9"
+#    show_in_carplay: true
+#    show_in_watch: true
+#    use_custom_colors: true
+#
+#  - name: iOS Lock Front Door
+#    background_color: "#2db761"
+#    label:
+#      text: "Lock Front Door"
+#      color: "#eaeaea"
+#    icon:
+#      icon: door-closed-lock
+#      color: "#a9a9a9"
+#    show_in_carplay: true
+#    show_in_watch: true
+#    use_custom_colors: true

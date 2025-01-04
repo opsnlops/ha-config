@@ -59,7 +59,7 @@ input_number: !include input_number.yaml
 climate: !include_dir_merge_list climate/
 
 # Enable iOS stuff
-ios: !include ios.yaml
+#ios: !include ios.yaml
 
 # Turn on themes
 frontend:
