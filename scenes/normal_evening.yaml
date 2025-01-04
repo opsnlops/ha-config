@@ -154,8 +154,8 @@ entities:
     brightness: 163
     state: "on"
     xy_color:
-      - 0.455
-      - 0.3857
+      - 0.2207
+      - 0.079
   light.bedroom_window_light:
     brightness: 186
     state: "on"
