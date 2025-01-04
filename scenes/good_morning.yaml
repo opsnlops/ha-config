@@ -22,6 +22,18 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
+  light.bedroom_dresser_left_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.bedroom_dresser_right_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
   light.bedroom_window_light:
     brightness: 254
     state: "on"
