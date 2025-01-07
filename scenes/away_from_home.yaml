@@ -103,7 +103,11 @@ entities:
     state: "off"
   light.bedroom_dresser_left_lamp:
     state: "off"
+  light.bedroom_dresser_left_lantern:
+    state: "off"
   light.bedroom_dresser_right_lamp:
+    state: "off"
+  light.bedroom_dresser_right_lantern:
     state: "off"
   light.bedroom_window_light:
     state: "off"
