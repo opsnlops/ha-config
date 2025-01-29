@@ -271,6 +271,32 @@ sensor:
        } %}
        {{ map[value] if value in map else 'Unknown' }}
 
+
+  #
+  # Office Windows via andersen-mqtt
+  #
+
+  - name: "Office Window 1 Last Polled"
+    state_topic: "andersen-mqtt/windows/window1/last_polled"
+    device_class: "timestamp"
+    entity_category: "diagnostic"
+
+  - name: "Office Window 2 Last Polled"
+    state_topic: "andersen-mqtt/windows/window2/last_polled"
+    device_class: "timestamp"
+    entity_category: "diagnostic"
+
+  - name: "Office Window 3 Last Polled"
+    state_topic: "andersen-mqtt/windows/window3/last_polled"
+    device_class: "timestamp"
+    entity_category: "diagnostic"
+
+  - name: "Office Window 4 Last Polled"
+    state_topic: "andersen-mqtt/windows/window4/last_polled"
+    device_class: "timestamp"
+    entity_category: "diagnostic"
+
+
 binary_sensor:
 
   - name: "Sparky Shaper Enabled"
@@ -282,3 +308,139 @@ binary_sensor:
     state_topic: "openevse/sparky/shaper_updated"
     payload_on: "true"
     payload_off: "false"
+
+
+
+  #
+  # Windows
+  #
+
+  - name: "Office Window 1 Open"
+    state_topic: "andersen-mqtt/windows/window1/open"
+    payload_on: "yes"
+    payload_off: "no"
+    device_class: window
+
+  - name: "Office Window 1 Movement Obstructed"
+    state_topic: "andersen-mqtt/windows/window1/movement_obstructed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 1 Screen Missing"
+    state_topic: "andersen-mqtt/windows/window1/screen_missing"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 1 RF Heard"
+    state_topic: "andersen-mqtt/windows/window1/rf_heard"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 1 Rain Sensed"
+    state_topic: "andersen-mqtt/windows/window1/rain_sensed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 1 Rain Override Active"
+    state_topic: "andersen-mqtt/windows/window1/rain_override_active"
+    payload_on: "yes"
+    payload_off: "no"
+
+
+
+  - name: "Office Window 2 Open"
+    state_topic: "andersen-mqtt/windows/window2/open"
+    payload_on: "yes"
+    payload_off: "no"
+    device_class: window
+
+  - name: "Office Window 2 Movement Obstructed"
+    state_topic: "andersen-mqtt/windows/window2/movement_obstructed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 2 Screen Missing"
+    state_topic: "andersen-mqtt/windows/window2/screen_missing"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 2 RF Heard"
+    state_topic: "andersen-mqtt/windows/window2/rf_heard"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 2 Rain Sensed"
+    state_topic: "andersen-mqtt/windows/window2/rain_sensed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 2 Rain Override Active"
+    state_topic: "andersen-mqtt/windows/window2/rain_override_active"
+    payload_on: "yes"
+    payload_off: "no"
+
+
+
+  - name: "Office Window 3 Open"
+    state_topic: "andersen-mqtt/windows/window3/open"
+    payload_on: "yes"
+    payload_off: "no"
+    device_class: window
+
+  - name: "Office Window 3 Movement Obstructed"
+    state_topic: "andersen-mqtt/windows/window3/movement_obstructed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 3 Screen Missing"
+    state_topic: "andersen-mqtt/windows/window3/screen_missing"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 3 RF Heard"
+    state_topic: "andersen-mqtt/windows/window3/rf_heard"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 3 Rain Sensed"
+    state_topic: "andersen-mqtt/windows/window3/rain_sensed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 3 Rain Override Active"
+    state_topic: "andersen-mqtt/windows/window3/rain_override_active"
+    payload_on: "yes"
+    payload_off: "no"
+
+
+
+  - name: "Office Window 4 Open"
+    state_topic: "andersen-mqtt/windows/window4/open"
+    payload_on: "yes"
+    payload_off: "no"
+    device_class: window
+
+  - name: "Office Window 4 Movement Obstructed"
+    state_topic: "andersen-mqtt/windows/window4/movement_obstructed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 4 Screen Missing"
+    state_topic: "andersen-mqtt/windows/window4/screen_missing"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 4 RF Heard"
+    state_topic: "andersen-mqtt/windows/window4/rf_heard"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 4 Rain Sensed"
+    state_topic: "andersen-mqtt/windows/window4/rain_sensed"
+    payload_on: "yes"
+    payload_off: "no"
+
+  - name: "Office Window 4 Rain Override Active"
+    state_topic: "andersen-mqtt/windows/window4/rain_override_active"
+    payload_on: "yes"
+    payload_off: "no"

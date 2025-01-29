@@ -133,3 +133,11 @@ laundry_room_lights:
   entities:
     - light.laundry_room_cabinet
     - light.laundry_room_light
+
+office_windows:
+  name: Office Windows
+  entities:
+    - binary_sensor.office_window_1_open
+    - binary_sensor.office_window_2_open
+    - binary_sensor.office_window_3_open
+    - binary_sensor.office_window_4_open
