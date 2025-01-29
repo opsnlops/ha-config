@@ -297,6 +297,60 @@ sensor:
     entity_category: "diagnostic"
 
 
+
+cover:
+  - name: "Office Window 1"
+    state_topic: "andersen-mqtt/windows/window1/open"
+    command_topic: "andersen-mqtt/windows/window1/command"
+    position_open: 100
+    position_closed: 0
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_open: "yes"
+    state_closed: "no"
+    device_class: "window"
+    unique_id: "andersen-mqtt-windows-window1"
+
+  - name: "Office Window 2"
+    state_topic: "andersen-mqtt/windows/window2/open"
+    command_topic: "andersen-mqtt/windows/window2/command"
+    position_open: 100
+    position_closed: 0
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_open: "yes"
+    state_closed: "no"
+    device_class: "window"
+    unique_id: "andersen-mqtt-windows-window2"
+
+  - name: "Office Window 3"
+    state_topic: "andersen-mqtt/windows/window3/open"
+    command_topic: "andersen-mqtt/windows/window3/command"
+    position_open: 100
+    position_closed: 0
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_open: "yes"
+    state_closed: "no"
+    device_class: "window"
+    unique_id: "andersen-mqtt-windows-window3"
+
+  - name: "Office Window 4"
+    state_topic: "andersen-mqtt/windows/window4/open"
+    command_topic: "andersen-mqtt/windows/window4/command"
+    position_open: 100
+    position_closed: 0
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_open: "yes"
+    state_closed: "no"
+    device_class: "window"
+    unique_id: "andersen-mqtt-windows-window4"
+
 binary_sensor:
 
   - name: "Sparky Shaper Enabled"
@@ -315,11 +369,6 @@ binary_sensor:
   # Windows
   #
 
-  - name: "Office Window 1 Open"
-    state_topic: "andersen-mqtt/windows/window1/open"
-    payload_on: "yes"
-    payload_off: "no"
-    device_class: window
 
   - name: "Office Window 1 Movement Obstructed"
     state_topic: "andersen-mqtt/windows/window1/movement_obstructed"
@@ -348,11 +397,6 @@ binary_sensor:
 
 
 
-  - name: "Office Window 2 Open"
-    state_topic: "andersen-mqtt/windows/window2/open"
-    payload_on: "yes"
-    payload_off: "no"
-    device_class: window
 
   - name: "Office Window 2 Movement Obstructed"
     state_topic: "andersen-mqtt/windows/window2/movement_obstructed"
@@ -381,12 +425,6 @@ binary_sensor:
 
 
 
-  - name: "Office Window 3 Open"
-    state_topic: "andersen-mqtt/windows/window3/open"
-    payload_on: "yes"
-    payload_off: "no"
-    device_class: window
-
   - name: "Office Window 3 Movement Obstructed"
     state_topic: "andersen-mqtt/windows/window3/movement_obstructed"
     payload_on: "yes"
@@ -413,12 +451,6 @@ binary_sensor:
     payload_off: "no"
 
 
-
-  - name: "Office Window 4 Open"
-    state_topic: "andersen-mqtt/windows/window4/open"
-    payload_on: "yes"
-    payload_off: "no"
-    device_class: window
 
   - name: "Office Window 4 Movement Obstructed"
     state_topic: "andersen-mqtt/windows/window4/movement_obstructed"

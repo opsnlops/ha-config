@@ -227,6 +227,12 @@
       - fan.office_floor_fan
       - fan.workshop_fan
 
+      # Windows
+      - cover.office_window_1
+      - cover.office_window_2
+      - cover.office_window_3
+      - cover.office_window_4
+
       # Other Sensors
       - sensor.co2_monitor_co2
       - sensor.outside_light_level
