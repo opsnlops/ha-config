@@ -13,6 +13,9 @@ preferences:
 # Turn on the web server
 web_server:
 
+# Turn on the prometheus /metrics endpoint
+prometheus:
+
 dashboard_import:
   package_import_url: github://athom-tech/athom-configs/athom-smart-plug.yaml
 

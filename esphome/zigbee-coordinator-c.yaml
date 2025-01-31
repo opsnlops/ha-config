@@ -52,6 +52,9 @@ web_server:
   port: 80
   local: true
 
+# Turn on the prometheus /metrics endpoint
+prometheus:
+
 switch:
   - platform: gpio
     pin: 5

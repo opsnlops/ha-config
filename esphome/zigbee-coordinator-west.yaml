@@ -52,6 +52,9 @@ ota:
 # Turn on the web server
 web_server:
 
+# Turn on the prometheus /metrics endpoint
+prometheus:
+
 preferences:
   flash_write_interval: 10min
 

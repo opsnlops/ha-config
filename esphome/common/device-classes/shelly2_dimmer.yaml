@@ -10,6 +10,9 @@ preferences:
 # Turn on the web server
 web_server:
 
+# Turn on the prometheus /metrics endpoint
+prometheus:
+
 logger:
   baud_rate: 0
   level: DEBUG
