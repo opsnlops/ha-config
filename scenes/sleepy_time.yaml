@@ -71,3 +71,8 @@ entities:
     xy_color:
       - 0.5435
       - 0.3978
+
+  # Turn off the big tree uplights
+  light.outside_big_trees_uplight_1:
+    state: "off"
+

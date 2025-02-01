@@ -100,6 +100,7 @@ outside_lights:
     - light.outside_driveway_marker_light
     - light.outside_maple_tree_uplight
     - light.outside_japanese_maple_light
+    - light.outside_big_trees_uplight_1
 
 guest_room_lights:
   name: Guest Room Lights
