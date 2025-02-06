@@ -10,8 +10,6 @@ entities:
     state: "off"
   light.bedroom_door_light:
     state: "off"
-  light.patio_lights:
-    state: "off"
   light.front_door_light:
     state: "off"
   light.carport_light:

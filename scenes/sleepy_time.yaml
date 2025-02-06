@@ -36,8 +36,11 @@ entities:
       - 0.5435
       - 0.3978
   light.bedroom_door_light:
-    brightness: 54
+    brightness: 43
     state: "on"
+    xy_color:
+      - 0.5435
+      - 0.3978
 
   light.patio_lights:
     state: "off"

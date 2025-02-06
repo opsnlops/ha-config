@@ -6,13 +6,13 @@ name: At Sunset
 entities:
   # Lights on the patio
   light.back_patio_east:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.back_patio_west:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.455
@@ -20,13 +20,13 @@ entities:
 
   # Lights by the back door
   light.back_door_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.back_corner_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.455
@@ -34,20 +34,22 @@ entities:
 
   # Lights on the front of the house
   light.front_door_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
-  light.patio_lights:
-    state: "on"
+
   light.bedroom_door_light:
-    brightness: 254
+    brightness: 255
     state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
 
   # Lights in the carport
   light.carport_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.455
