@@ -1,7 +1,8 @@
 esphome:
   name: ${devicename}
-  platform: ESP32
-  board: lolin_s2_mini
+
+esp32:
+  board: esp32s2
 
 # Turn on the web server
 web_server:

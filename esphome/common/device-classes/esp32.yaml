@@ -1,6 +1,7 @@
 esphome:
   name: ${devicename}
-  platform: ESP32
+
+esp32:
   board: esp32dev
 
 # Turn on the web server
