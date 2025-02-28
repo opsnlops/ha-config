@@ -7,8 +7,7 @@ wifi:
     static_ip: ${ip}
     gateway: 10.9.1.1
     subnet: 255.255.255.0
-    dns1: 10.3.2.3
-    dns2: 10.9.1.1
+    dns1: 10.9.1.1
 
 mdns:
   disabled: false
