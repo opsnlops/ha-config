@@ -1,0 +1,47 @@
+substitutions:
+  devicename: glowing_pixel_1
+  human_devicename: Glowing Pixel 1
+  ip: 10.9.1.215
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  rp2040: !include common/device-classes/rp2040.yaml
+
+logger:
+
+light:
+  - platform: rp2040_pio_led_strip
+    name: "${human_devicename} Pixel"
+    id: glowing_pixel
+    pin: GPIO16
+    num_leds: 7
+    pio: 0
+    rgb_order: GRB
+    chipset: WS2812B
+    effects:
+      - flicker:
+          name: Flicker Effect With Custom Values
+          alpha: 90%
+          intensity: 5.5%
+      - pulse:
+          name: "Fast Pulse"
+          transition_length: 0.5s
+          update_interval: 0.5s
+          min_brightness: 0%
+          max_brightness: 100%
+      - pulse:
+          name: "Slow Pulse"
+          # transition_length: 1s      # defaults to 1s
+          update_interval: 2s
+      - pulse:
+          name: "Asymmetrical Pulse"
+          transition_length:
+            on_length: 1s
+            off_length: 500ms
+          update_interval: 1.5s
+      - addressable_random_twinkle:
+      - addressable_random_twinkle:
+          name: Random Twinkle Effect With Custom Values
+          twinkle_probability: 25%
+          progress_interval: 32ms
