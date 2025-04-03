@@ -93,6 +93,9 @@ notify:
   - platform: telegram
     name: aprils_nest_telegram_group
     chat_id: !secret aprils_nest_telegram_group_id
+  - platform: telegram
+    name: lil_bun_watch_telegram_group
+    chat_id: !secret lil_bun_watch_group_id
   - name: aprils_devices
     platform: group
     services:
