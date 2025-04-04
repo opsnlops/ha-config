@@ -1,6 +1,6 @@
 #
-# I live on Whidey Island. There are places where I sometimes go, and
-# I like being able to see them labled in the UI.
+# I live on Whidbey Island. There are places where I sometimes go, and
+# I like being able to see them labeled in the UI.
 #
 
 - name: Home
@@ -14,7 +14,17 @@
   longitude: -122.46025135781878
   icon: mdi:cart-outline
 
-- name: Work
-  latitude: 47.59872460977204
-  longitude: -122.3320044598669
-  icon: mdi:office-building-outline
+- name: Gym
+  latitude: 48.01056248547356
+  longitude: -122.5347974437095
+  icon: mdi:weight-lifter
+
+- name: Payless Foods
+  latitude: 48.009958283921655
+  longitude: -122.52862635958766
+  icon: mdi:cart-outline
+
+- name: Electro
+  latitude: 48.25604549486106
+  longitude: -122.71279601775117
+  icon: mdi:lightning-bolt
