@@ -7,3 +7,4 @@
   allowed_chat_ids:
     - !secret bunny_telegram_id
     - !secret aprils_nest_telegram_group_id
+    - !secret lil_bun_watch_group_id
