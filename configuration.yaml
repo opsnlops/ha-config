@@ -101,6 +101,10 @@ notify:
     services:
       - service: mobile_app_april_s_phone
       - service: aprils_nest_telegram_group
+  - name: lil_bun_watch
+    platform: group
+    services:
+      - service: lil_bun_watch_telegram_group
 
 # Toss our metrics to influxdb so we can keep lots of history
 influxdb:
