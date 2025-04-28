@@ -81,8 +81,8 @@ entities:
     brightness: 150
     state: "on"
     xy_color:
-      - 0.455
-      - 0.3857
+      - 0.5435
+      - 0.3978
 
 
   # Turn off the big tree uplights
