@@ -22,5 +22,7 @@ entities:
     state: "off"
   light.outside_driveway_marker_light:
     state: "off"
+  light.outside_driveway_hillside_light_1:
+    state: "off"
   light.outside_big_trees_uplight_1:
     state: "off"

@@ -83,6 +83,13 @@ entities:
       - 0.455
       - 0.3857
 
+  light.outside_driveway_hillside_light_1:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
   light.outside_big_trees_uplight_1:
     brightness: 255
     state: "on"
