@@ -54,9 +54,6 @@ graph:
       - sensor: outside_temperature
         line_type: DASHED
         line_thickness: 2
-      - sensor: office_temperature
-        line_type: SOLID
-        line_thickness: 1
 
 font:
   - file: "fonts/FreeSans.ttf"
