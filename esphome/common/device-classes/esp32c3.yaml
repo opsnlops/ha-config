@@ -1,0 +1,19 @@
+esphome:
+  name: ${devicename}
+
+esp32:
+  board: esp32-c3-devkitm-1
+
+# Turn on the web server
+web_server:
+
+# Turn on the prometheus /metrics endpoint
+prometheus:
+
+preferences:
+  flash_write_interval: 10min
+
+logger:
+
+packages:
+  mqtt: !include  ../mqtt.yaml

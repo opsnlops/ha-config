@@ -1,0 +1,52 @@
+substitutions:
+  devicename: workshop-mini-display
+  human_devicename: Workshop Mini Display
+  ip: 10.9.1.208
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  esp32: !include common/device-classes/esp32c3.yaml
+
+
+# LCD bus I2C
+# LCD bus I2C
+i2c:
+  sda: GPIO5
+  scl: GPIO6
+  scan: true
+  id: bus_a
+  frequency: 800kHz
+
+# Display settings
+display:
+  - platform: ssd1306_i2c
+    model: "sh1106 128x64"
+    id: my_display
+    rotation: 0
+    update_interval: 1s
+    offset_y: 0
+    offset_x: 8
+    invert: false
+    address: 0x3C
+    lambda: |-
+      it.printf(35, 25, id(my_font), "%.1fF", id(office_temperature).state);
+      it.strftime(29, 53, id(clock_font), "%l:%M:%S %p", id(sntp_time).now());
+
+font:
+  - file: "fonts/FreeSans.ttf"
+    id: my_font
+    size: 24
+  - file: "fonts/FreeSans.ttf"
+    id: clock_font
+    size: 12
+
+
+sensor:
+
+  # Import some data from Home Assistant
+  - platform: homeassistant
+    id: office_temperature
+    name: "Office Temperature"
+    entity_id: sensor.office_temperature
+    internal: true
