@@ -93,6 +93,10 @@ entities:
     state: "off"
   switch.gray_fan:
     state: "off"
+  light.office_overhead_doorway_light:
+    state: "off"
+  light.office_overhead_over_desk_light:
+    state: "off"
 
   # Bedroom
   light.bunnys_room_fairy_lights:

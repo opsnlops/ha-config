@@ -222,6 +222,18 @@ entities:
       - 0.3291
   switch.office_stars:
     state: "off"
+  light.office_overhead_doorway_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.office_overhead_over_desk_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.3157
+      - 0.3291
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:

@@ -217,19 +217,19 @@ entities:
   # All of the lights are blue except for some fire effects
   #
   light.office_desk_edge_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.1358
       - 0.0445
   light.office_desk_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.1358
       - 0.0445
   light.office_filing_cabinet_light:
-    brightness: 254
+    brightness: 255
     state: "on"
     xy_color:
       - 0.1358
@@ -246,6 +246,18 @@ entities:
     state: "off"
   #switch.office_ceiling_fan:
   #  state: "on"
+  light.office_overhead_doorway_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.1358
+      - 0.0445
+  light.office_overhead_over_desk_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.1358
+      - 0.0445
 
   # Workshop
   light.workshop_lamp:

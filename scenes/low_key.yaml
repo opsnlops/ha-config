@@ -170,6 +170,18 @@ entities:
     state: "off"
   switch.office_ceiling_fan:
     state: "off"
+  light.office_overhead_doorway_light:
+    brightness: 60
+    state: "on"
+    xy_color:
+      - 0.1532
+      - 0.048
+  light.office_overhead_over_desk_light:
+    brightness: 60
+    state: "on"
+    xy_color:
+      - 0.1532
+      - 0.048
 
   # Bedroom
   light.bunnys_room_fairy_lights:

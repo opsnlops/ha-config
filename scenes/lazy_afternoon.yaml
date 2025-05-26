@@ -156,3 +156,18 @@ entities:
     xy_color:
       - 0.1898
       - 0.2324
+
+
+  # Office
+  light.office_overhead_doorway_light:
+    brightness: 180
+    state: "on"
+    xy_color:
+      - 0.1898
+      - 0.2324
+  light.office_overhead_over_desk_light:
+    brightness: 180
+    state: "on"
+    xy_color:
+      - 0.1898
+      - 0.2324

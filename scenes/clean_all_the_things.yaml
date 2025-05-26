@@ -247,6 +247,18 @@ entities:
     state: "on"
   switch.lava_lamp:
     state: "off"
+  light.office_overhead_doorway_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_overhead_over_desk_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
 
   # Workshop
   light.workshop_lamp:

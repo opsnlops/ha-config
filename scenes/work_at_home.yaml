@@ -35,6 +35,20 @@ entities:
       - 0.2444
       - 0.0978
 
+  # Overhead lights
+  light.office_overhead_doorway_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.office_overhead_over_desk_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+
   switch.office_stars:
     state: "on"
   switch.lava_lamp:

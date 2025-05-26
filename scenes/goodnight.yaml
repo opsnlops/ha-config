@@ -150,6 +150,10 @@ entities:
     state: "off"
   switch.gray_fan:
     state: "off"
+  light.office_overhead_doorway_light:
+    state: "off"
+  light.office_overhead_over_desk_light:
+    state: "off"
 
   # Guest Room
   fan.guest_room_fan:
