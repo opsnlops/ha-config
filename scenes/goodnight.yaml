@@ -195,15 +195,15 @@ entities:
     state: "off"
 
   # Bunny's Bathroom
-  light.bunnys_bathroom_shower:
+  light.bunnys_bathroom_bathtub_light_1:
     state: "off"
-  light.bunnys_bathroom_vanity:
+  light.bunnys_bathroom_bathtub_light_2:
     state: "off"
-  light.bunnys_bathroom_over_tub:
+  light.bunnys_bathroom_door_light:
     state: "off"
-  light.bunnys_bathroom_mirror_1:
+  light.bunnys_bathroom_shower_light_1:
     state: "off"
-  light.bunnys_bathroom_mirror_2:
+  light.bunnys_bathroom_shower_light_2:
     state: "off"
 
 
