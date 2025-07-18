@@ -2,9 +2,9 @@ esphome:
   name: ${devicename}
 
 esp32:
-  board: esp32s2
+  board: esp32dev
   framework:
-    type: esp-idf
+    type: arduino
 
 # Turn on the web server
 web_server:
