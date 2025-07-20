@@ -6,7 +6,7 @@ substitutions:
 packages:
   wifi: !include common/wifi.yaml
   base: !include common/base.yaml
-  esp32s2: !include common/device-classes/esp32s2.yaml
+  esp32s2: !include common/device-classes/lolin_s2_mini.yaml
 
 logger:
 

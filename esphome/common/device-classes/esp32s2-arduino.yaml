@@ -2,12 +2,16 @@ esphome:
   name: ${devicename}
 
 esp32:
-  board: lolin_s2_mini
+  board: esp32s2
   variant: esp32s2
   framework:
     type: arduino
-    version: latest
 
+# Turn on the web server
+web_server:
+
+# Turn on the prometheus /metrics endpoint
+prometheus:
 
 preferences:
   flash_write_interval: 10min
