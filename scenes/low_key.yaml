@@ -312,29 +312,45 @@ entities:
     brightness: 28
 
   # Bunny's Bathroom
-  light.bunnys_bathroom_shower:
-    brightness: 120
+  light.bunny_s_bathroom_bathtub_light_1:
     state: "on"
+    brightness: 68
     xy_color:
-      - 0.1532
-      - 0.048
-  light.bunnys_bathroom_vanity:
+      - 0.5435
+      - 0.3978
+  light.bunny_s_bathroom_bathtub_light_2:
+    state: "on"
+    brightness: 50
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bunny_s_bathroom_door_light:
+    state: "on"
+    brightness: 50
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bunny_s_bathroom_shower_light_1:
+    state: "on"
+    brightness: 50
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bunny_s_bathroom_shower_light_2:
+    state: "on"
+    brightness: 50
+    xy_color:
+      - 0.5435
+      - 0.3978
+  light.bunny_s_bathroom_shower_niche_light:
     state: "off"
-  light.bunnys_bathroom_over_tub:
+  light.bunny_s_bathroom_nightlight:
     state: "on"
-    brightness: 80
-  light.bunnys_bathroom_mirror_1:
-    brightness: 50
-    state: "on"
+    brightness: 70
     xy_color:
-      - 0.1532
-      - 0.048
-  light.bunnys_bathroom_mirror_2:
-    brightness: 50
-    state: "on"
-    xy_color:
-      - 0.1532
-      - 0.048
+      - 0.5409
+      - 0.3978
+
 
 
   light.patio_lights:
