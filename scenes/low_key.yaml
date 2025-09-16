@@ -350,7 +350,42 @@ entities:
     xy_color:
       - 0.5409
       - 0.3978
-
+  light.bunny_s_bathroom_light_1:
+    brightness: 20
+    state: "on"
+    xy_color:
+      - 0.5706
+      - 0.4087
+  light.bunny_s_bathroom_light_2:
+    brightness: 20
+    state: "on"
+    xy_color:
+      - 0.5706
+      - 0.4087
+  light.bunny_s_bathroom_light_3:
+    brightness: 20
+    state: "on"
+    xy_color:
+      - 0.5706
+      - 0.4087
+  light.bunny_s_bathroom_light_4:
+    brightness: 20
+    state: "on"
+    xy_color:
+      - 0.5706
+      - 0.4087
+  light.bunny_s_bathroom_light_5:
+    brightness: 20
+    state: "on"
+    xy_color:
+      - 0.5706
+      - 0.4087
+  light.bunny_s_bathroom_light_6:
+    brightness: 20
+    state: "on"
+    xy_color:
+      - 0.5706
+      - 0.4087
 
 
   light.patio_lights:

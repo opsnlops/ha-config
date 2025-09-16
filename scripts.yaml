@@ -116,6 +116,14 @@ work_at_home_scene:
     - service: scene.turn_on
       entity_id: scene.work_at_home
 
+shower_time_scene:
+  alias: "Shower Time"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.shower_time
+      data:
+        transition: 4
+
 ### End HomeKit Automation Scripts
 
 wled_start_raving:

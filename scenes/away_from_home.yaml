@@ -158,16 +158,33 @@ entities:
     state: "off"
 
   # Bunny's Bathroom
-  light.bunnys_bathroom_shower:
+  light.bunny_s_bathroom_bathtub_light_1:
     state: "off"
-  light.bunnys_bathroom_vanity:
+  light.bunny_s_bathroom_bathtub_light_2:
     state: "off"
-  light.bunnys_bathroom_over_tub:
+  light.bunny_s_bathroom_door_light:
     state: "off"
-  light.bunnys_bathroom_mirror_1:
+  light.bunny_s_bathroom_shower_light_1:
     state: "off"
-  light.bunnys_bathroom_mirror_2:
+  light.bunny_s_bathroom_shower_light_2:
     state: "off"
+  light.bunny_s_bathroom_shower_niche_light:
+    state: "off"
+  light.bunny_s_bathroom_nightlight:
+    state: "off"
+  light.bunny_s_bathroom_light_1:
+    state: "off"
+  light.bunny_s_bathroom_light_2:
+    state: "off"
+  light.bunny_s_bathroom_light_3:
+    state: "off"
+  light.bunny_s_bathroom_light_4:
+    state: "off"
+  light.bunny_s_bathroom_light_5:
+    state: "off"
+  light.bunny_s_bathroom_light_6:
+    state: "off"
+
 
   light.hallway_light:
     state: "off"
@@ -191,8 +208,6 @@ entities:
   switch.office_ceiling_fan:
     state: "off"
   fan.office_floor_fan:
-    state: "off"
-  switch.office_window_fan:
     state: "off"
   fan.workshop_fan:
     state: "off"

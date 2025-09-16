@@ -298,6 +298,42 @@ entities:
     xy_color:
       - 0.3157
       - 0.3291
+  light.bunny_s_bathroom_light_1:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.bunny_s_bathroom_light_2:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.bunny_s_bathroom_light_3:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.bunny_s_bathroom_light_4:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.bunny_s_bathroom_light_5:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.3157
+      - 0.3291
+  light.bunny_s_bathroom_light_6:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.3157
+      - 0.3291
 
   # Workshop
   light.workshop_lamp:

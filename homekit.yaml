@@ -178,6 +178,7 @@
       - script.making_time_scene
       - script.movie_time_scene
       - script.normal_evening_scene
+      - script.shower_time_scene
       - script.sleepy_time_scene
       - script.up_late_scene
       - script.work_at_home_scene
@@ -223,7 +224,7 @@
       - fan.family_room_ceiling_fan
       - fan.family_room_floor_fan
       - fan.guest_room_fan
-      - switch.office_ceiling_fan
+      - fan.office_fan
       - fan.office_floor_fan
       - fan.workshop_fan
 

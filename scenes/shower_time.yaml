@@ -1,0 +1,80 @@
+name:
+  Shower Time
+
+entities:
+  # Bunny's Bathroom
+  light.bunny_s_bathroom_bathtub_light_1:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_bathtub_light_2:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_door_light:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_shower_light_1:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_shower_light_2:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_shower_niche_light:
+    state: "on"
+    brightness: 255
+  light.bunny_s_bathroom_nightlight:
+    state: "on"
+    brightness: 255
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_light_1:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_light_2:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_light_3:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_light_4:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_light_5:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_light_6:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
