@@ -320,31 +320,37 @@ entities:
 
   # Bunny's Bathroom
   light.bunny_s_bathroom_bathtub_light_1:
-    brightness: 255
+    brightness: 200
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.bunny_s_bathroom_bathtub_light_2:
-    brightness: 255
+    brightness: 200
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.bunny_s_bathroom_door_light:
-    brightness: 255
+    brightness: 200
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.bunny_s_bathroom_shower_light_1:
-    brightness: 255
+    brightness: 200
     state: "on"
     xy_color:
       - 0.455
       - 0.3857
   light.bunny_s_bathroom_shower_light_2:
-    brightness: 255
+    brightness: 200
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bunny_s_bathroom_nightlight:
+    brightness: 200
     state: "on"
     xy_color:
       - 0.455
@@ -353,11 +359,11 @@ entities:
 
   light.hallway_light:
     state: "on"
-    brightness: 134
+    brightness: 240
 
   light.entryway_lights:
     state: "on"
-    brightness: 129
+    brightness: 240
 
   light.laundry_room_light:
     state: "on"
