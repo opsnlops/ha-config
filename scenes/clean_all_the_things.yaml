@@ -275,6 +275,22 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.sewing_table_light:
+    state: "on"
+    brightness: 255
+    rgbw_color:
+      - 255
+      - 124
+      - 127
+      - 255
+  light.workbench:
+    state: "on"
+    brightness: 255
+    rgbw_color:
+      - 255
+      - 68
+      - 0
+      - 255
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:

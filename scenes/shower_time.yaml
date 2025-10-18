@@ -78,3 +78,51 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+
+
+  # Bedroom
+  light.bunnys_room_fairy_lights:
+    state: "on"
+    brightness: 254
+  light.bedroom_left_nightstand_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_right_nightstand_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_window_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_dresser_left_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_dresser_left_lantern:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_dresser_right_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.bedroom_dresser_right_lantern:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857

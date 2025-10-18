@@ -45,11 +45,11 @@ entities:
       - 124
       - 127
       - 255
-  light.workbench_lights:
+  light.workbench:
     state: "on"
     brightness: 255
     rgbw_color:
       - 255
-      - 124
-      - 127
+      - 68
+      - 0
       - 255

@@ -58,3 +58,72 @@ entities:
   light.family_room_thermostat_lcd_display_backlight:
     state: "on"
     brightness: 255
+
+
+  # Kitchen
+  light.kitchen_counter_light_1:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_2:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_3:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_4:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_5:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_over_fridge_light:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_cooktop_north:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_cooktop_south:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.right_kitchen_window:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.left_kitchen_window:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_table:
+    brightness: 255
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857

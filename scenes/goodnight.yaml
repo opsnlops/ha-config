@@ -182,7 +182,7 @@ entities:
     state: "off"
   light.sewing_table_light:
     state: "off"
-  light.workbench_lights:
+  light.workbench:
     state: "off"
 
 

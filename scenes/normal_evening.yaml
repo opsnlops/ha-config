@@ -301,7 +301,7 @@ entities:
       - 3
       - 60
       - 0
-  light.workbench_lights:
+  light.workbench:
     state: "on"
     brightness: 255
     rgbw_color:
