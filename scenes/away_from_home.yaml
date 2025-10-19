@@ -147,6 +147,8 @@ entities:
     state: "off"
   light.workbench:
     state: "off"
+  light.workshop_shelf_lights:
+    state: "off"
 
 
   # Half Bathroom

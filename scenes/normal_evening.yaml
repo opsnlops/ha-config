@@ -309,6 +309,14 @@ entities:
       - 3
       - 60
       - 0
+  light.workshop_shelf_lights:
+    state: "on"
+    brightness: 255
+    rgbw_color:
+      - 0
+      - 3
+      - 60
+      - 0
 
 
   # Hallway Bathroom

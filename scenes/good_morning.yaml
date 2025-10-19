@@ -376,3 +376,12 @@ entities:
       - 255
       - 250
       - 255
+  light.workshop_shelf_lights:
+    state: "on"
+    brightness: 166
+    rgbw_color:
+      - 254
+      - 255
+      - 250
+      - 255
+
