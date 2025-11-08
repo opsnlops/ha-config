@@ -98,11 +98,11 @@ entities:
       - 0.5435
       - 0.3978
   light.family_room_floor_lamp:
-    brightness: 68
+    brightness: 74
     state: "on"
     xy_color:
-      - 0.5435
-      - 0.3978
+      - 0.1532
+      - 0.048
   light.temp_office_lamp:
     brightness: 104
     state: "on"
