@@ -124,6 +124,8 @@ entities:
     state: "off"
   light.bird_light:
     state: "off"
+  light.family_room_floor_lamp:
+    state: "off"
 
   # Office
   light.office_computer_table_lamp:

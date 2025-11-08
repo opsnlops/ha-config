@@ -62,6 +62,8 @@ entities:
     state: "off"
   light.blue_lamp:
     state: "off"
+  light.family_room_floor_lamp:
+    state: "off"
   light.family_room_fairy_lights:
     state: "off"
   light.family_room_window_table_lights:

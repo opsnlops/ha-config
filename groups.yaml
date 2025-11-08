@@ -13,6 +13,7 @@ family_room_lights:
     - light.blue_lamp
     - light.yellow_lamp
     - light.purple_lamp
+    - light.family_room_floor_lamp
     - light.temp_office_lamp
     - light.family_room_fairy_lights
     - light.over_fireplace

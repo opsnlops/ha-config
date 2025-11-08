@@ -92,6 +92,12 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.family_room_floor_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.family_room_fairy_lights:
     state: "on"
     brightness: 255
