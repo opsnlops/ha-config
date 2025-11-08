@@ -181,3 +181,10 @@ entities:
     xy_color:
       - 0.1898
       - 0.2324
+
+  light.mudroom_door_light:
+    state: "on"
+    brightness: 254
+
+  switch.bunnys_bathroom_fan:
+    state: "off"

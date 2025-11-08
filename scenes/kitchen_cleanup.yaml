@@ -66,3 +66,7 @@ entities:
     xy_color:
       - 0.5023
       - 0.4135
+
+  light.mudroom_door_light:
+    state: "on"
+    brightness: 120

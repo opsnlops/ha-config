@@ -250,3 +250,9 @@ entities:
 
   light.temp_office_lamp:
     state: "off"
+
+  light.mudroom_door_light:
+    state: "off"
+
+  switch.bunnys_bathroom_fan:
+    state: "off"

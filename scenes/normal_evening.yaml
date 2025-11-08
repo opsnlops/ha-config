@@ -413,4 +413,9 @@ entities:
     state: "on"
     brightness: 93
 
+  light.mudroom_door_light:
+    state: "on"
+    brightness: 254
 
+  switch.bunnys_bathroom_fan:
+    state: "off"

@@ -405,3 +405,7 @@ entities:
   light.laundry_room_light:
     state: "on"
     brightness: 254
+
+  light.mudroom_door_light:
+    state: "on"
+    brightness: 254

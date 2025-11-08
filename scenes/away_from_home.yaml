@@ -220,3 +220,7 @@ entities:
 
   light.temp_office_lamp:
     state: "off"
+
+  light.mudroom_door_light:
+    state: "off"
+    brightness: 254

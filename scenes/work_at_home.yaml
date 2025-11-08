@@ -127,3 +127,6 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+
+  switch.bunnys_bathroom_fan:
+    state: "off"

@@ -422,3 +422,6 @@ entities:
   switch.christmas_tree:
     state: "off"
 
+  light.mudroom_door_light:
+    state: "on"
+    brightness: 40
