@@ -1,0 +1,24 @@
+substitutions:
+  devicename: mango_motor_power_switch
+  human_devicename: Mango Motor Power Switch
+  ip: 10.9.1.220
+  icon: "mdi:toggle-switch"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  sonoff_s31: !include common/device-classes/sonoff_s31.yaml
+
+
+#
+# Emulate a fan to Home Assistant
+#
+fan:
+  - platform: template
+    name: "${human_devicename}"
+    on_turn_on:
+      - switch.turn_on: relay
+    on_turn_off:
+      - switch.turn_off: relay
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:fan"

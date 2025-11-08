@@ -30,7 +30,7 @@ display:
     invert: false
     address: 0x3C
     lambda: |-
-      it.printf(35, 25, id(my_font), "%.1fF", id(office_temperature).state);
+      it.printf(35, 25, id(my_font), "%.1fF", id(outside_temperature).state);
       it.strftime(29, 53, id(clock_font), "%l:%M:%S %p", id(sntp_time).now());
 
 font:
@@ -46,7 +46,7 @@ sensor:
 
   # Import some data from Home Assistant
   - platform: homeassistant
-    id: office_temperature
-    name: "Office Temperature"
-    entity_id: sensor.office_temperature
+    id: outside_temperature
+    name: "Outside Temperature"
+    entity_id: sensor.outside_temperature
     internal: true
