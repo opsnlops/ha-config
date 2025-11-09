@@ -39,21 +39,6 @@
             entity_id:
               - group.family_room_lights
 
-- platform: template
-  lights:
-    kitchen_lights:
-      friendly_name: "Kitchen Lights"
-      value_template: "{{ states('group.kitchen_lights') }}"
-      turn_on:
-        - service: homeassistant.turn_on
-          data:
-            entity_id:
-              - group.kitchen_lights
-      turn_off:
-        - service: homeassistant.turn_off
-          data:
-            entity_id:
-              - group.kitchen_lights
 
 - platform: template
   lights:
@@ -102,22 +87,6 @@
           data:
             entity_id:
               - group.bunnys_room_lights
-
-- platform: template
-  lights:
-    bunnys_bathroom_lights:
-      friendly_name: "Bunny's Bathroom Lights"
-      value_template: "{{ states('group.bunnys_bathroom_lights') }}"
-      turn_on:
-        - service: homeassistant.turn_on
-          data:
-            entity_id:
-              - group.bunnys_bathroom_lights
-      turn_off:
-        - service: homeassistant.turn_off
-          data:
-            entity_id:
-              - group.bunnys_bathroom_lights
 
 - platform: template
   lights:
