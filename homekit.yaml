@@ -16,7 +16,7 @@
       - light.office_lights
       - light.workshop_lights
       - light.bunnys_bathroom_lights
-      - light.bunnys_room_lights
+      - light.bedroom_lights
       - light.guest_room_lights
       - light.hallway_lights
       - light.hallway_bathroom_lights
@@ -196,7 +196,7 @@
       - sensor.workshop_temperature
 
       # Other Sensors
-      - sensor.co2_monitor_co2
+      #- sensor.co2_monitor_co2
 
       # Doors
       - binary_sensor.front_door
