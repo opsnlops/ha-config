@@ -42,22 +42,6 @@
 
 - platform: template
   lights:
-    office_lights:
-      friendly_name: "Office Lights"
-      value_template: "{{ states('group.office_lights') }}"
-      turn_on:
-        - service: homeassistant.turn_on
-          data:
-            entity_id:
-              - group.office_lights
-      turn_off:
-        - service: homeassistant.turn_off
-          data:
-            entity_id:
-              - group.office_lights
-
-- platform: template
-  lights:
     workshop_lights:
       friendly_name: "Workshop Lights"
       value_template: "{{ states('group.workshop_lights') }}"
