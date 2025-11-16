@@ -133,15 +133,31 @@ entities:
   light.kitchen_cooktop_south:
     state: "off"
   light.kitchen_counter_light_1:
-    state: "off"
+    brightness: 32
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.kitchen_counter_light_2:
-    state: "off"
+    brightness: 64
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.kitchen_counter_light_3:
-    state: "off"
+    brightness: 128
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.kitchen_counter_light_4:
-    state: "off"
-  light.kitchen_counter_light_5:
     brightness: 210
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
+  light.kitchen_counter_light_5:
+    brightness: 255
     state: "on"
     xy_color:
       - 0.455
