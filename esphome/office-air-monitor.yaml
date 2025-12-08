@@ -91,6 +91,18 @@ sensor:
       device_class: "volatile_organic_compounds"
       filters:
         - median
+  - platform: scd4x
+    address: 0x62
+    co2:
+      name: "${human_devicename} CO2"
+      device_class: "carbon_dioxide"
+      state_class: "measurement"
+      accuracy_decimals: 1
+    temperature:
+      name: "${human_devicename} Temperature"
+    humidity:
+      name: "${human_devicename} Humidity"
+    update_interval: 15s
 
 text_sensor:
   - platform: bme680_bsec
