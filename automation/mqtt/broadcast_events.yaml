@@ -169,67 +169,6 @@
       topic: "home/kitchen/humidity"
       payload_template: "{{ states.sensor.kitchen_relative_humidity.state }}"
 
-# Outside
-- alias: "MQTT - Outside Humidity"
-  trigger:
-    platform: state
-    entity_id: "sensor.outside_humidity"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/outside/humidity"
-      payload_template: "{{ states.sensor.outside_humidity.state }}"
-
-- alias: "MQTT - Outside Wind Bearing"
-  trigger:
-    platform: state
-    entity_id: "sensor.wind_bearing"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/outside/wind_bearing"
-      payload_template: "{{ states.sensor.wind_bearing.state }}"
-
-- alias: "MQTT - Outside Wind Direction"
-  trigger:
-    platform: state
-    entity_id: "sensor.wind_direction"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/outside/wind_direction"
-      payload_template: "{{ states.sensor.wind_direction.state }}"
-
-- alias: "MQTT - Outside Conditions"
-  trigger:
-    platform: state
-    entity_id: "weather.april_s_nest"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/outside/conditions"
-      payload_template: "{{ states.weather.april_s_nest.state }}"
-
-- alias: "MQTT - Outside Sun"
-  trigger:
-    platform: state
-    entity_id: "sun.sun"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/outside/sun"
-      payload_template: "{{ states.sun.sun.state }}"
-
-- alias: "MQTT - Outside Air Quailty"
-  trigger:
-    platform: state
-    entity_id: "sensor.airnow_aqi"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/outside/air_quality"
-      payload_template: "{{ states.sensor.airnow_aqi.state }}"
-
 ## Things!
 
 # Living Room Heater

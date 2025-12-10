@@ -115,7 +115,7 @@ sensor:
   - name: "Sparky Session Energy"
     state_topic: "openevse/sparky/session_energy"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "w"
+    unit_of_measurement: "W"
     device_class: "power"
     state_class: measurement
 
@@ -281,13 +281,30 @@ sensor:
 
   - name: "Mango Temperature"
     state_topic: "creatures/mango/sensors/board/temperature_f"
+    value_template: "{{ value | round(1) }}"
     unit_of_measurement: "°F"
     device_class: "temperature"
 
   - name: "Mango Motor Power Draw"
     state_topic: "creatures/mango/sensors/board/power/motor_power_in/power"
+    value_template: "{{ value | round(1) }}"
     unit_of_measurement: "W"
-    device_class: "energy"
+    device_class: "power"
+
+  - name: "Mango State"
+    state_topic: "creatures/mango/activity/state"
+
+  - name: "Mango Animation ID"
+    state_topic: "creatures/mango/activity/animation_id"
+
+  - name: "Mango State Reason"
+    state_topic: "creatures/mango/activity/reason"
+
+  - name: "Mango State"
+    state_topic: "creatures/mango/runtime/activity/state"
+
+  
+
 
 
   #
