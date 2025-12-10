@@ -272,6 +272,26 @@ sensor:
        {{ map[value] if value in map else 'Unknown' }}
 
 
+
+  #
+  #
+  # Creatures
+  #
+  #
+
+  - name: "Mango Temperature"
+    state_topic: "creatures/mango/sensors/board/temperature_f"
+    value_template: "{{ value | round(1) }}"
+    unit_of_measurement: "°F"
+    device_class: "temperature"
+
+  - name: "Mango Motor Power Draw"
+    state_topic: "creatures/mango/sensors/board/power/motor_power_in/power"
+    value_template: "{{ value | round(1) }}"
+    unit_of_measurement: "W"
+    device_class: "energy"
+
+
   #
   # Office Windows via andersen-mqtt
   #
