@@ -297,11 +297,11 @@ sensor:
   - name: "Mango Animation ID"
     state_topic: "creatures/mango/activity/animation_id"
 
+  - name: "Mango Animation Name"
+    state_topic: "creatures/mango/activity/animation_name"
+
   - name: "Mango State Reason"
     state_topic: "creatures/mango/activity/reason"
-
-  - name: "Mango State"
-    state_topic: "creatures/mango/runtime/activity/state"
 
   
 
