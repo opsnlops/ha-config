@@ -10,6 +10,10 @@ esp32:
 # Turn on the web server
 web_server:
 
+# Use WPA3 on ESP32 boards
+wifi:
+  min_auth_mode: WPA3
+
 # Turn on the prometheus /metrics endpoint
 prometheus:
 
