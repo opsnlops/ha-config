@@ -16,7 +16,7 @@ mqtt:
   discovery: false
   discovery_retain: false
   topic_prefix: esphome
-  log_topic: ${devicename}/logs
+  log_topic: esphome/logs/${devicename}
   birth_message:
     topic: esphome/status
     payload: "${devicename} online"
