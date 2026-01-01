@@ -116,3 +116,9 @@ sensor.workshop_light_strip_energy:
 sensor.workshop_light_strip_power:
   state_class: measurement
   device_class: power
+
+# Whole-home power clamp sensor
+sensor.aprils_nest_energy_monitor_electric_consumption_w:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W

@@ -8,6 +8,9 @@ esp8266:
   restore_from_flash: true
   board: esp8285
 
+wifi:
+  min_auth_mode: WPA2
+
 preferences:
   flash_write_interval: 10min
 

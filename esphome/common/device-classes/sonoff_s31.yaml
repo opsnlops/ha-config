@@ -11,6 +11,9 @@ esp8266:
 preferences:
   flash_write_interval: 10min
 
+wifi:
+  min_auth_mode: WPA2
+
 # Turn on the web server
 web_server:
 

@@ -1,0 +1,7 @@
+# Convert whole-home power (W) into cumulative energy (kWh) for the Energy dashboard.
+- platform: integration
+  source: sensor.aprils_nest_energy_monitor_electric_consumption_w
+  name: "Home Energy Consumption"
+  unit_prefix: k
+  unit_time: h
+  round: 3
