@@ -37,3 +37,10 @@
   unit_prefix: k
   unit_time: h
   round: 3
+
+# Integrate the cost rate (USD/h) to total cost (USD).
+- platform: integration
+  source: sensor.electricity_cost_rate
+  name: "Electricity Cost"
+  unit_time: h
+  round: 2

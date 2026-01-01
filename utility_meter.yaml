@@ -77,3 +77,19 @@ sparky_energy_monthly:
 sparky_energy_yearly:
   source: sensor.sparky_energy
   cycle: yearly
+
+electricity_cost_monthly:
+  source: sensor.electricity_cost
+  cycle: monthly
+
+electricity_cost_daily:
+  source: sensor.electricity_cost
+  cycle: daily
+
+electricity_cost_weekly:
+  source: sensor.electricity_cost
+  cycle: weekly
+
+electricity_cost_yearly:
+  source: sensor.electricity_cost
+  cycle: yearly

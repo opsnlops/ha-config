@@ -1,0 +1,56 @@
+# Time-of-use electricity rate for Energy dashboard cost tracking.
+- platform: template
+  sensors:
+    electricity_rate:
+      friendly_name: "Electricity Rate"
+      unit_of_measurement: "USD/kWh"
+      device_class: monetary
+      state_class: measurement
+      value_template: >-
+        {% set m = now().hour * 60 + now().minute %}
+        {% set is_weekday = now().isoweekday() in [1, 2, 3, 4, 5] %}
+        {% if is_weekday %}
+          {% if (420 <= m < 600) or (1020 <= m < 1200) %}
+            0.495597
+          {% elif (600 <= m < 1020) or (1200 <= m < 1380) %}
+            0.140272
+          {% else %}
+            0.091624
+          {% endif %}
+        {% else %}
+          {% if 420 <= m < 1380 %}
+            0.140272
+          {% else %}
+            0.091624
+          {% endif %}
+        {% endif %}
+
+    electricity_cost_rate:
+      friendly_name: "Electricity Cost Rate"
+      unit_of_measurement: "USD/h"
+      state_class: measurement
+      value_template: >-
+        {% set power_w = states('sensor.aprils_nest_energy_monitor_electric_consumption_w') | float(0) %}
+        {% set rate = states('sensor.electricity_rate') | float(0) %}
+        {{ (power_w / 1000 * rate) | round(4) }}
+
+    electricity_rate_period:
+      friendly_name: "Electricity Rate Period"
+      value_template: >-
+        {% set m = now().hour * 60 + now().minute %}
+        {% set is_weekday = now().isoweekday() in [1, 2, 3, 4, 5] %}
+        {% if is_weekday %}
+          {% if (420 <= m < 600) or (1020 <= m < 1200) %}
+            On Peak
+          {% elif (600 <= m < 1020) or (1200 <= m < 1380) %}
+            Off Peak
+          {% else %}
+            Super Off-Peak
+          {% endif %}
+        {% else %}
+          {% if 420 <= m < 1380 %}
+            Off Peak
+          {% else %}
+            Super Off-Peak
+          {% endif %}
+        {% endif %}
