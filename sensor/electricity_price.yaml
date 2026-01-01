@@ -5,7 +5,6 @@
       friendly_name: "Electricity Rate"
       unit_of_measurement: "USD/kWh"
       device_class: monetary
-      state_class: measurement
       value_template: >-
         {% set m = now().hour * 60 + now().minute %}
         {% set is_weekday = now().isoweekday() in [1, 2, 3, 4, 5] %}
@@ -28,7 +27,6 @@
     electricity_cost_rate:
       friendly_name: "Electricity Cost Rate"
       unit_of_measurement: "USD/h"
-      state_class: measurement
       value_template: >-
         {% set power_w = states('sensor.aprils_nest_energy_monitor_electric_consumption_w') | float(0) %}
         {% set rate = states('sensor.electricity_rate') | float(0) %}

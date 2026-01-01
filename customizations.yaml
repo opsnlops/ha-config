@@ -181,6 +181,17 @@ sensor.electricity_cost_yearly:
   unit_of_measurement: USD
   friendly_name: "Electricity Cost Yearly"
 
+sensor.electricity_rate:
+  device_class: monetary
+  state_class: measurement
+  unit_of_measurement: USD/kWh
+  friendly_name: "Electricity Rate"
+
+sensor.electricity_cost_rate:
+  state_class: measurement
+  unit_of_measurement: USD/h
+  friendly_name: "Electricity Cost Rate"
+
 # Hot water heater power clamp sensor
 sensor.hot_water_heater_electric_consumption_w:
   state_class: measurement
