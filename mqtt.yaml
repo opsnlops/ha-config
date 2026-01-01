@@ -115,9 +115,9 @@ sensor:
   - name: "Sparky Session Energy"
     state_topic: "openevse/sparky/session_energy"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "W"
-    device_class: "power"
-    state_class: measurement
+    unit_of_measurement: "kWh"
+    device_class: "energy"
+    state_class: total_increasing
 
   - name: "Sparky Session Elapsed Time"
     state_topic: "openevse/sparky/session_elapsed"
@@ -171,7 +171,7 @@ sensor:
     value_template: "{{ value | round(1) }}"
     unit_of_measurement: "Wh"
     device_class: "energy"
-    state_class: measurement
+    state_class: total_increasing
 
   - name: "Sparky Uptime"
     state_topic: "openevse/sparky/uptime"
@@ -181,29 +181,29 @@ sensor:
   - name: "Sparky Energy - Day"
     state_topic: "openevse/sparky/total_day"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "kW"
-    device_class: "power"
-    state_class: measurement
+    unit_of_measurement: "kWh"
+    device_class: "energy"
+    state_class: total_increasing
 
   - name: "Sparky Energy - Week"
     state_topic: "openevse/sparky/total_week"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "kW"
-    device_class: "power"
+    unit_of_measurement: "kWh"
+    device_class: "energy"
     state_class: total_increasing
 
   - name: "Sparky Energy - Month"
     state_topic: "openevse/sparky/total_month"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "kW"
-    device_class: "power"
+    unit_of_measurement: "kWh"
+    device_class: "energy"
     state_class: total_increasing
 
   - name: "Sparky Energy - Year"
     state_topic: "openevse/sparky/total_year"
     value_template: "{{ value | round(2) }}"
-    unit_of_measurement: "kW"
-    device_class: "power"
+    unit_of_measurement: "kWh"
+    device_class: "energy"
     state_class: total_increasing
 
   - name: "Sparky Energy - All Time"

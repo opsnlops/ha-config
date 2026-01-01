@@ -13,3 +13,67 @@ home_energy_monthly:
 home_energy_yearly:
   source: sensor.home_energy_consumption
   cycle: yearly
+
+hot_water_heater_energy_daily:
+  source: sensor.hot_water_heater_energy
+  cycle: daily
+
+hot_water_heater_energy_weekly:
+  source: sensor.hot_water_heater_energy
+  cycle: weekly
+
+hot_water_heater_energy_monthly:
+  source: sensor.hot_water_heater_energy
+  cycle: monthly
+
+hot_water_heater_energy_yearly:
+  source: sensor.hot_water_heater_energy
+  cycle: yearly
+
+fridge_energy_daily:
+  source: sensor.fridge_energy
+  cycle: daily
+
+fridge_energy_weekly:
+  source: sensor.fridge_energy
+  cycle: weekly
+
+fridge_energy_monthly:
+  source: sensor.fridge_energy
+  cycle: monthly
+
+fridge_energy_yearly:
+  source: sensor.fridge_energy
+  cycle: yearly
+
+main_network_wrack_energy_daily:
+  source: sensor.main_network_wrack_energy
+  cycle: daily
+
+main_network_wrack_energy_weekly:
+  source: sensor.main_network_wrack_energy
+  cycle: weekly
+
+main_network_wrack_energy_monthly:
+  source: sensor.main_network_wrack_energy
+  cycle: monthly
+
+main_network_wrack_energy_yearly:
+  source: sensor.main_network_wrack_energy
+  cycle: yearly
+
+sparky_energy_daily:
+  source: sensor.sparky_energy
+  cycle: daily
+
+sparky_energy_weekly:
+  source: sensor.sparky_energy
+  cycle: weekly
+
+sparky_energy_monthly:
+  source: sensor.sparky_energy
+  cycle: monthly
+
+sparky_energy_yearly:
+  source: sensor.sparky_energy
+  cycle: yearly

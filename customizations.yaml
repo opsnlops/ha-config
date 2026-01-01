@@ -128,3 +128,42 @@ sensor.home_energy_consumption:
   device_class: energy
   state_class: total_increasing
   unit_of_measurement: kWh
+
+sensor.hot_water_heater_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+
+sensor.fridge_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+
+sensor.main_network_wrack_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Main Network Wrack Energy"
+
+sensor.sparky_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Sparky Energy"
+
+# Hot water heater power clamp sensor
+sensor.hot_water_heater_electric_consumption_w:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+
+sensor.fridge_power_monitor_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+
+sensor.main_rack_pdu_ac_power_consumption:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Main Network Wrack Power Consumption"
