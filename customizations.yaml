@@ -122,3 +122,9 @@ sensor.aprils_nest_energy_monitor_electric_consumption_w:
   state_class: measurement
   device_class: power
   unit_of_measurement: W
+
+# Ensure Energy dashboard compatibility for the integrated energy sensor
+sensor.home_energy_consumption:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh

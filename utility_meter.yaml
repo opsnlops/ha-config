@@ -1,0 +1,15 @@
+home_energy_daily:
+  source: sensor.home_energy_consumption
+  cycle: daily
+
+home_energy_weekly:
+  source: sensor.home_energy_consumption
+  cycle: weekly
+
+home_energy_monthly:
+  source: sensor.home_energy_consumption
+  cycle: monthly
+
+home_energy_yearly:
+  source: sensor.home_energy_consumption
+  cycle: yearly
