@@ -52,6 +52,10 @@ sensor:
     current:
       name: "${human_devicename} Current"
       id: "${devicename}_current"
+      unit_of_measurement: A
+      device_class: current
+      state_class: measurement
+      entity_category: diagnostic
       accuracy_decimals: 2
       filters:
         - skip_initial: 1
@@ -59,6 +63,10 @@ sensor:
     voltage:
       name: "${human_devicename} Voltage"
       id: "${devicename}_voltage"
+      unit_of_measurement: V
+      device_class: voltage
+      state_class: measurement
+      entity_category: diagnostic
       accuracy_decimals: 2
       filters:
         - skip_initial: 1
@@ -66,19 +74,24 @@ sensor:
     power:
       name: "${human_devicename} Power"
       id: "${devicename}_power"
+      unit_of_measurement: W
+      device_class: power
+      state_class: measurement
       accuracy_decimals: 2
       filters:
         - skip_initial: 1
         - throttle_average: 20s
-  - platform: total_daily_energy
-    name: "${human_devicename} Total Daily Energy"
-    power_id: "${devicename}_power"
-    device_class: "energy"
-    state_class: "total_increasing"
-    filters:
-      # Multiplication factor from W to kW is 0.001
-      - multiply: 0.001
+  - platform: integration
+    name: "${human_devicename} Total Energy"
+    sensor: "${devicename}_power"
+    time_unit: h
     unit_of_measurement: kWh
+    device_class: energy
+    state_class: total_increasing
+    accuracy_decimals: 3
+    restore: true
+    filters:
+      - multiply: 0.001
 
 switch:
   - platform: gpio

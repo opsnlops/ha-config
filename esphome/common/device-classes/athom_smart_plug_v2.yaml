@@ -60,6 +60,10 @@ sensor:
   - platform: cse7766
     current:
       name: "${human_devicename} Current"
+      unit_of_measurement: A
+      device_class: current
+      state_class: measurement
+      entity_category: diagnostic
       filters:
         - lambda: if (x < 0.060) return 0.0; else return x;   #For the chip will report less than 3w power when no load is connected
         - skip_initial: 1
@@ -67,12 +71,19 @@ sensor:
 
     voltage:
       name: "${human_devicename} Voltage"
+      unit_of_measurement: V
+      device_class: voltage
+      state_class: measurement
+      entity_category: diagnostic
       filters:
         - skip_initial: 1
         - throttle_average: 20s
     power:
       name: "${human_devicename} Power"
       id: power_sensor
+      unit_of_measurement: W
+      device_class: power
+      state_class: measurement
       filters:
         - lambda: if (x < 3.0) return 0.0; else return x;    #For the chip will report less than 3w power when no load is connected
         - throttle_average: 20s
@@ -81,6 +92,9 @@ sensor:
       name: "${human_devicename} Energy"
       id: energy
       unit_of_measurement: kWh
+      device_class: energy
+      state_class: total_increasing
+      internal: true
       filters:
         # Multiplication factor from W to kW is 0.001
         - multiply: 0.001
@@ -103,15 +117,6 @@ sensor:
     lambda: |-
       return id(total_energy);
     update_interval: 10s
-
-  - platform: total_daily_energy
-    name: "${human_devicename} Total Daily Energy"
-    restore: true
-    power_id: power_sensor
-    unit_of_measurement: kWh
-    accuracy_decimals: 3
-    filters:
-      - multiply: 0.001
 
 
 button:

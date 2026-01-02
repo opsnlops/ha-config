@@ -29,6 +29,8 @@ sensor:
     sensor: temp_resistance_reading
     name: "${human_devicename} Temperature"
     unit_of_measurement: "°C"
+    device_class: temperature
+    state_class: measurement
     accuracy_decimals: 1
     icon: "mdi:thermometer"
     calibration:
@@ -50,17 +52,23 @@ sensor:
     sensor: temp_analog_reading
     configuration: DOWNSTREAM
     resistor: 32kOhm
+    internal: true
   - platform: adc
     id: temp_analog_reading
     pin: A0
+    internal: true
 
-  - platform: total_daily_energy
-    name: "${human_devicename} Energy"
-    power_id: power_dimmer
-    filters:
-      # Multiplication factor from W to kW is 0.001
-      - multiply: 0.001
+  - platform: integration
+    name: "${human_devicename} Total Energy"
+    sensor: power_dimmer
+    time_unit: h
     unit_of_measurement: kWh
+    device_class: energy
+    state_class: total_increasing
+    accuracy_decimals: 3
+    restore: true
+    filters:
+      - multiply: 0.001
 
 light:
   - platform: shelly_dimmer
@@ -70,10 +78,21 @@ light:
     power:
       name: "${human_devicename} Power"
       id: power_dimmer
+      unit_of_measurement: W
+      device_class: power
+      state_class: measurement
     voltage:
       name: "${human_devicename} Voltage"
+      unit_of_measurement: V
+      device_class: voltage
+      state_class: measurement
+      entity_category: diagnostic
     current:
       name: "${human_devicename} Current"
+      unit_of_measurement: A
+      device_class: current
+      state_class: measurement
+      entity_category: diagnostic
     min_brightness: 460
     max_brightness: 1000
     firmware:

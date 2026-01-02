@@ -30,22 +30,6 @@ hot_water_heater_energy_yearly:
   source: sensor.hot_water_heater_energy
   cycle: yearly
 
-fridge_energy_daily:
-  source: sensor.fridge_energy
-  cycle: daily
-
-fridge_energy_weekly:
-  source: sensor.fridge_energy
-  cycle: weekly
-
-fridge_energy_monthly:
-  source: sensor.fridge_energy
-  cycle: monthly
-
-fridge_energy_yearly:
-  source: sensor.fridge_energy
-  cycle: yearly
-
 main_network_wrack_energy_daily:
   source: sensor.main_network_wrack_energy
   cycle: daily

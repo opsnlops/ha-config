@@ -134,11 +134,6 @@ sensor.hot_water_heater_energy:
   state_class: total_increasing
   unit_of_measurement: kWh
 
-sensor.fridge_energy:
-  device_class: energy
-  state_class: total_increasing
-  unit_of_measurement: kWh
-
 sensor.main_network_wrack_energy:
   device_class: energy
   state_class: total_increasing

@@ -14,14 +14,6 @@
   unit_time: h
   round: 3
 
-# Convert fridge power (W) into cumulative energy (kWh).
-- platform: integration
-  source: sensor.fridge_power_monitor_power
-  name: "Fridge Energy"
-  unit_prefix: k
-  unit_time: h
-  round: 3
-
 # Convert main network wrack PDU power (W) into cumulative energy (kWh).
 - platform: integration
   source: sensor.main_rack_pdu_ac_power_consumption

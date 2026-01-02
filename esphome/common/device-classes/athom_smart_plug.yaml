@@ -55,6 +55,10 @@ sensor:
     voltage_divider: 780
     current:
       name: "${human_devicename} Current"
+      unit_of_measurement: A
+      device_class: current
+      state_class: measurement
+      entity_category: diagnostic
       filters:
           - calibrate_linear:
             - 0.0000 -> 0.0110 # Relay off no load
@@ -69,11 +73,17 @@ sensor:
           - lambda: if (x < 0.0260) return 0; else return (x - 0.0260);
     voltage:
       name: "${human_devicename} Voltage"
+      unit_of_measurement: V
+      device_class: voltage
+      state_class: measurement
+      entity_category: diagnostic
 
     power:
       name: "${human_devicename} Power"
       id: socket_my_power
       unit_of_measurement: W
+      device_class: power
+      state_class: measurement
       filters:
           - calibrate_linear:
             - 0.0000 -> 0.5900 # Relay off no load
@@ -89,11 +99,15 @@ sensor:
     change_mode_every: 1
     update_interval: 20s
 
-  - platform: total_daily_energy
-    name: "${human_devicename} Total Daily Energy"
-    power_id: socket_my_power
+  - platform: integration
+    name: "${human_devicename} Total Energy"
+    sensor: socket_my_power
+    time_unit: h
     unit_of_measurement: kWh
+    device_class: energy
+    state_class: total_increasing
     accuracy_decimals: 3
+    restore: true
     filters:
       - multiply: 0.001
 
