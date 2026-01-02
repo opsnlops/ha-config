@@ -140,6 +140,42 @@ sensor.main_network_wrack_energy:
   unit_of_measurement: kWh
   friendly_name: "Main Network Wrack Energy"
 
+sensor.chonkstar_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Chonkstar Energy"
+
+sensor.checkered_giant_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Checkered Giant Energy"
+
+sensor.creature_server_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Creature Server Energy"
+
+sensor.home_automation_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Home Automation Energy"
+
+sensor.palomino_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Palomino Energy"
+
+sensor.proxmox_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Proxmox Energy"
+
 sensor.sparky_energy:
   device_class: energy
   state_class: total_increasing
@@ -203,3 +239,39 @@ sensor.main_rack_pdu_ac_power_consumption:
   device_class: power
   unit_of_measurement: W
   friendly_name: "Main Network Wrack Power Consumption"
+
+sensor.main_rack_pdu_chonkstar_outlet_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Chonkstar Power"
+
+sensor.main_rack_pdu_checkered_giant_outlet_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Checkered Giant Power"
+
+sensor.main_rack_pdu_outlet_12_outlet_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Creature Server Power"
+
+sensor.main_rack_pdu_outlet_10_outlet_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Home Automation Power"
+
+sensor.main_rack_pdu_palomino_outlet_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Palomino Power"
+
+sensor.main_rack_pdu_proxmox_outlet_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Proxmox Power"

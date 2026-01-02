@@ -36,3 +36,47 @@
   name: "Electricity Cost"
   unit_time: h
   round: 2
+
+# Convert PDU outlet power (W) into cumulative energy (kWh).
+- platform: integration
+  source: sensor.main_rack_pdu_chonkstar_outlet_power
+  name: "Chonkstar Energy"
+  unit_prefix: k
+  unit_time: h
+  round: 3
+
+# Convert PDU outlet power (W) into cumulative energy (kWh).
+- platform: integration
+  source: sensor.main_rack_pdu_checkered_giant_outlet_power
+  name: "Checkered Giant Energy"
+  unit_prefix: k
+  unit_time: h
+  round: 3
+
+- platform: integration
+  source: sensor.main_rack_pdu_outlet_12_outlet_power
+  name: "Creature Server Energy"
+  unit_prefix: k
+  unit_time: h
+  round: 3
+
+- platform: integration
+  source: sensor.main_rack_pdu_outlet_10_outlet_power
+  name: "Home Automation Energy"
+  unit_prefix: k
+  unit_time: h
+  round: 3
+
+- platform: integration
+  source: sensor.main_rack_pdu_palomino_outlet_power
+  name: "Palomino Energy"
+  unit_prefix: k
+  unit_time: h
+  round: 3
+
+- platform: integration
+  source: sensor.main_rack_pdu_proxmox_outlet_power
+  name: "Proxmox Energy"
+  unit_prefix: k
+  unit_time: h
+  round: 3

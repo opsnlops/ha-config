@@ -66,9 +66,105 @@ electricity_cost_monthly:
   source: sensor.electricity_cost
   cycle: monthly
 
+chonkstar_energy_daily:
+  source: sensor.chonkstar_energy
+  cycle: daily
+
+chonkstar_energy_weekly:
+  source: sensor.chonkstar_energy
+  cycle: weekly
+
+chonkstar_energy_monthly:
+  source: sensor.chonkstar_energy
+  cycle: monthly
+
+chonkstar_energy_yearly:
+  source: sensor.chonkstar_energy
+  cycle: yearly
+
 electricity_cost_daily:
   source: sensor.electricity_cost
   cycle: daily
+
+checkered_giant_energy_daily:
+  source: sensor.checkered_giant_energy
+  cycle: daily
+
+checkered_giant_energy_weekly:
+  source: sensor.checkered_giant_energy
+  cycle: weekly
+
+checkered_giant_energy_monthly:
+  source: sensor.checkered_giant_energy
+  cycle: monthly
+
+checkered_giant_energy_yearly:
+  source: sensor.checkered_giant_energy
+  cycle: yearly
+
+creature_server_energy_daily:
+  source: sensor.creature_server_energy
+  cycle: daily
+
+creature_server_energy_weekly:
+  source: sensor.creature_server_energy
+  cycle: weekly
+
+creature_server_energy_monthly:
+  source: sensor.creature_server_energy
+  cycle: monthly
+
+creature_server_energy_yearly:
+  source: sensor.creature_server_energy
+  cycle: yearly
+
+home_automation_energy_daily:
+  source: sensor.home_automation_energy
+  cycle: daily
+
+home_automation_energy_weekly:
+  source: sensor.home_automation_energy
+  cycle: weekly
+
+home_automation_energy_monthly:
+  source: sensor.home_automation_energy
+  cycle: monthly
+
+home_automation_energy_yearly:
+  source: sensor.home_automation_energy
+  cycle: yearly
+
+palomino_energy_daily:
+  source: sensor.palomino_energy
+  cycle: daily
+
+palomino_energy_weekly:
+  source: sensor.palomino_energy
+  cycle: weekly
+
+palomino_energy_monthly:
+  source: sensor.palomino_energy
+  cycle: monthly
+
+palomino_energy_yearly:
+  source: sensor.palomino_energy
+  cycle: yearly
+
+proxmox_energy_daily:
+  source: sensor.proxmox_energy
+  cycle: daily
+
+proxmox_energy_weekly:
+  source: sensor.proxmox_energy
+  cycle: weekly
+
+proxmox_energy_monthly:
+  source: sensor.proxmox_energy
+  cycle: monthly
+
+proxmox_energy_yearly:
+  source: sensor.proxmox_energy
+  cycle: yearly
 
 electricity_cost_weekly:
   source: sensor.electricity_cost
