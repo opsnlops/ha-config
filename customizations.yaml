@@ -176,6 +176,12 @@ sensor.proxmox_energy:
   unit_of_measurement: kWh
   friendly_name: "Proxmox Energy"
 
+sensor.flemish_giant_energy:
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: kWh
+  friendly_name: "Flemish Giant Energy"
+
 sensor.sparky_energy:
   device_class: energy
   state_class: total_increasing
@@ -275,3 +281,9 @@ sensor.main_rack_pdu_proxmox_outlet_power:
   device_class: power
   unit_of_measurement: W
   friendly_name: "Proxmox Power"
+
+sensor.main_rack_pdu_flemish_giant_outlet_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Flemish Giant Power"

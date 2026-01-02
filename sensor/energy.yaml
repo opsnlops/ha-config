@@ -80,3 +80,10 @@
   unit_prefix: k
   unit_time: h
   round: 3
+
+- platform: integration
+  source: sensor.main_rack_pdu_flemish_giant_outlet_power
+  name: "Flemish Giant Energy"
+  unit_prefix: k
+  unit_time: h
+  round: 3

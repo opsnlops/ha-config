@@ -166,6 +166,22 @@ proxmox_energy_yearly:
   source: sensor.proxmox_energy
   cycle: yearly
 
+flemish_giant_energy_daily:
+  source: sensor.flemish_giant_energy
+  cycle: daily
+
+flemish_giant_energy_weekly:
+  source: sensor.flemish_giant_energy
+  cycle: weekly
+
+flemish_giant_energy_monthly:
+  source: sensor.flemish_giant_energy
+  cycle: monthly
+
+flemish_giant_energy_yearly:
+  source: sensor.flemish_giant_energy
+  cycle: yearly
+
 electricity_cost_weekly:
   source: sensor.electricity_cost
   cycle: weekly
