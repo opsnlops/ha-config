@@ -182,6 +182,22 @@ flemish_giant_energy_yearly:
   source: sensor.flemish_giant_energy
   cycle: yearly
 
+workshop_ups_energy_daily:
+  source: sensor.workshop_ups_energy
+  cycle: daily
+
+workshop_ups_energy_weekly:
+  source: sensor.workshop_ups_energy
+  cycle: weekly
+
+workshop_ups_energy_monthly:
+  source: sensor.workshop_ups_energy
+  cycle: monthly
+
+workshop_ups_energy_yearly:
+  source: sensor.workshop_ups_energy
+  cycle: yearly
+
 electricity_cost_weekly:
   source: sensor.electricity_cost
   cycle: weekly

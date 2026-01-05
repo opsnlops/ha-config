@@ -287,3 +287,39 @@ sensor.main_rack_pdu_flemish_giant_outlet_power:
   device_class: power
   unit_of_measurement: W
   friendly_name: "Flemish Giant Power"
+
+sensor.workshop_ups_energy:
+  state_class: total_increasing
+  device_class: energy
+  unit_of_measurement: kWh
+  friendly_name: "Workshop UPS Energy"
+
+sensor.workshop_ups_power:
+  state_class: measurement
+  device_class: power
+  unit_of_measurement: W
+  friendly_name: "Workshop UPS Power"
+
+sensor.workshop_ups_energy_daily:
+  state_class: total
+  device_class: energy
+  unit_of_measurement: kWh
+  friendly_name: "Workshop UPS Energy Daily"
+
+sensor.workshop_ups_energy_weekly:
+  state_class: total
+  device_class: energy
+  unit_of_measurement: kWh
+  friendly_name: "Workshop UPS Energy Weekly"
+
+sensor.workshop_ups_energy_monthly:
+  state_class: total
+  device_class: energy
+  unit_of_measurement: kWh
+  friendly_name: "Workshop UPS Energy Monthly"
+
+sensor.workshop_ups_energy_yearly:
+  state_class: total
+  device_class: energy
+  unit_of_measurement: kWh
+  friendly_name: "Workshop UPS Energy Yearly"
