@@ -1,0 +1,16 @@
+substitutions:
+  devicename: family_room_floor_fan
+  human_devicename: Family Room Floor Fan
+  ip: 10.9.1.213
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+
+esphome:
+  name: ${devicename}
+
+esp8266:
+  board: esp01_1m
+
+logger:

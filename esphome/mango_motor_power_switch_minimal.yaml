@@ -1,0 +1,16 @@
+substitutions:
+  devicename: mango_motor_power_switch
+  human_devicename: Mango Motor Power Switch
+  ip: 10.9.1.220
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+
+esphome:
+  name: ${devicename}
+
+esp8266:
+  board: esp01_1m
+
+logger:

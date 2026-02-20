@@ -1,0 +1,16 @@
+substitutions:
+  devicename: coffee_monitor
+  human_devicename: Coffee Monitor
+  ip: 10.9.1.207
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+
+esphome:
+  name: ${devicename}
+
+esp8266:
+  board: esp01_1m
+
+logger:
