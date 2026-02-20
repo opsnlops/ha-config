@@ -12,6 +12,9 @@ web_server:
 # Turn on the prometheus /metrics endpoint
 prometheus:
 
+wifi:
+  min_auth_mode: WPA3
+
 preferences:
   flash_write_interval: 10min
 

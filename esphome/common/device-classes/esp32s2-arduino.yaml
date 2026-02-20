@@ -16,6 +16,9 @@ prometheus:
 preferences:
   flash_write_interval: 10min
 
+wifi:
+  min_auth_mode: WPA3
+
 logger:
 
 packages:

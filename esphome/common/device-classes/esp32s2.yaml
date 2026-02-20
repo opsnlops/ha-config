@@ -10,15 +10,14 @@ esp32:
 # Turn on the web server
 web_server:
 
-# Use WPA3 on ESP32 boards
-wifi:
-  min_auth_mode: WPA3
-
 # Turn on the prometheus /metrics endpoint
 prometheus:
 
 preferences:
   flash_write_interval: 10min
+
+wifi:
+  min_auth_mode: WPA3
 
 logger:
 

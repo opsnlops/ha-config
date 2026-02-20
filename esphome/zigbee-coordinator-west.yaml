@@ -17,7 +17,7 @@ esphome:
 esp32:
   board: esp-wrover-kit
   framework:
-    type: arduino
+    type: esp-idf
 
 packages:
   base: !include common/base.yaml
@@ -25,7 +25,6 @@ packages:
 
 external_components:
   - source: github://tube0013/esphome-stream-server-v2
-  - source: github://syssi/esphome-zeroconf@main
 
 dashboard_import:
   package_import_url: github://tube0013/tube_gateways/models/current/tubeszb-cc2652-poe-2023/firmware/esphome/tubeszb-cc2652-poe-2023.yaml
@@ -34,7 +33,9 @@ ethernet:
   type: LAN8720
   mdc_pin: GPIO23
   mdio_pin: GPIO18
-  clk_mode: GPIO17_OUT
+  clk:
+    mode: CLK_OUT
+    pin: 17
   phy_addr: 0
   power_pin: GPIO12
   
@@ -123,16 +124,17 @@ binary_sensor:
     stream_server: ss
     name: "${human_devicename} TubesZB Serial Connected"
 
-zeroconf:
-  - service: "tubeszb"
-    protocol: "tcp"
-    port: 6638
-    txt:
-      version: 1.0
-      name: TubesZB
-      radio_type: znp
-      baud_rate: 115200
-      data_flow_control: software
+mdns:
+  services:
+    - service: _tubeszb
+      protocol: _tcp
+      port: 6638
+      txt:
+        version: "1.0"
+        name: TubesZB
+        radio_type: znp
+        baud_rate: "115200"
+        data_flow_control: software
 
 text_sensor:
   - platform: ethernet_info

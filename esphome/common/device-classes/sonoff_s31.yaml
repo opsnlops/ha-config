@@ -23,6 +23,9 @@ prometheus:
 logger:
   baud_rate: 0 # (UART logging interferes with cse7766)
 
+packages:
+  mqtt: !include  ../mqtt.yaml
+
 # Device Specific Config
 uart:
   rx_pin: RX

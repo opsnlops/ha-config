@@ -6,7 +6,7 @@ substitutions:
 packages:
   wifi: !include common/wifi.yaml
   base: !include common/base.yaml
-  esp32: !include common/device-classes/esp32.yaml
+  esp32: !include common/device-classes/esp32-idf.yaml
 
 logger:
 

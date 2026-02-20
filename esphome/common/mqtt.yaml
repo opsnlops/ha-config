@@ -5,10 +5,6 @@
 #  "discovery" is false here because we use the HA API to talk to HA. MQTT is
 #  for debugging purposes only.
 #
-#  Note that not all devices can handle this. The S31 plugs I have will reboot
-#  if MQTT is enabled *and* you connect to them via the OTA logger. I guess
-#  it's just too much for the small devices.
-#
 
 mqtt:
   broker: 10.9.1.5
