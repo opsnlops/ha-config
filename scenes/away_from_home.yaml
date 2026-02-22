@@ -228,3 +228,8 @@ entities:
   light.mudroom_door_light:
     state: "off"
     brightness: 254
+
+  switch.mango_motor_power_switch_mango_motor_power_switch_relay:
+    state: "off"
+  switch.beakys_power_switch:
+    state: "off"

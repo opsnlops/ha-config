@@ -260,3 +260,8 @@ entities:
 
   switch.bunnys_bathroom_fan:
     state: "off"
+
+  switch.mango_motor_power_switch_mango_motor_power_switch_relay:
+    state: "off"
+  switch.beakys_power_switch:
+    state: "off"
