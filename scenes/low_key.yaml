@@ -117,12 +117,18 @@ entities:
     brightness: 21
   light.family_room_floor_fan_blue_led:
     state: "off"
-  light.living_room_fireplace_backlight:
+  light.beaky_light:
     brightness: 43
     state: "on"
     xy_color:
       - 0.612
       - 0.374
+  light.rabbit_lamp:
+    brightness: 30
+    state: "on"
+    xy_color:
+      - 0.1532
+      - 0.048
 
   light.bird_light:
     brightness: 1

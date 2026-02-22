@@ -3,10 +3,27 @@ substitutions:
   human_devicename: Family Room Thermostat LCD
   ip: 10.9.1.241
 
+esphome:
+  name: ${devicename}
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+web_server:
+
+prometheus:
+
+wifi:
+  min_auth_mode: WPA3
+
+preferences:
+  flash_write_interval: 10min
+
 packages:
   wifi: !include common/wifi.yaml
   base: !include common/base.yaml
-  esp32: !include common/device-classes/esp32-idf.yaml
 
 logger:
 
@@ -77,13 +94,16 @@ text_sensor:
     internal: true
 
 display:
-  - platform: ili9xxx
-    model: ili9341
+  - platform: mipi_spi
+    model: ILI9341
     rotation: 270
+    invert_colors: false
     reset_pin: 22
-    data_rate: 10Mhz
+    data_rate: 10MHz
     cs_pin: 5
     dc_pin: 17
+    color_depth: 16
+    buffer_size: 25%
     lambda: |-
       it.fill(Color::BLACK);
         
@@ -93,7 +113,8 @@ display:
       
       // Rain
       it.print(95, 1, id(font2), "Rain");
-      it.printf(96, 19, id(font3), "%.2f\"", id(rain).state);
+      it.printf(96, 19, id(font3), "%.1f", id(rain).state * 25.4);
+      it.print(96, 43, id(caption_font), "mm");
 
       // Power
       it.print(175, 1, id(font2), "Power");

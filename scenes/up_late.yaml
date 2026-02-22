@@ -55,7 +55,13 @@ entities:
   light.family_room_window_table_lights:
     state: "on"
     brightness: 50
-  light.living_room_fireplace_backlight:
+  light.beaky_light:
+    brightness: 78
+    state: "on"
+    xy_color:
+      - 0.4089
+      - 0.2586
+  light.rabbit_lamp:
     brightness: 78
     state: "on"
     xy_color:

@@ -21,10 +21,16 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
+  light.rabbit_lamp:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.family_room_fairy_lights:
     state: "on"
     brightness: 254
-  light.living_room_fireplace_backlight:
+  light.beaky_light:
     brightness: 109
     state: "on"
     xy_color:

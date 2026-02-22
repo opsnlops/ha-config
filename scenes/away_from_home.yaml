@@ -59,7 +59,9 @@ entities:
     state: "off"
   light.family_room_window_table_lights:
     state: "off"
-  light.living_room_fireplace_backlight:
+  light.beaky_light:
+    state: "off"
+  light.rabbit_lamp:
     state: "off"
   light.family_room_sofa:
     state: "off"

@@ -1,0 +1,10 @@
+substitutions:
+  devicename: beakys_power_switch
+  human_devicename: Beaky's Power Switch
+  ip: 10.9.1.202
+  icon: "mdi:toggle-switch"
+
+packages:
+  wifi: !include common/wifi.yaml
+  base: !include common/base.yaml
+  athom: !include common/device-classes/athom_smart_plug_v2.yaml

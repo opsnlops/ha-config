@@ -9,9 +9,11 @@ entities:
     state: "off"
   light.yellow_lamp:
     state: "off"
+  light.rabbit_lamp:
+    state: "off"
   light.family_room_fairy_lights:
     state: "off"
-  light.living_room_fireplace_backlight:
+  light.beaky_light:
     state: "off"
   light.family_room_sofa:
     state: "off"

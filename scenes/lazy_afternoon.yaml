@@ -102,12 +102,18 @@ entities:
     xy_color:
       - 0.474
       - 0.471
-  light.living_room_fireplace_backlight:
-    brightness: 104
+  light.rabbit_lamp:
+    brightness: 140
     state: "on"
     xy_color:
       - 0.1898
       - 0.2324
+  light.beaky_light:
+    brightness: 254
+    state: "on"
+    xy_color:
+      - 0.455
+      - 0.3857
   light.over_fireplace:
     brightness: 152
     state: "on"
