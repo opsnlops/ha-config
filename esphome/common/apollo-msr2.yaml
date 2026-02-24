@@ -505,6 +505,7 @@ sensor:
 
   - platform: ltr390
     id: ltr_390
+    update_interval: 10s
     light:
       name: LTR390 Light
       id: ltr390light
@@ -513,7 +514,7 @@ sensor:
             static float last_reported_value = 0.0;
             float current_value = x;
             if (id(reduce_db_reporting).state) {
-              if (abs(current_value - last_reported_value) >= 20.0) {
+              if (current_value < 20.0 || abs(current_value - last_reported_value) >= 20.0) {
                 last_reported_value = current_value;
                 return current_value;
               } else {
