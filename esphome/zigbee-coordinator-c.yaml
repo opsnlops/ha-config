@@ -5,57 +5,126 @@ substitutions:
 esphome:
   name: ${devicename}
   project:
-    name: tubeszb.efr32_mgm24
-    version: "2024.03.15"
+    name: tubeszb.efr32_mgm24_2023
+    version: "2026.02.23"
+  min_version: 2025.12.0
+  on_boot:
+    - priority: 900
+      then:
+        - lambda: |-
+            // Force GPIO2 low (RTS asserted) early; UART will take the pin later.
+            gpio_reset_pin(GPIO_NUM_2);
+            gpio_set_direction(GPIO_NUM_2, GPIO_MODE_OUTPUT);
+            gpio_set_level(GPIO_NUM_2, 0);
+            #include "driver/uart.h"
+
+            ESP_LOGD("custom", "Applying HW Flow Control to uart_bus_zb...");
+            uart_set_pin(UART_NUM_1, 4, 36, 2, 13);
+            uart_set_hw_flow_ctrl(UART_NUM_1, UART_HW_FLOWCTRL_CTS_RTS, 122);
+    - priority: 200
+      then:
+        - stream_server.pause: { id: stream_srv }
+        - delay: 700ms
+        - switch.turn_on: zRST_gpio
+        - delay: 50ms
+        - switch.turn_off: zRST_gpio
+        - delay: 1s
+        - stream_server.resume: { id: stream_srv }
+        - script.execute: boot_probe_sequence
 
 esp32:
   board: esp-wrover-kit
   framework:
     type: esp-idf
+    advanced:
+      include_builtin_idf_components:
+        - esp_http_client
+        - esp_crt_bundle
+    sdkconfig_options:
+      CONFIG_LWIP_MAX_SOCKETS: "16"
+      CONFIG_PM_ENABLE: "n"
+      CONFIG_PM_POWER_DOWN_PERIPHERAL_IN_LIGHT_SLEEP: "n"
+      CONFIG_UART_ISR_IN_IRAM: "y"
 
-# Don't use the base packages on this device, it will make things crash. I'm
-# not sure why. I suspect it's the use of IDF rather than Arduino.
+# Don't use the base packages on this device — it has historically caused crashes.
 
 external_components:
-  - source: github://oxan/esphome-stream-server
   - source: github://tube0013/esphome-components
-    components: [uart]
-dashboard_import:
-  package_import_url: github://tube0013/tube_gateways/models/current/tubeszb-efr32-MGM24/firmware/ESPHome/tubeszb-mgm24.yaml
+    components: [stream_server, efr32_flasher, efr32_info]
 
-#Olimex ESP32-PoE Ethernet
+globals:
+  - id: boot_probe_done
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+
+# The IoT network has no internet access, so do NOT add dns1 to manual_ip.
+# DNS resolution will succeed but HTTPS connections (e.g. manifest fetches)
+# will hang and trigger a watchdog reset, boot-looping the device.
 ethernet:
   type: LAN8720
   mdc_pin: GPIO23
   mdio_pin: GPIO18
   clk:
+    pin: GPIO17
     mode: CLK_OUT
-    pin: 17
   phy_addr: 0
   power_pin: GPIO12
-
   manual_ip:
     static_ip: 10.9.1.77
     gateway: 10.9.1.1
     subnet: 255.255.255.0
 
-# Enable logging
 logger:
   level: DEBUG
 
-# Enable Home Assistant API
 api:
   reboot_timeout: 0s
 
 ota:
-  platform: esphome
+  - platform: esphome
+  - platform: web_server
 
 web_server:
   port: 80
-  local: true
+  version: 2
 
-# Turn on the prometheus /metrics endpoint
-prometheus:
+script:
+  - id: fw_update_mode
+    then:
+      - switch.turn_on: zBSL
+      - delay: 1s
+      - switch.turn_on: zRST_gpio
+      - delay: 1s
+      - switch.turn_off: zRST_gpio
+      - delay: 5s
+      - switch.turn_off: zBSL
+  - id: boot_probe_sequence
+    mode: queued
+    then:
+      - if:
+          condition:
+            lambda: 'return id(boot_probe_done);'
+          then:
+            - logger.log:
+                format: "Boot probe skipped (already executed)"
+                level: DEBUG
+          else:
+            - delay: 2s
+            - efr32_info.probe: { id: zigbee_info }
+            - wait_until:
+                condition:
+                  lambda: 'if (id(ncp_busy).state) App.feed_wdt(); return !id(ncp_busy).state;'
+                timeout: 45s
+            - delay: 500ms
+            - if:
+                condition:
+                  lambda: 'return id(board_name).state.empty();'
+                then:
+                  - logger.log:
+                      format: "Boot probe completed but board name sensor still empty"
+                      level: WARN
+            - lambda: 'id(boot_probe_done) = true;'
 
 switch:
   - platform: gpio
@@ -66,7 +135,7 @@ switch:
 
   - platform: gpio
     pin: 16
-    name: "${human_devicename} Pull Bootloader pin (PA0) to Low"
+    name: "${human_devicename} Bootloader pin (PA0)"
     id: zBSL
     inverted: yes
     restore_mode: ALWAYS_OFF
@@ -78,6 +147,23 @@ button:
     disabled_by_default: true
 
   - platform: template
+    name: "${human_devicename} Serial Server Pause"
+    internal: true
+    on_press:
+      - stream_server.pause: { id: stream_srv }
+      - text_sensor.template.publish:
+          id: ss_status
+          state: "Paused"
+  - platform: template
+    name: "${human_devicename} Serial Server Resume"
+    internal: true
+    on_press:
+      - stream_server.resume: { id: stream_srv }
+      - text_sensor.template.publish:
+          id: ss_status
+          state: "Running"
+
+  - platform: template
     name: "${human_devicename} EFR32 Reset"
     id: zRST
     disabled_by_default: true
@@ -86,31 +172,65 @@ button:
       - delay: 15ms
       - switch.turn_off: zRST_gpio
 
+  - platform: template
+    name: "${human_devicename} Trigger MGM24 Module Bootloader"
+    disabled_by_default: true
+    on_press:
+      - script.execute: fw_update_mode
+
+  - platform: template
+    name: "${human_devicename} Flash EFR32"
+    id: flash_efr32
+    on_press:
+      - efr32_flasher.update_firmware: { id: zigbee_efr32 }
+
+  - platform: template
+    name: "${human_devicename} Check EFR32 Update"
+    id: check_efr32_update
+    on_press:
+      - efr32_flasher.check_update: { id: zigbee_efr32 }
+
+  - platform: template
+    name: "${human_devicename} Probe EZSP Info"
+    id: ezsp_replay_identity
+    disabled_by_default: true
+    on_press:
+      - efr32_info.probe: { id: zigbee_info }
+      - logger.log: "BTN: EZSP info probe triggered"
+
 uart:
   id: uart_bus
   rx_pin: GPIO36
   tx_pin: GPIO4
-  cts_pin: GPIO13
-  rts_pin: GPIO2
-  # possible values are
-  # - DISABLE = disable hardware flow control
-  # - RTS = enable RX hardware flow control (rts)
-  # - CTS = enable TX hardware flow control (cts)
-  # - CTS_RTS = enable hardware flow control
-  # - MAX = ?
-  hw_flow_control: CTS_RTS
   baud_rate: 115200
-
+  rx_buffer_size: 8192
 
 stream_server:
+  id: stream_srv
   uart_id: uart_bus
-  port: 6638 # optional, default is 6638
-#  buffer_size: 512
+  port: 6638
+  buffer_size: 8192
+  trace: false
 
 binary_sensor:
   - platform: stream_server
     connected:
       name: "${human_devicename} TubesZB Serial Connected"
+  - platform: template
+    id: ncp_busy
+    name: "${human_devicename} NCP Busy"
+    device_class: running
+    on_press:
+      - stream_server.pause: { id: stream_srv }
+      - text_sensor.template.publish:
+          id: ss_status
+          state: "Paused"
+    on_release:
+      - stream_server.resume: { id: stream_srv }
+      - text_sensor.template.publish:
+          id: ss_status
+          state: "Running"
+
 sensor:
   - platform: stream_server
     connection_count:
@@ -118,12 +238,66 @@ sensor:
 
 mdns:
   services:
-    - service: "_tubeszb"
+    - service: "_zigbee-coordinator"
       protocol: "_tcp"
       port: 6638
       txt:
-        version: 1.0
-        name: TubesZB
-        radio_type: ezsp
-        baud_rate: 115200
-        data_flow_control: hardware
+        version: 1
+        name: "TubesZB"
+        radio_type: "ezsp"
+        serial_number: !lambda 'return esphome::get_mac_address();'
+
+efr32_flasher:
+  id: zigbee_efr32
+  uart_id: uart_bus
+  url: "https://github.com/tube0013/tube_gateways/raw/refs/heads/main/misc/efr32manifest.json"
+  boot_switch: zBSL
+  rst_switch: zRST_gpio
+  busy_binary_sensor: ncp_busy
+  show_progress: true
+  progress_step: 5
+  variant: auto
+  board_name_text: board_name
+  mfg_string_text: mfg_string
+  latest_fw_version_text: zb_latest_fw
+  bootloader_baud_rate: 115200
+
+efr32_info:
+  id: zigbee_info
+  uart_id: uart_bus
+  stream_server_id: stream_srv
+  busy_binary_sensor: ncp_busy
+  status_text: ezsp_info_status
+  manufacturer_text: mfg_string
+  board_name_text: board_name
+  firmware_text: ezsp_firmware
+  ieee_text: ezsp_ieee
+  raw_capture: true
+
+text_sensor:
+  - platform: ethernet_info
+    ip_address:
+      name: "${human_devicename} IP Address"
+    mac_address:
+      name: "${human_devicename} MAC Address"
+  - platform: template
+    id: zb_latest_fw
+    name: "${human_devicename} Zigbee Latest FW"
+  - platform: template
+    id: mfg_string
+    name: "${human_devicename} Zigbee MFG String"
+  - platform: template
+    id: board_name
+    name: "${human_devicename} Zigbee Board Name"
+  - platform: template
+    id: ss_status
+    name: "${human_devicename} Serial Server Status"
+  - platform: template
+    id: ezsp_info_status
+    name: "${human_devicename} EZSP Info Status"
+  - platform: template
+    id: ezsp_ieee
+    name: "${human_devicename} Zigbee IEEE Address"
+  - platform: template
+    id: ezsp_firmware
+    name: "${human_devicename} Zigbee Current FW Version"
