@@ -46,7 +46,9 @@ esp32:
       CONFIG_PM_POWER_DOWN_PERIPHERAL_IN_LIGHT_SLEEP: "n"
       CONFIG_UART_ISR_IN_IRAM: "y"
 
-# Don't use the base packages on this device — it has historically caused crashes.
+packages:
+  base: !include common/base.yaml
+  mqtt: !include common/mqtt.yaml
 
 external_components:
   - source: github://tube0013/esphome-components
@@ -82,7 +84,6 @@ api:
   reboot_timeout: 0s
 
 ota:
-  - platform: esphome
   - platform: web_server
 
 web_server:
@@ -142,10 +143,6 @@ switch:
     disabled_by_default: true
 
 button:
-  - platform: restart
-    name: "${human_devicename} Restart the Gateway"
-    disabled_by_default: true
-
   - platform: template
     name: "${human_devicename} Serial Server Pause"
     internal: true
