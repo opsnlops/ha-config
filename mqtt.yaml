@@ -303,7 +303,31 @@ sensor:
   - name: "Mango State Reason"
     state_topic: "creatures/mango/activity/reason"
 
-  
+  - name: "Beaky Temperature"
+    state_topic: "creatures/beaky/sensors/board/temperature_f"
+    value_template: "{{ value | round(1) }}"
+    unit_of_measurement: "°F"
+    device_class: "temperature"
+
+  - name: "Beaky Motor Power Draw"
+    state_topic: "creatures/beaky/sensors/board/power/motor_power_in/power"
+    value_template: "{{ value | round(1) }}"
+    unit_of_measurement: "W"
+    device_class: "power"
+
+  - name: "Beaky State"
+    state_topic: "creatures/beaky/activity/state"
+
+  - name: "Beaky Animation ID"
+    state_topic: "creatures/beaky/activity/animation_id"
+
+  - name: "Beaky Animation Name"
+    state_topic: "creatures/beaky/activity/animation_name"
+
+  - name: "Beaky State Reason"
+    state_topic: "creatures/beaky/activity/reason"
+
+
 
 
 
