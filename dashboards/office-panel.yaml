@@ -96,11 +96,6 @@ views:
     path: climate
     badges: []
     cards:
-      - type: weather-forecast
-        entity: weather.accuweather
-        secondary_info_attribute: humidity
-        show_forecast: false
-        name: Whidbey Island
       - type: entities
         entities:
           - entity: sensor.outside_temperature
@@ -135,11 +130,6 @@ views:
           detail: 1
         title: Whidbey Island Weather
         state_color: true
-      - type: history-graph
-        entities:
-          - entity: weather.accuweather
-        hours_to_show: 24
-        refresh_interval: 0
       - type: history-graph
         entities:
           - entity: sensor.bunnys_bathroom_temperature
@@ -280,7 +270,6 @@ views:
         entities:
           - entity: sensor.bunnys_room_light_level
           - entity: sensor.family_room_light_level
-          - entity: sensor.office_light_level
         hours_to_show: 24
         refresh_interval: 0
         title: Light Levels
