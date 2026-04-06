@@ -35,9 +35,6 @@ homekit: !include homekit.yaml
 zone: !include zones.yaml
 
 
-# Templated covers
-cover: !include covers.yaml
-
 # Enable streaming cameras
 ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
@@ -170,6 +167,10 @@ template:
               Super Off-Peak
             {% endif %}
           {% endif %}
+      - name: "Rain Today (mm)"
+        unique_id: "fa7c3390-942b-11ef-b424-8b059de72258"
+        unit_of_measurement: "mm"
+        state: "{{ (states('sensor.rain_today') | float*25.4) | round(2) }}"
     light:
       - name: "Family Room Clock"
         state: "{{ states('input_boolean.creatures_clocky_family_room_display_on') }}"
