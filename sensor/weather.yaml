@@ -1,27 +1,6 @@
 # This allows me to see how much rain has come in today, rather than
 # over the lifetime of the sensor
 
-- platform: template
-  sensors:
-    rain_today:
-      value_template: >
-        {%- if not (is_state("sensor.rain_amount","unknown") or is_state("sensor.rain_in_prior","unknown") )-%}
-        {{ ((states('sensor.rain_amount') | float) - (states('sensor.rain_in_prior') | float)) | round(2) }}
-        {%- endif -%}
-      friendly_name: "Rain Today"
-      unit_of_measurement: "in"
-      device_class: precipitation
-
-# Show the wind in human units
-- platform: template
-  sensors:
-    wind_direction:
-      value_template: >
-        {% set direction = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] %}
-        {% set degree = states('sensor.wind_bearing')|float %}
-        {{ direction[((degree+11.25)/22.5)|int] }}
-      friendly_name: "Wind Direction"
-
 # Use the stats platform to keep track of 24 hour metrics
 - platform: statistics
   name: "Outside Temperature 24 Hour Min"

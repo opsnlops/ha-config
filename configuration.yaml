@@ -34,8 +34,6 @@ homekit: !include homekit.yaml
 
 zone: !include zones.yaml
 
-# Templated lights
-light: !include lights.yaml
 
 # Templated covers
 cover: !include covers.yaml
@@ -58,6 +56,217 @@ input_number: !include input_number.yaml
 utility_meter: !include utility_meter.yaml
 
 climate: !include_dir_merge_list climate/
+
+# Modern template sensors
+template:
+  - sensor:
+      - name: "Electricity Cost Rate"
+        unit_of_measurement: "USD/h"
+        state: >-
+          {% set power_w = states('sensor.aprils_nest_energy_monitor_electric_consumption_w') | float(0) %}
+          {% set rate = states('sensor.electricity_rate') | float(0) %}
+          {{ (power_w / 1000 * rate) | round(4) }}
+      - name: "Sable Hotend Target"
+        device_class: temperature
+        unit_of_measurement: "°C"
+        state: >-
+          {{ states.sensor.sable_sensor.attributes['extruder']['target'] | float | round(1) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Hotend Actual"
+        device_class: temperature
+        unit_of_measurement: "°C"
+        state: >-
+          {{ states.sensor.sable_sensor.attributes['extruder']['temperature'] | float | round(1) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Bed Target"
+        device_class: temperature
+        unit_of_measurement: "°C"
+        state: >-
+          {{ states.sensor.sable_sensor.attributes['heater_bed']['target'] | float | round(1) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Bed Actual"
+        device_class: temperature
+        unit_of_measurement: "°C"
+        state: >-
+          {{ states.sensor.sable_sensor.attributes['heater_bed']['temperature'] | float | round(1) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable State"
+        icon: mdi:printer-3d
+        state: >-
+          {{ states.sensor.sable_sensor.attributes['print_stats']['state'] if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Current Print"
+        state: >-
+          {{ states.sensor.sable_sensor.attributes['print_stats']['filename'] if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Current Progress"
+        unit_of_measurement: "%"
+        icon: mdi:file-percent
+        state: >-
+          {{ (states.sensor.sable_sensor.attributes['display_status']['progress'] * 100) | round(1) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Print Time"
+        icon: mdi:clock-start
+        state: >-
+          {{ states.sensor.sable_sensor.attributes['print_stats']['print_duration'] | timestamp_custom("%H:%M:%S", 0) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Time Remaining"
+        icon: mdi:clock-end
+        state: >-
+          {{ (((states.sensor.sable_sensor.attributes['print_stats']['print_duration'] / states.sensor.sable_sensor.attributes['display_status']['progress'] - states.sensor.sable_sensor.attributes['print_stats']['print_duration']) if states.sensor.sable_sensor.attributes['display_status']['progress'] > 0 else 0) | timestamp_custom('%H:%M:%S', 0)) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable ETA"
+        icon: mdi:clock-outline
+        state: >-
+          {{ (as_timestamp(now()) + 2 * 60 * 60 + ((states.sensor.sable_sensor.attributes['print_stats']['print_duration'] / states.sensor.sable_sensor.attributes['display_status']['progress'] - states.sensor.sable_sensor.attributes['print_stats']['print_duration']) if states.sensor.sable_sensor.attributes['display_status']['progress'] > 0 else 0)) | timestamp_custom("%H:%M:%S", 0) if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Nozzletemp"
+        icon: mdi:thermometer
+        state: >-
+          {{ [(states.sensor.sable_sensor.attributes['extruder']['temperature'] | float | round(1) | string), " / ", (states.sensor.sable_sensor.attributes['extruder']['target'] | float | round(1) | string)] | join if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Sable Bedtemp"
+        icon: mdi:thermometer
+        state: >-
+          {{ [(states.sensor.sable_sensor.attributes['heater_bed']['temperature'] | float | round(1) | string), " / ", (states.sensor.sable_sensor.attributes['heater_bed']['target'] | float | round(1) | string)] | join if is_state('sensor.sable_sensor', 'OK') else None }}
+      - name: "Rain Today"
+        unit_of_measurement: "in"
+        device_class: precipitation
+        state: >-
+          {%- if not (is_state("sensor.rain_amount","unknown") or is_state("sensor.rain_in_prior","unknown") )-%}
+          {{ ((states('sensor.rain_amount') | float) - (states('sensor.rain_in_prior') | float)) | round(2) }}
+          {%- endif -%}
+      - name: "Wind Direction"
+        state: >-
+          {% set direction = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] %}
+          {% set degree = states('sensor.wind_bearing')|float %}
+          {{ direction[((degree+11.25)/22.5)|int] }}
+      - name: "Electricity Rate"
+        unit_of_measurement: "USD/kWh"
+        device_class: monetary
+        state: >-
+          {% set m = now().hour * 60 + now().minute %}
+          {% set is_weekday = now().isoweekday() in [1, 2, 3, 4, 5] %}
+          {% if is_weekday %}
+            {% if (420 <= m < 600) or (1020 <= m < 1200) %}
+              0.495597
+            {% elif (600 <= m < 1020) or (1200 <= m < 1380) %}
+              0.140272
+            {% else %}
+              0.091624
+            {% endif %}
+          {% else %}
+            {% if 420 <= m < 1380 %}
+              0.140272
+            {% else %}
+              0.091624
+            {% endif %}
+          {% endif %}
+      - name: "Electricity Rate Period"
+        state: >-
+          {% set m = now().hour * 60 + now().minute %}
+          {% set is_weekday = now().isoweekday() in [1, 2, 3, 4, 5] %}
+          {% if is_weekday %}
+            {% if (420 <= m < 600) or (1020 <= m < 1200) %}
+              On Peak
+            {% elif (600 <= m < 1020) or (1200 <= m < 1380) %}
+              Off Peak
+            {% else %}
+              Super Off-Peak
+            {% endif %}
+          {% else %}
+            {% if 420 <= m < 1380 %}
+              Off Peak
+            {% else %}
+              Super Off-Peak
+            {% endif %}
+          {% endif %}
+    light:
+      - name: "Family Room Clock"
+        state: "{{ states('input_boolean.creatures_clocky_family_room_display_on') }}"
+        turn_on:
+          - action: input_boolean.turn_on
+            data:
+              entity_id:
+                - input_boolean.creatures_clocky_family_room_display_on
+        turn_off:
+          - action: input_boolean.turn_off
+            data:
+              entity_id:
+                - input_boolean.creatures_clocky_family_room_display_on
+      - name: "Family Room Lights"
+        state: "{{ states('group.family_room_lights') }}"
+        turn_on:
+          - action: homeassistant.turn_on
+            data:
+              entity_id:
+                - group.family_room_lights
+        turn_off:
+          - action: homeassistant.turn_off
+            data:
+              entity_id:
+                - group.family_room_lights
+      - name: "Workshop Lights"
+        state: "{{ states('group.workshop_lights') }}"
+        turn_on:
+          - action: homeassistant.turn_on
+            data:
+              entity_id:
+                - group.workshop_lights
+        turn_off:
+          - action: homeassistant.turn_off
+            data:
+              entity_id:
+                - group.workshop_lights
+      - name: "Guest Room Lights"
+        state: "{{ states('group.guest_room_lights') }}"
+        turn_on:
+          - action: homeassistant.turn_on
+            data:
+              entity_id:
+                - group.guest_room_lights
+        turn_off:
+          - action: homeassistant.turn_off
+            data:
+              entity_id:
+                - group.guest_room_lights
+      - name: "Hallway Lights"
+        state: "{{ states('group.hallway_lights') }}"
+        turn_on:
+          - action: homeassistant.turn_on
+            data:
+              entity_id:
+                - group.hallway_lights
+        turn_off:
+          - action: homeassistant.turn_off
+            data:
+              entity_id:
+                - group.hallway_lights
+      - name: "Hallway Bathroom Lights"
+        state: "{{ states('group.hallway_bathroom_lights') }}"
+        turn_on:
+          - action: homeassistant.turn_on
+            data:
+              entity_id:
+                - group.hallway_bathroom_lights
+        turn_off:
+          - action: homeassistant.turn_off
+            data:
+              entity_id:
+                - group.hallway_bathroom_lights
+      - name: "Half Bathroom Lights"
+        state: "{{ states('group.half_bathroom_lights') }}"
+        turn_on:
+          - action: homeassistant.turn_on
+            data:
+              entity_id:
+                - group.half_bathroom_lights
+        turn_off:
+          - action: homeassistant.turn_off
+            data:
+              entity_id:
+                - group.half_bathroom_lights
+      - name: "Laundry Room Lights"
+        state: "{{ states('group.laundry_room_lights') }}"
+        turn_on:
+          - action: homeassistant.turn_on
+            data:
+              entity_id:
+                - group.laundry_room_lights
+        turn_off:
+          - action: homeassistant.turn_off
+            data:
+              entity_id:
+                - group.laundry_room_lights
 
 # Enable iOS stuff
 #ios: !include ios.yaml
