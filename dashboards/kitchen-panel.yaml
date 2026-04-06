@@ -53,14 +53,6 @@ views:
         show_color_control: true
         collapsible_controls: true
         fill_container: false
-      - type: custom:mushroom-light-card
-        entity: light.patio_lights
-        layout: horizontal
-        use_light_color: false
-        show_brightness_control: true
-        show_color_control: true
-        collapsible_controls: true
-        fill_container: false
       - type: custom:mushroom-lock-card
         entity: lock.front_door
         layout: horizontal

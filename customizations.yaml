@@ -4,22 +4,6 @@ sensor.guest_room_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
   state_class: measurement
-sensor.half_bathroom_relative_humidity:
-  unit_of_measurement: "%"
-  device_class: humidity
-  state_class: measurement
-sensor.hallway_bathroom_relative_humidity:
-  unit_of_measurement: "%"
-  device_class: humidity
-  state_class: measurement
-sensor.kitchen_relative_humidity:
-  unit_of_measurement: "%"
-  device_class: humidity
-  state_class: measurement
-sensor.laundry_room_relative_humidity:
-  unit_of_measurement: "%"
-  device_class: humidity
-  state_class: measurement
 sensor.mud_room_relative_humidity:
   unit_of_measurement: "%"
   device_class: humidity
@@ -38,24 +22,6 @@ sensor.outside_pm_2_5um:
 sensor.outside_pm_10um:
   state_class: measurement
 
-# Door and window sensors
-binary_sensor.back_door:
-  device_class: door
-binary_sensor.bedroom_door:
-  device_class: door
-binary_sensor.entryway_door:
-  device_class: door
-binary_sensor.forbidden_door:
-  device_class: door
-binary_sensor.front_door:
-  device_class: door
-
-binary_sensor.family_room_east_window:
-  device_class: window
-binary_sensor.family_room_west_window:
-  device_class: window
-binary_sensor.laundry_room_window:
-  device_class: window
 
 ###
 #

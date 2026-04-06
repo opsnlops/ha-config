@@ -204,9 +204,6 @@ entities:
   # Guest Room
   switch.guest_room_stars:
     state: "on"
-  light.guest_room_overhead_light:
-    state: "on"
-    brightness: 90
   fan.guest_room_fan:
     state: "on"
     speed: "medium"
@@ -256,7 +253,6 @@ entities:
     state: "off"
   switch.lava_lamp:
     state: "off"
-  #switch.office_ceiling_fan:
   #  state: "on"
   light.office_overhead_doorway_light:
     brightness: 255

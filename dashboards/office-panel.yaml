@@ -80,9 +80,7 @@ views:
             name: Lights
             secondary_info: none
           - entity: switch.lava_lamp
-          - entity: switch.office_ceiling_fan
           - entity: switch.office_floor_fan
-          - entity: switch.office_window_fan
         state_color: true
         show_header_toggle: false
       - type: custom:mushroom-climate-card
@@ -225,10 +223,6 @@ views:
           - entity: sensor.entryway_humidity
           - entity: sensor.family_room_humidity
           - entity: sensor.guest_room_relative_humidity
-          - entity: sensor.half_bathroom_relative_humidity
-          - entity: sensor.hallway_bathroom_relative_humidity
-          - entity: sensor.kitchen_relative_humidity
-          - entity: sensor.laundry_room_relative_humidity
           - entity: sensor.mud_room_relative_humidity
           - entity: sensor.office_humidity
           - entity: sensor.outside_humidity

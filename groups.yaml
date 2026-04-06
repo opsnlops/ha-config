@@ -109,7 +109,6 @@ guest_room_lights:
   entities:
     - light.guest_room_left_lamp
     - light.guest_room_right_lamp
-    - light.guest_room_overhead_light
     - switch.guest_room_stars
 
 hallway_lights:

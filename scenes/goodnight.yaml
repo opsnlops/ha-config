@@ -1,11 +1,5 @@
 name: Goodnight
 entities:
-  light.dining_room_bookshelf:
-    brightness: 76
-    state: "off"
-    xy_color:
-      - 0.6213
-      - 0.3612
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:
@@ -56,12 +50,6 @@ entities:
     xy_color:
       - 0.1543
       - 0.0919
-  light.kitchen_hanging_light:
-    brightness: 208
-    state: "off"
-    xy_color:
-      - 0.1571
-      - 0.1989
   light.kitchen_over_fridge_light:
     state: "off"
   light.right_kitchen_window:
@@ -130,8 +118,6 @@ entities:
     state: "off"
 
   # Office
-  light.office_computer_table_lamp:
-    state: "off"
   light.office_desk_edge_light:
     state: "off"
   light.office_desk_light:
@@ -144,11 +130,7 @@ entities:
     state: "off"
   switch.lava_lamp:
     state: "off"
-  switch.office_ceiling_fan:
-    state: "off"
   fan.office_floor_fan:
-    state: "off"
-  switch.office_window_fan:
     state: "off"
   switch.office_heater:
     state: "off"
@@ -163,8 +145,6 @@ entities:
   fan.guest_room_fan:
     state: "off"
   switch.guest_room_stars:
-    state: "off"
-  light.guest_room_overhead_light:
     state: "off"
   light.guest_room_left_lamp:
     state: "off"
@@ -237,8 +217,6 @@ entities:
   light.entryway_lights:
     state: "off"
 
-  light.patio_lights:
-    state: "off"
 
   # Turn off the flamethrowers 🔥
   climate.family_room_heat:

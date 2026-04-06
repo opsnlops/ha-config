@@ -123,12 +123,6 @@ entities:
       - 0.3157
       - 0.3291
 
-  light.dining_room_bookshelf:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.3157
-      - 0.3291
 
   #Family Room
   light.family_room_tv_backlighting:
@@ -196,8 +190,6 @@ entities:
       - 0.3157
       - 0.3291
   light.family_room_floor_fan_blue_led:
-    state: "on"
-  light.family_room_fairy_lights_blue_led:
     state: "on"
   light.family_room_thermostat_lcd_display_backlight:
     state: "on"

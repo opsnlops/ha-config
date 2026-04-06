@@ -40,12 +40,6 @@ entities:
     xy_color:
       - 0.1898
       - 0.2324
-  light.dining_room_bookshelf:
-    brightness: 254
-    state: "on"
-    xy_color:
-      - 0.455
-      - 0.3857
 
   switch.guest_room_stars:
     state: "on"
@@ -128,8 +122,6 @@ entities:
     state: "on"
     color_temp: 383
 
-  switch.family_room_fairy_lights:
-    state: "off"
   light.family_room_window_table_lights:
     state: "off"
 

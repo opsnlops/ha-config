@@ -42,8 +42,6 @@ entities:
       - 0.5435
       - 0.3978
 
-  light.patio_lights:
-    state: "off"
 
   light.carport_light:
     brightness: 48

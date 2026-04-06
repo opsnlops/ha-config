@@ -7,10 +7,6 @@ name:
   #
 
 entities:
-  light.dining_room_bookshelf:
-    state: "off"
-  light.dining_room_fairy_lights:
-    state: "off"
 
   # Hallway Bathroom
   switch.hallway_bathroom_stars:
@@ -32,8 +28,6 @@ entities:
   light.kitchen_counter_light_4:
     state: "off"
   light.kitchen_counter_light_5:
-    state: "off"
-  light.kitchen_hanging_light:
     state: "off"
   light.kitchen_over_fridge_light:
     state: "off"
@@ -79,8 +73,6 @@ entities:
     state: "off"
 
   # Office
-  light.office_computer_table_lamp:
-    state: "off"
   light.office_desk_edge_light:
     state: "off"
   light.office_desk_light:
@@ -123,8 +115,6 @@ entities:
     state: "off"
 
   # Guest Room
-  light.guest_room_overhead_light:
-    state: "off"
   switch.guest_room_stars:
     state: "off"
   fan.guest_room_fan:
@@ -201,8 +191,6 @@ entities:
   light.laundry_room_light:
     state: "off"
 
-  light.patio_lights:
-    state: "off"
 
   # Make sure the fans are off
   fan.bedroom_fan:
@@ -210,8 +198,6 @@ entities:
   fan.family_room_ceiling_fan:
     state: "off"
   fan.family_room_floor_fan:
-    state: "off"
-  switch.office_ceiling_fan:
     state: "off"
   fan.office_floor_fan:
     state: "off"

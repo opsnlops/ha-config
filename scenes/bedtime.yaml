@@ -19,40 +19,8 @@ entities:
     xy_color:
       - 0.455
       - 0.3857
-  light.dining_room_bookshelf:
-    brightness: 86
-    state: "on"
-    xy_color:
-      - 0.2528
-      - 0.113
-  light.dining_room_fairy_lights:
-    state: "off"
   switch.guest_room_stars:
     state: "off"
-  light.kitchen_counter_north:
-    brightness: 61
-    state: "on"
-    xy_color:
-      - 0.3965
-      - 0.1652
-  light.kitchen_counter_south:
-    brightness: 51
-    state: "on"
-    xy_color:
-      - 0.4721
-      - 0.4883
-  light.kitchen_pantry_overhead:
-    brightness: 43
-    state: "on"
-    xy_color:
-      - 0.1481
-      - 0.2414
-  light.living_room_corner_lamp:
-    brightness: 89
-    state: "on"
-    xy_color:
-      - 0.5653
-      - 0.2372
   light.family_room_fairy_lights:
     state: "off"
   light.family_room_window_table_lights:
@@ -69,12 +37,6 @@ entities:
     xy_color:
       - 0.1525
       - 0.0477
-  light.living_room_glass_table_lamp:
-    brightness: 58
-    state: "on"
-    xy_color:
-      - 0.2207
-      - 0.079
   light.family_room_sofa:
     brightness: 30
     state: "on"
@@ -87,49 +49,7 @@ entities:
     xy_color:
       - 0.1648
       - 0.5841
-  light.living_room_window_lamp:
-    brightness: 58
-    state: "on"
-    xy_color:
-      - 0.2007
-      - 0.1055
-  light.office_computer_table_lamp:
-    brightness: 76
-    state: "on"
-    xy_color:
-      - 0.1718
-      - 0.7406
   switch.office_stars:
     state: "off"
-  light.office_filing_cabinet_lamp:
-    brightness: 76
-    state: "on"
-    xy_color:
-      - 0.1525
-      - 0.0477
-  light.office_overhead_east:
-    brightness: 63
-    state: "on"
-    xy_color:
-      - 0.1364
-      - 0.0403
-  light.office_overhead_north:
-    brightness: 112
-    state: "on"
-    xy_color:
-      - 0.6783
-      - 0.2897
-  light.office_overhead_south:
-    brightness: 43
-    state: "on"
-    xy_color:
-      - 0.1956
-      - 0.0726
-  light.office_overhead_west:
-    brightness: 58
-    state: "on"
-    xy_color:
-      - 0.152
-      - 0.2758
   switch.lava_lamp:
     state: "off"
