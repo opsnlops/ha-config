@@ -33,13 +33,13 @@
   port: 23001
   filter:
     include_entities:
-      - camera.driveway
+      - camera.driveway_medium
   entity_config:
-    camera.driveway:
+    camera.driveway_medium:
       linked_motion_sensor: binary_sensor.driveway_person_detected
       support_audio: True
       video_codec: copy
-      # HA doesn't like the 4k streams, so this is the 720p one
+      # HomeKit maxes out at 1080p, so use the medium quality stream
       stream_source: rtsps://10.3.2.2:7441/z5SRvL307nRBC7Jo?enableSrtp
 
 - name: Back Driveway Camera
