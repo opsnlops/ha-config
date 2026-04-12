@@ -84,7 +84,7 @@
       video_codec: copy
       audio_packet_size: 564
       linked_motion_sensor: binary_sensor.family_room_camera_motion
-      stream_source: rtsp://10.3.2.2:7447/7N7cAe7gT7MSxy6K
+      stream_source: rtsps://10.3.2.2:7441/iUpYkqpjglxjBd8z?enableSrtp
 
 - name: Front Door Camera
   mode: accessory
