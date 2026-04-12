@@ -92,14 +92,14 @@
   port: 23005
   filter:
     include_entities:
-      - camera.front_door
+      - camera.front_door_medium_resolution_channel
   entity_config:
-    camera.front_door:
+    camera.front_door_medium_resolution_channel:
       support_audio: True
       linked_doorbell_sensor: binary_sensor.doorbell
       linked_motion_sensor: binary_sensor.front_door_person_detected
       video_codec: copy
-      stream_source: rtsp://10.3.2.2:7447/Is9Efi6ozJgNn5ll
+      stream_source: rtsps://10.3.2.2:7441/Is9Efi6ozJgNn5ll?enableSrtp
 
 - name: Mud Room Camera
   mode: accessory
