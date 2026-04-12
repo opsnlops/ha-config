@@ -40,7 +40,7 @@
       support_audio: True
       video_codec: copy
       # HA doesn't like the 4k streams, so this is the 720p one
-      stream_source: rtsp://10.3.2.2:7447/z5SRvL307nRBC7Jo
+      stream_source: rtsps://10.3.2.2:7441/z5SRvL307nRBC7Jo?enableSrtp
 
 - name: Back Driveway Camera
   mode: accessory
