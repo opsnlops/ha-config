@@ -79,16 +79,6 @@
       topic: "home/kitchen/motion"
       payload_template: "{{ states.binary_sensor.kitchen_motion.state }}"
 
-- alias: "MQTT - Kitchen Temperature"
-  trigger:
-    platform: state
-    entity_id: "sensor.kitchen_temperature"
-  action:
-    service: mqtt.publish
-    data:
-      topic: "home/kitchen/temperature"
-      payload_template: "{{ states.sensor.kitchen_temperature.state }}"
-
 ## Things!
 
 # Bedroom Fan
@@ -121,7 +111,6 @@
     data:
       topic: "people/furries/home"
       payload_template: "{{ states.group.all_furries.state }}"
-
 
 
 
