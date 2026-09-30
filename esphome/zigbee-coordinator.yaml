@@ -30,6 +30,10 @@ esp32:
       CONFIG_PM_ENABLE: "n"
       CONFIG_PM_POWER_DOWN_PERIPHERAL_IN_LIGHT_SLEEP: "n"
       CONFIG_UART_ISR_IN_IRAM: "y"
+      # cc2652_flasher uses esp_crt_bundle but doesn't request it; since
+      # ESPHome 2026.9 the bundle is only built when a component asks for it.
+      CONFIG_MBEDTLS_CERTIFICATE_BUNDLE: "y"
+      CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_DEFAULT_CMN: "y"
 
 packages:
   base: !include common/base.yaml
