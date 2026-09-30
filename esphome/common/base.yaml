@@ -11,7 +11,7 @@ api:
 
 ota:
   - platform: esphome
-    password: !secret esphome_ota_password
+    encryption: {}  # uses the api encryption key
 
 # esphome will (correctly) guess the timezone from whichever
 # of my devices is running the update
