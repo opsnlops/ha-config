@@ -50,3 +50,7 @@ sensor:
     name: "Outside Temperature"
     entity_id: sensor.outside_temperature
     internal: true
+  # Loopback: report the value the display received so HA can confirm it's current
+  - platform: copy
+    source_id: outside_temperature
+    name: "${human_devicename} Displayed Outside Temperature"
