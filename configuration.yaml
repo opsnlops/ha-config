@@ -23,8 +23,7 @@ http:
   trusted_proxies: 10.3.2.5
 
 group: !include groups.yaml
-automation manual: !include_dir_merge_list automation/
-automation ui: !include automations.yaml
+automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include_dir_list scenes/
 
