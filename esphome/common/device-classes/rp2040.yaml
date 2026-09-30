@@ -1,7 +1,7 @@
 esphome:
   name: ${devicename}
 
-rp2040:
+rp2:
   board: rpipicow
   framework:
     platform_version: https://github.com/maxgerhardt/platform-raspberrypi.git

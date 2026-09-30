@@ -13,8 +13,7 @@ logger:
 light:
   - platform: esp32_rmt_led_strip
     chipset: SK6812
-    rgb_order: GRB
-    is_rgbw: true
+    channel_colors: GRBW
     pin: GPIO13
     num_leds: 144
     icon: mdi:led-strip

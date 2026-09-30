@@ -17,7 +17,7 @@ light:
     pin: GPIO16
     num_leds: 1
     pio: 0
-    rgb_order: RGB
+    channel_colors: RGB
     chipset: WS2812B
     effects:
       - flicker:

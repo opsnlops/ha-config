@@ -35,7 +35,6 @@ modbus_controller:
   - id: epever
     address: 0x1
     modbus_id: mod_bus_epever
-    command_throttle: 500ms
     setup_priority: -10
     update_interval: 20s
 
@@ -290,7 +289,6 @@ sensor:
     address: 0x331B
     register_type: read
     value_type: S_DWORD_R
-    register_count: 2
     accuracy_decimals: 2
     unit_of_measurement: "A"
     filters:
