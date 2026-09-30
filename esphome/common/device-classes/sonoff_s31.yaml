@@ -1,3 +1,7 @@
+substitutions:
+  # Set to "false" in a device config to stop a short press toggling the relay
+  button_toggles_relay: "true"
+
 esphome:
   name: ${devicename}
   project:
@@ -41,7 +45,11 @@ binary_sensor:
           - ON for at most 1s
           - OFF for at least 0.2s
         then:
-          - switch.toggle: relay
+          - if:
+              condition:
+                lambda: return ${button_toggles_relay};
+              then:
+                - switch.toggle: relay
       - timing:
           - ON for at least 4s
         then:

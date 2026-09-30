@@ -56,6 +56,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_voltage
+    state_class: measurement
+    device_class: voltage
     name: "${human_devicename} Battery Voltage"
     address: 0x331A
     register_type: read
@@ -69,7 +71,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_mode
-    name: "${human_devicename} Charging Mode"
+    name: "${human_devicename} Charging Mode Code"
+    internal: true
     address: 0x3008
     unit_of_measurement: ""
     register_type: read
@@ -79,6 +82,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: pv_input_voltage
+    state_class: measurement
+    device_class: voltage
     name: "${human_devicename} PV Array Input Voltage"
     address: 0x3100
     unit_of_measurement: "V"
@@ -91,6 +96,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: pv_input_current
+    state_class: measurement
+    device_class: current
     name: "${human_devicename} PV Array Input Current"
     address: 0x3101
     unit_of_measurement: "A"
@@ -103,6 +110,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: pv_input_power
+    state_class: measurement
+    device_class: power
     name: "${human_devicename} PV Array Input Power"
     address: 0x3102
     unit_of_measurement: "W"
@@ -115,6 +124,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_voltage
+    state_class: measurement
+    device_class: voltage
     name: "${human_devicename} Charging Voltage"
     address: 0x3104
     unit_of_measurement: "V"
@@ -127,6 +138,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_current
+    state_class: measurement
+    device_class: current
     name: "${human_devicename} Charging Current"
     address: 0x3105
     unit_of_measurement: "A"
@@ -139,6 +152,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: charging_power
+    state_class: measurement
+    device_class: power
     name: "${human_devicename} Charging Power"
     address: 0x3106
     unit_of_measurement: "W"
@@ -151,6 +166,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: load_voltage
+    state_class: measurement
+    device_class: voltage
     name: "${human_devicename} Load Voltage"
     address: 0x310C
     unit_of_measurement: "V"
@@ -163,6 +180,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: load_current
+    state_class: measurement
+    device_class: current
     name: "${human_devicename} Load Current"
     address: 0x310D
     unit_of_measurement: "A"
@@ -175,6 +194,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: load_power
+    state_class: measurement
+    device_class: power
     name: "${human_devicename} Load Power"
     address: 0x310E
     unit_of_measurement: "W"
@@ -187,6 +208,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_temperature
+    state_class: measurement
+    device_class: temperature
     name: "${human_devicename} Battery Temperature"
     address: 0x3110
     unit_of_measurement: °C
@@ -199,6 +222,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: device_temperature
+    state_class: measurement
+    device_class: temperature
     name: "${human_devicename} Device Temperature"
     address: 0x3111
     unit_of_measurement: °C
@@ -211,6 +236,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: power_components_temperature
+    state_class: measurement
+    device_class: temperature
     name: "${human_devicename} Power Components Temperature"
     address: 0x3112
     unit_of_measurement: °C
@@ -223,6 +250,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_soc
+    state_class: measurement
     name: "${human_devicename} Battery SOC"
     address: 0x311A
     unit_of_measurement: "%"
@@ -234,6 +262,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: remote_battery_temperature
+    state_class: measurement
+    device_class: temperature
     name: "${human_devicename} Remote Battery Temperature"
     address: 0x311B
     unit_of_measurement: °C
@@ -245,6 +275,9 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_volt_settings
+    unit_of_measurement: "V"
+    device_class: voltage
+    entity_category: diagnostic
     name: "${human_devicename} Remote Real Voltage"
     address: 0x311D
     register_type: read
@@ -256,27 +289,30 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: Battery_status_volt
-    name: "${human_devicename} Battery Status"
+    name: "${human_devicename} Battery Status Code"
+    internal: true
     address: 0x3200
     register_type: read
     value_type: U_WORD
-    bitmask: 7  #(Bits 0-3)
+    bitmask: 0x0F  # D3-D0
     accuracy_decimals: 0
 
   - platform: modbus_controller
     modbus_controller_id: epever
     id: Battery_status_temp
-    name: "${human_devicename} Battery Status Temperature"
+    name: "${human_devicename} Battery Temperature Status Code"
+    internal: true
     address: 0x3200
     register_type: read
     value_type: U_WORD
-    bitmask: 0x38  #(Bits 4-7)
+    bitmask: 0xF0  # D7-D4
     accuracy_decimals: 0
 
   - platform: modbus_controller
     modbus_controller_id: epever
     id: Charger_status
-    name: "${human_devicename} Charger Status"
+    name: "${human_devicename} Charger Status Code"
+    internal: true
     address: 0x3201
     register_type: read
     value_type: U_WORD
@@ -285,6 +321,8 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: epever
     id: battery_current
+    state_class: measurement
+    device_class: current
     name: "${human_devicename} Battery Current"
     address: 0x331B
     register_type: read
@@ -293,3 +331,77 @@ sensor:
     unit_of_measurement: "A"
     filters:
       - multiply: 0.01
+
+  - platform: modbus_controller
+    modbus_controller_id: epever
+    id: pv_energy_total
+    name: "${human_devicename} PV Energy Total"
+    address: 0x3312
+    register_type: read
+    value_type: U_DWORD_R
+    accuracy_decimals: 2
+    unit_of_measurement: "kWh"
+    device_class: energy
+    state_class: total_increasing
+    filters:
+      - multiply: 0.01
+
+# Human-readable versions of the EPEVER status registers
+text_sensor:
+  - platform: template
+    name: "${human_devicename} Charging Mode"
+    entity_category: diagnostic
+    update_interval: 20s
+    lambda: |-
+      if (std::isnan(id(charging_mode).state)) return {"Unknown"};
+      switch ((int) id(charging_mode).state) {
+        case 1: return {"PWM"};
+        case 2: return {"MPPT"};
+        default: return {"Unknown"};
+      }
+
+  - platform: template
+    name: "${human_devicename} Battery Voltage Status"
+    update_interval: 20s
+    lambda: |-
+      if (std::isnan(id(Battery_status_volt).state)) return {"Unknown"};
+      switch ((int) id(Battery_status_volt).state) {
+        case 0: return {"Normal"};
+        case 1: return {"Overvoltage"};
+        case 2: return {"Undervoltage"};
+        case 3: return {"Low Voltage Disconnect"};
+        case 4: return {"Fault"};
+        default: return {"Unknown"};
+      }
+
+  - platform: template
+    name: "${human_devicename} Battery Temperature Status"
+    update_interval: 20s
+    lambda: |-
+      if (std::isnan(id(Battery_status_temp).state)) return {"Unknown"};
+      switch ((int) id(Battery_status_temp).state) {
+        case 0: return {"Normal"};
+        case 1: return {"Over Temperature"};
+        case 2: return {"Low Temperature"};
+        default: return {"Unknown"};
+      }
+
+  - platform: template
+    name: "${human_devicename} Charging Stage"
+    update_interval: 20s
+    lambda: |-
+      if (std::isnan(id(Charger_status).state)) return {"Unknown"};
+      switch (((int) id(Charger_status).state >> 2) & 0x3) {
+        case 0: return {"Not Charging"};
+        case 1: return {"Float"};
+        case 2: return {"Boost"};
+        default: return {"Equalizing"};
+      }
+
+binary_sensor:
+  - platform: template
+    name: "${human_devicename} Charger Fault"
+    device_class: problem
+    lambda: |-
+      if (std::isnan(id(Charger_status).state)) return {};
+      return ((int) id(Charger_status).state >> 1) & 0x1;

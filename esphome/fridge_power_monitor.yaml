@@ -3,6 +3,8 @@ substitutions:
   human_devicename: Fridge Power Monitor
   ip: 10.9.1.205
   icon: mdi:fridge-variant
+  # Never let a bumped button turn off the fridge
+  button_toggles_relay: "false"
 
 packages:
   wifi: !include common/wifi.yaml

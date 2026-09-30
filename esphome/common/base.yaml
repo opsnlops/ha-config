@@ -26,8 +26,8 @@ time:
 # It's handy to have the uptime of the device recorded
 sensor: 
   - platform: uptime
+    type: timestamp
     name: "${human_devicename} Uptime"
-    update_interval: 60s
 
 binary_sensor:
   - platform: status
@@ -40,6 +40,3 @@ button:
   - platform: safe_mode
     name: "${human_devicename} Restart in Safe Mode"
     id: power_button
-  - platform: shutdown
-    name: "${human_devicename} Shutdown"
-    id: shutdown_button
