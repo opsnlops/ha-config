@@ -127,22 +127,30 @@ template:
       - name: "Electricity Rate"
         unit_of_measurement: "USD/kWh"
         device_class: monetary
+        # PSE Schedule 327 (TOU 3-tier with Super Off-Peak). Each rate is the
+        # Sch 327 energy charge plus the per-kWh riders that apply to every
+        # kWh: conservation 0.009409 + PCA 0.038719 - exchange credit 0.006648
+        # - other credits 0.002378 = 0.039102. Winter is Oct-Mar.
         state: >-
           {% set m = now().hour * 60 + now().minute %}
           {% set is_weekday = now().isoweekday() in [1, 2, 3, 4, 5] %}
+          {% set winter = now().month in [10, 11, 12, 1, 2, 3] %}
+          {% set on_peak = 0.549442 if winter else 0.317706 %}
+          {% set off_peak = 0.172955 if winter else 0.167922 %}
+          {% set super_off_peak = 0.121409 %}
           {% if is_weekday %}
             {% if (420 <= m < 600) or (1020 <= m < 1200) %}
-              0.495597
+              {{ on_peak }}
             {% elif (600 <= m < 1020) or (1200 <= m < 1380) %}
-              0.140272
+              {{ off_peak }}
             {% else %}
-              0.091624
+              {{ super_off_peak }}
             {% endif %}
           {% else %}
             {% if 420 <= m < 1380 %}
-              0.140272
+              {{ off_peak }}
             {% else %}
-              0.091624
+              {{ super_off_peak }}
             {% endif %}
           {% endif %}
       - name: "Electricity Rate Period"
